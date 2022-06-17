@@ -18,6 +18,7 @@ module.exports = {
     sourceType: 'module',
     project: ['tsconfig.json'],
   },
+  ignorePatterns: ['.eslintrc.js'],
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'prettier'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
