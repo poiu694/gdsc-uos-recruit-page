@@ -7,6 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "lint": "yarn service:lint && yarn design-system:lint && yarn hooks:lint",
+    "hooks:lint": "yarn workspace hooks lint",
+    "design-system:lint": "yarn workspace design-system lint",
     "service": "yarn workspace service dev",
     "service:lint": "yarn workspace service lint"
   },
