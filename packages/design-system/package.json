@@ -1,4 +1,29 @@
 {
   "name": "design-system",
-  "packageManager": "yarn@3.2.1"
+  "version": "1.0.0",
+  "packageManager": "yarn@3.2.1",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "scripts": {
+    "lint": "eslint --ext **/*.ts **/*.tsx"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "18.2.0",
+    "typescript": "^4.7.4"
+  }
 }
