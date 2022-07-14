@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "wayou.vscode-todo-highlight",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
+}
