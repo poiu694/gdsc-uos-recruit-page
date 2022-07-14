@@ -2,8 +2,8 @@
   "name": "design-system",
   "version": "1.0.0",
   "packageManager": "yarn@3.2.1",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./index.ts",
+  "types": "./index.ts",
   "scripts": {
     "lint": "eslint --ext **/*.ts **/*.tsx"
   },
