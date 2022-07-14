@@ -1,42 +1,22 @@
 {
-  "name": "sample_recruit_page",
-  "version": "0.1.0",
+  "name": "gdsc-uos-recruit-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/poiu694/sample_page.git",
+  "author": "Lee <43488305+poiu694@users.noreply.github.com>",
+  "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "service": "yarn workspace service dev",
+    "service:lint": "yarn workspace service lint"
   },
-  "dependencies": {
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "17.0.42",
-    "@types/prettier": "^2",
-    "@types/react": "18.0.12",
-    "@types/react-dom": "18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
-    "eslint": "8.17.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "12.1.6",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1",
-    "typescript": "4.7.3"
-  },
+  "workspaces": [
+    "admin",
+    "service",
+    "packages/**"
+  ],
   "packageManager": "yarn@3.2.1",
-  "engines": {
-    "node": "^16.15.0",
-    "npm": "please-use-yarn",
-    "yarn": "^1.22.17"
+  "dependencies": {
+    "typescript": "^4.7.4"
   }
 }
