@@ -1,0 +1,14 @@
+{
+  "name": "gdsc-uos-recruit-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/poiu694/sample_page.git",
+  "author": "Lee <43488305+poiu694@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "admin/**",
+    "service/**",
+    "packages/**"
+  ]
+}
