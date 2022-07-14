@@ -6,9 +6,13 @@
   "author": "Lee <43488305+poiu694@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "service": "yarn workspace service dev",
+    "service:lint": "yarn workspace service lint"
+  },
   "workspaces": [
-    "admin/**",
-    "service/**",
+    "admin",
+    "service",
     "packages/**"
   ],
   "packageManager": "yarn@3.2.1"
