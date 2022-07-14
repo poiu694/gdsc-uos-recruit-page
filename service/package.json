@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
-    "@gdsc-uos-recruit-page/tsconfig-custo": "1.0.0",
+    "@gdsc-uos-recruit-page/tsconfig-custom": "1.0.0",
     "@types/node": "18.0.4",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
