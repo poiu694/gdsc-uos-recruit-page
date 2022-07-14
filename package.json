@@ -15,5 +15,8 @@
     "service",
     "packages/**"
   ],
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
 }

@@ -1240,6 +1240,8 @@ __metadata:
 "gdsc-uos-recruit-page@workspace:.":
   version: 0.0.0-use.local
   resolution: "gdsc-uos-recruit-page@workspace:."
+  dependencies:
+    typescript: ^4.7.4
   languageName: unknown
   linkType: soft
 

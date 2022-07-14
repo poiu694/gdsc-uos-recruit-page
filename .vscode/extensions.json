@@ -2,6 +2,7 @@
   "recommendations": [
     "wayou.vscode-todo-highlight",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "arcanis.vscode-zipfs"
   ]
 }
