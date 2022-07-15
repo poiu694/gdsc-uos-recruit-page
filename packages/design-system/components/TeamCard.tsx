@@ -49,16 +49,31 @@ const Wrapper = styled.section`
   border-radius: 15px;
 
   @media (max-width: ${theme.size.mobile}px) {
-    height: 200px;
+    width: 100%;
+    height: 60px;
   }
 `;
 
 const Title = styled.div`
   padding: ${theme.padding.xlg}px;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    padding: ${theme.padding.sm};
+
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
 `;
 
 const Description = styled.div`
   padding-left: ${theme.padding.xlg}px;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    display: none;
+  }
 `;
 
 const BottomNav = styled.button`
@@ -74,6 +89,14 @@ const BottomNav = styled.button`
   border: none;
   outline: none;
   border-radius: 0px 0px 15px 15px;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    width: 30%;
+    height: 100%;
+    right: 0;
+
+    border-radius: 0px 15px 15px 0;
+  }
 `;
 
 export default TeamCard;
