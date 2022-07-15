@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Header />
-      <MainTeam />
+      <MainBanner />
       <MainProcess />
       <MainTeam />
     </Layout>
