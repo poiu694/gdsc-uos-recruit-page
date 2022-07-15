@@ -70,6 +70,10 @@ const Wrapper = styled.div<TypographyProps>`
     &.h6 {
       font-size: 12px;
     }
+
+    &.body4 {
+      font-size: 8px;
+    }
   }
 `;
 

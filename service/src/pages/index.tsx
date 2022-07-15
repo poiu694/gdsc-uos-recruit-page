@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import styled from '@emotion/styled';
-import { Header } from '@gdsc-uos-recruit-page/design-system';
+import { Bottom, Header } from '@gdsc-uos-recruit-page/design-system';
 
 import { MainBanner, MainProcess, MainTeam } from '../components';
 
@@ -11,6 +11,7 @@ const Home: NextPage = () => {
       <MainBanner />
       <MainProcess />
       <MainTeam />
+      <Bottom />
     </Layout>
   );
 };
