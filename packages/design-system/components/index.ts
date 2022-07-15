@@ -3,3 +3,4 @@ export { default as Typography } from './Typography';
 export { default as Title } from './Title';
 export { default as Header } from './Header';
 export { default as TeamCard } from './TeamCard';
+export { default as Circle } from './Circle';

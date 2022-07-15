@@ -37,20 +37,20 @@ function MainTeam() {
 
 const Wrapper = styled.div`
   width: 80%;
-  min-height: 100%;
+  min-height: 100vh;
   position: relative;
 
   margin: 0 auto;
 `;
 
 const TitleWrapper = styled.div`
-  margin: 1em 0 5em 0;
+  margin-bottom: 3em;
 `;
 
 const TeamCardWrapper = styled.div`
   width: 100%;
   height: 100%;
-  margin: 4em auto 0px 0px;
+  margin: 3em auto;
 
   display: flex;
   justify-content: space-between;
