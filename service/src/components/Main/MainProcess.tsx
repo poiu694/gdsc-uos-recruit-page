@@ -47,10 +47,6 @@ const Wrapper = styled.div`
   position: relative;
 
   margin: 0 auto;
-
-  @media (max-width: ${theme.size.tabletS}px) {
-    width: 100%;
-  }
 `;
 
 const CircleList = styled.ul`

@@ -26,6 +26,8 @@ function Title({ title, desc1, desc2 }: TitleProps) {
 }
 
 const Wrapper = styled.div`
+  word-break: keep-all;
+
   div:first-of-type {
     margin-bottom: 8px;
   }
