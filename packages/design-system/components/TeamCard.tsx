@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+
 import { TeamValueType } from '../@types/Team';
 import { theme } from '../theme';
 import { getJobByTeam, getPrimaryColor } from '../utils/colorUtils';

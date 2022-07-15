@@ -1,9 +1,10 @@
 import { PropsWithChildren, CSSProperties } from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+
 import { FontKeyType } from '../theme/fonts';
 import { colors, PalleteValueType } from '../theme/colors';
 import { theme } from '../theme';
-import { css } from '@emotion/react';
 
 interface TypographyProps {
   type: FontKeyType;
