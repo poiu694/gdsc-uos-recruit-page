@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Button } from '@gdsc-uos-recruit-page/design-system';
 import styles from '../styles/Home.module.css';
 
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
