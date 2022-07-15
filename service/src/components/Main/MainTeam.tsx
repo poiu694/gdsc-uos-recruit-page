@@ -14,7 +14,7 @@ function MainTeam() {
         </Typography>
       </TitleWrapper>
       <Title
-        title='Show us your Passion !'
+        title='Show us your Passion !s'
         desc1='성장하고 싶어하고 열정적인 사람을 찾고 있습니다.'
         desc2='당신의 열정을 뽐내주세요.'
       />
