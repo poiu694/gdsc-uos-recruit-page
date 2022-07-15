@@ -7,7 +7,7 @@ function Header() {
     <Wrapper>
       <NavigationWrapper>
         <Logo>
-          <div>Logo</div>
+          <img src='/logo128.png' alt='logo' />
         </Logo>
         <Navigation>
           <Typography type='h5'>모집 공고</Typography>
@@ -28,6 +28,9 @@ const Wrapper = styled.header`
   top: 0;
   z-index: ${theme.zIndex.header};
 
+  display: flex;
+  align-items: center;
+
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: blur(4px);
 `;
@@ -42,15 +45,25 @@ const Navigation = styled.div`
   float: right;
 
   gap: 16px;
+  @media (max-width: ${theme.size.mobile}px) {
+    gap: 8px;
+  }
 `;
 
 const Logo = styled.div`
-  @media (min-width: ${theme.size.mobile}px) {
-    display: none;
-  }
+  width: 100%;
+  height: 100%;
 
-  @media (min-width: ${theme.size.tabletS}px) {
-    display: block;
+  position: absolute;
+  top: 0;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    width: 50px;
+    top: 13px;
+
+    img {
+      max-width: 100%;
+    }
   }
 `;
 
