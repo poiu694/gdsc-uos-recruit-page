@@ -130,6 +130,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@emotion/is-prop-valid@npm:1.1.3"
+  dependencies:
+    "@emotion/memoize": ^0.7.4
+  checksum: 511997c3bbaab5a967db65b65a111afc46c4aac8b3b87a436fd9e3dc2891829a9ada1405b77326f407d93934ee3b831e62248b498c071089312c5be080af75dd
+  languageName: node
+  linkType: hard
+
 "@emotion/memoize@npm:^0.7.4, @emotion/memoize@npm:^0.7.5":
   version: 0.7.5
   resolution: "@emotion/memoize@npm:0.7.5"
@@ -180,6 +189,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/styled@npm:^11.9.3":
+  version: 11.9.3
+  resolution: "@emotion/styled@npm:11.9.3"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@emotion/babel-plugin": ^11.7.1
+    "@emotion/is-prop-valid": ^1.1.3
+    "@emotion/serialize": ^1.0.4
+    "@emotion/utils": ^1.1.0
+  peerDependencies:
+    "@babel/core": ^7.0.0
+    "@emotion/react": ^11.0.0-rc.0
+    react: ">=16.8.0"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@types/react":
+      optional: true
+  checksum: 16d9ef8c5840b13ec47f91f9963b64ec8a94197fe99bb3bd4e9f7404a09bb65a333e9ab6590af97c0090360816db70e8c920731198c3a30fbb2c2cfd5e8d8a65
+  languageName: node
+  linkType: hard
+
 "@emotion/unitless@npm:^0.7.5":
   version: 0.7.5
   resolution: "@emotion/unitless@npm:0.7.5"
@@ -218,6 +249,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdsc-uos-recruit-page/design-system@1.0.0, @gdsc-uos-recruit-page/design-system@workspace:packages/design-system":
+  version: 0.0.0-use.local
+  resolution: "@gdsc-uos-recruit-page/design-system@workspace:packages/design-system"
+  dependencies:
+    "@emotion/react": ^11.9.3
+    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
+    "@types/react": ^17.0.37
+    "@types/react-dom": ^17.0.11
+    "@typescript-eslint/eslint-plugin": ^5.30.6
+    "@typescript-eslint/parser": ^5.30.6
+    emotion-reset: ^3.0.1
+    eslint: ^8.19.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jsx-a11y: ^6.6.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.30.1
+    eslint-plugin-react-hooks: ^4.6.0
+    react: 18.2.0
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "@gdsc-uos-recruit-page/eslint-config-custom@1.0.0, @gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom":
   version: 0.0.0-use.local
   resolution: "@gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom"
@@ -234,6 +290,29 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
     prettier: ^2.7.1
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
+"@gdsc-uos-recruit-page/hooks@1.0.0, @gdsc-uos-recruit-page/hooks@workspace:packages/hooks":
+  version: 0.0.0-use.local
+  resolution: "@gdsc-uos-recruit-page/hooks@workspace:packages/hooks"
+  dependencies:
+    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
+    "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
+    "@types/react": ^17.0.37
+    "@typescript-eslint/eslint-plugin": ^5.30.6
+    "@typescript-eslint/parser": ^5.30.6
+    eslint: ^8.19.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jsx-a11y: ^6.6.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.30.1
+    eslint-plugin-react-hooks: ^4.6.0
+    react: 18.2.0
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -967,30 +1046,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"design-system@workspace:packages/design-system":
-  version: 0.0.0-use.local
-  resolution: "design-system@workspace:packages/design-system"
-  dependencies:
-    "@emotion/react": ^11.9.3
-    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
-    "@types/react": ^17.0.37
-    "@types/react-dom": ^17.0.11
-    "@typescript-eslint/eslint-plugin": ^5.30.6
-    "@typescript-eslint/parser": ^5.30.6
-    eslint: ^8.19.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-jsx-a11y: ^6.6.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.30.1
-    eslint-plugin-react-hooks: ^4.6.0
-    react: 18.2.0
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
-
 "dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
@@ -1022,6 +1077,25 @@ __metadata:
   version: 9.2.2
   resolution: "emoji-regex@npm:9.2.2"
   checksum: 8487182da74aabd810ac6d6f1994111dfc0e331b01271ae01ec1eb0ad7b5ecc2bbbbd2f053c05cb55a1ac30449527d819bbfbf0e3de1023db308cbcb47f86601
+  languageName: node
+  linkType: hard
+
+"emotion-reset@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "emotion-reset@npm:3.0.1"
+  peerDependencies:
+    "@emotion/react": ">=11"
+  checksum: 788cfbf6f31fadd22da2d61558c5f7b30da3d355d646c28e0b48f453bdd6d86dd3c55d0d8f55e3cf37c09446d597ac1ada4273244c4141467024a70b1e178fa8
+  languageName: node
+  linkType: hard
+
+"enhanced-resolve@npm:^5.7.0":
+  version: 5.10.0
+  resolution: "enhanced-resolve@npm:5.10.0"
+  dependencies:
+    graceful-fs: ^4.2.4
+    tapable: ^2.2.0
+  checksum: 0bb9830704db271610f900e8d79d70a740ea16f251263362b0c91af545576d09fe50103496606c1300a05e588372d6f9780a9bc2e30ce8ef9b827ec8f44687ff
   languageName: node
   linkType: hard
 
@@ -1082,6 +1156,13 @@ __metadata:
     is-date-object: ^1.0.1
     is-symbol: ^1.0.2
   checksum: 4ead6671a2c1402619bdd77f3503991232ca15e17e46222b0a41a5d81aebc8740a77822f5b3c965008e631153e9ef0580540007744521e72de8e33599fca2eed
+  languageName: node
+  linkType: hard
+
+"escalade@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "escalade@npm:3.1.1"
+  checksum: a3e2a99f07acb74b3ad4989c48ca0c3140f69f923e56d0cba0526240ee470b91010f9d39001f2a4a313841d237ede70a729e92125191ba5d21e74b106800b133
   languageName: node
   linkType: hard
 
@@ -1635,6 +1716,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"graceful-fs@npm:^4.2.4":
+  version: 4.2.10
+  resolution: "graceful-fs@npm:4.2.10"
+  checksum: 3f109d70ae123951905d85032ebeae3c2a5a7a997430df00ea30df0e3a6c60cf6689b109654d6fdacd28810a053348c4d14642da1d075049e6be1ba5216218da
+  languageName: node
+  linkType: hard
+
 "has-bigints@npm:^1.0.1, has-bigints@npm:^1.0.2":
   version: 1.0.2
   resolution: "has-bigints@npm:1.0.2"
@@ -1698,29 +1786,6 @@ __metadata:
   checksum: b1538270429b13901ee586aa44f4cc3ecd8831c061d06cb8322e50ea17b3f5ce4d0e2e66394761e6c8e152cd8c34fb3b4b690116c6ce2bd45b18c746516cb9e8
   languageName: node
   linkType: hard
-
-"hooks@workspace:packages/hooks":
-  version: 0.0.0-use.local
-  resolution: "hooks@workspace:packages/hooks"
-  dependencies:
-    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
-    "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
-    "@types/react": ^17.0.37
-    "@typescript-eslint/eslint-plugin": ^5.30.6
-    "@typescript-eslint/parser": ^5.30.6
-    eslint: ^8.19.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-jsx-a11y: ^6.6.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.30.1
-    eslint-plugin-react-hooks: ^4.6.0
-    react: 18.2.0
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
 
 "ignore@npm:^5.2.0":
   version: 5.2.0
@@ -2114,6 +2179,16 @@ __metadata:
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
   checksum: 23ad088b08f898fc9b53011d7bb78ec48e79de7627e01ab5518e806033861bef68d5b0cd0e2205c2f36690ac9571ff6bcb05eb777ced2eeda8d4ac5b44592c3d
+  languageName: node
+  linkType: hard
+
+"next-transpile-modules@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "next-transpile-modules@npm:9.0.0"
+  dependencies:
+    enhanced-resolve: ^5.7.0
+    escalade: ^3.1.1
+  checksum: 9a5d86d80cedc2404b2b1d5bd4994f2f7bf60e5e20f24e8cc5cfec34da1418b4a439916f37a95ca336bcf6d81094c3647354ac6a0c6737b3df59e62b6380507d
   languageName: node
   linkType: hard
 
@@ -2620,7 +2695,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "service@workspace:service"
   dependencies:
+    "@emotion/react": ^11.9.3
+    "@emotion/styled": ^11.9.3
+    "@gdsc-uos-recruit-page/design-system": 1.0.0
     "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
+    "@gdsc-uos-recruit-page/hooks": 1.0.0
     "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
     "@types/node": 18.0.4
     "@types/react": 18.0.15
@@ -2637,6 +2716,7 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
     next: 12.2.2
+    next-transpile-modules: ^9.0.0
     react: 18.2.0
     react-dom: 18.2.0
     typescript: ^4.7.4
@@ -2795,6 +2875,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"tapable@npm:^2.2.0":
+  version: 2.2.1
+  resolution: "tapable@npm:2.2.1"
+  checksum: 3b7a1b4d86fa940aad46d9e73d1e8739335efd4c48322cb37d073eb6f80f5281889bf0320c6d8ffcfa1a0dd5bfdbd0f9d037e252ef972aca595330538aac4d51
   languageName: node
   linkType: hard
 

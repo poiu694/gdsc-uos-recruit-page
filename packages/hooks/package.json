@@ -1,5 +1,5 @@
 {
-  "name": "hooks",
+  "name": "@gdsc-uos-recruit-page/hooks",
   "version": "1.0.0",
   "packageManager": "yarn@3.2.1",
   "main": "./index.ts",

@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@gdsc-uos-recruit-page/design-system": "1.0.0",
     "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
+    "@gdsc-uos-recruit-page/hooks": "1.0.0",
     "@gdsc-uos-recruit-page/tsconfig-custom": "1.0.0",
     "@types/node": "18.0.4",
     "@types/react": "18.0.15",
@@ -30,6 +34,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "next-transpile-modules": "^9.0.0",
     "typescript": "^4.7.4"
   }
 }
