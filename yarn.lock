@@ -218,6 +218,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gdsc-uos-recruit-page/design-system@1.0.0, @gdsc-uos-recruit-page/design-system@workspace:packages/design-system":
+  version: 0.0.0-use.local
+  resolution: "@gdsc-uos-recruit-page/design-system@workspace:packages/design-system"
+  dependencies:
+    "@emotion/react": ^11.9.3
+    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
+    "@types/react": ^17.0.37
+    "@types/react-dom": ^17.0.11
+    "@typescript-eslint/eslint-plugin": ^5.30.6
+    "@typescript-eslint/parser": ^5.30.6
+    eslint: ^8.19.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jsx-a11y: ^6.6.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.30.1
+    eslint-plugin-react-hooks: ^4.6.0
+    react: 18.2.0
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "@gdsc-uos-recruit-page/eslint-config-custom@1.0.0, @gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom":
   version: 0.0.0-use.local
   resolution: "@gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom"
@@ -234,6 +258,29 @@ __metadata:
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
     prettier: ^2.7.1
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
+"@gdsc-uos-recruit-page/hooks@1.0.0, @gdsc-uos-recruit-page/hooks@workspace:packages/hooks":
+  version: 0.0.0-use.local
+  resolution: "@gdsc-uos-recruit-page/hooks@workspace:packages/hooks"
+  dependencies:
+    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
+    "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
+    "@types/react": ^17.0.37
+    "@typescript-eslint/eslint-plugin": ^5.30.6
+    "@typescript-eslint/parser": ^5.30.6
+    eslint: ^8.19.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jsx-a11y: ^6.6.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.30.1
+    eslint-plugin-react-hooks: ^4.6.0
+    react: 18.2.0
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -967,30 +1014,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"design-system@workspace:packages/design-system":
-  version: 0.0.0-use.local
-  resolution: "design-system@workspace:packages/design-system"
-  dependencies:
-    "@emotion/react": ^11.9.3
-    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
-    "@types/react": ^17.0.37
-    "@types/react-dom": ^17.0.11
-    "@typescript-eslint/eslint-plugin": ^5.30.6
-    "@typescript-eslint/parser": ^5.30.6
-    eslint: ^8.19.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-jsx-a11y: ^6.6.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.30.1
-    eslint-plugin-react-hooks: ^4.6.0
-    react: 18.2.0
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
-
 "dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
@@ -1698,29 +1721,6 @@ __metadata:
   checksum: b1538270429b13901ee586aa44f4cc3ecd8831c061d06cb8322e50ea17b3f5ce4d0e2e66394761e6c8e152cd8c34fb3b4b690116c6ce2bd45b18c746516cb9e8
   languageName: node
   linkType: hard
-
-"hooks@workspace:packages/hooks":
-  version: 0.0.0-use.local
-  resolution: "hooks@workspace:packages/hooks"
-  dependencies:
-    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
-    "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
-    "@types/react": ^17.0.37
-    "@typescript-eslint/eslint-plugin": ^5.30.6
-    "@typescript-eslint/parser": ^5.30.6
-    eslint: ^8.19.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-jsx-a11y: ^6.6.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.30.1
-    eslint-plugin-react-hooks: ^4.6.0
-    react: 18.2.0
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
 
 "ignore@npm:^5.2.0":
   version: 5.2.0
@@ -2620,7 +2620,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "service@workspace:service"
   dependencies:
+    "@gdsc-uos-recruit-page/design-system": 1.0.0
     "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
+    "@gdsc-uos-recruit-page/hooks": 1.0.0
     "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
     "@types/node": 18.0.4
     "@types/react": 18.0.15

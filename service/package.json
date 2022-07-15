@@ -14,7 +14,9 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@gdsc-uos-recruit-page/design-system": "1.0.0",
     "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
+    "@gdsc-uos-recruit-page/hooks": "1.0.0",
     "@gdsc-uos-recruit-page/tsconfig-custom": "1.0.0",
     "@types/node": "18.0.4",
     "@types/react": "18.0.15",

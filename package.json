@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "lint": "yarn service:lint && yarn design-system:lint && yarn hooks:lint",
-    "hooks:lint": "yarn workspace hooks lint",
-    "design-system:lint": "yarn workspace design-system lint",
+    "hooks:lint": "yarn workspace @gdsc-uos-recruit-page/hooks lint",
+    "design-system:lint": "yarn workspace @gdsc-uos-recruit-page/design-system lint",
     "service": "yarn workspace service dev",
     "service:lint": "yarn workspace service lint"
   },
