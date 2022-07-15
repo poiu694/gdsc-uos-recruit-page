@@ -22,19 +22,19 @@ function MainProcess() {
       />
       <CircleList>
         <CircleItem>
-          <Circle type='first' title='서류 접수' date='2022.08.04 월요일' />
+          <Circle type='first' title='서류 접수1' date='2022.08.04 월요일' />
         </CircleItem>
         <CircleItem>
-          <Circle type='second' title='서류 접수' date='2022.08.04 월요일' />
+          <Circle type='second' title='서류 접수2' date='2022.08.04 월요일' />
         </CircleItem>
         <CircleItem>
-          <Circle type='third' title='서류 접수' date='2022.08.04 월요일' />
+          <Circle type='third' title='서류 접수3' date='2022.08.04 월요일' />
         </CircleItem>
         <CircleItem>
-          <Circle type='fourth' title='서류 접수' date='2022.08.04 월요일' />
+          <Circle type='fourth' title='서류 접수4' date='2022.08.04 월요일' />
         </CircleItem>
         <CircleItem>
-          <Circle type='fifth' title='서류 접수' date='2022.08.04 월요일' />
+          <Circle type='fifth' title='서류 접수5' date='2022.08.04 월요일' />
         </CircleItem>
       </CircleList>
     </Wrapper>
@@ -88,25 +88,26 @@ const CircleItem = styled.li`
       }
 
       &:nth-of-type(2) {
-        grid-column: 3/5;
-      }
-
-      &:nth-of-type(3) {
-        grid-column: 5/7;
-      }
-
-      &:nth-of-type(4) {
         grid-row: 2/3;
         grid-column: 2/4;
       }
 
-      &:last-of-type {
+      &:nth-of-type(3) {
+        grid-row: 1;
+        grid-column: 3/5;
+      }
+
+      &:nth-of-type(4) {
         grid-row: 2/3;
         grid-column: 4/6;
       }
+
+      &:last-of-type {
+        grid-column: 5/7;
+      }
     }
 
-    @media (max-width: ${theme.size.mobile}px) {
+    @media (max-width: ${theme.size.tabletS}px) {
       &:nth-of-type(1) {
         grid-row: 1/3;
         grid-column: 1/2;
