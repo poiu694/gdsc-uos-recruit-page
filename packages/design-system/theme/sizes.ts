@@ -1,4 +1,4 @@
-export const sizes = {
+export const size = {
   mobile: 768,
 } as const;
 
