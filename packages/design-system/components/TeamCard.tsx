@@ -40,7 +40,7 @@ function TeamCard({ type = 'Frontend', handleClickNav }: TeamCard) {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   width: 260px;
   height: 300px;
   position: relative;
@@ -48,11 +48,11 @@ const Wrapper = styled.div`
   border-radius: 15px;
 `;
 
-const Title = styled.header`
+const Title = styled.div`
   padding: ${theme.padding.xlg}px;
 `;
 
-const Description = styled.section`
+const Description = styled.div`
   padding-left: ${theme.padding.xlg}px;
 `;
 

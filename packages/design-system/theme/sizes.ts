@@ -1,5 +1,7 @@
 export const size = {
-  mobile: 768,
+  mobile: 576,
+  tabletS: 768,
+  tabletL: 1279,
 } as const;
 
 export const padding = {

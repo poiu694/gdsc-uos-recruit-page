@@ -1,12 +1,7 @@
-import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 import { TeamCard, Title } from '@gdsc-uos-recruit-page/design-system';
 
-const Wrapper = styled.div`
-  color: ${(props) => props.theme.colors.text.general};
-`;
-
-const Home: NextPage = () => {
+function MainProcess() {
   return (
     <Wrapper>
       hi
@@ -29,6 +24,11 @@ const Home: NextPage = () => {
       </div>
     </Wrapper>
   );
-};
+}
 
-export default Home;
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+export default MainProcess;
