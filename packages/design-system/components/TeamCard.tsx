@@ -46,6 +46,10 @@ const Wrapper = styled.section`
   position: relative;
   background-color: ${theme.palette.gray500};
   border-radius: 15px;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    height: 200px;
+  }
 `;
 
 const Title = styled.div`
