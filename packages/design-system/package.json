@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",

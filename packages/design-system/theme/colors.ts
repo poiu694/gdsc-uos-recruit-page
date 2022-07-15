@@ -62,3 +62,7 @@ export const colors = {
     // overlay: `linear-gradient(180deg, rgba(79, 23, 197, 0) -39.47%, ${palette.purple400} 100%)`,
   },
 } as const;
+
+
+type PalleteType = typeof palette;
+export type PalleteValueType = PalleteType[keyof PalleteType];
