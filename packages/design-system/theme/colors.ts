@@ -5,9 +5,9 @@ export const palette = {
   gray50: '#EEEEEE',
   gray100: '#AFAFAF',
   gray200: '#898989',
-  gray300: '#898989',
+  gray300: '#676767',
   gray400: '#353535',
-  gray500: '#898989',
+  gray500: '#292929',
   black: '#181818',
 
   // core color

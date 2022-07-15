@@ -3,6 +3,7 @@ export const size = {
 } as const;
 
 export const padding = {
+  xlg: 24,
   lg: 20,
   md: 16,
   sm: 12,
