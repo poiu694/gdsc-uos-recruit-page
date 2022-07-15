@@ -5,9 +5,9 @@ export const palette = {
   gray50: '#EEEEEE',
   gray100: '#AFAFAF',
   gray200: '#898989',
-  gray300: '#898989',
+  gray300: '#676767',
   gray400: '#353535',
-  gray500: '#898989',
+  gray500: '#292929',
   black: '#181818',
 
   // core color
@@ -62,3 +62,7 @@ export const colors = {
     // overlay: `linear-gradient(180deg, rgba(79, 23, 197, 0) -39.47%, ${palette.purple400} 100%)`,
   },
 } as const;
+
+
+type PalleteType = typeof palette;
+export type PalleteValueType = PalleteType[keyof PalleteType];

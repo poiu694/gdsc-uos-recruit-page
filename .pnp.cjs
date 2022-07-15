@@ -337,6 +337,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:11.9.3", {\
+          "packageLocation": "./.yarn/__virtual__/@emotion-styled-virtual-5432b7d1d6/0/cache/@emotion-styled-npm-11.9.3-01b80e031e-16d9ef8c58.zip/node_modules/@emotion/styled/",\
+          "packageDependencies": [\
+            ["@emotion/styled", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:11.9.3"],\
+            ["@babel/core", null],\
+            ["@babel/runtime", "npm:7.18.6"],\
+            ["@emotion/babel-plugin", "virtual:b7b781c4f33a34eaaa1068063991ff16e4d229c808c11812b69404e2fa0910263e6e962f8f930d14c827c0fc199a79fd1f1cf907b4d8e038618b3e916ad00ab6#npm:11.9.2"],\
+            ["@emotion/is-prop-valid", "npm:1.1.3"],\
+            ["@emotion/react", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:11.9.3"],\
+            ["@emotion/serialize", "npm:1.0.4"],\
+            ["@emotion/utils", "npm:1.1.0"],\
+            ["@types/babel__core", null],\
+            ["@types/emotion__react", null],\
+            ["@types/react", "npm:17.0.47"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@babel/core",\
+            "@emotion/react",\
+            "@types/babel__core",\
+            "@types/emotion__react",\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["virtual:24b8d75432356b9a2c8fd3c998aa00f126c4332f8aacea8502c3764e1813149b6f1eb94c905498b9676ac9284ec9d04a2b0101e131fdf859b619b6de6d7f79c2#npm:11.9.3", {\
           "packageLocation": "./.yarn/__virtual__/@emotion-styled-virtual-c76230c9a9/0/cache/@emotion-styled-npm-11.9.3-01b80e031e-16d9ef8c58.zip/node_modules/@emotion/styled/",\
           "packageDependencies": [\
@@ -415,6 +441,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@gdsc-uos-recruit-page/design-system", "workspace:packages/design-system"],\
             ["@emotion/react", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:11.9.3"],\
+            ["@emotion/styled", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:11.9.3"],\
             ["@gdsc-uos-recruit-page/eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["@types/react", "npm:17.0.47"],\
             ["@types/react-dom", "npm:17.0.17"],\

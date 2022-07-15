@@ -58,3 +58,6 @@ export const fonts = {
     font-size: 16px;
   `,
 } as const;
+
+type FontType = typeof fonts;
+export type FontKeyType = keyof FontType;
