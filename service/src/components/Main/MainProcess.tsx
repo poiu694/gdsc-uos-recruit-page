@@ -46,7 +46,11 @@ const Wrapper = styled.div`
   min-height: 100vh;
   position: relative;
 
-  margin: 0 auto;
+  margin: 60px auto;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    min-height: 100vh;
+  }
 `;
 
 const CircleList = styled.ul`
@@ -137,7 +141,11 @@ const CircleItem = styled.li`
 `;
 
 const TitleWrapper = styled.div`
-  margin: 5em 0;
+  margin-bottom: 5em;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    margin-bottom: 2em;
+  }
 `;
 
 export default MainProcess;

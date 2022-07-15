@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import {
   TeamCard,
+  theme,
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
@@ -39,11 +40,19 @@ const Wrapper = styled.div`
   min-height: 100vh;
   position: relative;
 
-  margin: 0 auto;
+  margin: 60px auto;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    min-height: 80vh;
+  }
 `;
 
 const TitleWrapper = styled.div`
-  margin-bottom: 3em;
+  margin-bottom: 5em;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    margin-bottom: 2em;
+  }
 `;
 
 const TeamCardWrapper = styled.div`
