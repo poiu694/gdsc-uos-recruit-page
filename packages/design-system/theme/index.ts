@@ -3,7 +3,7 @@ import { fonts } from './fonts';
 import { padding, size } from './sizes';
 import { zIndex } from './zIndex';
 
-export const theme = {
+const theme = {
   palette,
   colors,
   fonts,
@@ -11,3 +11,5 @@ export const theme = {
   padding,
   zIndex,
 } as const;
+
+export default theme;
