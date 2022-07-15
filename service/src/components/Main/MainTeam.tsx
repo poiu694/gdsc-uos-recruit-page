@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import {
   TeamCard,
-  theme,
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
