@@ -26,40 +26,17 @@ function MainTeam() {
           desc2='당신의 열정을 뽐내주세요.'
         />
       </StyledAOSEmptyWrapper>
-      <TeamCardWrapper>
-        <StyledAOSEmptyWrapper
-          data-aos='fade-up'
-          data-aos-duration={defaultDuration}
-        >
-          <TeamCard
-            type='Frontend'
-            handleClickNav={() => console.log('frontend')}
-          />
-        </StyledAOSEmptyWrapper>
-        <StyledAOSEmptyWrapper
-          data-aos='fade-up'
-          data-aos-duration={defaultDuration}
-        >
-          <TeamCard
-            type='Backend'
-            handleClickNav={() => console.log('Backend')}
-          />
-        </StyledAOSEmptyWrapper>
-        <StyledAOSEmptyWrapper
-          data-aos='fade-up'
-          data-aos-duration={defaultDuration}
-        >
-          <TeamCard
-            type='Mobile'
-            handleClickNav={() => console.log('Mobile')}
-          />
-        </StyledAOSEmptyWrapper>
-        <StyledAOSEmptyWrapper
-          data-aos='fade-up'
-          data-aos-duration={defaultDuration}
-        >
-          <TeamCard type='DA/ML' handleClickNav={() => console.log('DA/ML')} />
-        </StyledAOSEmptyWrapper>
+      <TeamCardWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
+        <TeamCard
+          type='Frontend'
+          handleClickNav={() => console.log('frontend')}
+        />
+        <TeamCard
+          type='Backend'
+          handleClickNav={() => console.log('Backend')}
+        />
+        <TeamCard type='Mobile' handleClickNav={() => console.log('Mobile')} />
+        <TeamCard type='DA/ML' handleClickNav={() => console.log('DA/ML')} />
       </TeamCardWrapper>
     </Wrapper>
   );
