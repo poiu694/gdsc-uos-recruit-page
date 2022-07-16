@@ -5,31 +5,61 @@ import {
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
+import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
+import { StyledAOSEmptyWrapper } from '.';
 
 function MainTeam() {
   return (
     <Wrapper>
-      <TitleWrapper>
+      <TitleWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
         <Typography type='h1' textAlign='center'>
           Team
         </Typography>
       </TitleWrapper>
-      <Title
-        title='Show us your Passion !'
-        desc1='성장하고 싶어하고 열정적인 사람을 찾고 있습니다.'
-        desc2='당신의 열정을 뽐내주세요.'
-      />
+      <StyledAOSEmptyWrapper
+        data-aos='fade-up'
+        data-aos-duration={defaultDuration}
+      >
+        <Title
+          title='Show us your Passion !'
+          desc1='성장하고 싶어하고 열정적인 사람을 찾고 있습니다.'
+          desc2='당신의 열정을 뽐내주세요.'
+        />
+      </StyledAOSEmptyWrapper>
       <TeamCardWrapper>
-        <TeamCard
-          type='Frontend'
-          handleClickNav={() => console.log('frontend')}
-        />
-        <TeamCard
-          type='Backend'
-          handleClickNav={() => console.log('Backend')}
-        />
-        <TeamCard type='Mobile' handleClickNav={() => console.log('Mobile')} />
-        <TeamCard type='DA/ML' handleClickNav={() => console.log('DA/ML')} />
+        <StyledAOSEmptyWrapper
+          data-aos='fade-up'
+          data-aos-duration={defaultDuration}
+        >
+          <TeamCard
+            type='Frontend'
+            handleClickNav={() => console.log('frontend')}
+          />
+        </StyledAOSEmptyWrapper>
+        <StyledAOSEmptyWrapper
+          data-aos='fade-up'
+          data-aos-duration={defaultDuration}
+        >
+          <TeamCard
+            type='Backend'
+            handleClickNav={() => console.log('Backend')}
+          />
+        </StyledAOSEmptyWrapper>
+        <StyledAOSEmptyWrapper
+          data-aos='fade-up'
+          data-aos-duration={defaultDuration}
+        >
+          <TeamCard
+            type='Mobile'
+            handleClickNav={() => console.log('Mobile')}
+          />
+        </StyledAOSEmptyWrapper>
+        <StyledAOSEmptyWrapper
+          data-aos='fade-up'
+          data-aos-duration={defaultDuration}
+        >
+          <TeamCard type='DA/ML' handleClickNav={() => console.log('DA/ML')} />
+        </StyledAOSEmptyWrapper>
       </TeamCardWrapper>
     </Wrapper>
   );

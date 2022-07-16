@@ -6,34 +6,43 @@ import {
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
+import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
+import { StyledAOSEmptyWrapper } from '.';
 
 function MainProcess() {
   return (
     <Wrapper>
-      <TitleWrapper>
+      <TitleWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
         <Typography type='h1' textAlign='center'>
           Process
         </Typography>
       </TitleWrapper>
-      <Title
-        title='Process for Recruit'
-        desc1='저희와 함께할 새로운 멤버를 구합니다.'
-        desc2='많은 지원 부탁드립니다.'
-      />
+      <StyledAOSEmptyWrapper
+        data-aos='fade-up'
+        data-aos-duration={defaultDuration}
+      >
+        <Title
+          title='Process for Recruit'
+          desc1='저희와 함께할 새로운 멤버를 구합니다.'
+          desc2='많은 지원 부탁드립니다.'
+          data-aos='fade-up'
+          data-aos-duration={defaultDuration}
+        />
+      </StyledAOSEmptyWrapper>
       <CircleList>
-        <CircleItem>
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='first' title='서류 접수1' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='second' title='서류 접수2' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='third' title='서류 접수3' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='fourth' title='서류 접수4' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='fifth' title='서류 접수5' date='2022.08.04 월요일' />
         </CircleItem>
       </CircleList>
