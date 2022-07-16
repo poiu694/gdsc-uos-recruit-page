@@ -492,9 +492,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gdsc-uos-recruit-page/hooks", "workspace:packages/hooks"],\
             ["@gdsc-uos-recruit-page/eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["@gdsc-uos-recruit-page/tsconfig-custom", "workspace:packages/tsconfig-custom"],\
+            ["@types/aos", "npm:3.0.4"],\
             ["@types/react", "npm:17.0.47"],\
             ["@typescript-eslint/eslint-plugin", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:5.30.6"],\
+            ["aos", "npm:2.3.4"],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-airbnb", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:19.0.4"],\
             ["eslint-config-airbnb-typescript", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:17.0.0"],\
