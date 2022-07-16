@@ -12,9 +12,9 @@ const Up = () => {
       <path
         d='M20.9864 15L14.2262 9L7.46606 15'
         stroke='#353535'
-        stroke-width='1.5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='1.5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );
