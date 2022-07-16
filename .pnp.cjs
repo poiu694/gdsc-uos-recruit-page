@@ -492,9 +492,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gdsc-uos-recruit-page/hooks", "workspace:packages/hooks"],\
             ["@gdsc-uos-recruit-page/eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["@gdsc-uos-recruit-page/tsconfig-custom", "workspace:packages/tsconfig-custom"],\
+            ["@types/aos", "npm:3.0.4"],\
             ["@types/react", "npm:17.0.47"],\
             ["@typescript-eslint/eslint-plugin", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:5.30.6"],\
+            ["aos", "npm:2.3.4"],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-airbnb", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:19.0.4"],\
             ["eslint-config-airbnb-typescript", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:17.0.0"],\
@@ -703,6 +705,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@swc/helpers", "npm:0.4.2"],\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/aos", [\
+        ["npm:3.0.4", {\
+          "packageLocation": "./.yarn/cache/@types-aos-npm-3.0.4-fac8b2f462-55c54865df.zip/node_modules/@types/aos/",\
+          "packageDependencies": [\
+            ["@types/aos", "npm:3.0.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1177,6 +1188,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["aos", [\
+        ["npm:2.3.4", {\
+          "packageLocation": "./.yarn/cache/aos-npm-2.3.4-40ac384fbe-42f823777e.zip/node_modules/aos/",\
+          "packageDependencies": [\
+            ["aos", "npm:2.3.4"],\
+            ["classlist-polyfill", "npm:1.2.0"],\
+            ["lodash.debounce", "npm:4.0.8"],\
+            ["lodash.throttle", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["argparse", [\
         ["npm:2.0.1", {\
           "packageLocation": "./.yarn/cache/argparse-npm-2.0.1-faff7999e6-83644b5649.zip/node_modules/argparse/",\
@@ -1361,6 +1384,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:4.1.2"],\
             ["ansi-styles", "npm:4.3.0"],\
             ["supports-color", "npm:7.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["classlist-polyfill", [\
+        ["npm:1.2.0", {\
+          "packageLocation": "./.yarn/cache/classlist-polyfill-npm-1.2.0-e5d1976a47-43ff10af5e.zip/node_modules/classlist-polyfill/",\
+          "packageDependencies": [\
+            ["classlist-polyfill", "npm:1.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3159,11 +3191,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lodash.debounce", [\
+        ["npm:4.0.8", {\
+          "packageLocation": "./.yarn/cache/lodash.debounce-npm-4.0.8-f1d6e09799-a3f527d22c.zip/node_modules/lodash.debounce/",\
+          "packageDependencies": [\
+            ["lodash.debounce", "npm:4.0.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lodash.merge", [\
         ["npm:4.6.2", {\
           "packageLocation": "./.yarn/cache/lodash.merge-npm-4.6.2-77cb4416bf-ad580b4bdb.zip/node_modules/lodash.merge/",\
           "packageDependencies": [\
             ["lodash.merge", "npm:4.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.throttle", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/lodash.throttle-npm-4.1.1-856641af92-129c0a28ce.zip/node_modules/lodash.throttle/",\
+          "packageDependencies": [\
+            ["lodash.throttle", "npm:4.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3813,11 +3863,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gdsc-uos-recruit-page/eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["@gdsc-uos-recruit-page/hooks", "workspace:packages/hooks"],\
             ["@gdsc-uos-recruit-page/tsconfig-custom", "workspace:packages/tsconfig-custom"],\
+            ["@types/aos", "npm:3.0.4"],\
             ["@types/node", "npm:18.0.4"],\
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@typescript-eslint/eslint-plugin", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:5.30.6"],\
+            ["aos", "npm:2.3.4"],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-airbnb", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:19.0.4"],\
             ["eslint-config-airbnb-typescript", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:17.0.0"],\

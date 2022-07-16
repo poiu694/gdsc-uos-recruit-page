@@ -66,6 +66,14 @@ const Wrapper = styled.div<TypographyProps>`
     &.h5 {
       font-size: 16px;
     }
+
+    &.h6 {
+      font-size: 12px;
+    }
+
+    &.body4 {
+      font-size: 8px;
+    }
   }
 `;
 

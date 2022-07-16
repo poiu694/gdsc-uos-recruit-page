@@ -15,10 +15,10 @@ function Title({ title, desc1, desc2 }: TitleProps) {
       <Typography type='h2' color={colors.text.bold}>
         {title}
       </Typography>
-      <Typography type='h5' color={colors.text.general}>
+      <Typography type='h6' color={colors.text.general}>
         {desc1}
       </Typography>
-      <Typography type='h5' color={colors.text.general}>
+      <Typography type='h6' color={colors.text.general}>
         {desc2}
       </Typography>
     </Wrapper>

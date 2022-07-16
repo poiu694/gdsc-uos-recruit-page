@@ -25,7 +25,7 @@ const Wrapper = styled.header`
   height: 60px;
   margin: 0 auto;
 
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: ${theme.zIndex.header};
 

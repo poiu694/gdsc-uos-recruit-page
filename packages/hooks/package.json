@@ -10,9 +10,11 @@
   "dependencies": {
     "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
     "@gdsc-uos-recruit-page/tsconfig-custom": "1.0.0",
+    "@types/aos": "^3.0.4",
     "@types/react": "^17.0.37",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "aos": "^2.3.4",
     "eslint": "^8.19.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",

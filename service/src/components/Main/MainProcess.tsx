@@ -6,35 +6,44 @@ import {
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
+import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
+import { StyledAOSEmptyWrapper } from '.';
 
 function MainProcess() {
   return (
     <Wrapper>
-      <TitleWrapper>
+      <TitleWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
         <Typography type='h1' textAlign='center'>
           Process
         </Typography>
       </TitleWrapper>
-      <Title
-        title='Process for Recruit'
-        desc1='저희와 함께할 새로운 멤버를 구합니다.'
-        desc2='많은 지원 부탁드립니다.'
-      />
+      <StyledAOSEmptyWrapper
+        data-aos='fade-up'
+        data-aos-duration={defaultDuration}
+      >
+        <Title
+          title='Process for Recruit'
+          desc1='저희와 함께할 새로운 멤버를 구합니다.'
+          desc2='많은 지원 부탁드립니다.'
+          data-aos='fade-up'
+          data-aos-duration={defaultDuration}
+        />
+      </StyledAOSEmptyWrapper>
       <CircleList>
-        <CircleItem>
-          <Circle type='first' title='서류 접수' date='2022.08.04 월요일' />
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+          <Circle type='first' title='서류 접수1' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
-          <Circle type='second' title='서류 접수' date='2022.08.04 월요일' />
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+          <Circle type='second' title='서류 접수2' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
-          <Circle type='third' title='서류 접수' date='2022.08.04 월요일' />
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+          <Circle type='third' title='서류 접수3' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
-          <Circle type='fourth' title='서류 접수' date='2022.08.04 월요일' />
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+          <Circle type='fourth' title='서류 접수4' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem>
-          <Circle type='fifth' title='서류 접수' date='2022.08.04 월요일' />
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+          <Circle type='fifth' title='서류 접수5' date='2022.08.04 월요일' />
         </CircleItem>
       </CircleList>
     </Wrapper>
@@ -46,7 +55,11 @@ const Wrapper = styled.div`
   min-height: 100vh;
   position: relative;
 
-  margin: 0 auto;
+  margin: 60px auto;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    min-height: 100vh;
+  }
 `;
 
 const CircleList = styled.ul`
@@ -88,25 +101,26 @@ const CircleItem = styled.li`
       }
 
       &:nth-of-type(2) {
-        grid-column: 3/5;
-      }
-
-      &:nth-of-type(3) {
-        grid-column: 5/7;
-      }
-
-      &:nth-of-type(4) {
         grid-row: 2/3;
         grid-column: 2/4;
       }
 
-      &:last-of-type {
+      &:nth-of-type(3) {
+        grid-row: 1;
+        grid-column: 3/5;
+      }
+
+      &:nth-of-type(4) {
         grid-row: 2/3;
         grid-column: 4/6;
       }
+
+      &:last-of-type {
+        grid-column: 5/7;
+      }
     }
 
-    @media (max-width: ${theme.size.mobile}px) {
+    @media (max-width: ${theme.size.tabletS}px) {
       &:nth-of-type(1) {
         grid-row: 1/3;
         grid-column: 1/2;
@@ -136,7 +150,11 @@ const CircleItem = styled.li`
 `;
 
 const TitleWrapper = styled.div`
-  margin: 5em 0;
+  margin-bottom: 5em;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    margin-bottom: 2em;
+  }
 `;
 
 export default MainProcess;
