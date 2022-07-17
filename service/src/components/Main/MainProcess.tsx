@@ -36,9 +36,9 @@ function MainProcess() {
         <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='second' title='서류 접수2' date='2022.08.04 월요일' />
         </CircleItem>
-        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+        {/* <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='third' title='서류 접수3' date='2022.08.04 월요일' />
-        </CircleItem>
+        </CircleItem> */}
         <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='fourth' title='서류 접수4' date='2022.08.04 월요일' />
         </CircleItem>
@@ -115,7 +115,7 @@ const CircleItem = styled.li`
         grid-column: 4/6;
       }
 
-      &:last-of-type {
+      &:nth-of-type(5) {
         grid-column: 5/7;
       }
     }
@@ -143,7 +143,7 @@ const CircleItem = styled.li`
 
       &:nth-of-type(5) {
         grid-row: 5/7;
-        grid-column: 1/2;
+        grid-column: 2/3;
       }
     }
   };
