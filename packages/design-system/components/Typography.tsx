@@ -1,4 +1,4 @@
-import { PropsWithChildren, CSSProperties } from 'react';
+import React, { PropsWithChildren, CSSProperties } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -6,7 +6,7 @@ import { FontKeyType } from '../theme/fonts';
 import { colors, PalleteValueType } from '../theme/colors';
 import { theme } from '../theme';
 
-interface TypographyProps {
+interface TypographyProps extends React.HTMLAttributes<HTMLDivElement> {
   type: FontKeyType;
   className?: string;
   display?: CSSProperties['display'];
@@ -24,6 +24,7 @@ function Typography({
   display = 'block',
   textAlign = 'start',
   color = colors.text.general,
+  ...restProps
 }: TypographyPropsWithChildren) {
   return (
     <Wrapper
@@ -32,6 +33,7 @@ function Typography({
       display={display}
       textAlign={textAlign}
       color={color}
+      {...restProps}
     >
       {children}
     </Wrapper>
