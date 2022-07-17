@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Blog, Down, Github, Gmail, Right, Up } from '../asset/svg';
+import { Blog, Down, Github, Gmail, Left, Right, Up } from '../asset/svg';
 
 const ICONS = {
   down: Down,
   up: Up,
+  left: Left,
   right: Right,
   github: Github,
   gmail: Gmail,
