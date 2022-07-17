@@ -33,12 +33,8 @@ function TeamList({ teamName }: TeamListProps) {
   return (
     <Wrapper>
       {teams.map((team, idx) => (
-        <CustomLink href={team.url}>
-          <ListItem
-            key={team.title}
-            id={`${idx}`}
-            onClick={handleClickTeamItem}
-          >
+        <CustomLink key={team.title} href={team.url}>
+          <ListItem id={`${idx}`} onClick={handleClickTeamItem}>
             <Typography
               type='body3'
               className={isActive[idx] ? 'bold' : ''}
@@ -67,7 +63,7 @@ const Wrapper = styled.ul`
 
 const ListItem = styled.li`
   height: 32px;
-  padding: ${theme.padding.md}px ${theme.padding.md}px ${theme.padding.md}px
+  padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px
     ${theme.padding.md}px;
 
   cursor: pointer;
@@ -75,6 +71,8 @@ const ListItem = styled.li`
 
   display: flex;
   align-items: center;
+
+  white-space: nowrap;
 
   -webkit-transition: all 0.1s ease-in-out; /* Safari */
   transition: all 0.1s ease-in-out;
@@ -91,10 +89,6 @@ const ListItem = styled.li`
   .body3.bold {
     color: ${theme.colors.text.bold};
     font-weight: 700;
-  }
-
-  @media (max-width: ${theme.size.mobile}px) {
-    white-space: nowrap;
   }
 `;
 

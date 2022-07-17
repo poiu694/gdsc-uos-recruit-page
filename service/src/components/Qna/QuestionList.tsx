@@ -11,8 +11,8 @@ function QuestionList({ questions }: QuestionListProps) {
   return (
     <Wrapper>
       {questions.map((question) => (
-        <CustomLink href={question.url}>
-          <ListItem key={question.title}>
+        <CustomLink key={question.title} href={question.url}>
+          <ListItem>
             <Typography
               type='body3'
               color={theme.palette.gray200}
