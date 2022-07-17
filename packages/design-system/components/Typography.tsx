@@ -8,6 +8,7 @@ import { theme } from '../theme';
 
 interface TypographyProps {
   type: FontKeyType;
+  className?: string;
   display?: CSSProperties['display'];
   textAlign?: CSSProperties['textAlign'];
   color?: PalleteValueType;
@@ -18,6 +19,7 @@ interface TypographyPropsWithChildren
 
 function Typography({
   type,
+  className,
   children,
   display = 'block',
   textAlign = 'start',
@@ -26,7 +28,7 @@ function Typography({
   return (
     <Wrapper
       type={type}
-      className={type}
+      className={`${type} ${className}`}
       display={display}
       textAlign={textAlign}
       color={color}
