@@ -11,9 +11,9 @@ function Header() {
           <img src='/logo128.png' alt='logo' />
         </Logo>
         <Navigation>
-          <Typography type='h5'>모집 공고</Typography>
-          <Typography type='h5'>자주 묻는 질문</Typography>
-          <Typography type='h5'>지원 하기</Typography>
+          <Typography type='body3'>모집 공고</Typography>
+          <Typography type='body3'>자주 묻는 질문</Typography>
+          <Typography type='body3'>지원 하기</Typography>
         </Navigation>
       </NavigationWrapper>
     </Wrapper>
@@ -53,10 +53,14 @@ const Navigation = styled.div`
 
 const Logo = styled.div`
   width: 100%;
-  height: 100%;
+  height: 60px;
 
   position: absolute;
   top: 0;
+
+  img {
+    max-height: 100%;
+  }
 
   @media (max-width: ${theme.size.mobile}px) {
     width: 50px;
