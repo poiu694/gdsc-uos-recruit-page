@@ -1,10 +1,5 @@
 import styled from '@emotion/styled';
-import {
-  Banner,
-  Bottom,
-  Header,
-  theme,
-} from '@gdsc-uos-recruit-page/design-system';
+import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { QuestionListItem } from '../../../../@types/question';
 
@@ -17,21 +12,17 @@ interface QnaPageProps {
 
 const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
   return (
-    <>
-      <Layout>
-        <Header />
-        <Banner />
-        <Introduction
-          title='자주 묻는 질문'
-          desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
-        />
-        <ContentsWrapper>
-          <TeamList />
-          <QuestionBox question={question} />
-        </ContentsWrapper>
-      </Layout>
-      <Bottom />
-    </>
+    <Layout>
+      <Banner />
+      <Introduction
+        title='자주 묻는 질문'
+        desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
+      />
+      <ContentsWrapper>
+        <TeamList />
+        <QuestionBox question={question} />
+      </ContentsWrapper>
+    </Layout>
   );
 };
 

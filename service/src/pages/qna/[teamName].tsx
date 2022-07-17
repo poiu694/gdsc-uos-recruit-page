@@ -1,12 +1,7 @@
 import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import styled from '@emotion/styled';
-import {
-  Banner,
-  Bottom,
-  Header,
-  theme,
-} from '@gdsc-uos-recruit-page/design-system';
+import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 
 import { TeamKeyType } from '../../../@types/team';
 import { QuestionListItem } from '../../../@types/question';
@@ -27,7 +22,6 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
   return (
     <>
       <Layout>
-        <Header />
         <Banner />
         <Introduction
           title='자주 묻는 질문'
@@ -38,7 +32,6 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
           <QuestionList questions={questions} />
         </ContentsWrapper>
       </Layout>
-      <Bottom />
     </>
   );
 };
