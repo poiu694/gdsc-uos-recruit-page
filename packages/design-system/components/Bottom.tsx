@@ -20,7 +20,7 @@ function Bottom() {
 
 const Wrapper = styled.div`
   width: 80%;
-  margin: 0 auto 10px auto;
+  margin: 100px auto 16px auto;
 
   display: flex;
   justify-content: space-between;

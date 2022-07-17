@@ -56,7 +56,7 @@ export const colors = {
     bold: palette.black,
   },
   ui: {
-    divider: palette.gray50,
+    divider: palette.gray100,
     border: palette.gray100,
     hover: palette.gray50,
     // overlay: `linear-gradient(180deg, rgba(79, 23, 197, 0) -39.47%, ${palette.purple400} 100%)`,

@@ -73,8 +73,12 @@ const Wrapper = styled.div<TypographyProps>`
       font-size: 12px;
     }
 
-    &.body3 {
+    &.body2 {
       font-size: 16px;
+    }
+
+    &.body3 {
+      font-size: 14px;
     }
 
     &.body4 {

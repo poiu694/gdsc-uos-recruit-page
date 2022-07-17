@@ -8,7 +8,7 @@ import { TeamKeyType } from '../../../@types/team';
 import { QuestionListItem } from '../../../@types/question';
 
 interface TeamListProps {
-  teamName: TeamKeyType;
+  teamName?: TeamKeyType;
 }
 
 const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
@@ -18,7 +18,7 @@ const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
 };
 
 function TeamList({ teamName }: TeamListProps) {
-  const [isActive, setIsActive] = useState(initalIsActive(teams, teamName));
+  const [isActive, setIsActive] = useState(initalIsActive(teams, teamName!));
 
   const handleClickTeamItem = useCallback(
     (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
@@ -33,8 +33,12 @@ function TeamList({ teamName }: TeamListProps) {
   return (
     <Wrapper>
       {teams.map((team, idx) => (
-        <ListItem key={team.title} id={`${idx}`} onClick={handleClickTeamItem}>
-          <CustomLink href={team.url}>
+        <CustomLink href={team.url}>
+          <ListItem
+            key={team.title}
+            id={`${idx}`}
+            onClick={handleClickTeamItem}
+          >
             <Typography
               type='body3'
               className={isActive[idx] ? 'bold' : ''}
@@ -42,8 +46,8 @@ function TeamList({ teamName }: TeamListProps) {
             >
               {team.title}
             </Typography>
-          </CustomLink>
-        </ListItem>
+          </ListItem>
+        </CustomLink>
       ))}
     </Wrapper>
   );
@@ -55,7 +59,9 @@ const Wrapper = styled.ul`
 
   @media (max-width: ${theme.size.mobile}px) {
     width: 100%;
-    margin-top: 32px;
+    margin: 40px 0;
+    border: 1px solid ${theme.colors.ui.divider};
+    border-radius: 5px;
   }
 `;
 

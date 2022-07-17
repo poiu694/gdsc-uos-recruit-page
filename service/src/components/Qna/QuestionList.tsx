@@ -76,7 +76,7 @@ const ListItem = styled.li`
     flex-grow: 20;
 
     @media (max-width: ${theme.size.mobile}px) {
-      padding-left: 16px;
+      padding-left: ${theme.padding.md}px;
     }
   }
 `;
