@@ -39,8 +39,20 @@ const Wrapper = styled.ul`
   width: 100%;
   margin-left: 12em;
 
+  @media (max-width: ${theme.size.tabletL}px) {
+    margin-left: 4em;
+  }
+
+  @media (max-width: ${theme.size.tabletS}px) {
+    margin-left: 1em;
+  }
+
   @media (max-width: ${theme.size.mobile}px) {
     margin-left: 0;
+
+    svg {
+      width: 16px;
+    }
   }
 `;
 
