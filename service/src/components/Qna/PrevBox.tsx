@@ -16,7 +16,7 @@ function PrevBox() {
 }
 
 const Wrapper = styled.div`
-  width: 10em;
+  width: 15em;
   padding: 4px;
   margin-bottom: 12px;
 
@@ -24,6 +24,10 @@ const Wrapper = styled.div`
   align-items: center;
 
   cursor: pointer;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    margin-bottom: 0;
+  }
 
   svg {
     margin-top: 2px;

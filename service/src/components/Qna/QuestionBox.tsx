@@ -16,7 +16,7 @@ function QuestionBox({ question }: QuestionBoxProps) {
         <Typography type='h3'>{question?.title}</Typography>
       </TitleWrapper>
       <ContentWrapper>
-        <Typography type='body2' color={theme.colors.text.general}>
+        <Typography type='body3' color={theme.colors.text.general}>
           {question?.desc}
         </Typography>
       </ContentWrapper>
@@ -26,6 +26,24 @@ function QuestionBox({ question }: QuestionBoxProps) {
 
 const Wrapper = styled.div`
   width: 100%;
+
+  margin-left: 12em;
+
+  @media (max-width: ${theme.size.tabletL}px) {
+    margin-left: 4em;
+  }
+
+  @media (max-width: ${theme.size.tabletS}px) {
+    margin-left: 1em;
+  }
+
+  @media (max-width: ${theme.size.mobile}px) {
+    margin-left: 0;
+
+    svg {
+      width: 16px;
+    }
+  }
 `;
 
 const TitleWrapper = styled.div`

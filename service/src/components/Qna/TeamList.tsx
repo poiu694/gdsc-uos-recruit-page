@@ -77,6 +77,12 @@ const ListItem = styled.li`
   -webkit-transition: all 0.1s ease-in-out; /* Safari */
   transition: all 0.1s ease-in-out;
 
+  @media (max-width: ${theme.size.mobile}px) {
+    .body3 {
+      font-size: 18px;
+    }
+  }
+
   &:hover {
     background-color: ${theme.colors.ui.hover};
 
