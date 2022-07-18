@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import styled from '@emotion/styled';
-import { Bottom, Header, theme } from '@gdsc-uos-recruit-page/design-system';
+import { theme } from '@gdsc-uos-recruit-page/design-system';
 import { useAOS } from '@gdsc-uos-recruit-page/hooks';
 
 import { MainBanner, MainProcess, MainTeam } from '../components';

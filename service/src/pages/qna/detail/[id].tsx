@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { QuestionListItem } from '../../../../@types/question';
 
+import { QuestionListItem } from '../../../../@types/question';
 import { Introduction } from '../../../components/common';
-import { QuestionBox, QuestionList, TeamList } from '../../../components/Qna';
+import { QuestionBox, TeamList } from '../../../components/Qna';
 
 interface QnaPageProps {
   question: QuestionListItem;
@@ -61,7 +61,6 @@ const Layout = styled.div`
 const ContentsWrapper = styled.div`
   width: 80%;
   margin: 0 auto;
-  gap: 80px;
 
   display: flex;
   justify-content: space-between;

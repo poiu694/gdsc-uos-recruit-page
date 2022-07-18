@@ -17,13 +17,13 @@ function Header({ goMainPage, goSupportPage, goQuestionPage }: HeaderProps) {
           <img src='/logo128.png' alt='logo' />
         </Logo>
         <Navigation>
-          <Typography type='body3' onClick={goMainPage}>
+          <Typography type='body4' onClick={goMainPage}>
             모집 공고
           </Typography>
-          <Typography type='body3' onClick={goSupportPage}>
+          <Typography type='body4' onClick={goSupportPage}>
             자주 묻는 질문
           </Typography>
-          <Typography type='body3' onClick={goQuestionPage}>
+          <Typography type='body4' onClick={goQuestionPage}>
             지원 하기
           </Typography>
         </Navigation>
@@ -62,7 +62,7 @@ const Navigation = styled.div`
     gap: 8px;
   }
 
-  .body3 {
+  .body4 {
     cursor: pointer;
   }
 `;

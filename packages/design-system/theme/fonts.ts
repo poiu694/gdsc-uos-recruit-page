@@ -57,6 +57,11 @@ export const fonts = {
     line-height: 1.6;
     font-size: 16px;
   `,
+  body5: css`
+    letter-spacing: -0.018em;
+    line-height: 1.6;
+    font-size: 14px;
+  `,
 } as const;
 
 type FontType = typeof fonts;

@@ -10,7 +10,7 @@ function Introduction({ title, desc }: IntroductionProps) {
   return (
     <ContentsWrapper>
       <Typography type='h1'>{title}</Typography>
-      <Typography type='body2' color={theme.colors.text.general}>
+      <Typography type='body3' color={theme.colors.text.general}>
         {desc}
       </Typography>
     </ContentsWrapper>
@@ -22,13 +22,20 @@ const ContentsWrapper = styled.div`
   height: 100%;
 
   margin: 0 auto;
+  word-break: keep-all;
 
   .h1 {
     margin-bottom: 16px;
   }
 
-  .body2 {
+  .body3 {
     margin-bottom: 48px;
+  }
+
+  @media (max-width: ${theme.size.mobile}px) {
+    .body3 {
+      margin-bottom: 16px;
+    }
   }
 `;
 

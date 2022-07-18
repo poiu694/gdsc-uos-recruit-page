@@ -6,7 +6,7 @@ import Typography from './Typography';
 function Bottom() {
   return (
     <Wrapper>
-      <Typography type='body4' color={theme.palette.gray300}>
+      <Typography type='body5' color={theme.palette.gray300}>
         © CopyRight GDSC UOS. All Right Reserved.
       </Typography>
       <IconWrapper>
@@ -30,9 +30,6 @@ const Wrapper = styled.div`
 const IconWrapper = styled.div`
   display: flex;
   gap: 16px;
-
-  @media (max-width: ${theme.size.mobile}px) {
-  }
 `;
 
 export default Bottom;

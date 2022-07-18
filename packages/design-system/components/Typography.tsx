@@ -68,23 +68,31 @@ const Wrapper = styled.div<TypographyProps>`
     }
 
     &.h5 {
-      font-size: 16px;
+      font-size: 20px;
     }
 
     &.h6 {
-      font-size: 12px;
-    }
-
-    &.body2 {
-      font-size: 16px;
-    }
-
-    &.body3 {
       font-size: 14px;
     }
 
+    &.body1 {
+      font-size: 20px;
+    }
+
+    &.body2 {
+      font-size: 18px;
+    }
+
+    &.body3 {
+      font-size: 16px;
+    }
+
     &.body4 {
-      font-size: 8px;
+      font-size: 12px;
+    }
+
+    &.body5 {
+      font-size: 10px;
     }
   }
 `;
