@@ -7,7 +7,7 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@constants/*": ["./src/constants/*"],
-      "types": ["./@types/*"]
+      "@types": ["./@types/*"]
     }
   }
 }
