@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { CometRain, SolarSystem } from "../asset/svg";
-import { theme } from "../theme";
+import styled from '@emotion/styled';
+import { CometRain, SolarSystem } from '../asset/svg';
+import { theme } from '../theme';
 
 function Planet() {
   return (

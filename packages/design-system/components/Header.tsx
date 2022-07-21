@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-import { theme } from "../theme";
-import Typography from "./Typography";
+import { theme } from '../theme';
+import Typography from './Typography';
 
 interface HeaderProps {
   goMainPage: () => void;
@@ -14,16 +14,16 @@ function Header({ goMainPage, goSupportPage, goQuestionPage }: HeaderProps) {
     <Wrapper>
       <NavigationWrapper>
         <Logo>
-          <img src="/logo128.png" alt="logo" />
+          <img src='/logo128.png' alt='logo' />
         </Logo>
         <Navigation>
-          <Typography type="body4" onClick={goMainPage}>
+          <Typography type='body4' onClick={goMainPage}>
             모집 공고
           </Typography>
-          <Typography type="body4" onClick={goSupportPage}>
+          <Typography type='body4' onClick={goSupportPage}>
             자주 묻는 질문
           </Typography>
-          <Typography type="body4" onClick={goQuestionPage}>
+          <Typography type='body4' onClick={goQuestionPage}>
             지원 하기
           </Typography>
         </Navigation>

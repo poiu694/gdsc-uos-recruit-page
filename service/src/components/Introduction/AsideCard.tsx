@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { theme, Typography } from "@gdsc-uos-recruit-page/design-system";
+import styled from '@emotion/styled';
+import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-import { AsideCard } from "../../../@types/";
+import { AsideCard } from '../../../@types/';
 
 interface AsideCardProps {
   aside: AsideCard;
@@ -18,24 +18,24 @@ function AsideCard({
     <Wrapper>
       <CardWrapper>
         <Line>
-          <Typography type="body4" color={theme.palette.gray200}>
+          <Typography type='body4' color={theme.palette.gray200}>
             소속
           </Typography>
-          <Typography type="body4">{aside.team}</Typography>
+          <Typography type='body4'>{aside.team}</Typography>
         </Line>
         <Line>
-          <Typography type="body4" color={theme.palette.gray200}>
+          <Typography type='body4' color={theme.palette.gray200}>
             경력사항
           </Typography>
-          <Typography type="body4">{aside.experience}</Typography>
+          <Typography type='body4'>{aside.experience}</Typography>
         </Line>
         <Line>
-          <Typography type="body4" color={theme.palette.gray200}>
+          <Typography type='body4' color={theme.palette.gray200}>
             요구사항
           </Typography>
           <Needs>
             {aside.needs.map((need) => (
-              <Typography type="body4" key={need}>
+              <Typography type='body4' key={need}>
                 {need}
               </Typography>
             ))}
@@ -44,18 +44,18 @@ function AsideCard({
       </CardWrapper>
       <ButtonWrapper>
         <Typography
-          type="h6"
-          role="button"
-          textAlign="center"
+          type='h6'
+          role='button'
+          textAlign='center'
           color={theme.colors.primary.white}
           onClick={handleClickSupportBtn}
         >
           지원 하러 가기
         </Typography>
         <Typography
-          type="h6"
-          role="button"
-          textAlign="center"
+          type='h6'
+          role='button'
+          textAlign='center'
           color={theme.colors.primary.yellow}
           onClick={handleClickQuestionListBtn}
         >

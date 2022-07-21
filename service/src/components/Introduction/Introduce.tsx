@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { theme, Typography } from "@gdsc-uos-recruit-page/design-system";
+import styled from '@emotion/styled';
+import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
 interface IntroduceProps {
   desc: string;
@@ -8,10 +8,10 @@ interface IntroduceProps {
 function Introduce({ desc }: IntroduceProps) {
   return (
     <Wrapper>
-      <Typography type="h4" color={theme.colors.text.bold}>
+      <Typography type='h4' color={theme.colors.text.bold}>
         소개
       </Typography>
-      <Typography type="body3">{desc}</Typography>
+      <Typography type='body3'>{desc}</Typography>
     </Wrapper>
   );
 }

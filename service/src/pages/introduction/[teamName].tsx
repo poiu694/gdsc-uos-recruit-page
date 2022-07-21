@@ -1,11 +1,11 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import styled from "@emotion/styled";
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 
-import { Banner, theme } from "@gdsc-uos-recruit-page/design-system";
-import { Introduction } from "@components/common";
-import { TeamKeyType, IntroductionType } from "../../../@types";
-import { Activity, AsideCard, Introduce } from "@components/Introduction";
-import { useRouter } from "next/router";
+import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { Introduction } from '@components/common';
+import { Activity, AsideCard, Introduce } from '@components/Introduction';
+import { TeamKeyType, IntroductionType } from '../../../@types';
 
 interface IntroductionProps {
   introduction: IntroductionType;
@@ -50,10 +50,10 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [
-      { params: { teamName: "frontend" } },
-      { params: { teamName: "backend" } },
-      { params: { teamName: "mobile" } },
-      { params: { teamName: "data_ml" } },
+      { params: { teamName: 'frontend' } },
+      { params: { teamName: 'backend' } },
+      { params: { teamName: 'mobile' } },
+      { params: { teamName: 'data_ml' } },
     ],
     fallback: true, // false or 'blocking'
   };
@@ -61,15 +61,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const introduction = {
-    title: "Frontend",
-    desc: "GDSC UOS Frontend 소개 페이지입니다.",
+    title: 'Frontend',
+    desc: 'GDSC UOS Frontend 소개 페이지입니다.',
     introduction:
-      "동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한  으로 길이 보전하세 ",
-    activities: ["테크톡", "기술 블로그 글 작성", "데일리 스크럼"],
+      '동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한  으로 길이 보전하세 ',
+    activities: ['테크톡', '기술 블로그 글 작성', '데일리 스크럼'],
     aside: {
-      team: "Frontend Team",
-      experience: "무관",
-      needs: ["HTML5", "CSS3", "Javascript"],
+      team: 'Frontend Team',
+      experience: '무관',
+      needs: ['HTML5', 'CSS3', 'Javascript'],
     },
   } as IntroductionType;
 

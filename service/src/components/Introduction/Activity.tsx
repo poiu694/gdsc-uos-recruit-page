@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { theme, Typography } from "@gdsc-uos-recruit-page/design-system";
+import styled from '@emotion/styled';
+import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
 interface ActivityProps {
   activies: string[];
@@ -8,12 +8,12 @@ interface ActivityProps {
 function Activity({ activies }: ActivityProps) {
   return (
     <Wrapper>
-      <Typography type="h4" color={theme.colors.text.bold}>
+      <Typography type='h4' color={theme.colors.text.bold}>
         활동
       </Typography>
       <List>
         {activies.map((activity) => (
-          <ListItem key={activity} type="body3">
+          <ListItem key={activity} type='body3'>
             • {activity}
           </ListItem>
         ))}
