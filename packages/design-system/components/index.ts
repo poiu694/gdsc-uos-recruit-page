@@ -7,3 +7,4 @@ export { default as Circle } from './Circle';
 export { default as Bottom } from './Bottom';
 export { default as Icon } from './Icon';
 export { default as Banner } from './Banner';
+export { default as Planet } from './Planet';

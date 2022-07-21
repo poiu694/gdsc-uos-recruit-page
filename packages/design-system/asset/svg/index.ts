@@ -5,3 +5,5 @@ export { default as Right } from './Right';
 export { default as Blog } from './Blog';
 export { default as Github } from './Github';
 export { default as Gmail } from './Gmail';
+export { default as CometRain } from './CometRain';
+export { default as SolarSystem } from "./SolarSystem";
