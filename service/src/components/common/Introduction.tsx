@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import styled from "@emotion/styled";
+import { theme, Typography } from "@gdsc-uos-recruit-page/design-system";
 
 interface IntroductionProps {
   title: string;
@@ -9,8 +9,8 @@ interface IntroductionProps {
 function Introduction({ title, desc }: IntroductionProps) {
   return (
     <ContentsWrapper>
-      <Typography type='h1'>{title}</Typography>
-      <Typography type='body3' color={theme.colors.text.general}>
+      <Typography type="h1">{title}</Typography>
+      <Typography type="body3" color={theme.colors.text.general}>
         {desc}
       </Typography>
     </ContentsWrapper>
@@ -18,7 +18,7 @@ function Introduction({ title, desc }: IntroductionProps) {
 }
 
 const ContentsWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
 
   margin: 0 auto;
