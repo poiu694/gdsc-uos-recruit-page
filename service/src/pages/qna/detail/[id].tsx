@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { QuestionListItem } from '../../../../@types/question';
 import { Introduction } from '../../../components/common';
 import { QuestionBox, TeamList } from '../../../components/Qna';
+import { IntroductionWrapper } from '../[teamName]';
 
 interface QnaPageProps {
   question: QuestionListItem;
@@ -14,10 +15,12 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
   return (
     <Layout>
       <Banner />
-      <Introduction
-        title='자주 묻는 질문'
-        desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
-      />
+      <IntroductionWrapper>
+        <Introduction
+          title='자주 묻는 질문'
+          desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
+        />
+      </IntroductionWrapper>
       <ContentsWrapper>
         <TeamList />
         <QuestionBox question={question} />

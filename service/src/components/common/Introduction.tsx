@@ -18,7 +18,7 @@ function Introduction({ title, desc }: IntroductionProps) {
 }
 
 const ContentsWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
 
   margin: 0 auto;

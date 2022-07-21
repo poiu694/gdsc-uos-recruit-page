@@ -1,18 +1,18 @@
-import styled from "@emotion/styled";
-import { theme } from "../theme";
-import Icon from "./Icon";
-import Typography from "./Typography";
+import styled from '@emotion/styled';
+import { theme } from '../theme';
+import Icon from './Icon';
+import Typography from './Typography';
 
 function Bottom() {
   return (
     <Wrapper>
-      <Typography type="body5" color={theme.palette.gray300}>
+      <Typography type='body5' color={theme.palette.gray300}>
         © CopyRight GDSC UOS. All Right Reserved.
       </Typography>
       <IconWrapper>
-        <Icon type="github" color={theme.palette.blue400} />
-        <Icon type="blog" color={theme.palette.coreYellow} />
-        <Icon type="gmail" color={theme.palette.red200} />
+        <Icon type='github' color={theme.palette.blue400} />
+        <Icon type='blog' color={theme.palette.coreYellow} />
+        <Icon type='gmail' color={theme.palette.red200} />
       </IconWrapper>
     </Wrapper>
   );

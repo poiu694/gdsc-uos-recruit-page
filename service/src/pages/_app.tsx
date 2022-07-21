@@ -12,9 +12,12 @@ import { useCallback } from 'react';
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
-  const handleLinkToPage = useCallback((url: string) => {
-    router.push(url);
-  }, []);
+  const handleLinkToPage = useCallback(
+    (url: string) => {
+      router.push(url);
+    },
+    [router]
+  );
 
   return (
     <ThemeProvider theme={theme}>

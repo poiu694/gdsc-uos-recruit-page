@@ -23,10 +23,12 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
     <>
       <Layout>
         <Banner />
-        <Introduction
-          title='자주 묻는 질문'
-          desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
-        />
+        <IntroductionWrapper>
+          <Introduction
+            title='자주 묻는 질문'
+            desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
+          />
+        </IntroductionWrapper>
         <ContentsWrapper>
           <TeamList teamName={teamName} />
           <QuestionList questions={questions} />
@@ -72,6 +74,11 @@ const Layout = styled.div`
   margin-bottom: 100px;
 
   background-color: ${theme.colors.background};
+`;
+
+export const IntroductionWrapper = styled.div`
+  width: 80%;
+  margin: 0 auto;
 `;
 
 const ContentsWrapper = styled.div`
