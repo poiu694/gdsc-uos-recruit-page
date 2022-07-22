@@ -23,6 +23,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    gap: 16px;
+  }
 `;
 
 export default Introduce;

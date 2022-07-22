@@ -5,7 +5,6 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { QuestionListItem } from '../../../../@types/question';
 import { Introduction } from '../../../components/common';
 import { QuestionBox, TeamList } from '../../../components/Qna';
-import { IntroductionWrapper } from '../[teamName]';
 
 interface QnaPageProps {
   question: QuestionListItem;
@@ -59,6 +58,15 @@ const Layout = styled.div`
   margin-bottom: 100px;
 
   background-color: ${theme.colors.background};
+`;
+
+const IntroductionWrapper = styled.div`
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: ${theme.size.mobile}px) {
+    display: none;
+  }
 `;
 
 const ContentsWrapper = styled.div`
