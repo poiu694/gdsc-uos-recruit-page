@@ -11,6 +11,7 @@
     "hooks:lint": "yarn workspace @gdsc-uos-recruit-page/hooks lint",
     "design-system:lint": "yarn workspace @gdsc-uos-recruit-page/design-system lint",
     "service": "yarn workspace service dev",
+    "service:build": "yarn workspace service build",
     "service:lint": "yarn workspace service lint"
   },
   "workspaces": [
