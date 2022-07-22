@@ -8,12 +8,12 @@ interface ActivityProps {
 function Activity({ activies }: ActivityProps) {
   return (
     <Wrapper>
-      <Typography type='h4' color={theme.colors.text.bold}>
+      <Typography type='h5' color={theme.colors.text.bold}>
         활동
       </Typography>
       <List>
         {activies.map((activity) => (
-          <ListItem key={activity} type='body3'>
+          <ListItem key={activity} type='body4'>
             • {activity}
           </ListItem>
         ))}
@@ -24,7 +24,7 @@ function Activity({ activies }: ActivityProps) {
 
 const Wrapper = styled.div`
   width: 100%;
-  margin: 56px auto 0 auto;
+  margin: 32px auto 0 auto;
 
   display: flex;
   flex-direction: column;

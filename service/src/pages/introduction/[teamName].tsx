@@ -61,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const introduction = {
-    title: 'Frontend',
+    title: 'Frontend Developer',
     desc: 'GDSC UOS Frontend 소개 페이지입니다.',
     introduction:
       '동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한  으로 길이 보전하세 ',
@@ -101,6 +101,8 @@ const Wrapper = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
+  width: 80%;
+  
   display: flex;
   flex-direction: column;
 
