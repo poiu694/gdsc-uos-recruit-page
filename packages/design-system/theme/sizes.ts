@@ -1,6 +1,6 @@
 export const size = {
   mobile: 576,
-  tabletS: 768,
+  tabletS: 767,
   tabletL: 1279,
 } as const;
 
