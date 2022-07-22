@@ -8,10 +8,10 @@ interface IntroduceProps {
 function Introduce({ desc }: IntroduceProps) {
   return (
     <Wrapper>
-      <Typography type='h4' color={theme.colors.text.bold}>
+      <Typography type='h5' color={theme.colors.text.bold}>
         소개
       </Typography>
-      <Typography type='body3'>{desc}</Typography>
+      <Typography type='body4'>{desc}</Typography>
     </Wrapper>
   );
 }
@@ -22,11 +22,7 @@ const Wrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 32px;
-
-  @media (max-width: ${theme.size.mobile}px) {
-    gap: 16px;
-  }
+  gap: 16px;
 `;
 
 export default Introduce;

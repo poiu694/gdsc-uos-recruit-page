@@ -72,8 +72,6 @@ const Layout = styled.div`
   width: 100%;
   height: 100%;
   margin-bottom: 100px;
-
-  background-color: ${theme.colors.background};
 `;
 
 const IntroductionWrapper = styled.div`

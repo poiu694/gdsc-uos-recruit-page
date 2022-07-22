@@ -22,8 +22,6 @@ const Wrapper = styled.div`
   width: 80%;
   margin: 100px auto 16px auto;
 
-  background-color: ${theme.colors.background};
-
   display: flex;
   justify-content: space-between;
   align-items: center;
