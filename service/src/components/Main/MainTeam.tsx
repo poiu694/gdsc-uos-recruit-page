@@ -69,7 +69,11 @@ const TeamCardWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: ${theme.padding.xlg}px;
+
+  @media (min-width: ${theme.size.tabletL + 300}px) {
+    margin-top: 8em;
+  }
 `;
 
 export default MainTeam;

@@ -36,15 +36,15 @@ function MainProcess() {
         <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='second' title='서류 접수2' date='2022.08.04 월요일' />
         </CircleItem>
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+          <Circle type='third' title='서류 접수4' date='2022.08.04 월요일' />
+        </CircleItem>
+        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
+          <Circle type='fourth' title='서류 접수5' date='2022.08.04 월요일' />
+        </CircleItem>
         {/* <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
           <Circle type='third' title='서류 접수3' date='2022.08.04 월요일' />
         </CircleItem> */}
-        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
-          <Circle type='fourth' title='서류 접수4' date='2022.08.04 월요일' />
-        </CircleItem>
-        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
-          <Circle type='fifth' title='서류 접수5' date='2022.08.04 월요일' />
-        </CircleItem>
       </CircleList>
     </Wrapper>
   );
@@ -52,14 +52,9 @@ function MainProcess() {
 
 const Wrapper = styled.div`
   width: 80%;
-  min-height: 100vh;
   position: relative;
 
   margin: 60px auto;
-
-  @media (max-width: ${theme.size.mobile}px) {
-    min-height: 100vh;
-  }
 `;
 
 const CircleList = styled.ul`
@@ -67,11 +62,16 @@ const CircleList = styled.ul`
   justify-content: space-between;
 
   padding: 0;
+  margin-top: 3em;
+
+  @media (min-width: ${theme.size.tabletL + 300}px) {
+    margin-top: 8em;
+  }
 
   @media (max-width: ${theme.size.tabletL}px) {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   @media (max-width: ${theme.size.tabletS}px) {
@@ -80,7 +80,7 @@ const CircleList = styled.ul`
 
   @media (max-width: ${theme.size.mobile}px) {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
   }
@@ -97,22 +97,23 @@ const CircleItem = styled.li`
       width: 100%;
 
       &:first-of-type {
-        grid-column: 1/3;
+        grid-row: 1/2;
+        grid-column: 1/1;
       }
 
       &:nth-of-type(2) {
-        grid-row: 2/3;
-        grid-column: 2/4;
+        grid-row: 2/2;
+        grid-column: 4/1;
       }
 
       &:nth-of-type(3) {
-        grid-row: 1;
-        grid-column: 3/5;
+        grid-row: 1/2;
+        grid-column: 8/2;
       }
 
       &:nth-of-type(4) {
-        grid-row: 2/3;
-        grid-column: 4/6;
+        grid-row: 2/2;
+        grid-column: 12/4;
       }
 
       &:nth-of-type(5) {
