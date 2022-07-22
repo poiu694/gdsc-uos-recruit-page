@@ -37,7 +37,6 @@ const Wrapper = styled.header`
   height: 60px;
   margin: 0 auto;
 
-  background-color: ${theme.colors.background};
   position: fixed;
   top: 0;
   z-index: ${theme.zIndex.header};
