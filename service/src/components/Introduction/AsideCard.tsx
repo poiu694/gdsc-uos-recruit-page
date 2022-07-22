@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-import { AsideCard } from '../../../@types/';
+import type { AsideCardType } from '../../../@types/';
 
 interface AsideCardProps {
-  aside: AsideCard;
+  aside: AsideCardType;
   handleClickQuestionListBtn: () => void;
   handleClickSupportBtn: () => void;
 }

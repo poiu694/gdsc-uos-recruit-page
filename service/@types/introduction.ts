@@ -1,4 +1,4 @@
-export interface AsideCard {
+export interface AsideCardType {
   team: string;
   experience: string;
   needs: string[];
@@ -9,5 +9,5 @@ export interface IntroductionType {
   desc: string;
   introduction: string;
   activities: string[];
-  aside: AsideCard;
+  aside: AsideCardType;
 }
