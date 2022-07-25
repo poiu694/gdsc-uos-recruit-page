@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
-import { Introduction } from '@components/common';
-import { Activity, AsideCard, Introduce } from '@components/Introduction';
+import { Introduction } from '../../components/common';
+import { Activity, AsideCard, Introduce } from '../../components/Introduction';
 import { TeamKeyType, IntroductionType } from '../../../@types';
 
 interface IntroductionProps {

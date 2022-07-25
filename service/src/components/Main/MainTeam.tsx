@@ -6,9 +6,14 @@ import {
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
+import { TitleTwoDesc } from '../../../@types';
 import { StyledAOSEmptyWrapper } from '.';
 
-function MainTeam() {
+interface MainTeamProps {
+  content: TitleTwoDesc;
+}
+
+function MainTeam({ content }: MainTeamProps) {
   return (
     <Wrapper>
       <TitleWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
@@ -21,9 +26,9 @@ function MainTeam() {
         data-aos-duration={defaultDuration}
       >
         <Title
-          title='Show us your Passion !'
-          desc1='성장하고 싶어하고 열정적인 사람을 찾고 있습니다.'
-          desc2='당신의 열정을 뽐내주세요.'
+          title={content.title}
+          desc1={content.desc1}
+          desc2={content.desc2}
         />
       </StyledAOSEmptyWrapper>
       <TeamCardWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>

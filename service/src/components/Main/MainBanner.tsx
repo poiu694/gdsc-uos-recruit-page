@@ -5,7 +5,11 @@ import {
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
 
-function MainBanner() {
+interface MainBannerProps {
+  banner: string;
+}
+
+function MainBanner({ banner }: MainBannerProps) {
   return (
     <Wrapper>
       <ContentsWrapper>
@@ -25,7 +29,7 @@ function MainBanner() {
         </TitleWrapper>
         <Typography type='h2'>University of Seoul</Typography>
         <DescWrapper>
-          <Typography type='h6'>2022년부터 함께 할 사람을 찾습니다.</Typography>
+          <Typography type='h6'>{banner}</Typography>
         </DescWrapper>
       </ContentsWrapper>
       <Planet />

@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { QuestionListItem } from '../../../../@types/question';
 import { Introduction } from '../../../components/common';
 import { QuestionBox, TeamList } from '../../../components/Qna';
+import { QuestionContent } from '../../../constants';
 
 interface QnaPageProps {
   question: QuestionListItem;
@@ -29,8 +30,8 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = new Array(30).map((_, idx) => ({
-    params: { id: String(idx) },
+  const paths = QuestionContent.all.map((content) => ({
+    params: { id: content.id },
   }));
 
   return {
@@ -40,14 +41,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const question = {
-    title: '지원 마감이 언제까지 일까요? 1',
-    url: '/qna/detail/1',
-    desc: '동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한  으로 길이 보전하세 ',
-  };
+  const questionIdx = QuestionContent.all.findIndex(
+    (content) => content.id === params!.id
+  );
+
   return {
     props: {
-      question,
+      question: QuestionContent.all[questionIdx],
     },
   };
 };
