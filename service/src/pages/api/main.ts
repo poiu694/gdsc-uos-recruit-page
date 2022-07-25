@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { MainContent } from '../../constants';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { MainContent } from '../../constants';
 import { TitleOneDesc, TitleTwoDesc } from '../../../@types';
 
 export interface MainProcess {

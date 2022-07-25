@@ -5,10 +5,11 @@ import {
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
+import { ProcessCircleType } from '@gdsc-uos-recruit-page/design-system/components/Circle';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
+
 import { TitleOneDesc, TitleTwoDesc } from '../../../@types';
 import { StyledAOSEmptyWrapper } from '.';
-import { ProcessCircleType } from '@gdsc-uos-recruit-page/design-system/components/Circle';
 
 interface MainProcessProps {
   content: TitleTwoDesc;
