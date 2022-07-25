@@ -8,6 +8,9 @@ import { QuestionListItem } from '../../../@types/question';
 import { Introduction } from '../../components/common';
 import { TeamList } from '../../components/Qna';
 import QuestionList from '../../components/Qna/QuestionList';
+import { QuestionContent } from '../../constants/';
+import { TitleOneDesc } from '../../../@types';
+import { getQuestion } from '../../utils';
 
 interface Params extends ParsedUrlQuery {
   teamName: TeamKeyType;
@@ -52,13 +55,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const questions = await [
-    { title: '지원 마감이 언제까지 일까요? 1', url: '/qna/detail/1' },
-    { title: '지원 마감이 언제까지 일까요? 2', url: '/qna/detail/2' },
-    { title: '지원 마감이 언제까지 일까요? 3', url: '/qna/detail/3' },
-    { title: '지원 마감이 언제까지 일까요? 4', url: '/qna/detail/4' },
-    { title: '지원 마감이 언제까지 일까요? 5', url: '/qna/detail/5' },
-  ];
+  const questions = getQuestion(params!.teamName as string);
 
   return {
     props: {
