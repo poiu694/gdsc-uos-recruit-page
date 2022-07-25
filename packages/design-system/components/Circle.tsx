@@ -3,8 +3,10 @@ import styled from '@emotion/styled';
 import { theme } from '../theme';
 import Typography from './Typography';
 
+export type ProcessCircleType = 'process-0' | 'process-1' | 'process-2' | 'process-3' | 'process-4';
+
 interface Circle {
-  type: 'first' | 'second' | 'third' | 'fourth' | 'fifth';
+  type: ProcessCircleType;
   title: string;
   date: string;
 }
@@ -36,7 +38,7 @@ const Wrapper = styled.div`
 
   border-radius: 50%;
 
-  &.first {
+  &.process-0 {
     background: linear-gradient(
       46.16deg,
       ${theme.palette.coreYellow} 15.52%,
@@ -44,7 +46,7 @@ const Wrapper = styled.div`
     );
   }
 
-  &.second {
+  &.process-1 {
     background: linear-gradient(
       86.91deg,
       ${theme.palette.coreBlue} 2.22%,
@@ -52,7 +54,7 @@ const Wrapper = styled.div`
     );
   }
 
-  &.fifth {
+  &.process-4 {
     background: linear-gradient(
       261deg,
       ${theme.palette.coreRed} 5.56%,
@@ -60,7 +62,7 @@ const Wrapper = styled.div`
     );
   }
 
-  &.third {
+  &.process-2 {
     background: linear-gradient(
       265.27deg,
       ${theme.palette.coreRed} 16.03%,
@@ -68,7 +70,7 @@ const Wrapper = styled.div`
     );
   }
 
-  &.fourth {
+  &.process-3 {
     background: linear-gradient(
       306.53deg,
       ${theme.palette.coreGreen} 16.03%,
@@ -85,7 +87,7 @@ const Wrapper = styled.div`
     width: 144px;
     height: 144px;
 
-    &.first {
+    &.process-0 {
       background: linear-gradient(
         340.91deg,
         ${theme.palette.coreBlue} 2.22%,
@@ -93,7 +95,7 @@ const Wrapper = styled.div`
       );
     }
 
-    &.second {
+    &.process-1 {
       background: linear-gradient(
         31.16deg,
         ${theme.palette.coreYellow} 32.52%,
@@ -101,7 +103,7 @@ const Wrapper = styled.div`
       );
     }
 
-    &.fifth {
+    &.process-4 {
       background: linear-gradient(
         340.73deg,
         ${theme.palette.coreRed} 1.75%,
@@ -109,7 +111,7 @@ const Wrapper = styled.div`
       );
     }
 
-    &.third {
+    &.process-2 {
       background: linear-gradient(
         126.53deg,
         ${theme.palette.coreGreen} 32.03%,
@@ -117,7 +119,7 @@ const Wrapper = styled.div`
       );
     }
 
-    &.fourth {
+    &.process-3 {
       background: linear-gradient(
         212.27deg,
         ${theme.palette.coreRed} 32.03%,

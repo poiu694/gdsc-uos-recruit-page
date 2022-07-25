@@ -1,15 +1,21 @@
 import styled from '@emotion/styled';
 import {
   Circle,
-  TeamCard,
   theme,
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
+import { TitleOneDesc, TitleTwoDesc } from '../../../@types';
 import { StyledAOSEmptyWrapper } from '.';
+import { ProcessCircleType } from '@gdsc-uos-recruit-page/design-system/components/Circle';
 
-function MainProcess() {
+interface MainProcessProps {
+  content: TitleTwoDesc;
+  circle: TitleOneDesc[];
+}
+
+function MainProcess({ content, circle }: MainProcessProps) {
   return (
     <Wrapper>
       <TitleWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
@@ -22,29 +28,27 @@ function MainProcess() {
         data-aos-duration={defaultDuration}
       >
         <Title
-          title='Process for Recruit'
-          desc1='저희와 함께할 새로운 멤버를 구합니다.'
-          desc2='많은 지원 부탁드립니다.'
+          title={content.title}
+          desc1={content.desc1}
+          desc2={content.desc2}
           data-aos='fade-up'
           data-aos-duration={defaultDuration}
         />
       </StyledAOSEmptyWrapper>
       <CircleList>
-        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
-          <Circle type='first' title='서류 접수1' date='2022.08.04 월요일' />
-        </CircleItem>
-        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
-          <Circle type='second' title='서류 접수2' date='2022.08.04 월요일' />
-        </CircleItem>
-        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
-          <Circle type='third' title='서류 접수4' date='2022.08.04 월요일' />
-        </CircleItem>
-        <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
-          <Circle type='fourth' title='서류 접수5' date='2022.08.04 월요일' />
-        </CircleItem>
-        {/* <CircleItem data-aos='fade-up' data-aos-duration={defaultDuration}>
-          <Circle type='third' title='서류 접수3' date='2022.08.04 월요일' />
-        </CircleItem> */}
+        {circle.map((content, idx) => (
+          <CircleItem
+            data-aos='fade-up'
+            data-aos-duration={defaultDuration}
+            key={content.title}
+          >
+            <Circle
+              type={`process-${idx}` as ProcessCircleType}
+              title={content.title}
+              date={content.desc}
+            />
+          </CircleItem>
+        ))}
       </CircleList>
     </Wrapper>
   );
