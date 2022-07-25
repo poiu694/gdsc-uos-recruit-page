@@ -5,7 +5,7 @@ import {
   globalStyle,
   theme,
 } from '@gdsc-uos-recruit-page/design-system';
-import { Header } from '@components/common';
+import { Header } from '../components/common';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

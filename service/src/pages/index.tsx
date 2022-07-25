@@ -2,7 +2,8 @@ import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 import { useAOS } from '@gdsc-uos-recruit-page/hooks';
 import useSWR from 'swr';
-import { fetcher } from 'src/utils';
+
+import { fetcher } from '../../src/utils';
 
 import { MainBanner, MainProcess, MainTeam } from '../components';
 
