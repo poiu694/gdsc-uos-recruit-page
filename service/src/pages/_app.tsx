@@ -1,11 +1,7 @@
 import type { AppProps } from 'next/app';
 import { Global, ThemeProvider } from '@emotion/react';
-import {
-  Bottom,
-  globalStyle,
-  theme,
-} from '@gdsc-uos-recruit-page/design-system';
-import { Header } from '../components/common';
+import { globalStyle, theme } from '@gdsc-uos-recruit-page/design-system';
+import { Header, Bottom } from '../components/common';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

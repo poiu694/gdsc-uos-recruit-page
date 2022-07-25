@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { theme } from '../theme';
-import Icon from './Icon';
-import Typography from './Typography';
+import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
+import Icon from '@gdsc-uos-recruit-page/design-system/components/Icon';
+import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
 
 function Bottom() {
   return (
