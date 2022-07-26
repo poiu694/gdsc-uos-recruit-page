@@ -1,8 +1,8 @@
 export const Team = {
-  frontend: 'Frontend',
-  backend: 'Backend',
-  mobile: 'Mobile',
-  data_ml: 'DA/ML',
+  frontend: 'frontend',
+  backend: 'backend',
+  mobile: 'mobile',
+  data_ml: 'data_ml',
 } as const;
 
 

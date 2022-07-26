@@ -6,6 +6,7 @@ import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 import { Introduction } from '../../components/common';
 import { Activity, AsideCard, Introduce } from '../../components/Introduction';
 import { TeamKeyType, IntroductionType } from '../../../@types';
+import { IntroductionContent } from '../../constants';
 
 interface IntroductionProps {
   introduction: IntroductionType;
@@ -60,18 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const introduction = {
-    title: 'Frontend Developer',
-    desc: 'GDSC UOS Frontend 소개 페이지입니다.',
-    introduction:
-      '동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이  마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한  으로 길이 보전하세 ',
-    activities: ['테크톡', '기술 블로그 글 작성', '데일리 스크럼'],
-    aside: {
-      team: 'Frontend Team',
-      experience: '무관',
-      needs: ['HTML5', 'CSS3', 'Javascript'],
-    },
-  } as IntroductionType;
+  const introduction = IntroductionContent[params!.teamName as TeamKeyType];
 
   return {
     props: {
@@ -102,7 +92,7 @@ const Wrapper = styled.div`
 
 const ContentsWrapper = styled.div`
   width: 80%;
-  
+
   display: flex;
   flex-direction: column;
 

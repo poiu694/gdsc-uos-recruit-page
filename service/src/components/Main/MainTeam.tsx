@@ -1,11 +1,8 @@
 import styled from '@emotion/styled';
-import {
-  TeamCard,
-  theme,
-  Title,
-  Typography,
-} from '@gdsc-uos-recruit-page/design-system';
+import { theme, Title, Typography } from '@gdsc-uos-recruit-page/design-system';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
+
+import { TeamCard } from '../common';
 import { TitleTwoDesc } from '../../../@types';
 import { StyledAOSEmptyWrapper } from '.';
 
@@ -32,16 +29,10 @@ function MainTeam({ content }: MainTeamProps) {
         />
       </StyledAOSEmptyWrapper>
       <TeamCardWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
-        <TeamCard
-          type='Frontend'
-          handleClickNav={() => console.log('frontend')}
-        />
-        <TeamCard
-          type='Backend'
-          handleClickNav={() => console.log('Backend')}
-        />
-        <TeamCard type='Mobile' handleClickNav={() => console.log('Mobile')} />
-        <TeamCard type='DA/ML' handleClickNav={() => console.log('DA/ML')} />
+        <TeamCard type='frontend' />
+        <TeamCard type='backend' />
+        <TeamCard type='mobile' />
+        <TeamCard type='data_ml' />
       </TeamCardWrapper>
     </Wrapper>
   );

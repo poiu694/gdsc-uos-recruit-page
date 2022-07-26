@@ -1,7 +1,7 @@
 import { TeamKeyType } from './team';
 
 export interface QuestionListItem {
-  id: string;
+  id?: string;
   type: TeamKeyType;
   title: string;
   url: string;

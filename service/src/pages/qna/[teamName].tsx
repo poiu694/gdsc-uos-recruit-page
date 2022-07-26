@@ -55,7 +55,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const questions = getQuestion(params!.teamName as string);
+  const questions = QuestionContent[params!.teamName as TeamKeyType];
 
   return {
     props: {
