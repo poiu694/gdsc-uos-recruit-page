@@ -1,22 +1,12 @@
 import styled from '@emotion/styled';
-
 import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
-import { useWindowSize } from '@gdsc-uos-recruit-page/hooks';
 import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
+import { useCallback } from 'react';
 
-const getSrc = (width: number) => {
-  if (width <= theme.size.mobile + 50) {
-    return '/logo_small.png';
-  }
-  return '/logo.png';
-};
+import CustomLink from './CustomLink';
 
 function Header() {
-  const windowSize = useWindowSize();
-  const [imgSrc, setImgSrc] = useState<string>(getSrc(windowSize.width));
   const router = useRouter();
 
   const handleLinkToPage = useCallback(
@@ -26,16 +16,20 @@ function Header() {
     [router]
   );
 
-  useEffect(() => {
-    setImgSrc(getSrc(windowSize.width));
-  }, [windowSize]);
-
   return (
     <Wrapper>
       <NavigationWrapper>
-        <Logo>
-          <Image src={imgSrc} layout='fill' />
-        </Logo>
+        <CustomLink href='/'>
+          <Logo>
+            <picture>
+              <source
+                media={`(max-width: ${theme.size.mobile}px)`}
+                srcSet='/logo_small.png'
+              />
+              <img src='/logo.png' />
+            </picture>
+          </Logo>
+        </CustomLink>
         <Navigation>
           <Typography type='body4' onClick={() => handleLinkToPage('/')}>
             모집 공고
@@ -79,7 +73,7 @@ const NavigationWrapper = styled.header`
   margin: 0 auto;
 `;
 
-const Navigation = styled.div`
+const Navigation = styled.nav`
   display: flex;
   float: right;
 
@@ -101,6 +95,12 @@ const Logo = styled.div`
   top: 10px;
 
   cursor: pointer;
+
+  picture,
+  picture img {
+    width: 100%;
+    height: 100%;
+  }
 
   @media (max-width: ${theme.size.mobile}px) {
     width: 40px;
