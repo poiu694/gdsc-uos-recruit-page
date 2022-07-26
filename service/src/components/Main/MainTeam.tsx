@@ -3,8 +3,8 @@ import { theme, Title, Typography } from '@gdsc-uos-recruit-page/design-system';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 
 import { TeamCard } from '../common';
-import { StyledAOSEmptyWrapper } from '.';
 import { TitleTwoDesc } from '../../../@types';
+import { StyledAOSEmptyWrapper } from '.';
 
 interface MainTeamProps {
   content: TitleTwoDesc;

@@ -20,7 +20,7 @@ function TeamCard({ type }: TeamProps) {
 
   const handleClickNav = useCallback(() => {
     router.push(`/introduction/${type}`);
-  }, []);
+  }, [router, type]);
 
   return (
     <Wrapper type={type}>
