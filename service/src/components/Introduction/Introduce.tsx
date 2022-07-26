@@ -11,7 +11,7 @@ function Introduce({ desc }: IntroduceProps) {
       <Typography type='h5' color={theme.colors.text.bold}>
         소개
       </Typography>
-      <Typography type='body4'>{desc}</Typography>
+      <Typography type='body3'>{desc}</Typography>
     </Wrapper>
   );
 }

@@ -13,7 +13,7 @@ function Activity({ activies }: ActivityProps) {
       </Typography>
       <List>
         {activies.map((activity) => (
-          <ListItem key={activity} type='body4'>
+          <ListItem key={activity} type='body3'>
             • {activity}
           </ListItem>
         ))}
