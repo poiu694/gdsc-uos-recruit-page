@@ -1,0 +1,43 @@
+{
+  "name": "service",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@types/aos": "^3.0.4",
+    "aos": "^2.3.4",
+    "next": "canary",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "^1.3.0"
+  },
+  "devDependencies": {
+    "@gdsc-uos-recruit-page/design-system": "1.0.0",
+    "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
+    "@gdsc-uos-recruit-page/hooks": "1.0.0",
+    "@gdsc-uos-recruit-page/tsconfig-custom": "1.0.0",
+    "@types/node": "18.0.4",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "next-transpile-modules": "^9.0.0",
+    "typescript": "^4.7.4"
+  }
+}

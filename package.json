@@ -1,0 +1,26 @@
+{
+  "name": "gdsc-uos-recruit-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/poiu694/sample_page.git",
+  "author": "Lee <43488305+poiu694@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "yarn service:lint && yarn design-system:lint && yarn hooks:lint",
+    "hooks:lint": "yarn workspace @gdsc-uos-recruit-page/hooks lint",
+    "design-system:lint": "yarn workspace @gdsc-uos-recruit-page/design-system lint",
+    "service": "yarn workspace service dev",
+    "service:build": "yarn workspace service build",
+    "service:lint": "yarn workspace service lint"
+  },
+  "workspaces": [
+    "admin",
+    "service",
+    "packages/**"
+  ],
+  "packageManager": "yarn@3.2.1",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}
