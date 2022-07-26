@@ -1,3 +1,5 @@
+import { QuestionListItem, TeamContent } from '../../@types';
+
 const CommonQuestion = [
   {
     id: '1',
@@ -155,9 +157,9 @@ const DataMLQuestion = [
 
 export default Object.freeze({
   common: CommonQuestion,
-  front: FrontQuestion,
-  back: BackQuestion,
+  frontend: FrontQuestion,
+  backend: BackQuestion,
   mobile: MobileQuestion,
   data_ml: DataMLQuestion,
   all: [...CommonQuestion, ...FrontQuestion, ...BackQuestion, ...MobileQuestion, ...DataMLQuestion]
-})
+} as TeamContent<QuestionListItem[]>)
