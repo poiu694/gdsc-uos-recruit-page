@@ -1,39 +1,50 @@
+import React, { useCallback } from 'react';
 import styled from '@emotion/styled';
-import React from 'react';
+import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { TeamValueType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import {
+  get400Color,
+  getJobByTeam,
+  getPrimaryColor,
+  getTitleCaseTeam,
+} from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
+import { useRouter } from 'next/router';
 
-import { TeamValueType } from '../@types/Team';
-import { theme } from '../theme';
-import { getJobByTeam, getPrimaryColor } from '../utils/colorUtils';
-import Typography from './Typography';
-
-interface TeamCard {
+interface TeamProps {
   type: TeamValueType;
-  handleClickNav: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-function TeamCard({ type = 'Frontend', handleClickNav }: TeamCard) {
-  const teamJob = getJobByTeam(type).split(' '); // [0]: Team, [1]: Developer
-  const primaryColor = getPrimaryColor(type);
+function TeamCard({ type }: TeamProps) {
+  const [team, Developer] = getJobByTeam(type); // [0]: Team, [1]: Developer
+  const router = useRouter();
+
+  const handleClickNav = useCallback(() => {
+    router.push(`/introduction/${type}`);
+  }, []);
 
   return (
-    <Wrapper>
+    <Wrapper type={type}>
       <Title>
-        <Typography type='h4' color={primaryColor}>
-          {type}
+        <Typography type='h4' color={theme.colors.primary.white}>
+          {getTitleCaseTeam(type)}
         </Typography>
       </Title>
 
       <Description>
-        <Typography type='h6' color={theme.colors.primary.white}>
-          {teamJob[0]}
+        <Typography type='h6' color={theme.palette.gray50}>
+          {team}
         </Typography>
-        <Typography type='h6' color={theme.colors.primary.white}>
-          {teamJob[1]}
+        <Typography type='h6' color={theme.palette.gray50}>
+          {Developer}
         </Typography>
       </Description>
 
       <BottomNav onClick={handleClickNav}>
-        <Typography type='h4' textAlign='center' color={primaryColor}>
+        <Typography
+          type='h4'
+          textAlign='center'
+          color={theme.colors.primary.white}
+        >
           Detail
         </Typography>
       </BottomNav>
@@ -41,16 +52,20 @@ function TeamCard({ type = 'Frontend', handleClickNav }: TeamCard) {
   );
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.section<TeamProps>`
   width: 260px;
   height: 300px;
   position: relative;
-  background-color: ${theme.palette.gray500};
+  background-color: ${(props) => get400Color(props.type)};
   border-radius: 15px;
 
   @media (max-width: ${theme.size.mobile}px) {
     width: 100%;
     height: 60px;
+  }
+
+  &:hover {
+    background-color: ${(props) => getPrimaryColor(props.type)};
   }
 `;
 
@@ -84,11 +99,12 @@ const BottomNav = styled.button`
   bottom: 0;
   cursor: pointer;
 
-  background-color: ${theme.palette.gray400};
-
   border: none;
+  border-top: 1px solid ${theme.colors.background};
   outline: none;
   border-radius: 0px 0px 15px 15px;
+
+  background-color: transparent;
 
   @media (max-width: ${theme.size.mobile}px) {
     width: 30%;
