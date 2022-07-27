@@ -1,35 +1,39 @@
 import styled from '@emotion/styled';
 import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { useRouter } from 'next/router';
+
 import { QuestionListItem } from '../../../@types/question';
-import { CustomLink } from '../common';
 
 interface QuestionListProps {
   questions: QuestionListItem[];
 }
 
 function QuestionList({ questions }: QuestionListProps) {
+  const router = useRouter();
+
   return (
     <Wrapper>
       {questions.map((question) => (
-        <CustomLink key={question.title} href={question.url}>
-          <ListItem>
-            <Typography
-              type='body3'
-              color={theme.palette.gray200}
-              className='question-mark'
-            >
-              Q
-            </Typography>
-            <Typography
-              type='body3'
-              color={theme.colors.text.general}
-              className='title'
-            >
-              {question.title}
-            </Typography>
-            <Icon type='right' hoverAction={false} />
-          </ListItem>
-        </CustomLink>
+        <ListItem
+          key={question.title}
+          onClick={() => router.push(question.url)}
+        >
+          <Typography
+            type='body3'
+            color={theme.palette.gray200}
+            className='question-mark'
+          >
+            Q
+          </Typography>
+          <Typography
+            type='body3'
+            color={theme.colors.text.general}
+            className='title'
+          >
+            {question.title}
+          </Typography>
+          <Icon type='right' hoverAction={false} />
+        </ListItem>
       ))}
     </Wrapper>
   );

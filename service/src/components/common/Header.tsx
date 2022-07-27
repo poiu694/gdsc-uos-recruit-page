@@ -4,8 +4,6 @@ import Typography from '@gdsc-uos-recruit-page/design-system/components/Typograp
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
-import CustomLink from './CustomLink';
-
 function Header() {
   const router = useRouter();
 
@@ -19,17 +17,15 @@ function Header() {
   return (
     <Wrapper>
       <NavigationWrapper>
-        <CustomLink href='/'>
-          <Logo>
-            <picture>
-              <source
-                media={`(max-width: ${theme.size.mobile}px)`}
-                srcSet='/logo_small.png'
-              />
-              <img src='/logo.png' />
-            </picture>
-          </Logo>
-        </CustomLink>
+        <Logo onClick={() => handleLinkToPage('/')}>
+          <picture>
+            <source
+              media={`(max-width: ${theme.size.mobile}px)`}
+              srcSet='/logo_small.png'
+            />
+            <img src='/logo.png' />
+          </picture>
+        </Logo>
         <Navigation>
           <Typography type='body4' onClick={() => handleLinkToPage('/')}>
             모집 공고
