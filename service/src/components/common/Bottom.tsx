@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
 import Icon from '@gdsc-uos-recruit-page/design-system/components/Icon';
 import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
+import CustomLink from './CustomLink';
 
 function Bottom() {
   return (
@@ -10,9 +11,27 @@ function Bottom() {
         © CopyRight GDSC UOS. All Right Reserved.
       </Typography>
       <IconWrapper>
-        <Icon type='github' color={theme.palette.blue400} />
-        <Icon type='blog' color={theme.palette.coreYellow} />
-        <Icon type='gmail' color={theme.palette.red200} />
+        <CustomLink
+          target='_blank'
+          href='https://github.com/GDSC-University-of-Seoul'
+          rel='external'
+        >
+          <Icon type='github' color={theme.palette.blue400} />
+        </CustomLink>
+        <CustomLink
+          target='_blank'
+          href='https://gdsc-university-of-seoul.github.io'
+          rel='external'
+        >
+          <Icon type='blog' color={theme.palette.coreYellow} />
+        </CustomLink>
+        <CustomLink
+          target='_blank'
+          href='mailto:olmnuiui70@gmail.com'
+          rel='external'
+        >
+          <Icon type='gmail' color={theme.palette.red200} />
+        </CustomLink>
       </IconWrapper>
     </Wrapper>
   );
