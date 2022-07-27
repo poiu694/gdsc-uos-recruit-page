@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import { useCallback, useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { teams } from '../../constants';
-import { CustomLink } from '../common';
 import { TeamKeyType } from '../../../@types/team';
 import { QuestionListItem } from '../../../@types/question';
 
@@ -19,13 +19,15 @@ const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
 
 function TeamList({ teamName }: TeamListProps) {
   const [isActive, setIsActive] = useState(initalIsActive(teams, teamName!));
+  const router = useRouter();
 
   const handleClickTeamItem = useCallback(
     (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-      const { id: indexToUpdate } = e.currentTarget;
+      const { id: indexToUpdate, dataset } = e.currentTarget;
       const nextIsActive = new Array(teams.length).fill(false);
       nextIsActive[Number(indexToUpdate)] = true;
       setIsActive(nextIsActive);
+      router.push(dataset.url as string);
     },
     []
   );
@@ -33,17 +35,20 @@ function TeamList({ teamName }: TeamListProps) {
   return (
     <Wrapper>
       {teams.map((team, idx) => (
-        <CustomLink key={team.title} href={team.url}>
-          <ListItem id={`${idx}`} onClick={handleClickTeamItem}>
-            <Typography
-              type='body3'
-              className={isActive[idx] ? 'bold' : ''}
-              color={theme.palette.gray300}
-            >
-              {team.title}
-            </Typography>
-          </ListItem>
-        </CustomLink>
+        <ListItem
+          id={`${idx}`}
+          onClick={handleClickTeamItem}
+          key={team.title}
+          data-url={team.url}
+        >
+          <Typography
+            type='body3'
+            className={isActive[idx] ? 'bold' : ''}
+            color={theme.palette.gray300}
+          >
+            {team.title}
+          </Typography>
+        </ListItem>
       ))}
     </Wrapper>
   );
