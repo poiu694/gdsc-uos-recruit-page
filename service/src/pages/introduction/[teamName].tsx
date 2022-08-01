@@ -7,6 +7,7 @@ import { Introduction } from '../../components/common';
 import { Activity, AsideCard, Introduce } from '../../components/Introduction';
 import { TeamKeyType, IntroductionType } from '../../../@types';
 import { IntroductionContent } from '../../constants';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 interface IntroductionProps {
   introduction: IntroductionType;
@@ -18,12 +19,16 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
   teamName,
 }) => {
   const router = useRouter();
+  const { logEvent, logPageView } = useGA();
+  logPageView(`/introduction/${teamName}`);
 
   const handleClickSupportBtn = () => {
+    logEvent('Application', `click ${teamName} application`);
     router.push(`/qna/${teamName}`);
   };
 
   const handleClickQuestionListBtn = () => {
+    logEvent('Click(Question)', `click ${teamName} question`);
     router.push(`/qna/${teamName}`);
   };
 

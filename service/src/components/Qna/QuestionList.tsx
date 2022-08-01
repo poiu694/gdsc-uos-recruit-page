@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { useRouter } from 'next/router';
 
 import { QuestionListItem } from '../../../@types/question';
@@ -10,13 +11,25 @@ interface QuestionListProps {
 
 function QuestionList({ questions }: QuestionListProps) {
   const router = useRouter();
+  const { logEvent } = useGA();
+
+  const handleClickListItem = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ) => {
+    e.stopPropagation();
+    const { dataset } = e.currentTarget;
+    logEvent('Click(QuestionItem)', `${dataset.title} click`);
+    router.push(dataset.url as string);
+  };
 
   return (
     <Wrapper>
       {questions.map((question) => (
         <ListItem
           key={question.title}
-          onClick={() => router.push(question.url)}
+          data-title={question.title}
+          data-url={question.url}
+          onClick={handleClickListItem}
         >
           <Typography
             type='body3'

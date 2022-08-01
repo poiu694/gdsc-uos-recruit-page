@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { QuestionListItem } from '../../../../@types/question';
@@ -12,6 +13,9 @@ interface QnaPageProps {
 }
 
 const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
+  const { logPageView } = useGA();
+  logPageView(`/qna/detail/${question.id}`);
+
   return (
     <Layout>
       <Banner />
