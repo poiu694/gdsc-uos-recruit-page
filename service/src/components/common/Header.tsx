@@ -3,33 +3,32 @@ import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
 import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
-
-import CustomLink from './CustomLink';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 function Header() {
   const router = useRouter();
+  const { logEvent } = useGA();
 
   const handleLinkToPage = useCallback(
     (url: string) => {
+      logEvent('route(head)', `move to ${url}`);
       router.push(url);
     },
-    [router]
+    [router, logEvent]
   );
 
   return (
     <Wrapper>
       <NavigationWrapper>
-        <CustomLink href='/'>
-          <Logo>
-            <picture>
-              <source
-                media={`(max-width: ${theme.size.mobile}px)`}
-                srcSet='/logo_small.png'
-              />
-              <img src='/logo.png' />
-            </picture>
-          </Logo>
-        </CustomLink>
+        <Logo onClick={() => handleLinkToPage('/')}>
+          <picture>
+            <source
+              media={`(max-width: ${theme.size.mobile}px)`}
+              srcSet='/logo_small.png'
+            />
+            <img src='/logo.png' />
+          </picture>
+        </Logo>
         <Navigation>
           <Typography type='body4' onClick={() => handleLinkToPage('/')}>
             모집 공고

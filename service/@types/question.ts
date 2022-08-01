@@ -1,4 +1,4 @@
-import { TeamKeyType } from './team';
+import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 
 export interface QuestionListItem {
   id?: string;

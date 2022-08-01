@@ -27,18 +27,18 @@ export const getJobByTeam = (type: TeamValueType) => {
   }
 };
 
-export const getPrimaryColor = (type: TeamValueType) => {
+export const get200Color = (type: TeamValueType) => {
   switch (type) {
     case 'frontend':
-      return theme.colors.primary.yellow;
+      return theme.palette.yellow200;
     case 'backend':
-      return theme.colors.primary.red;
+      return theme.palette.red200;
     case 'mobile':
-      return theme.colors.primary.green;
+      return theme.palette.green200;
     case 'data_ml':
-      return theme.colors.primary.blue;
+      return theme.palette.blue200;
     default:
-      return theme.colors.primary.yellow;
+      return theme.palette.yellow200;
   }
 };
 

@@ -12,7 +12,8 @@
     "design-system:lint": "yarn workspace @gdsc-uos-recruit-page/design-system lint",
     "service": "yarn workspace service dev",
     "service:build": "yarn workspace service build",
-    "service:lint": "yarn workspace service lint"
+    "service:lint": "yarn workspace service lint",
+    "admin": "yarn workspace admin dev"
   },
   "workspaces": [
     "admin",

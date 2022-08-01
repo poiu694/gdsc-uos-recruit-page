@@ -1,35 +1,52 @@
 import styled from '@emotion/styled';
 import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { useRouter } from 'next/router';
+
 import { QuestionListItem } from '../../../@types/question';
-import { CustomLink } from '../common';
 
 interface QuestionListProps {
   questions: QuestionListItem[];
 }
 
 function QuestionList({ questions }: QuestionListProps) {
+  const router = useRouter();
+  const { logEvent } = useGA();
+
+  const handleClickListItem = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ) => {
+    e.stopPropagation();
+    const { dataset } = e.currentTarget;
+    logEvent('Click(QuestionItem)', `${dataset.title} click`);
+    router.push(dataset.url as string);
+  };
+
   return (
     <Wrapper>
       {questions.map((question) => (
-        <CustomLink key={question.title} href={question.url}>
-          <ListItem>
-            <Typography
-              type='body3'
-              color={theme.palette.gray200}
-              className='question-mark'
-            >
-              Q
-            </Typography>
-            <Typography
-              type='body3'
-              color={theme.colors.text.general}
-              className='title'
-            >
-              {question.title}
-            </Typography>
-            <Icon type='right' hoverAction={false} />
-          </ListItem>
-        </CustomLink>
+        <ListItem
+          key={question.title}
+          data-title={question.title}
+          data-url={question.url}
+          onClick={handleClickListItem}
+        >
+          <Typography
+            type='body3'
+            color={theme.palette.gray200}
+            className='question-mark'
+          >
+            Q
+          </Typography>
+          <Typography
+            type='body3'
+            color={theme.colors.text.general}
+            className='title'
+          >
+            {question.title}
+          </Typography>
+          <Icon type='right' hoverAction={false} />
+        </ListItem>
       ))}
     </Wrapper>
   );

@@ -5,10 +5,10 @@ import { TeamValueType } from '@gdsc-uos-recruit-page/design-system/@types/Team'
 import {
   get400Color,
   getJobByTeam,
-  getPrimaryColor,
   getTitleCaseTeam,
 } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { useRouter } from 'next/router';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 interface TeamProps {
   type: TeamValueType;
@@ -17,10 +17,12 @@ interface TeamProps {
 function TeamCard({ type }: TeamProps) {
   const [team, Developer] = getJobByTeam(type); // [0]: Team, [1]: Developer
   const router = useRouter();
+  const { logEvent } = useGA();
 
   const handleClickNav = useCallback(() => {
+    logEvent('route(team)', `move to ${type}`);
     router.push(`/introduction/${type}`);
-  }, [router, type]);
+  }, [router, type, logEvent]);
 
   return (
     <Wrapper type={type}>
@@ -65,7 +67,7 @@ const Wrapper = styled.section<TeamProps>`
   }
 
   &:hover {
-    background-color: ${(props) => getPrimaryColor(props.type)};
+    background-color: ${(props) => theme.colors.team[props.type]};
   }
 `;
 

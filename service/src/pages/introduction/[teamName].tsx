@@ -3,9 +3,11 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Introduction } from '../../components/common';
 import { Activity, AsideCard, Introduce } from '../../components/Introduction';
-import { TeamKeyType, IntroductionType } from '../../../@types';
+import { IntroductionType } from '../../../@types';
 import { IntroductionContent } from '../../constants';
 
 interface IntroductionProps {
@@ -18,19 +20,23 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
   teamName,
 }) => {
   const router = useRouter();
+  const { logEvent, logPageView } = useGA();
+  logPageView(`/introduction/${teamName}`);
 
   const handleClickSupportBtn = () => {
+    logEvent('Application', `click ${teamName} application`);
     router.push(`/qna/${teamName}`);
   };
 
   const handleClickQuestionListBtn = () => {
+    logEvent('Click(Question)', `click ${teamName} question`);
     router.push(`/qna/${teamName}`);
   };
 
   return (
     <>
       <Layout>
-        <Banner />
+        <Banner teamName={teamName} />
         <Wrapper>
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
@@ -38,6 +44,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
             <Activity activies={introduction.activities} />
           </ContentsWrapper>
           <AsideCard
+            teamName={teamName}
             aside={introduction.aside}
             handleClickQuestionListBtn={handleClickQuestionListBtn}
             handleClickSupportBtn={handleClickSupportBtn}

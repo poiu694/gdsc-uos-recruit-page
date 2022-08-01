@@ -1,16 +1,15 @@
 import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import styled from '@emotion/styled';
+import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
-import { TeamKeyType } from '../../../@types/team';
 import { QuestionListItem } from '../../../@types/question';
 import { Introduction } from '../../components/common';
 import { TeamList } from '../../components/Qna';
 import QuestionList from '../../components/Qna/QuestionList';
 import { QuestionContent } from '../../constants/';
-import { TitleOneDesc } from '../../../@types';
-import { getQuestion } from '../../utils';
 
 interface Params extends ParsedUrlQuery {
   teamName: TeamKeyType;
@@ -22,10 +21,13 @@ interface QnaListPageProps {
 }
 
 const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
+  const { logPageView } = useGA();
+  logPageView(`/qna/${teamName}`);
+
   return (
     <>
       <Layout>
-        <Banner />
+        <Banner teamName={teamName} />
         <IntroductionWrapper>
           <Introduction
             title='자주 묻는 질문'
