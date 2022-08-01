@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import styled from '@emotion/styled';
-import { useAOS } from '@gdsc-uos-recruit-page/hooks';
+import { useAOS, useGA } from '@gdsc-uos-recruit-page/hooks';
 import useSWR from 'swr';
 
 import { fetcher } from '../../src/utils';
@@ -9,6 +9,8 @@ import { MainBanner, MainProcess, MainTeam } from '../components';
 
 const Home: NextPage = () => {
   const { data, error } = useSWR('/api/main', fetcher);
+  const { logPageView } = useGA();
+  logPageView('/');
   useAOS();
 
   if (error) return <div>Failed to load</div>;

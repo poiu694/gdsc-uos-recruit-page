@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -20,6 +21,7 @@ const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
 function TeamList({ teamName }: TeamListProps) {
   const [isActive, setIsActive] = useState(initalIsActive(teams, teamName!));
   const router = useRouter();
+  const { logEvent } = useGA();
 
   const handleClickTeamItem = useCallback(
     (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
@@ -27,9 +29,10 @@ function TeamList({ teamName }: TeamListProps) {
       const nextIsActive = new Array(teams.length).fill(false);
       nextIsActive[Number(indexToUpdate)] = true;
       setIsActive(nextIsActive);
+      logEvent('Click(TeamQuestion)', `${dataset.title} click`);
       router.push(dataset.url as string);
     },
-    []
+    [logEvent, router]
   );
 
   return (
@@ -39,6 +42,7 @@ function TeamList({ teamName }: TeamListProps) {
           id={`${idx}`}
           onClick={handleClickTeamItem}
           key={team.title}
+          data-team={team.title}
           data-url={team.url}
         >
           <Typography

@@ -3,15 +3,18 @@ import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
 import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 function Header() {
   const router = useRouter();
+  const { logEvent } = useGA();
 
   const handleLinkToPage = useCallback(
     (url: string) => {
+      logEvent('route(head)', `move to ${url}`);
       router.push(url);
     },
-    [router]
+    [router, logEvent]
   );
 
   return (

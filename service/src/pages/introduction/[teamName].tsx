@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Introduction } from '../../components/common';
 import { Activity, AsideCard, Introduce } from '../../components/Introduction';
 import { TeamKeyType, IntroductionType } from '../../../@types';
@@ -18,12 +19,16 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
   teamName,
 }) => {
   const router = useRouter();
+  const { logEvent, logPageView } = useGA();
+  logPageView(`/introduction/${teamName}`);
 
   const handleClickSupportBtn = () => {
+    logEvent('Application', `click ${teamName} application`);
     router.push(`/qna/${teamName}`);
   };
 
   const handleClickQuestionListBtn = () => {
+    logEvent('Click(Question)', `click ${teamName} question`);
     router.push(`/qna/${teamName}`);
   };
 
