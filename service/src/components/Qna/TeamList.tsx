@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
+import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { teams } from '../../constants';
-import { TeamKeyType } from '../../../@types/team';
 import { QuestionListItem } from '../../../@types/question';
 
 interface TeamListProps {

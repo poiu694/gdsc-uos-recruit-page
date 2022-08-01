@@ -18,7 +18,7 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
 
   return (
     <Layout>
-      <Banner />
+      <Banner teamName={question?.type ?? 'frontend'} />
       <IntroductionWrapper>
         <Introduction
           title='자주 묻는 질문'
@@ -26,7 +26,7 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
         />
       </IntroductionWrapper>
       <ContentsWrapper>
-        <TeamList />
+        <TeamList teamName={question?.type} />
         <QuestionBox question={question} />
       </ContentsWrapper>
     </Layout>

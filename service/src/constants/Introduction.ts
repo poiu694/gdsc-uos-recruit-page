@@ -1,4 +1,5 @@
-import { IntroductionType, TeamContent } from '../../@types';
+import { TeamContent } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { IntroductionType } from '../../@types';
 
 const FrontEndIntroduction = {
   title: 'Frontend Developer',

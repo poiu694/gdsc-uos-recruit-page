@@ -1,4 +1,5 @@
-import { QuestionListItem, TeamContent } from '../../@types';
+import { TeamContent } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { QuestionListItem } from '../../@types';
 
 const CommonQuestion = [
   {
