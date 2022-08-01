@@ -5,7 +5,6 @@ import { TeamValueType } from '@gdsc-uos-recruit-page/design-system/@types/Team'
 import {
   get400Color,
   getJobByTeam,
-  getPrimaryColor,
   getTitleCaseTeam,
 } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { useRouter } from 'next/router';
@@ -68,7 +67,7 @@ const Wrapper = styled.section<TeamProps>`
   }
 
   &:hover {
-    background-color: ${(props) => getPrimaryColor(props.type)};
+    background-color: ${(props) => theme.colors.team[props.type]};
   }
 `;
 

@@ -1,15 +1,22 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import {
+  get200Color,
+  get400Color,
+} from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 
 import type { AsideCardType } from '../../../@types/';
 
 interface AsideCardProps {
+  teamName: TeamKeyType;
   aside: AsideCardType;
   handleClickQuestionListBtn: () => void;
   handleClickSupportBtn: () => void;
 }
 
 function AsideCard({
+  teamName,
   aside,
   handleClickQuestionListBtn,
   handleClickSupportBtn,
@@ -34,15 +41,16 @@ function AsideCard({
             요구사항
           </Typography>
           <Needs>
-            {aside.needs.map((need) => (
+            {aside.needs.map((need, idx) => (
               <Typography type='body4' key={need}>
                 {need}
+                {idx !== aside.needs.length - 1 ? ',' : ''}
               </Typography>
             ))}
           </Needs>
         </Line>
       </CardWrapper>
-      <ButtonWrapper>
+      <ButtonWrapper teamName={teamName}>
         <Typography
           type='h6'
           role='button'
@@ -56,7 +64,7 @@ function AsideCard({
           type='h6'
           role='button'
           textAlign='center'
-          color={theme.colors.primary.yellow}
+          color={theme.colors.team[teamName]}
           onClick={handleClickQuestionListBtn}
         >
           자주 묻는 질문
@@ -110,10 +118,14 @@ const Line = styled.span`
 
 const Needs = styled.span`
   display: flex;
-  gap: 8px;
+  gap: 4px;
 `;
 
-const ButtonWrapper = styled.div`
+interface TeamNameProps {
+  teamName: TeamKeyType;
+}
+
+const ButtonWrapper = styled.div<TeamNameProps>`
   width: 100%;
 
   & > div {
@@ -126,12 +138,12 @@ const ButtonWrapper = styled.div`
   }
 
   & > div:nth-of-type(1) {
-    background-color: ${theme.colors.primary.yellow};
+    background-color: ${(props) => theme.colors.team[props.teamName]};
   }
 
   & > div:last-of-type {
-    background-color: ${theme.palette.yellow200};
-    border: 1px solid ${theme.palette.yellow400};
+    background-color: ${(props) => get200Color(props.teamName)};
+    border: 1px solid ${(props) => get400Color(props.teamName)};
   }
 `;
 

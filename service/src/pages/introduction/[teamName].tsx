@@ -44,6 +44,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
             <Activity activies={introduction.activities} />
           </ContentsWrapper>
           <AsideCard
+            teamName={teamName}
             aside={introduction.aside}
             handleClickQuestionListBtn={handleClickQuestionListBtn}
             handleClickSupportBtn={handleClickSupportBtn}
