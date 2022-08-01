@@ -2,6 +2,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import styled from '@emotion/styled';
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 import { TeamKeyType } from '../../../@types/team';
 import { QuestionListItem } from '../../../@types/question';
@@ -9,7 +10,6 @@ import { Introduction } from '../../components/common';
 import { TeamList } from '../../components/Qna';
 import QuestionList from '../../components/Qna/QuestionList';
 import { QuestionContent } from '../../constants/';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 interface Params extends ParsedUrlQuery {
   teamName: TeamKeyType;

@@ -23,7 +23,7 @@ function TeamCard({ type }: TeamProps) {
   const handleClickNav = useCallback(() => {
     logEvent('route(team)', `move to ${type}`);
     router.push(`/introduction/${type}`);
-  }, [router, type]);
+  }, [router, type, logEvent]);
 
   return (
     <Wrapper type={type}>

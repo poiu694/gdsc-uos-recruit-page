@@ -14,7 +14,7 @@ function Header() {
       logEvent('route(head)', `move to ${url}`);
       router.push(url);
     },
-    [router]
+    [router, logEvent]
   );
 
   return (

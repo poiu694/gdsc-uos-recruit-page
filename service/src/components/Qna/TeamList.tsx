@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { teams } from '../../constants';
 import { TeamKeyType } from '../../../@types/team';
 import { QuestionListItem } from '../../../@types/question';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 interface TeamListProps {
   teamName?: TeamKeyType;
@@ -32,7 +32,7 @@ function TeamList({ teamName }: TeamListProps) {
       logEvent('Click(TeamQuestion)', `${dataset.title} click`);
       router.push(dataset.url as string);
     },
-    []
+    [logEvent, router]
   );
 
   return (
