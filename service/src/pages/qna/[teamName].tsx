@@ -1,8 +1,9 @@
 import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
-import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { Banner } from '@gdsc-uos-recruit-page/design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 import { QuestionListItem } from '../../../@types/question';
@@ -79,14 +80,16 @@ const IntroductionWrapper = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
+  ${({ theme }) => css`
+    width: 80%;
+    margin: 0 auto;
 
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: ${theme.size.mobile}px) {
-    flex-direction: column-reverse;
-  }
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: ${theme.size.mobile}px) {
+      flex-direction: column-reverse;
+    }
+  `}
 `;
 
 export default QnaListPage;

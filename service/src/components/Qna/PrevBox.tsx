@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import { useRouter } from 'next/router';
@@ -16,35 +17,37 @@ function PrevBox() {
 }
 
 const Wrapper = styled.div`
-  width: 15em;
-  padding: 4px;
-  margin-bottom: 12px;
+  ${({ theme }) => css`
+    width: 15em;
+    padding: 4px;
+    margin-bottom: 12px;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  cursor: pointer;
-
-  @media (max-width: ${theme.size.mobile}px) {
-    margin-bottom: 0;
-  }
-
-  svg {
-    margin-top: 2px;
-    margin-right: 8px;
+    cursor: pointer;
 
     @media (max-width: ${theme.size.mobile}px) {
-      width: 16px;
+      margin-bottom: 0;
     }
-  }
 
-  &:hover {
-    background-color: ${theme.colors.ui.hover};
+    svg {
+      margin-top: 2px;
+      margin-right: 8px;
 
-    .body4 {
-      color: ${theme.colors.text.bold};
+      @media (max-width: ${theme.size.mobile}px) {
+        width: 16px;
+      }
     }
-  }
+
+    &:hover {
+      background-color: ${theme.colors.ui.hover};
+
+      .body4 {
+        color: ${theme.colors.text.bold};
+      }
+    }
+  `}
 `;
 
 export default PrevBox;

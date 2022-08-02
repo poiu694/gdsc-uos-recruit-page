@@ -1,7 +1,7 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import {
   Circle,
-  theme,
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
@@ -63,35 +63,38 @@ const Wrapper = styled.div`
 `;
 
 const CircleList = styled.ul`
-  display: flex;
-  justify-content: space-between;
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
 
-  padding: 0;
-  margin-top: 3em;
+    padding: 0;
+    margin-top: 3em;
 
-  @media (min-width: ${theme.size.tabletL + 300}px) {
-    margin-top: 8em;
-  }
+    @media (min-width: ${theme.size.tabletL + 300}px) {
+      margin-top: 8em;
+    }
 
-  @media (max-width: ${theme.size.tabletL}px) {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-  }
+    @media (max-width: ${theme.size.tabletL}px) {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-  @media (max-width: ${theme.size.tabletS}px) {
-    width: 53.6rem;
-  }
+    @media (max-width: ${theme.size.tabletS}px) {
+      width: 53.6rem;
+    }
 
-  @media (max-width: ${theme.size.mobile}px) {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+  `}
 `;
 
 const CircleItem = styled.li`
+  ${({ theme }) => css`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -153,14 +156,17 @@ const CircleItem = styled.li`
       }
     }
   };
+  `}
 `;
 
 const TitleWrapper = styled.div`
-  margin-bottom: 5em;
+  ${({ theme }) => css`
+    margin-bottom: 5em;
 
-  @media (max-width: ${theme.size.mobile}px) {
-    margin-bottom: 2em;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      margin-bottom: 2em;
+    }
+  `}
 `;
 
 export default MainProcess;

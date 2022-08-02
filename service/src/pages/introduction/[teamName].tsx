@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
@@ -97,16 +98,18 @@ const Wrapper = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
-  width: 80%;
+  ${({ theme }) => css`
+    width: 80%;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  margin-right: 64px;
-  @media (max-width: ${theme.size.mobile}px) {
-    width: 100%;
-    margin: 0;
-  }
+    margin-right: 64px;
+    @media (max-width: ${theme.size.mobile}px) {
+      width: 100%;
+      margin: 0;
+    }
+  `}
 `;
 
 export default IntroductionPage;
