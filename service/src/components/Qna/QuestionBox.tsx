@@ -13,7 +13,7 @@ function QuestionBox({ question }: QuestionBoxProps) {
     <Wrapper>
       <PrevBox />
       <TitleWrapper>
-        <Typography type='h3'>{question?.title}</Typography>
+        <Typography type='h2'>{question?.title}</Typography>
       </TitleWrapper>
       <ContentWrapper>
         <Typography type='body3' color={theme.colors.text.general}>
