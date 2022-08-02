@@ -1,5 +1,6 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { Banner } from '@gdsc-uos-recruit-page/design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
@@ -19,12 +20,10 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
   return (
     <Layout>
       <Banner teamName={question?.type ?? 'frontend'} />
-      <IntroductionWrapper>
-        <Introduction
-          title='자주 묻는 질문'
-          desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
-        />
-      </IntroductionWrapper>
+      <IntroductionWrapper
+        title='자주 묻는 질문'
+        desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
+      />
       <ContentsWrapper>
         <TeamList teamName={question?.type} />
         <QuestionBox question={question} />
@@ -62,25 +61,29 @@ const Layout = styled.div`
   margin-bottom: 100px;
 `;
 
-const IntroductionWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
+const IntroductionWrapper = styled(Introduction)`
+  ${({ theme }) => css`
+    width: 80%;
+    margin: 0 auto;
 
-  @media (max-width: ${theme.size.mobile}px) {
-    display: none;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      display: none;
+    }
+  `}
 `;
 
 const ContentsWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
+  ${({ theme }) => css`
+    width: 80%;
+    margin: 0 auto;
 
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: ${theme.size.mobile}px) {
-    flex-direction: column-reverse;
-    gap: 0;
-  }
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: ${theme.size.mobile}px) {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+  `}
 `;
 
 export default QnaPage;

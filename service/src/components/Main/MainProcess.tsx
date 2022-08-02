@@ -9,7 +9,6 @@ import { ProcessCircleType } from '@gdsc-uos-recruit-page/design-system/componen
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 
 import { TitleOneDesc, TitleTwoDesc } from '../../../@types';
-import { StyledAOSEmptyWrapper } from '.';
 
 interface MainProcessProps {
   content: TitleTwoDesc;
@@ -24,18 +23,13 @@ function MainProcess({ content, circle }: MainProcessProps) {
           Process
         </Typography>
       </TitleWrapper>
-      <StyledAOSEmptyWrapper
+      <Title
+        title={content.title}
+        desc1={content.desc1}
+        desc2={content.desc2}
         data-aos='fade-up'
         data-aos-duration={defaultDuration}
-      >
-        <Title
-          title={content.title}
-          desc1={content.desc1}
-          desc2={content.desc2}
-          data-aos='fade-up'
-          data-aos-duration={defaultDuration}
-        />
-      </StyledAOSEmptyWrapper>
+      />
       <CircleList>
         {circle.map((content, idx) => (
           <CircleItem

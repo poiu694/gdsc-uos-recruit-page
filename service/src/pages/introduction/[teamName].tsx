@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
@@ -7,12 +8,11 @@ import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Introduction } from '../../components/common';
 import { Activity, AsideCard, Introduce } from '../../components/Introduction';
-import { IntroductionType } from '../../../@types';
+import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
 
-interface IntroductionProps {
+interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;
-  teamName: TeamKeyType;
 }
 
 const IntroductionPage: NextPage<IntroductionProps> = ({
@@ -98,15 +98,18 @@ const Wrapper = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
-  width: 80%;
+  ${({ theme }) => css`
+    width: 80%;
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  margin-right: 64px;
-  @media (max-width: ${theme.size.mobile}px) {
-    margin: 0;
-  }
+    margin-right: 64px;
+    @media (max-width: ${theme.size.mobile}px) {
+      width: 100%;
+      margin: 0;
+    }
+  `}
 `;
 
 export default IntroductionPage;

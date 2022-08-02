@@ -1,15 +1,14 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import {
   get200Color,
   get400Color,
 } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 
-import type { AsideCardType } from '../../../@types/';
+import type { AsideCardType, TeamNameProps } from '../../../@types/';
 
-interface AsideCardProps {
-  teamName: TeamKeyType;
+interface AsideCardProps extends TeamNameProps {
   aside: AsideCardType;
   handleClickQuestionListBtn: () => void;
   handleClickSupportBtn: () => void;
@@ -75,45 +74,51 @@ function AsideCard({
 }
 
 const Wrapper = styled.aside`
-  white-space: nowrap;
+  ${({ theme }) => css`
+    white-space: nowrap;
 
-  @media (max-width: ${theme.size.mobile}px) {
-    min-width: 90%;
-    margin-top: 32px;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      min-width: 90%;
+      margin-top: 32px;
+    }
+  `}
 `;
 
 const CardWrapper = styled.div`
-  width: 100%;
-  padding: 8px;
+  ${({ theme }) => css`
+    width: 100%;
+    padding: 8px;
 
-  border: 1px solid ${theme.colors.ui.divider};
-  border-radius: 5px;
+    border: 1px solid ${theme.colors.ui.divider};
+    border-radius: 5px;
 
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.padding.md}px;
+    display: flex;
+    flex-direction: column;
+    gap: ${theme.padding.md}px;
 
-  span:last-of-type {
-    border: 0;
-  }
+    span:last-of-type {
+      border: 0;
+    }
+  `}
 `;
 
 const Line = styled.span`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-
-  padding-bottom: 4px;
-  border-bottom: 1px solid ${theme.palette.gray50};
-
-  @media (max-width: ${theme.size.tabletL}px) {
-    grid-template-columns: 1fr;
-    padding-bottom: 8px;
-  }
-
-  @media (max-width: ${theme.size.mobile}px) {
+  ${({ theme }) => css`
+    display: grid;
     grid-template-columns: 1fr 2fr;
-  }
+
+    padding-bottom: 4px;
+    border-bottom: 1px solid ${theme.palette.gray50};
+
+    @media (max-width: ${theme.size.tabletL}px) {
+      grid-template-columns: 1fr;
+      padding-bottom: 8px;
+    }
+
+    @media (max-width: ${theme.size.mobile}px) {
+      grid-template-columns: 1fr 2fr;
+    }
+  `}
 `;
 
 const Needs = styled.span`
@@ -121,30 +126,28 @@ const Needs = styled.span`
   gap: 4px;
 `;
 
-interface TeamNameProps {
-  teamName: TeamKeyType;
-}
-
 const ButtonWrapper = styled.div<TeamNameProps>`
-  width: 100%;
-
-  & > div {
+  ${({ theme, teamName }) => css`
     width: 100%;
-    padding: 8px;
-    margin-top: ${theme.padding.md}px;
-    border-radius: 15px;
 
-    cursor: pointer;
-  }
+    & > div {
+      width: 100%;
+      padding: 8px;
+      margin-top: ${theme.padding.md}px;
+      border-radius: 15px;
 
-  & > div:nth-of-type(1) {
-    background-color: ${(props) => theme.colors.team[props.teamName]};
-  }
+      cursor: pointer;
+    }
 
-  & > div:last-of-type {
-    background-color: ${(props) => get200Color(props.teamName)};
-    border: 1px solid ${(props) => get400Color(props.teamName)};
-  }
+    & > div:nth-of-type(1) {
+      background-color: ${theme.colors.team[teamName]};
+    }
+
+    & > div:last-of-type {
+      background-color: ${get200Color(teamName)};
+      border: 1px solid ${get400Color(teamName)};
+    }
+  `}
 `;
 
 export default AsideCard;
