@@ -112,6 +112,7 @@ const BottomNav = styled.button`
     width: 30%;
     height: 100%;
     right: 0;
+    border: none;
 
     border-radius: 0px 15px 15px 0;
   }
