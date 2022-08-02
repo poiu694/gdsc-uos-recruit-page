@@ -1,15 +1,13 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import {
   get200Color,
   get400Color,
 } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 
-import type { AsideCardType } from '../../../@types/';
+import type { AsideCardType, TeamNameProps } from '../../../@types/';
 
-interface AsideCardProps {
-  teamName: TeamKeyType;
+interface AsideCardProps extends TeamNameProps {
   aside: AsideCardType;
   handleClickQuestionListBtn: () => void;
   handleClickSupportBtn: () => void;
@@ -120,10 +118,6 @@ const Needs = styled.span`
   display: flex;
   gap: 4px;
 `;
-
-interface TeamNameProps {
-  teamName: TeamKeyType;
-}
 
 const ButtonWrapper = styled.div<TeamNameProps>`
   width: 100%;

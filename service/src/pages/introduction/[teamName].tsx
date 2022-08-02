@@ -7,12 +7,11 @@ import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Introduction } from '../../components/common';
 import { Activity, AsideCard, Introduce } from '../../components/Introduction';
-import { IntroductionType } from '../../../@types';
+import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
 
-interface IntroductionProps {
+interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;
-  teamName: TeamKeyType;
 }
 
 const IntroductionPage: NextPage<IntroductionProps> = ({

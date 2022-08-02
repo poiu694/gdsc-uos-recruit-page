@@ -10,14 +10,14 @@ import { Introduction } from '../../components/common';
 import { TeamList } from '../../components/Qna';
 import QuestionList from '../../components/Qna/QuestionList';
 import { QuestionContent } from '../../constants/';
+import { TeamNameProps } from '../../../@types';
 
 interface Params extends ParsedUrlQuery {
   teamName: TeamKeyType;
 }
 
-interface QnaListPageProps {
+interface QnaListPageProps extends TeamNameProps {
   questions: QuestionListItem[];
-  teamName: TeamKeyType;
 }
 
 const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
@@ -36,7 +36,7 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
         </IntroductionWrapper>
         <ContentsWrapper>
           <TeamList teamName={teamName} />
-          <QuestionList questions={questions} />
+          <QuestionList questions={questions} teamName={teamName} />
         </ContentsWrapper>
       </Layout>
     </>

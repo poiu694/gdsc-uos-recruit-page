@@ -8,8 +8,7 @@ import { useRouter } from 'next/router';
 
 import { TeamNameProps, QuestionListItem } from '../../../@types';
 
-interface QuestionListProps {
-  teamName: TeamKeyType;
+interface QuestionListProps extends TeamNameProps{
   questions: QuestionListItem[];
 }
 
