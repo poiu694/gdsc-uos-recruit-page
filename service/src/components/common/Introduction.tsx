@@ -2,14 +2,14 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-interface IntroductionProps {
+interface IntroductionProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   desc: string;
 }
 
-function Introduction({ title, desc }: IntroductionProps) {
+function Introduction({ title, desc, ...restProps }: IntroductionProps) {
   return (
-    <ContentsWrapper>
+    <ContentsWrapper {...restProps}>
       <Typography type='h1'>{title}</Typography>
       <Typography type='body3' color={theme.colors.text.general}>
         {desc}

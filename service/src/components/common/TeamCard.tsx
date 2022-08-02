@@ -23,11 +23,9 @@ function TeamCard({ teamName }: TeamNameProps) {
 
   return (
     <Wrapper teamName={teamName}>
-      <Title>
-        <Typography type='h4' color={theme.colors.primary.white}>
-          {getTitleCaseTeam(teamName)}
-        </Typography>
-      </Title>
+      <TitleWrapper type='h4' color={theme.colors.primary.white}>
+        {getTitleCaseTeam(teamName)}
+      </TitleWrapper>
 
       <Description>
         <Typography type='h6' color={theme.palette.gray50}>
@@ -70,7 +68,7 @@ const Wrapper = styled.section<TeamNameProps>`
   `}
 `;
 
-const Title = styled.div`
+const TitleWrapper = styled(Typography)`
   ${({ theme }) => css`
     padding: ${theme.padding.xlg}px;
 

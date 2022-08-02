@@ -29,9 +29,7 @@ function MainBanner({ banner }: MainBannerProps) {
           </Typography>
         </TitleWrapper>
         <Typography type='h2'>University of Seoul</Typography>
-        <DescWrapper>
-          <Typography type='h6'>{banner}</Typography>
-        </DescWrapper>
+        <DescWrapper type='h6'>{banner}</DescWrapper>
       </ContentsWrapper>
       <Planet />
     </Wrapper>
@@ -67,7 +65,7 @@ const TitleWrapper = styled.div`
   column-gap: 12px;
 `;
 
-const DescWrapper = styled.div`
+const DescWrapper = styled(Typography)`
   margin-top: 16px;
 `;
 

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { Typography } from '@gdsc-uos-recruit-page/design-system';
 
 import { QuestionListItem } from '../../../@types/question';
 import PrevBox from './PrevBox';
@@ -13,14 +13,8 @@ function QuestionBox({ question }: QuestionBoxProps) {
   return (
     <Wrapper>
       <PrevBox />
-      <TitleWrapper>
-        <Typography type='h2'>{question?.title}</Typography>
-      </TitleWrapper>
-      <ContentWrapper>
-        <Typography type='body3' color={theme.colors.text.general}>
-          {question?.desc}
-        </Typography>
-      </ContentWrapper>
+      <TitleWrapper type='h2'>{question?.title}</TitleWrapper>
+      <ContentWrapper type='body3'>{question?.desc} </ContentWrapper>
     </Wrapper>
   );
 }
@@ -49,7 +43,7 @@ const Wrapper = styled.div`
   `}
 `;
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled(Typography)`
   ${({ theme }) => css`
     padding-bottom: ${theme.padding.md}px;
 
@@ -57,7 +51,7 @@ const TitleWrapper = styled.div`
   `}
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled(Typography)`
   ${({ theme }) => css`
     margin-top: ${theme.padding.md}px;
 

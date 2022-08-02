@@ -5,7 +5,6 @@ import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 
 import { TeamCard } from '../common';
 import { TitleTwoDesc } from '../../../@types';
-import { StyledAOSEmptyWrapper } from '.';
 
 interface MainTeamProps {
   content: TitleTwoDesc;
@@ -19,16 +18,13 @@ function MainTeam({ content }: MainTeamProps) {
           Team
         </Typography>
       </TitleWrapper>
-      <StyledAOSEmptyWrapper
+      <Title
         data-aos='fade-up'
         data-aos-duration={defaultDuration}
-      >
-        <Title
-          title={content.title}
-          desc1={content.desc1}
-          desc2={content.desc2}
-        />
-      </StyledAOSEmptyWrapper>
+        title={content.title}
+        desc1={content.desc1}
+        desc2={content.desc2}
+      />
       <TeamCardWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
         <TeamCard teamName='frontend' />
         <TeamCard teamName='backend' />
