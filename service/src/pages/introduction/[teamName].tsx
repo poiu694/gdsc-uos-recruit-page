@@ -104,6 +104,7 @@ const ContentsWrapper = styled.div`
 
   margin-right: 64px;
   @media (max-width: ${theme.size.mobile}px) {
+    width: 100%;
     margin: 0;
   }
 `;
