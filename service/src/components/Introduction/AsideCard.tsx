@@ -24,24 +24,24 @@ function AsideCard({
     <Wrapper>
       <CardWrapper>
         <Line>
-          <Typography type='body3' color={theme.palette.gray200}>
+          <Typography type='body4' color={theme.palette.gray200}>
             소속
           </Typography>
-          <Typography type='body3'>{aside.team}</Typography>
+          <Typography type='body4'>{aside.team}</Typography>
         </Line>
         <Line>
-          <Typography type='body3' color={theme.palette.gray200}>
+          <Typography type='body4' color={theme.palette.gray200}>
             경력사항
           </Typography>
-          <Typography type='body3'>{aside.experience}</Typography>
+          <Typography type='body4'>{aside.experience}</Typography>
         </Line>
         <Line>
-          <Typography type='body3' color={theme.palette.gray200}>
+          <Typography type='body4' color={theme.palette.gray200}>
             요구사항
           </Typography>
           <Needs>
             {aside.needs.map((need, idx) => (
-              <Typography type='body3' key={need}>
+              <Typography type='body4' key={need}>
                 {need}
                 {idx !== aside.needs.length - 1 ? ',' : ''}
               </Typography>
@@ -80,6 +80,10 @@ const Wrapper = styled.aside`
     @media (max-width: ${theme.size.mobile}px) {
       min-width: 90%;
       margin-top: 32px;
+
+      div.body4 {
+        font-size: 14px;
+      }
     }
   `}
 `;
