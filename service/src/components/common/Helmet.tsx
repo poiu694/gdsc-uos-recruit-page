@@ -36,7 +36,6 @@ function Helmet({
           }),
         }}
       />
-
       {/* favicon */}
       <link rel='apple-touch-icon' sizes='57x57' href='/apple-icon-57x57.png' />
       <link rel='apple-touch-icon' sizes='60x60' href='/apple-icon-60x60.png' />
@@ -91,15 +90,14 @@ function Helmet({
         sizes='16x16'
         href='/favicon-16x16.png'
       />
+      <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
       <link rel='manifest' href='/manifest.json' />
       <meta name='msapplication-TileColor' content='#ffffff' />
       <meta name='msapplication-TileImage' content='/ms-icon-144x144.png' />
       <meta name='theme-color' content='#ffffff' />
-
       <title>{`GDSC | ${title}`}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content='GDSC,UOS,RECRUIT,GDSC UOS' />
-
       {/* for mobile */}
       <meta property='og:type' content='website' />
       <meta property='og:title' content={`GDSC | ${title}`} />
@@ -107,7 +105,6 @@ function Helmet({
       <meta property='og:description' content={description} />
       <meta property='og:image' content='/logo128.png' />
       <meta property='og:url' content={url} />
-
       {isRoot && <link rel='canonical' href={baseURL} />}
     </Head>
   );

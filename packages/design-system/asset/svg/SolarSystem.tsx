@@ -206,7 +206,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     top: 10%;
-    left: 20%;
+    left: 0;
   }
 
   .sun-system-bg,
