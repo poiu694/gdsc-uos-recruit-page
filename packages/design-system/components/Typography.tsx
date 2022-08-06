@@ -14,9 +14,6 @@ interface TypographyProps extends React.HTMLAttributes<HTMLDivElement> {
   color?: PalleteValueType;
 }
 
-interface TypographyPropsWithChildren
-  extends PropsWithChildren<TypographyProps> {}
-
 function Typography({
   type,
   className,
@@ -25,7 +22,7 @@ function Typography({
   textAlign = 'start',
   color = colors.text.general,
   ...restProps
-}: TypographyPropsWithChildren) {
+}: PropsWithChildren<TypographyProps>) {
   return (
     <Wrapper
       type={type}

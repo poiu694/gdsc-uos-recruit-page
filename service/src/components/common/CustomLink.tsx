@@ -2,13 +2,14 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { AnchorHTMLAttributes, PropsWithChildren } from 'react';
 
-interface CustomLink extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface CustomLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
 }
-
-interface CustomLinkProps extends PropsWithChildren<CustomLink> {}
-
-function CustomLink({ href, children, ...restProps }: CustomLinkProps) {
+function CustomLink({
+  href,
+  children,
+  ...restProps
+}: PropsWithChildren<CustomLinkProps>) {
   return (
     <Link href={href} passHref {...restProps}>
       <Wrapper>{children}</Wrapper>

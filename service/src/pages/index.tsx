@@ -6,6 +6,7 @@ import useSWR from 'swr';
 import { fetcher } from '../../src/utils';
 
 import { MainBanner, MainProcess, MainTeam } from '../components';
+import { Helmet } from '../components/common';
 
 const Home: NextPage = () => {
   const { data, error } = useSWR('/api/main', fetcher);
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
+      <Helmet title='메인' description='GDSC UOS RECRUIT 메인 페이지'/>
       <MainBanner banner={data.banner} />
       <MainProcess
         content={data.process.content}

@@ -7,10 +7,7 @@ import { useRouter } from 'next/router';
 
 import { teams } from '../../constants';
 import { QuestionListItem } from '../../../@types/question';
-
-interface TeamListProps {
-  teamName?: TeamKeyType;
-}
+import { TeamNameProps } from '../../../@types';
 
 const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
   return new Array(teams.length)
@@ -18,7 +15,7 @@ const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
     .map((_, idx) => teamName === teams[idx].type);
 };
 
-function TeamList({ teamName }: TeamListProps) {
+function TeamList({ teamName }: TeamNameProps) {
   const [isActive, setIsActive] = useState(initalIsActive(teams, teamName!));
   const router = useRouter();
   const { logEvent } = useGA();

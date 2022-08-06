@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
 import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
@@ -55,6 +56,7 @@ const Wrapper = styled.header`
   width: 100%;
   height: 60px;
   margin: 0 auto;
+  padding-top: 10px;
 
   position: fixed;
   top: 0;
@@ -65,6 +67,12 @@ const Wrapper = styled.header`
 
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: blur(4px);
+
+  @media (max-width: ${theme.size.mobile}px) {
+    div.body4 {
+      font-size: 14px;
+    }
+  }
 `;
 
 const NavigationWrapper = styled.header`
@@ -73,39 +81,44 @@ const NavigationWrapper = styled.header`
 `;
 
 const Navigation = styled.nav`
-  display: flex;
-  float: right;
+  ${({ theme }) => css`
+    display: flex;
+    float: right;
 
-  gap: ${theme.padding.md}px;
-  @media (max-width: ${theme.size.mobile}px) {
-    gap: 8px;
-  }
+    gap: ${theme.padding.md}px;
+    @media (max-width: ${theme.size.mobile}px) {
+      gap: 8px;
+    }
 
-  .body4 {
-    cursor: pointer;
-  }
+    .body4 {
+      cursor: pointer;
+    }
+  `}
 `;
 
 const Logo = styled.div`
-  width: 300px;
-  height: 40px;
+  ${({ theme }) => css`
+    width: 300px;
+    height: 40px;
 
-  position: absolute;
-  top: 10px;
+    position: absolute;
+    top: 10px;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  picture,
-  picture img {
-    width: 100%;
-    height: 100%;
-  }
+    picture,
+    picture img {
+      width: 100%;
+      height: 100%;
+      padding-top: 10px;
+    }
 
-  @media (max-width: ${theme.size.mobile}px) {
-    width: 40px;
-    height: 20px;
-    top: 20px;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      width: 40px;
+      height: 20px;
+      top: 20px;
+    }
+  `}
 `;
 
 export default Header;

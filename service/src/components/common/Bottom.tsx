@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
 import Icon from '@gdsc-uos-recruit-page/design-system/components/Icon';
@@ -47,8 +48,10 @@ const Wrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  display: flex;
-  gap: ${theme.padding.md}px;
+  ${({ theme }) => css`
+    display: flex;
+    gap: ${theme.padding.md}px;
+  `}
 `;
 
 export default Bottom;
