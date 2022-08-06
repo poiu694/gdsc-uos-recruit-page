@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { Introduction } from '../../components/common';
+import { Helmet, Introduction } from '../../components/common';
 import { Activity, AsideCard, Introduce } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
@@ -35,6 +35,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
 
   return (
     <>
+      <Helmet title='소개' description='GDSC UOS RECRUIT 소개 페이지' />
       <Layout>
         <Banner teamName={teamName} />
         <Wrapper>

@@ -5,7 +5,7 @@ import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { QuestionListItem } from '../../../../@types/question';
-import { Introduction } from '../../../components/common';
+import { Helmet, Introduction } from '../../../components/common';
 import { QuestionBox, TeamList } from '../../../components/Qna';
 import { QuestionContent } from '../../../constants';
 
@@ -18,17 +18,20 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
   logPageView(`/qna/detail/${question?.id ?? ''}`);
 
   return (
-    <Layout>
-      <Banner teamName={question?.type ?? 'frontend'} />
-      <IntroductionWrapper
-        title='자주 묻는 질문'
-        desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
-      />
-      <ContentsWrapper>
-        <TeamList teamName={question?.type} />
-        <QuestionBox question={question} />
-      </ContentsWrapper>
-    </Layout>
+    <>
+      <Helmet title='질문' description='GDSC UOS RECRUIT 질문 페이지' />
+      <Layout>
+        <Banner teamName={question?.type ?? 'frontend'} />
+        <IntroductionWrapper
+          title='자주 묻는 질문'
+          desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
+        />
+        <ContentsWrapper>
+          <TeamList teamName={question?.type} />
+          <QuestionBox question={question} />
+        </ContentsWrapper>
+      </Layout>
+    </>
   );
 };
 
