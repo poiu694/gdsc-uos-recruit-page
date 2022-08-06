@@ -37,14 +37,13 @@ function Helmet({
         }}
       />
 
-      <meta property='og:title' content={`GDSC | ${title}`} />
-      <title>{title}</title>
+      <title>{`GDSC | ${title}`}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content='GDSC,UOS,RECRUIT,GDSC UOS' />
 
       {/* for mobile */}
       <meta property='og:type' content='website' />
-      <meta property='og:title' content={title} />
+      <meta property='og:title' content={`GDSC | ${title}`} />
       <meta property='og:site_name' content='GDSC-UOS-RECRUIT-PAGE' />
       <meta property='og:description' content={description} />
       <meta property='og:image' content='../../../public/logo128.png' />
