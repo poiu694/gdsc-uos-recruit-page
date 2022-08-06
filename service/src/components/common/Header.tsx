@@ -67,6 +67,12 @@ const Wrapper = styled.header`
 
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: blur(4px);
+
+  @media (max-width: ${theme.size.mobile}px) {
+    div.body4 {
+      font-size: 14px;
+    }
+  }
 `;
 
 const NavigationWrapper = styled.header`
