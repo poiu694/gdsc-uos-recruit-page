@@ -56,6 +56,7 @@ const Wrapper = styled.header`
   width: 100%;
   height: 60px;
   margin: 0 auto;
+  padding-top: 10px;
 
   position: fixed;
   top: 0;
@@ -66,6 +67,12 @@ const Wrapper = styled.header`
 
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: blur(4px);
+
+  @media (max-width: ${theme.size.mobile}px) {
+    div.body4 {
+      font-size: 14px;
+    }
+  }
 `;
 
 const NavigationWrapper = styled.header`
@@ -103,6 +110,7 @@ const Logo = styled.div`
     picture img {
       width: 100%;
       height: 100%;
+      padding-top: 10px;
     }
 
     @media (max-width: ${theme.size.mobile}px) {

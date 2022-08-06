@@ -80,6 +80,10 @@ const Wrapper = styled.aside`
     @media (max-width: ${theme.size.mobile}px) {
       min-width: 90%;
       margin-top: 32px;
+
+      div.body4 {
+        font-size: 14px;
+      }
     }
   `}
 `;
@@ -146,6 +150,17 @@ const ButtonWrapper = styled.div<TeamNameProps>`
     & > div:last-of-type {
       background-color: ${get200Color(teamName)};
       border: 1px solid ${get400Color(teamName)};
+    }
+
+    @media (max-width: ${theme.size.mobile}px) {
+      & {
+        padding: 0 8px;
+      }
+
+      width: 100%;
+      display: flex;
+      jusitfy-content: space-between;
+      gap: 10px;
     }
   `}
 `;
