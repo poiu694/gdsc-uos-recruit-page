@@ -42,10 +42,6 @@ const Wrapper = styled.div`
     min-height: 100vh;
     position: relative;
     margin: 60px auto;
-
-    @media (max-width: ${theme.size.mobile}px) {
-      margin: 60px 60px 0 auto;
-    }
   `}
 `;
 
