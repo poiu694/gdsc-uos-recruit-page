@@ -106,6 +106,8 @@ function Helmet({
       <meta property='og:description' content={description} />
       <meta property='og:image' content='/logo128.png' />
       <meta property='og:url' content={url} />
+
+      {/* baseRoot */}
       {isRoot && <link rel='canonical' href={baseURL} />}
     </Head>
   );
