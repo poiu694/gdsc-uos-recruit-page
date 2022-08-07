@@ -11,7 +11,6 @@ function Bottom() {
       <Typography type='body5' color={theme.palette.gray300}>
         © CopyRight GDSC UOS. All Right Reserved.
       </Typography>
-      
       <IconWrapper>
         <CustomLink
           target='_blank'
