@@ -9,10 +9,7 @@ on:
       - develop
 
 jobs:
-  service:
-    if: |
-      "github.event.client_payload.job == 'service'" ||
-      "!contains(github.event.head_commit.message, '[skip ci]')"
+  : if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,22 +18,22 @@ jobs:
         working-directory: ./service
         run: yarn
 
-      - name: run ESLint
+      - name: run Service eslint
+        if: contains(steps.file_changes.outputs.files , '"service/')
         working-directory: ./service
         run: yarn lint
 
-  admin:
-    if: |
-      "github.event.client_payload.job == 'admin'" ||
-      "!contains(github.event.head_commit.message, '[skip ci]')"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Admin yarn install
+      - name: run Admin eslint
+        if: contains(steps.file_changes.outputs.files , '"admin/')
         working-directory: ./admin
-        run: yarn
+        run: yarn lint
 
-      - name: Admin run ESLint
-        working-directory: ./admin
-        run: yarn lint:admin
+      - name: run hooks eslint
+        if: contains(steps.file_changes.outputs.files , '"hooks/')
+        working-directory: ./packages/hooks
+        run: yarn lint
+
+      - name: run design-system eslint
+        if: contains(steps.file_changes.outputs.files , '"design-system/')
+        working-directory: ./packages/design-system
+        run: yarn lint
