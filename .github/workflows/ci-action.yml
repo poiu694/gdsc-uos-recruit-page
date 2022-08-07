@@ -9,34 +9,67 @@ on:
       - develop
 
 jobs:
-  service:
-    if: |
-      "github.event.client_payload.job == 'service'" ||
-      "!contains(github.event.head_commit.message, '[skip ci]')"
+  lint-and-test:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout action
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: file changes action
+        uses: trilom/file-changes-action@v1.2.3
+
+      - name: save variable output files
+        run: |
+          echo ::set-output name=OUTPUT_FILES::$(cat $HOME/files.json)
+        id: files
+
+      - name: save target files
+        run: |
+          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"service"* ]]; then
+            echo ::set-output name=service::true
+          fi
+          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"admin"* ]]; then
+            echo ::set-output name=admin::true
+          fi
+          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"hooks"* ]]; then
+            echo ::set-output name=hooks::true
+          fi
+          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"design-system"* ]]; then
+            echo ::set-output name=design-system::true
+          fi
+        id: changes
 
       - name: yarn install
-        working-directory: ./service
         run: yarn
 
-      - name: run ESLint
-        working-directory: ./service
-        run: yarn lint
+      - name: run service eslint
+        if: ${{ steps.changes.outputs.service == 'true' }}
+        run: |
+          yarn service:lint
+          echo ${{ steps.changes.outputs.service == 'true' }}
 
-  admin:
-    if: |
-      "github.event.client_payload.job == 'admin'" ||
-      "!contains(github.event.head_commit.message, '[skip ci]')"
+      - name: run admin eslint
+        if: ${{ steps.changes.outputs.admin == 'true' }}
+        run: yarn admin:lint
 
-    steps:
-      - uses: actions/checkout@v2
+      - name: run hooks eslint
+        if: ${{ steps.changes.outputs.hooks == 'true' }}
+        run: yarn hooks:lint
 
-      - name: Admin yarn install
-        working-directory: ./admin
-        run: yarn
-
-      - name: Admin run ESLint
-        working-directory: ./admin
-        run: yarn lint:admin
+      - name: run design-system eslint
+        if: ${{ steps.changes.outputs.design-system == 'true' }}
+        run: yarn design-system:lint
