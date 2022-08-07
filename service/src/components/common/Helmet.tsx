@@ -98,6 +98,7 @@ function Helmet({
       <title>{`GDSC | ${title}`}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content='GDSC,UOS,RECRUIT,GDSC UOS' />
+
       {/* for mobile */}
       <meta property='og:type' content='website' />
       <meta property='og:title' content={`GDSC | ${title}`} />
