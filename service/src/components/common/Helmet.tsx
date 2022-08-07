@@ -98,6 +98,7 @@ function Helmet({
       <title>{`GDSC | ${title}`}</title>
       <meta name='description' content={description} />
       <meta name='keywords' content='GDSC,UOS,RECRUIT,GDSC UOS' />
+
       {/* for mobile */}
       <meta property='og:type' content='website' />
       <meta property='og:title' content={`GDSC | ${title}`} />
@@ -105,6 +106,8 @@ function Helmet({
       <meta property='og:description' content={description} />
       <meta property='og:image' content='/logo128.png' />
       <meta property='og:url' content={url} />
+
+      {/* for baseRoot */}
       {isRoot && <link rel='canonical' href={baseURL} />}
     </Head>
   );
