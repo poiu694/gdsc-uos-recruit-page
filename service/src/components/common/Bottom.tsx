@@ -27,6 +27,7 @@ function Bottom() {
         >
           <Icon type='blog' color={theme.palette.coreYellow} />
         </CustomLink>
+
         <CustomLink
           target='_blank'
           href='mailto:olmnuiui70@gmail.com'
