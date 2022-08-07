@@ -1,34 +1,68 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { TeamCard, Title } from '@gdsc-uos-recruit-page/design-system';
+import {
+  Planet,
+  theme,
+  Typography,
+} from '@gdsc-uos-recruit-page/design-system';
 
-function MainBanner() {
+interface MainBannerProps {
+  banner: string;
+}
+
+function MainBanner({ banner }: MainBannerProps) {
   return (
     <Wrapper>
-      hi
-      <Title
-        title='Show us your Passion !'
-        desc1='성장하고 싶어하고 열정적인 사람을 찾고 있습니다.'
-        desc2='당신의 열정을 뽐내주세요.'
-      />
-      <div style={{ display: 'flex', gap: '20px' }}>
-        <TeamCard
-          type='Frontend'
-          handleClickNav={() => console.log('frontend')}
-        />
-        <TeamCard
-          type='Backend'
-          handleClickNav={() => console.log('Backend')}
-        />
-        <TeamCard type='Mobile' handleClickNav={() => console.log('Mobile')} />
-        <TeamCard type='DA/ML' handleClickNav={() => console.log('DA/ML')} />
-      </div>
+      <ContentsWrapper>
+        <TitleWrapper>
+          <Typography type='h1' color={theme.colors.primary.red}>
+            Google
+          </Typography>
+          <Typography type='h1' color={theme.colors.primary.yellow}>
+            Developer
+          </Typography>
+          <Typography type='h1' color={theme.colors.primary.green}>
+            Student
+          </Typography>
+          <Typography type='h1' color={theme.colors.primary.blue}>
+            Club
+          </Typography>
+        </TitleWrapper>
+        <Typography type='h2'>University of Seoul</Typography>
+        <DescWrapper type='h6'>{banner}</DescWrapper>
+      </ContentsWrapper>
+      <Planet />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  ${({ theme }) => css`
+    width: 80%;
+    min-height: 100vh;
+    position: relative;
+    margin: 60px auto;
+  `}
+`;
+
+const ContentsWrapper = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    left: 0%;
+    bottom: 15%;
+
+    z-index: ${theme.zIndex.body};
+  `}
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+`;
+
+const DescWrapper = styled(Typography)`
+  margin-top: 16px;
 `;
 
 export default MainBanner;

@@ -2,23 +2,23 @@ import styled from '@emotion/styled';
 import { colors } from '../theme/colors';
 import Typography from './Typography';
 
-interface TitleProps {
+interface TitleProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   desc1: string;
   desc2: string;
   desc3?: string;
 }
 
-function Title({ title, desc1, desc2 }: TitleProps) {
+function Title({ title, desc1, desc2, ...restProps }: TitleProps) {
   return (
-    <Wrapper>
+    <Wrapper {...restProps}>
       <Typography type='h2' color={colors.text.bold}>
         {title}
       </Typography>
-      <Typography type='h5' color={colors.text.general}>
+      <Typography type='h6' color={colors.text.general}>
         {desc1}
       </Typography>
-      <Typography type='h5' color={colors.text.general}>
+      <Typography type='h6' color={colors.text.general}>
         {desc2}
       </Typography>
     </Wrapper>

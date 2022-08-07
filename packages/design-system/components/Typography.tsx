@@ -1,4 +1,4 @@
-import { PropsWithChildren, CSSProperties } from 'react';
+import React, { PropsWithChildren, CSSProperties } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -6,30 +6,31 @@ import { FontKeyType } from '../theme/fonts';
 import { colors, PalleteValueType } from '../theme/colors';
 import { theme } from '../theme';
 
-interface TypographyProps {
+interface TypographyProps extends React.HTMLAttributes<HTMLDivElement> {
   type: FontKeyType;
+  className?: string;
   display?: CSSProperties['display'];
   textAlign?: CSSProperties['textAlign'];
   color?: PalleteValueType;
 }
 
-interface TypographyPropsWithChildren
-  extends PropsWithChildren<TypographyProps> {}
-
 function Typography({
   type,
+  className,
   children,
   display = 'block',
   textAlign = 'start',
   color = colors.text.general,
-}: TypographyPropsWithChildren) {
+  ...restProps
+}: PropsWithChildren<TypographyProps>) {
   return (
     <Wrapper
       type={type}
-      className={type}
+      className={`${type} ${className}`}
       display={display}
       textAlign={textAlign}
       color={color}
+      {...restProps}
     >
       {children}
     </Wrapper>
@@ -64,7 +65,31 @@ const Wrapper = styled.div<TypographyProps>`
     }
 
     &.h5 {
+      font-size: 20px;
+    }
+
+    &.h6 {
+      font-size: 14px;
+    }
+
+    &.body1 {
+      font-size: 20px;
+    }
+
+    &.body2 {
+      font-size: 18px;
+    }
+
+    &.body3 {
       font-size: 16px;
+    }
+
+    &.body4 {
+      font-size: 12px;
+    }
+
+    &.body5 {
+      font-size: 10px;
     }
   }
 `;

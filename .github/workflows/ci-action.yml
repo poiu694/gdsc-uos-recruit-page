@@ -9,15 +9,34 @@ on:
       - develop
 
 jobs:
-  build-and-test:
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+  service:
+    if: |
+      "github.event.client_payload.job == 'service'" ||
+      "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
       - name: yarn install
+        working-directory: ./service
         run: yarn
 
       - name: run ESLint
+        working-directory: ./service
         run: yarn lint
+
+  admin:
+    if: |
+      "github.event.client_payload.job == 'admin'" ||
+      "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Admin yarn install
+        working-directory: ./admin
+        run: yarn
+
+      - name: Admin run ESLint
+        working-directory: ./admin
+        run: yarn lint:admin

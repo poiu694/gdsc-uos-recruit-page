@@ -1,3 +1,5 @@
+import { TeamContent } from '../@types/Team';
+
 export const palette = {
   // Gray Scale
   background: '#FCFCFC',
@@ -39,6 +41,9 @@ export const palette = {
   blue200: '#BBDEFB',
   blue300: '#42A5F5',
   blue400: '#2196F3',
+
+  // orange for default
+  orange: '#F36B08',
 } as const;
 
 export const colors = {
@@ -56,11 +61,19 @@ export const colors = {
     bold: palette.black,
   },
   ui: {
-    divider: palette.gray50,
+    divider: palette.gray100,
     border: palette.gray100,
-    hover: palette.gray300,
+    hover: palette.gray50,
     // overlay: `linear-gradient(180deg, rgba(79, 23, 197, 0) -39.47%, ${palette.purple400} 100%)`,
   },
+  team: {
+    frontend: palette.coreYellow,
+    backend: palette.coreRed,
+    mobile: palette.coreGreen,
+    data_ml: palette.coreBlue,
+    all: palette.orange, // default 
+    common: palette.orange // default 
+  } as TeamContent<PalleteValueType>
 } as const;
 
 
