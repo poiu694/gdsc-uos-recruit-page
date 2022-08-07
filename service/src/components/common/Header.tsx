@@ -30,7 +30,6 @@ function Header() {
             <img src='/logo.png' />
           </picture>
         </Logo>
-
         <Navigation>
           <Typography type='body4' onClick={() => handleLinkToPage('/')}>
             모집 공고
