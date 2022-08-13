@@ -30,7 +30,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: file changes action
-        uses: trilom/file-changes-action@v1.2.3
+        uses: trilom/file-changes-action@master
 
       - name: save variable output files
         run: |
