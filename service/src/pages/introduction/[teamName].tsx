@@ -7,7 +7,7 @@ import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Helmet, Introduction } from '../../components/common';
-import { Activity, AsideCard, Introduce } from '../../components/Introduction';
+import { List, AsideCard, Introduce } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
 
@@ -41,8 +41,8 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
         <Wrapper>
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
-            <Introduce desc={introduction.introduction} />
-            <Activity activies={introduction.activities} />
+            <List title='소개' items={introduction.introduction} />
+            <List title='활동' items={introduction.activities} />
           </ContentsWrapper>
           <AsideCard
             teamName={teamName}
