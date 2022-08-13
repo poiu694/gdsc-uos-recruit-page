@@ -9,5 +9,6 @@ export interface IntroductionType {
   desc: string;
   introduction: string[];
   activities: string[];
+  wants: string[];
   aside: AsideCardType;
 }

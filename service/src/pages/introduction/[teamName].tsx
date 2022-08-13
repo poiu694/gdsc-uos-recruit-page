@@ -10,6 +10,7 @@ import { Helmet, Introduction } from '../../components/common';
 import { List, AsideCard, Introduce } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
+import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 
 interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;
@@ -41,8 +42,15 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
         <Wrapper>
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
-            <List title='소개' items={introduction.introduction} />
-            <List title='활동' items={introduction.activities} />
+            <List title='저희를 소개할게요' items={introduction.introduction} />
+            <List
+              title='저희는 이런 활동을 해요'
+              items={introduction.activities}
+            />
+            <List
+              title={`${getTitleCaseTeam(teamName)} 팀은 이런 분을 기다립니다.`}
+              items={introduction.wants}
+            />
           </ContentsWrapper>
           <AsideCard
             teamName={teamName}
