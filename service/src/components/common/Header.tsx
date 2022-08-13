@@ -5,6 +5,7 @@ import Typography from '@gdsc-uos-recruit-page/design-system/components/Typograp
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { GOOGLE_FORM_LINK } from '../../constants/form';
 
 function Header() {
   const router = useRouter();
@@ -13,6 +14,12 @@ function Header() {
   const handleLinkToPage = useCallback(
     (url: string) => {
       logEvent('route(head)', `move to ${url}`);
+      if (url === GOOGLE_FORM_LINK) {
+        if (window) {
+          window.open(GOOGLE_FORM_LINK, '_blank');
+        }
+        return;
+      }
       router.push(url);
     },
     [router, logEvent]
@@ -42,7 +49,7 @@ function Header() {
           </Typography>
           <Typography
             type='body4'
-            onClick={() => handleLinkToPage('/qna/common')}
+            onClick={() => handleLinkToPage(GOOGLE_FORM_LINK)}
           >
             지원 하기
           </Typography>

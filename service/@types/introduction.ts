@@ -7,7 +7,8 @@ export interface AsideCardType {
 export interface IntroductionType {
   title: string;
   desc: string;
-  introduction: string;
+  introduction: string[];
   activities: string[];
+  wants: string[];
   aside: AsideCardType;
 }

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 
 import { TeamNameProps, QuestionListItem } from '../../../@types';
 
-interface QuestionListProps extends TeamNameProps{
+interface QuestionListProps extends TeamNameProps {
   questions: QuestionListItem[];
 }
 
@@ -52,7 +52,7 @@ function QuestionList({ questions, teamName }: QuestionListProps) {
           >
             {question.title}
           </Typography>
-          <Icon type='right' hoverAction={false} />
+          <Icon type='right' hoverAction={false} className='right' />
         </ListItem>
       ))}
       {teamName !== 'common' && (
@@ -101,7 +101,6 @@ const ListItem = styled.li`
     border-radius: 5px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     -webkit-transition: all 0.1s ease-in-out; /* Safari */
@@ -115,16 +114,17 @@ const ListItem = styled.li`
       }
     }
 
-    .question-mark {
-      flex-grow: 1;
-    }
-
     .title {
-      flex-grow: 20;
+      margin-left: 30px;
 
       @media (max-width: ${theme.size.mobile}px) {
+        margin-left: 0px;
         padding-left: ${theme.padding.md}px;
       }
+    }
+
+    & div:nth-of-type(3) {
+      margin-left: auto;
     }
   `}
 `;

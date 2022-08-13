@@ -8,9 +8,11 @@ export const getQuestion = (type: string) => {
     case 'common':
       return QuestionContent.common;     
     case 'frontend':
-      return QuestionContent.front;
+      return QuestionContent.frontend;
     case 'backend':
-      return QuestionContent.back;
+      return QuestionContent.backend;
+    case 'design':
+      return QuestionContent.design;
     case 'mobile':
       return QuestionContent.mobile;
     case 'data_ml':
