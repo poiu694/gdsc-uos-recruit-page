@@ -4,13 +4,13 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Helmet, Introduction } from '../../components/common';
 import { List, AsideCard, Introduce } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
-import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { GOOGLE_FORM_LINK } from '../../constants/form';
 
 interface IntroductionProps extends TeamNameProps {
