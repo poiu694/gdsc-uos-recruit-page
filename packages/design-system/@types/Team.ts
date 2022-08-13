@@ -4,6 +4,7 @@ const Team = {
   backend: 'backend',
   mobile: 'mobile',
   data_ml: 'data_ml',
+  design: 'design',
   all: 'all',
 } as const;
 

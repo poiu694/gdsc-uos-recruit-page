@@ -16,7 +16,7 @@ export const palette = {
   coreBlue: '#4285F4',
   coreRed: '#EA4335',
   coreYellow: '#FBBC04',
-  coreGreen: '#34A853',
+  coreGreen: '#0F9D58',
 
   // red color
   red100: '#FFEBEE',
@@ -44,6 +44,8 @@ export const palette = {
 
   // orange for default
   orange: '#F36B08',
+  oragne400: '#F37D28',
+  oragne200: '#F6BF97',
 } as const;
 
 export const colors = {
@@ -71,6 +73,7 @@ export const colors = {
     backend: palette.coreRed,
     mobile: palette.coreGreen,
     data_ml: palette.coreBlue,
+    design: palette.orange,
     all: palette.orange, // default 
     common: palette.orange // default 
   } as TeamContent<PalleteValueType>

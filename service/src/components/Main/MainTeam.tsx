@@ -30,6 +30,7 @@ function MainTeam({ content }: MainTeamProps) {
         <TeamCard teamName='backend' />
         <TeamCard teamName='mobile' />
         <TeamCard teamName='data_ml' />
+        <TeamCard teamName='design' />
       </TeamCardWrapper>
     </Wrapper>
   );
@@ -64,9 +65,9 @@ const TeamCardWrapper = styled.div`
     height: 100%;
     margin: 3em auto;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    place-items: center center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: ${theme.padding.xlg}px;
 
     @media (min-width: ${theme.size.tabletL + 300}px) {

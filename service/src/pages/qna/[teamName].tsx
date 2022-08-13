@@ -27,7 +27,10 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
 
   return (
     <>
-      <Helmet title='자주 묻는 질문' description='GDSC UOS RECRUIT 자주 묻는 질문 페이지' />
+      <Helmet
+        title='자주 묻는 질문'
+        description='GDSC UOS RECRUIT 자주 묻는 질문 페이지'
+      />
       <Layout>
         <Banner teamName={teamName} />
         <IntroductionWrapper
@@ -51,6 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       { params: { teamName: 'backend' } },
       { params: { teamName: 'mobile' } },
       { params: { teamName: 'data_ml' } },
+      { params: { teamName: 'design' } },
     ],
     fallback: false, // false or 'blocking'
   };

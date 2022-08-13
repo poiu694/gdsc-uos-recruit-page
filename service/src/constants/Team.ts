@@ -6,4 +6,5 @@ export const teams: QuestionListItem[] = [
     { type: 'backend',title: 'Backend Team', url: '/qna/backend' },
     { type: 'mobile',title: 'Mobile Team', url: '/qna/mobile' },
     { type: 'data_ml',title: 'DA/ML Team', url: '/qna/data_ml' },
+    { type: 'design',title: 'Design Team', url: '/qna/design' },
   ];

@@ -1,23 +1,24 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-interface ActivityProps {
-  activies: string[];
+interface ListProps {
+  title: string;
+  items: string[];
 }
 
-function Activity({ activies }: ActivityProps) {
+function List({ title, items }: ListProps) {
   return (
     <Wrapper>
       <Typography type='h5' color={theme.colors.text.bold}>
-        활동
+        {title}
       </Typography>
-      <List>
-        {activies.map((activity) => (
-          <ListItem key={activity} type='body3'>
-            • {activity}
+      <Lists>
+        {items.map((item) => (
+          <ListItem key={item} type='body3'>
+            • {item}
           </ListItem>
         ))}
-      </List>
+      </Lists>
     </Wrapper>
   );
 }
@@ -30,10 +31,10 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const List = styled.ul`
+const Lists = styled.ul`
   margin-top: 16px;
 `;
 
 const ListItem = styled(Typography)``;
 
-export default Activity;
+export default List;
