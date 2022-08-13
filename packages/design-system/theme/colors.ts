@@ -16,7 +16,7 @@ export const palette = {
   coreBlue: '#4285F4',
   coreRed: '#EA4335',
   coreYellow: '#FBBC04',
-  coreGreen: '#34A853',
+  coreGreen: '#0F9D58',
 
   // red color
   red100: '#FFEBEE',
