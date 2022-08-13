@@ -8,7 +8,7 @@ import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/col
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Helmet, Introduction } from '../../components/common';
-import { List, AsideCard, Introduce } from '../../components/Introduction';
+import { List, AsideCard } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
 import { GOOGLE_FORM_LINK } from '../../constants/form';
