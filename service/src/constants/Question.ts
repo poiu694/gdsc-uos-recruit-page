@@ -156,11 +156,43 @@ const DataMLQuestion = [
   },
 ];
 
+const DesignQuestion = [
+  {
+    id: '501',
+    type: 'data_ml',
+    url: '/qna/detail/501',
+    title: '머신러닝에 대해 잘 모르는데 괜찮을까요?',
+    desc: '동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한 으로 길이 보전하세',
+  },
+  {
+    id: '502',
+    type: 'data_ml',
+    url: '/qna/detail/502',
+    title: '개발 경험이 없는데 괜찮을까요?',
+    desc: '동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한 으로 길이 보전하세',
+  },
+  {
+    id: '503',
+    type: 'data_ml',
+    url: '/qna/detail/503',
+    title: '주로 어떤 활동을 진행하나요?',
+    desc: '동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한 으로 길이 보전하세',
+  },
+  {
+    id: '504',
+    type: 'data_ml',
+    url: '/qna/detail/504',
+    title: '개발을 가르쳐주는 활동이 따로 있나요?',
+    desc: '동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한 으로 길이 보전하세',
+  },
+];
+
 export default Object.freeze({
   common: CommonQuestion,
   frontend: FrontQuestion,
   backend: BackQuestion,
   mobile: MobileQuestion,
   data_ml: DataMLQuestion,
-  all: [...CommonQuestion, ...FrontQuestion, ...BackQuestion, ...MobileQuestion, ...DataMLQuestion]
+  design: DesignQuestion,
+  all: [...CommonQuestion, ...FrontQuestion, ...BackQuestion, ...MobileQuestion, ...DataMLQuestion, ...DesignQuestion]
 } as TeamContent<QuestionListItem[]>)

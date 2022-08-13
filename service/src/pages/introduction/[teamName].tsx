@@ -71,6 +71,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       { params: { teamName: 'backend' } },
       { params: { teamName: 'mobile' } },
       { params: { teamName: 'data_ml' } },
+      { params: { teamName: 'design' } },
     ],
     fallback: false, // false or 'blocking'
   };

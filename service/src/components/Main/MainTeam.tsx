@@ -30,6 +30,7 @@ function MainTeam({ content }: MainTeamProps) {
         <TeamCard teamName='backend' />
         <TeamCard teamName='mobile' />
         <TeamCard teamName='data_ml' />
+        <TeamCard teamName='design' />
       </TeamCardWrapper>
     </Wrapper>
   );
