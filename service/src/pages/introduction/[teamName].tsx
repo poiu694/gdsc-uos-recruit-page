@@ -11,6 +11,7 @@ import { List, AsideCard, Introduce } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
 import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
+import { GOOGLE_FORM_LINK } from '../../constants/form';
 
 interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;
@@ -26,7 +27,9 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
 
   const handleClickSupportBtn = () => {
     logEvent('Application', `click ${teamName} application`);
-    router.push(`/qna/${teamName}`);
+    if (window) {
+      window.open(GOOGLE_FORM_LINK, '_blank');
+    }
   };
 
   const handleClickQuestionListBtn = () => {
