@@ -33,7 +33,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
   };
 
   const handleClickQuestionListBtn = () => {
-    logEvent('Click(Question)', `${teamName}에서 자주 묻는 질문 클릭`);
+    logEvent('Question', `${teamName}에서 자주 묻는 질문 클릭`);
     router.push(`/qna/${teamName}`);
   };
 
