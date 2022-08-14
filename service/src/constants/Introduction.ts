@@ -8,7 +8,7 @@ const FrontEndIntroduction = {
     '열정있는 팀원들이 활동합니다.',
     '혼자만 아는 것이 아니라, 다 같이 공유하는 것을 지향합니다.',
     '개발적으로 어려운 부분은 같이 머리를 맞대고 헤쳐나갑니다.',
-    '다른팀들과 소통하는 법을 배웁니다.',
+    '다른 팀들과 소통하는 법을 배웁니다.',
     '프로젝트를 배포하면서 자신의 결과물을 보여줄 수 있는 팀입니다.',
   ],
   activities: [
@@ -21,11 +21,11 @@ const FrontEndIntroduction = {
   aside: {
     team: 'Frontend Team',
     experience: '무관',
-    needs: ['HTML5', 'CSS3', 'Javascript'],
+    needs: ['열정'],
   },
   wants: [
     '프론트엔드를 진정으로 하고 싶으신 분',
-    '자신의 지식을 공유하는데 꺼리낌 없으신 분',
+    '자신의 지식을 공유하는데 거리낌 없으신 분',
     '개발을 잘 몰라 평소에 아이디어만 가지고 계셨던 분',
   ],
 } as IntroductionType;
@@ -41,15 +41,15 @@ const BackEndIntroduction = {
     '모르는 것에 대해 자신감 있게 물어보고 함께 고민합니다.',
   ],
   activities: [
-    '개인 혹은 팀별 프로젝트를 진행합니다',
+    '개인 혹은 팀별 프로젝트를 진행합니다.',
     '데일리 스크럼을 통해 프로젝트 진행상황을 공유합니다!',
     '백엔드팀 스프린트 리뷰를 통해 한달 활동을 피드백합니다.',
-    'Tech Talk를 통해 개발 지식을 습득합니다',
+    'Tech Talk를 통해 개발 지식을 습득합니다.',
   ],
   aside: {
     team: 'Backend Team',
     experience: '무관',
-    needs: ['JAVA', 'Node', 'Go'],
+    needs: ['열정'],
   },
   wants: [
     'Backend Team의 목표를 달성하고자 함께 노력 하실 분',
@@ -68,10 +68,10 @@ const MobileIntroduction = {
     '개발 공식 문서를 기반으로 자신의 지식을 정리하고 확장합니다.',
   ],
   activities: [
-    '개인 혹은 팀별 프로젝트를 진행합니다',
+    '개인 혹은 팀별 프로젝트를 진행합니다.',
     '데일리 스크럼을 통해 프로젝트 진행상황을 공유합니다!',
     '모바일팀 스프린트 리뷰를 통해 한달 활동을 피드백합니다.',
-    'Tech Talk를 통해 개발 지식을 습득합니다',
+    'Tech Talk를 통해 개발 지식을 습득합니다.',
   ],
   aside: {
     team: 'Mobile Team',
@@ -88,14 +88,29 @@ const MobileIntroduction = {
 const DataMLIntroduction = {
   title: 'Data/ML Developer',
   desc: 'GDSC UOS Data/ML 소개 페이지입니다.',
-  introduction: [],
-  activities: ['테크톡', '기술 블로그 글 작성', '데일리 스크럼'],
+  introduction: [
+    'Deep Learning을 딥하게, Machine Learning을 주도적으로 공부합니다.',
+    '사담 나누기를 좋아합니다.',
+    '깊은 지식을 나누며 성장합니다.',
+    '이론적인 부분을 놓치지 않으려고 노력합니다.',
+  ],
+  activities: [
+    '데일리 스크럼에서 매일 관심 있는 기술, 오늘 있었던 일 등의 이야기를 나눕니다.',
+    '매 달 한 명씩 돌아가며 GDSC 블로그에 본인의 관심사를 정리한 글을 포스팅해 지식을 기록합니다.',
+    '격주로 한 명씩 돌아가며 논문을 읽고, 내용을 공유하는 페이퍼 리뷰를 합니다.',
+    '팀 프로젝트로 외부 대회에 나가기도 합니다.',
+  ],
   aside: {
     team: 'Data/ML Team',
     experience: '무관',
-    needs: ['Python', 'Pytorch', 'Colab'],
+    needs: ['Python', '열정'],
   },
-  wants: []
+  wants: [
+    '머신러닝, 딥러닝을 깊게 공부해보고 싶은 사람',
+    '영어로 된 논문을 읽는 것에 부담이 덜한 사람',
+    '데이터 분석 덕후들을 만나고 싶은 사람',
+    '이 글을 읽고 뇌세포의 전기신호가 Threshold를 넘은 사람',
+  ],
 } as IntroductionType;
 
 const DesignIntroduction = {
