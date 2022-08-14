@@ -15,7 +15,7 @@ interface QnaPageProps {
 
 const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
   const { logPageView } = useGA();
-  logPageView(`/qna/detail/${question?.id ?? ''}`);
+  logPageView(`${question?.title ?? ''} 질문 조회`);
 
   return (
     <>

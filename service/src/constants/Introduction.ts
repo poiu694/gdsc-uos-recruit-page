@@ -114,8 +114,8 @@ const DataMLIntroduction = {
 } as IntroductionType;
 
 const DesignIntroduction = {
-  title: 'Designer',
-  desc: 'GDSC UOS Designer 소개 페이지입니다.',
+  title: 'Product Designer',
+  desc: 'GDSC UOS Design 소개 페이지입니다.',
   introduction: [
     '이번에 신규 창설되는 팀입니다.',
     '프로젝트 전체를 이해하고, 개발자들과 소통하는 법을 배웁니다.',

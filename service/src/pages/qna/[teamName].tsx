@@ -23,7 +23,7 @@ interface QnaListPageProps extends TeamNameProps {
 
 const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
   const { logPageView } = useGA();
-  logPageView(`/qna/${teamName}`);
+  logPageView(`${teamName} 질문 페이지 조회`);
 
   return (
     <>

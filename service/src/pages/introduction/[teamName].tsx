@@ -26,14 +26,14 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
   logPageView(`/introduction/${teamName}`);
 
   const handleClickSupportBtn = () => {
-    logEvent('Application', `click ${teamName} application`);
+    logEvent('Application', `${teamName}에서 지원하기 클릭`);
     if (window) {
       window.open(GOOGLE_FORM_LINK, '_blank');
     }
   };
 
   const handleClickQuestionListBtn = () => {
-    logEvent('Click(Question)', `click ${teamName} question`);
+    logEvent('Click(Question)', `${teamName}에서 자주 묻는 질문 클릭`);
     router.push(`/qna/${teamName}`);
   };
 
