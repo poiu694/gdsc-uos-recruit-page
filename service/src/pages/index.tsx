@@ -10,7 +10,7 @@ import { Helmet } from '../components/common';
 const Home: NextPage = () => {
   const { data, error } = useSWR('/api/main', fetcher);
   const { logPageView } = useGA();
-  logPageView('/');
+  logPageView('메인 화면 조회');
   useAOS();
 
   if (error) return <div>Failed to load</div>;
