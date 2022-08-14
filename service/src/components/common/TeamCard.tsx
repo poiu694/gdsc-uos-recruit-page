@@ -17,7 +17,7 @@ function TeamCard({ teamName }: TeamNameProps) {
   const { logEvent } = useGA();
 
   const handleClickNav = useCallback(() => {
-    logEvent('route(team)', `move to ${teamName}`);
+    logEvent('Team', `${teamName} 로 접근`);
     router.push(`/introduction/${teamName}`);
   }, [router, teamName, logEvent]);
 

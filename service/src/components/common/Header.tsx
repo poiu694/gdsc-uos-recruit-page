@@ -13,7 +13,7 @@ function Header() {
 
   const handleLinkToPage = useCallback(
     (url: string) => {
-      logEvent('route(head)', `move to ${url}`);
+      logEvent('Head', `${url} 로 이동`);
       if (url === GOOGLE_FORM_LINK) {
         if (window) {
           window.open(GOOGLE_FORM_LINK, '_blank');

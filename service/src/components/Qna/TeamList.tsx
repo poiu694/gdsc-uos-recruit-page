@@ -26,7 +26,7 @@ function TeamList({ teamName }: TeamNameProps) {
       const nextIsActive = new Array(teams.length).fill(false);
       nextIsActive[Number(indexToUpdate)] = true;
       setIsActive(nextIsActive);
-      logEvent('Click(TeamQuestion)', `${dataset.title} click`);
+      logEvent('Question', `${dataset.title} click`);
       router.push(dataset.url as string);
     },
     [logEvent, router]

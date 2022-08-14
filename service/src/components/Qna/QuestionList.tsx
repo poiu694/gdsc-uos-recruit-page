@@ -21,7 +21,7 @@ function QuestionList({ questions, teamName }: QuestionListProps) {
   ) => {
     e.stopPropagation();
     const { dataset } = e.currentTarget;
-    logEvent('Click(QuestionItem)', `${dataset.title} click`);
+    logEvent('Question', `${dataset.title} click`);
     router.push(dataset.url as string);
   };
 
