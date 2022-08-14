@@ -76,7 +76,7 @@ const MobileIntroduction = {
   aside: {
     team: 'Mobile Team',
     experience: '무관',
-    needs: ['Android', 'React Native', 'Swift'],
+    needs: ['열정'],
   },
   wants: [
     '눈에 보이는 피드백이 있는 개발을 하고 싶으신 분',
@@ -103,7 +103,7 @@ const DataMLIntroduction = {
   aside: {
     team: 'Data/ML Team',
     experience: '무관',
-    needs: ['Python', '열정'],
+    needs: ['열정'],
   },
   wants: [
     '머신러닝, 딥러닝을 깊게 공부해보고 싶은 사람',
