@@ -51,7 +51,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
               items={introduction.activities}
             />
             <List
-              title={`${getTitleCaseTeam(teamName)} 팀은 이런 분을 기다립니다.`}
+              title={`${getTitleCaseTeam(teamName)} 팀은 이런 분을 기다립니다`}
               items={introduction.wants}
             />
           </ContentsWrapper>
