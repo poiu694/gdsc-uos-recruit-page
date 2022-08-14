@@ -65,9 +65,9 @@ const TeamCardWrapper = styled.div`
     height: 100%;
     margin: 3em auto;
 
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    place-items: center center;
     gap: ${theme.padding.xlg}px;
 
     @media (min-width: ${theme.size.tabletL + 300}px) {
