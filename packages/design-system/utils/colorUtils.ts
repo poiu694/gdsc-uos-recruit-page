@@ -24,7 +24,7 @@ export const getJobByTeam = (type: TeamValueType) => {
     case 'data_ml':
       return ['Data', 'Engineer'];
     case 'design':
-      return ['Designer', ''];
+      return ['Product', 'Designer'];
     default:
       return [`${getTitleCaseTeam(type)}`, 'Developer'];
   }
