@@ -124,14 +124,14 @@ const DataMLQuestion = [
 const DesignQuestion = [
   {
     id: '501',
-    type: 'data_ml',
+    type: 'design',
     url: '/qna/detail/501',
     title: '기존에는 어떤 활동을 진행했나요?',
     desc: 'GDSC UOS Design Team은 이번에 첫 활동을 시작합니다.\n\n기존에 활동은 없었지만, 앞으로는 포트폴리오 스터디, 개발자와 소통해보는 경험, 기존 서비스를 분석하고 더 나은 서비스를 제공하려는 스터디 등을 생각하고 있습니다.',
   },
   {
     id: '502',
-    type: 'data_ml',
+    type: 'design',
     url: '/qna/detail/502',
     title: '주로 어떤 툴을 사용하면 좋을까요?',
     desc: '원하시는 툴이 있다면 해당 툴을 사용하셔도 됩니다.\n\n개발자와 협업을 위해 Figma, Zeplin 등을 많이 사용하며, Sketch, XD 툴도 많이 사용합니다.',
