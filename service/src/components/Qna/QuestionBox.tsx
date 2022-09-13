@@ -14,7 +14,10 @@ function QuestionBox({ question }: QuestionBoxProps) {
     <Wrapper>
       <PrevBox />
       <TitleWrapper type='h2'>{question?.title}</TitleWrapper>
-      <ContentWrapper type='body3'>{question?.desc} </ContentWrapper>
+      <ContentWrapper
+        type='body3'
+        dangerouslySetInnerHTML={{ __html: question?.desc! }}
+      />
     </Wrapper>
   );
 }
