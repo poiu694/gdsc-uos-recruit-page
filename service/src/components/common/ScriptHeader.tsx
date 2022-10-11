@@ -4,10 +4,6 @@ import Script from 'next/script';
 function ScriptHeader() {
   return (
     <Head>
-      <meta
-        name='google-site-verification'
-        content={process.env.NEXT_PULBIC_GOOGLE_SITE_VERIFICATION ?? ''}
-      />
       <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${
