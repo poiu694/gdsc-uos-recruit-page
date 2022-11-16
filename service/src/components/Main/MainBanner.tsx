@@ -25,7 +25,7 @@ function MainBanner({ banner }: MainBannerProps) {
             Student
           </Typography>
           <Typography type='h1' color={theme.colors.primary.blue}>
-            Club
+            Clubs
           </Typography>
         </TitleWrapper>
         <Typography type='h2'>University of Seoul</Typography>
