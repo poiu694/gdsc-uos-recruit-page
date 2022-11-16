@@ -21,31 +21,39 @@ export const palette = {
   // red color
   red100: '#FFEBEE',
   red200: '#FFCDD2',
-  red300: '#EF5350',
-  red400: '#F44336',
+  red300: '#EF9A9A',
+  red400: '#E57373',
+  red500: '#EF5350',
+  red600: '#F44336',
 
   // gren color
   green100: '#E8F5E9',
   green200: '#C8E6C9',
-  green300: '#66BB6A',
-  green400: '#4CAF50',
+  green300: '#A5D6A7',
+  green400: '#81C784',
+  green500: '#66BB6A',
+  green600: '#4CAF50',
 
   // yellow color
   yellow100: '#FFF8E1',
   yellow200: '#FFECB3',
-  yellow300: '#FFCA28',
+  yellow300: '#FFE082',
   yellow400: '#FFC107',
+  yellow500: '#FFCA28',
+  yellow600: '#FFC107',
 
   // blue color
   blue100: '#E3F2FD',
   blue200: '#BBDEFB',
-  blue300: '#42A5F5',
-  blue400: '#2196F3',
+  blue300: '#90CAF9',
+  blue400: '#64B5F6',
+  blue500: '#42A5F5',
+  blue600: '#2196F3',
 
   // orange for default
   orange: '#F36B08',
-  oragne400: '#F37D28',
-  oragne200: '#F6BF97',
+  orange200: '#F6BF97',
+  orange400: '#F37D28',
 } as const;
 
 export const colors = {
