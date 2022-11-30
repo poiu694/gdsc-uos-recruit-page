@@ -138,7 +138,7 @@ const DesignQuestion = [
   },
 ];
 
-export default Object.freeze({
+export default {
   common: CommonQuestion,
   frontend: FrontQuestion,
   backend: BackQuestion,
@@ -146,4 +146,4 @@ export default Object.freeze({
   data_ml: DataMLQuestion,
   design: DesignQuestion,
   all: [...CommonQuestion, ...FrontQuestion, ...BackQuestion, ...MobileQuestion, ...DataMLQuestion, ...DesignQuestion]
-} as TeamContent<QuestionListItem[]>)
+} as TeamContent<QuestionListItem[]>

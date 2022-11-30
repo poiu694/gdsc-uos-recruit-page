@@ -54,6 +54,7 @@ export const palette = {
   orange: '#F36B08',
   orange200: '#F6BF97',
   orange400: '#F37D28',
+  orange600: '#F38B08',
 } as const;
 
 export const colors = {

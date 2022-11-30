@@ -142,10 +142,10 @@ const DesignIntroduction = {
 } as IntroductionType;
 
 
-export default Object.freeze({
+export default {
   frontend: FrontEndIntroduction,
   backend: BackEndIntroduction,
   mobile: MobileIntroduction,
   data_ml: DataMLIntroduction,
   design: DesignIntroduction,
-} as TeamContent<IntroductionType>);
+} as TeamContent<IntroductionType>;

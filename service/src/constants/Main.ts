@@ -32,8 +32,8 @@ const MainTeam = {
   desc2: '당신의 열정을 뽐내주세요.'
 }
 
-export default Object.freeze({
+export default {
   banner: MainBannerDesc,
   process: MainProcess,
   team: MainTeam,
-});
+} as const;

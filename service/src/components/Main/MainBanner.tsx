@@ -37,12 +37,12 @@ function MainBanner({ banner }: MainBannerProps) {
 }
 
 const Wrapper = styled.div`
-  ${({ theme }) => css`
-    width: 80%;
-    min-height: 100vh;
-    position: relative;
-    margin: 60px auto;
-  `}
+  position: relative;
+  height: 100vh;
+
+  @media (max-width: ${theme.size.tabletL}px) {
+    height: 110vh;
+  }
 `;
 
 const ContentsWrapper = styled.div`

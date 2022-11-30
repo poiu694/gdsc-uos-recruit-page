@@ -38,11 +38,6 @@ function MainTeam({ content }: MainTeamProps) {
 
 const Wrapper = styled.div`
   ${({ theme }) => css`
-    width: 80%;
-    min-height: 85vh;
-    position: relative;
-
-    margin: 60px auto;
     @media (max-width: ${theme.size.mobile}px) {
       min-height: 50vh;
     }

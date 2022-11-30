@@ -13,23 +13,20 @@ function Bottom() {
       </Typography>
       <IconWrapper>
         <CustomLink
-          target='_blank'
           href='https://github.com/GDSC-University-of-Seoul'
-          rel='external'
+          aria-label='move to gdsc-uos github'
         >
           <Icon type='github' color={theme.palette.blue400} />
         </CustomLink>
         <CustomLink
-          target='_blank'
           href='https://gdsc-university-of-seoul.github.io'
-          rel='external'
+          aria-label='move to gdsc-uos blog'
         >
           <Icon type='blog' color={theme.palette.coreYellow} />
         </CustomLink>
         <CustomLink
-          target='_blank'
           href='mailto:olmnuiui70@gmail.com'
-          rel='external'
+          aria-label='contact to site developer(gmail)'
         >
           <Icon type='gmail' color={theme.palette.red200} />
         </CustomLink>
@@ -40,7 +37,7 @@ function Bottom() {
 
 const Wrapper = styled.div`
   width: 80%;
-  margin: 100px auto 16px auto;
+  margin: 100px auto 32px auto;
 
   display: flex;
   justify-content: space-between;
