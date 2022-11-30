@@ -34,7 +34,7 @@ function Header() {
               media={`(max-width: ${theme.size.mobile}px)`}
               srcSet='/logo_small.png'
             />
-            <img src='/logo.png' />
+            <img src='/logo.png' alt='gdsc-uos-logo' />
           </picture>
         </Logo>
         <Navigation>
@@ -44,12 +44,14 @@ function Header() {
           <Typography
             type='body4'
             onClick={() => handleLinkToPage('/qna/common')}
+            aria-label='move to common question to gdsc-uos'
           >
             자주 묻는 질문
           </Typography>
           <Typography
             type='body4'
             onClick={() => handleLinkToPage(GOOGLE_FORM_LINK)}
+            aria-label='move to apply google-form link'
           >
             지원 하기
           </Typography>

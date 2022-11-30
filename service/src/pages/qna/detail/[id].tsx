@@ -5,7 +5,7 @@ import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { QuestionListItem } from '../../../../@types/question';
-import { Helmet, Introduction } from '../../../components/common';
+import { Bottom, Helmet, Introduction } from '../../../components/common';
 import { QuestionBox, TeamList } from '../../../components/Qna';
 import { QuestionContent } from '../../../constants';
 
@@ -31,6 +31,7 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
           <QuestionBox question={question} />
         </ContentsWrapper>
       </Layout>
+      <Bottom />
     </>
   );
 };

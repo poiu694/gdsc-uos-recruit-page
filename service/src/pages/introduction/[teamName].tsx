@@ -7,7 +7,7 @@ import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { Helmet, Introduction } from '../../components/common';
+import { Bottom, Helmet, Introduction } from '../../components/common';
 import { List, AsideCard } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
@@ -63,6 +63,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
           />
         </Wrapper>
       </Layout>
+      <Bottom />
     </>
   );
 };
