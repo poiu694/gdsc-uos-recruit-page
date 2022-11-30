@@ -50,10 +50,7 @@ function MainProcess({ content, circle }: MainProcessProps) {
 }
 
 const Wrapper = styled.div`
-  width: 80%;
-  position: relative;
-
-  margin: 60px auto;
+  margin-block: 60px;
 `;
 
 const CircleList = styled.ul`
