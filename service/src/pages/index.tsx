@@ -17,18 +17,20 @@ const Home: NextPage = () => {
   if (!data) return null;
 
   return (
-    <Layout>
-      <Helmet title='메인' description='GDSC UOS RECRUIT 메인 페이지' />
-      <Content>
-        <MainBanner banner={data.banner} />
-        <MainProcess
-          content={data.process.content}
-          circle={data.process.circle}
-        />
-        <MainTeam content={data.team} />
-      </Content>
+    <>
+      <Layout>
+        <Helmet title='메인' description='GDSC UOS RECRUIT 메인 페이지' />
+        <Content>
+          <MainBanner banner={data.banner} />
+          <MainProcess
+            content={data.process.content}
+            circle={data.process.circle}
+          />
+          <MainTeam content={data.team} />
+        </Content>
+      </Layout>
       <Bottom />
-    </Layout>
+    </>
   );
 };
 
