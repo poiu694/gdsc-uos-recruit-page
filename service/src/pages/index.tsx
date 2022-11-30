@@ -8,13 +8,10 @@ import { MainBanner, MainProcess, MainTeam } from '../components';
 import { Bottom, Helmet } from '../components/common';
 
 const Home: NextPage = () => {
-  const { data, error } = useSWR('/api/main', fetcher);
+  const mainData = 
   const { logPageView } = useGA();
   logPageView('메인 화면 조회');
   useAOS();
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return null;
 
   return (
     <>
