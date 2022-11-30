@@ -41,7 +41,7 @@ export const get200Color = (type: TeamValueType) => {
     case 'data_ml':
       return theme.palette.blue200;
     case 'design':
-      return theme.palette.oragne200;
+      return theme.palette.orange200;
     default:
       return theme.palette.yellow200;
   }
@@ -58,8 +58,25 @@ export const get400Color = (type: TeamValueType) => {
     case 'data_ml':
       return theme.palette.blue400;
     case 'design':
-      return theme.palette.oragne400;
+      return theme.palette.orange400;
     default:
       return theme.palette.yellow400;
+  }
+};
+
+export const get600Color = (type: TeamValueType) => {
+  switch (type) {
+    case 'frontend':
+      return theme.palette.yellow600;
+    case 'backend':
+      return theme.palette.red600;
+    case 'mobile':
+      return theme.palette.green600;
+    case 'data_ml':
+      return theme.palette.blue600;
+    case 'design':
+      return theme.palette.orange600;
+    default:
+      return theme.palette.yellow600;
   }
 };

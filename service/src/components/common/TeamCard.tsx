@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import {
-  get400Color,
+  get600Color,
   getJobByTeam,
   getTitleCaseTeam,
 } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
@@ -54,7 +54,8 @@ const Wrapper = styled.section<TeamNameProps>`
     width: 260px;
     height: 300px;
     position: relative;
-    background-color: ${get400Color(teamName)};
+    transition: all 0.1s ease-in;
+    background-color: ${get600Color(teamName)};
     border-radius: 15px;
 
     @media (max-width: ${theme.size.mobile}px) {
