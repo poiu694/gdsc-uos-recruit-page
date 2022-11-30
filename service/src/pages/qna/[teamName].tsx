@@ -7,7 +7,7 @@ import { Banner } from '@gdsc-uos-recruit-page/design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 import { QuestionListItem } from '../../../@types/question';
-import { Helmet, Introduction } from '../../components/common';
+import { Bottom, Helmet, Introduction } from '../../components/common';
 import { TeamList } from '../../components/Qna';
 import QuestionList from '../../components/Qna/QuestionList';
 import { QuestionContent } from '../../constants/';
@@ -42,6 +42,7 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
           <QuestionList questions={questions} teamName={teamName} />
         </ContentsWrapper>
       </Layout>
+      <Bottom />
     </>
   );
 };
