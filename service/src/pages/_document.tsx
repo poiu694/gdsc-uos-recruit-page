@@ -8,6 +8,7 @@ export default function Document() {
         name='google-site-verification'
         content={process.env.NEXT_PULBIC_GOOGLE_SITE_VERIFICATION ?? ''}
       />
+      <html lang='ko' />
       <body>
         <Main />
         <NextScript />
