@@ -13,11 +13,8 @@ function QuestionBox({ question }: QuestionBoxProps) {
   return (
     <Wrapper>
       <PrevBox />
-      <TitleWrapper type='h2'>{question?.title}</TitleWrapper>
-      <ContentWrapper
-        type='body3'
-        dangerouslySetInnerHTML={{ __html: question?.desc! }}
-      />
+      <TitleWrapper type="h2">{question?.title}</TitleWrapper>
+      <ContentWrapper type="body3">{question?.desc}</ContentWrapper>
     </Wrapper>
   );
 }
@@ -57,6 +54,7 @@ const TitleWrapper = styled(Typography)`
 const ContentWrapper = styled(Typography)`
   ${({ theme }) => css`
     margin-top: ${theme.padding.md}px;
+    white-space: pre-line;
 
     @media (max-width: ${theme.size.mobile}px) {
       margin-bottom: ${theme.padding.xlg}px;
