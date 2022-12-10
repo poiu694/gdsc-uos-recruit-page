@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-interface IntroductionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface IntroductionProps extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
   desc: string;
 }
@@ -10,8 +10,8 @@ interface IntroductionProps extends React.HTMLAttributes<HTMLDivElement> {
 function Introduction({ title, desc, ...restProps }: IntroductionProps) {
   return (
     <ContentsWrapper {...restProps}>
-      <Typography type='h1'>{title}</Typography>
-      <Typography type='body3' color={theme.colors.text.general}>
+      <Typography type="h1">{title}</Typography>
+      <Typography type="body3" color={theme.colors.text.general}>
         {desc}
       </Typography>
     </ContentsWrapper>

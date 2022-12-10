@@ -6,7 +6,7 @@ import { FontKeyType } from '../theme/fonts';
 import { colors, PalleteValueType } from '../theme/colors';
 import { theme } from '../theme';
 
-interface TypographyProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TypographyProps extends React.ComponentPropsWithoutRef<'div'> {
   type: FontKeyType;
   className?: string;
   display?: CSSProperties['display'];
