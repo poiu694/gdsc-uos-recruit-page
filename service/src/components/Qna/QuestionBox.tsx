@@ -5,11 +5,11 @@ import { Typography } from '@gdsc-uos-recruit-page/design-system';
 import { QuestionListItem } from '../../../@types/question';
 import PrevBox from './PrevBox';
 
-interface QuestionBoxProps {
+interface Props {
   question: QuestionListItem;
 }
 
-function QuestionBox({ question }: QuestionBoxProps) {
+function QuestionBox({ question }: Props) {
   return (
     <Wrapper>
       <PrevBox />

@@ -1,18 +1,18 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
+
 import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { useRouter } from 'next/router';
 
 import { TeamNameProps, QuestionListItem } from '../../../@types';
 
-interface QuestionListProps extends TeamNameProps {
+interface Props extends TeamNameProps {
   questions: QuestionListItem[];
 }
 
-function QuestionList({ questions, teamName }: QuestionListProps) {
+function QuestionList({ questions, teamName }: Props) {
   const router = useRouter();
   const { logEvent } = useGA();
 
@@ -39,25 +39,25 @@ function QuestionList({ questions, teamName }: QuestionListProps) {
           onClick={handleClickListItem}
         >
           <Typography
-            type='body3'
+            type="body3"
             color={theme.palette.gray200}
-            className='question-mark'
+            className="question-mark"
           >
             Q
           </Typography>
           <Typography
-            type='body3'
+            type="body3"
             color={theme.colors.text.general}
-            className='title'
+            className="title"
           >
             {question.title}
           </Typography>
-          <Icon type='right' hoverAction={false} className='right' />
+          <Icon type="right" hoverAction={false} className="right" />
         </ListItem>
       ))}
       {teamName !== 'common' && (
         <DirectLink
-          type='h6'
+          type="h6"
           teamName={teamName}
           onClick={handleClickDirectTeamLink}
         >

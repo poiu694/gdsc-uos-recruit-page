@@ -2,12 +2,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-interface IntroductionProps extends React.ComponentPropsWithoutRef<'div'> {
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
   desc: string;
 }
 
-function Introduction({ title, desc, ...restProps }: IntroductionProps) {
+function Introduction({ title, desc, ...restProps }: Props) {
   return (
     <ContentsWrapper {...restProps}>
       <Typography type="h1">{title}</Typography>

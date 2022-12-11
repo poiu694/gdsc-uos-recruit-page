@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 import { colors } from '../theme/colors';
 import Typography from './Typography';
 
-interface TitleProps extends React.ComponentPropsWithoutRef<'div'> {
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
   desc1: string;
   desc2: string;
   desc3?: string;
 }
 
-function Title({ title, desc1, desc2, ...restProps }: TitleProps) {
+function Title({ title, desc1, desc2, ...restProps }: Props) {
   return (
     <Wrapper {...restProps}>
       <Typography type="h2" color={colors.text.bold}>

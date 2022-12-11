@@ -1,20 +1,20 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-interface ListProps {
+interface Props {
   title: string;
   items: string[];
 }
 
-function List({ title, items }: ListProps) {
+function List({ title, items }: Props) {
   return (
     <Wrapper>
-      <Typography type='h5' color={theme.colors.text.bold}>
+      <Typography type="h5" color={theme.colors.text.bold}>
         {title}
       </Typography>
       <Lists>
         {items.map((item) => (
-          <ListItem key={item} type='body3'>
+          <ListItem key={item} type="body3">
             • {item}
           </ListItem>
         ))}

@@ -10,21 +10,21 @@ export type ProcessCircleType =
   | 'process-3'
   | 'process-4';
 
-interface Circle {
+interface Props {
   type: ProcessCircleType;
   title: string;
   date: string;
 }
 
-function Circle({ type, title, date }: Circle) {
+function Circle({ type, title, date }: Props) {
   return (
     <Wrapper className={type}>
       <Title>
-        <Typography type='h5' textAlign='center' color={theme.palette.white}>
+        <Typography type="h5" textAlign="center" color={theme.palette.white}>
           {title}
         </Typography>
       </Title>
-      <Typography type='body4' textAlign='center' color={theme.palette.white}>
+      <Typography type="body4" textAlign="center" color={theme.palette.white}>
         {date}
       </Typography>
     </Wrapper>

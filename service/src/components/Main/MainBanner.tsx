@@ -6,30 +6,30 @@ import {
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
 
-interface MainBannerProps {
+interface Props {
   banner: string;
 }
 
-function MainBanner({ banner }: MainBannerProps) {
+function MainBanner({ banner }: Props) {
   return (
     <Wrapper>
       <ContentsWrapper>
         <TitleWrapper>
-          <Typography type='h1' color={theme.colors.primary.red}>
+          <Typography type="h1" color={theme.colors.primary.red}>
             Google
           </Typography>
-          <Typography type='h1' color={theme.colors.primary.yellow}>
+          <Typography type="h1" color={theme.colors.primary.yellow}>
             Developer
           </Typography>
-          <Typography type='h1' color={theme.colors.primary.green}>
+          <Typography type="h1" color={theme.colors.primary.green}>
             Student
           </Typography>
-          <Typography type='h1' color={theme.colors.primary.blue}>
+          <Typography type="h1" color={theme.colors.primary.blue}>
             Clubs
           </Typography>
         </TitleWrapper>
-        <Typography type='h2'>University of Seoul</Typography>
-        <DescWrapper type='h6'>{banner}</DescWrapper>
+        <Typography type="h2">University of Seoul</Typography>
+        <DescWrapper type="h6">{banner}</DescWrapper>
       </ContentsWrapper>
       <Planet />
     </Wrapper>

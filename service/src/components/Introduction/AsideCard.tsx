@@ -8,7 +8,7 @@ import {
 
 import type { AsideCardType, TeamNameProps } from '../../../@types/';
 
-interface AsideCardProps extends TeamNameProps {
+interface Props extends TeamNameProps {
   aside: AsideCardType;
   handleClickQuestionListBtn: () => void;
   handleClickSupportBtn: () => void;
@@ -19,29 +19,29 @@ function AsideCard({
   aside,
   handleClickQuestionListBtn,
   handleClickSupportBtn,
-}: AsideCardProps) {
+}: Props) {
   return (
     <Wrapper>
       <CardWrapper>
         <Line>
-          <Typography type='body4' color={theme.palette.gray200}>
+          <Typography type="body4" color={theme.palette.gray200}>
             소속
           </Typography>
-          <Typography type='body4'>{aside.team}</Typography>
+          <Typography type="body4">{aside.team}</Typography>
         </Line>
         <Line>
-          <Typography type='body4' color={theme.palette.gray200}>
+          <Typography type="body4" color={theme.palette.gray200}>
             경력사항
           </Typography>
-          <Typography type='body4'>{aside.experience}</Typography>
+          <Typography type="body4">{aside.experience}</Typography>
         </Line>
         <Line>
-          <Typography type='body4' color={theme.palette.gray200}>
+          <Typography type="body4" color={theme.palette.gray200}>
             요구사항
           </Typography>
           <Needs>
             {aside.needs.map((need, idx) => (
-              <Typography type='body4' key={need}>
+              <Typography type="body4" key={need}>
                 {need}
                 {idx !== aside.needs.length - 1 ? ',' : ''}
               </Typography>
@@ -51,18 +51,18 @@ function AsideCard({
       </CardWrapper>
       <ButtonWrapper teamName={teamName}>
         <Typography
-          type='h6'
-          role='button'
-          textAlign='center'
+          type="h6"
+          role="button"
+          textAlign="center"
           color={theme.colors.primary.white}
           onClick={handleClickSupportBtn}
         >
           지원 하러 가기
         </Typography>
         <Typography
-          type='h6'
-          role='button'
-          textAlign='center'
+          type="h6"
+          role="button"
+          textAlign="center"
           color={theme.colors.team[teamName]}
           onClick={handleClickQuestionListBtn}
         >

@@ -15,13 +15,13 @@ const ICONS = {
 type IconValueType = typeof ICONS;
 export type IconKeyType = keyof IconValueType;
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
+interface Props extends React.SVGProps<SVGSVGElement> {
   type: IconKeyType;
   color?: string;
   hoverAction?: boolean;
 }
 
-function Icon({ type, color, hoverAction = true, ...restProps }: IconProps) {
+function Icon({ type, color, hoverAction = true, ...restProps }: Props) {
   return (
     <Wrapper color={color} className={hoverAction ? 'hover-action' : ''}>
       {React.createElement(ICONS[type], { ...restProps })}

@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-interface IntroduceProps {
+interface Props {
   desc: string;
 }
 
-function Introduce({ desc }: IntroduceProps) {
+function Introduce({ desc }: Props) {
   return (
     <Wrapper>
-      <Typography type='h5' color={theme.colors.text.bold}>
+      <Typography type="h5" color={theme.colors.text.bold}>
         소개
       </Typography>
-      <Typography type='body3'>{desc}</Typography>
+      <Typography type="body3">{desc}</Typography>
     </Wrapper>
   );
 }

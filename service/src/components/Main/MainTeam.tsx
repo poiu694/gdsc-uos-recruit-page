@@ -6,31 +6,31 @@ import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 import { TeamCard } from '../common';
 import { TitleTwoDesc } from '../../../@types';
 
-interface MainTeamProps {
+interface Props {
   content: TitleTwoDesc;
 }
 
-function MainTeam({ content }: MainTeamProps) {
+function MainTeam({ content }: Props) {
   return (
     <Wrapper>
-      <TitleWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
-        <Typography type='h1' textAlign='center'>
+      <TitleWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
+        <Typography type="h1" textAlign="center">
           Team
         </Typography>
       </TitleWrapper>
       <Title
-        data-aos='fade-up'
+        data-aos="fade-up"
         data-aos-duration={defaultDuration}
         title={content.title}
         desc1={content.desc1}
         desc2={content.desc2}
       />
-      <TeamCardWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
-        <TeamCard teamName='frontend' />
-        <TeamCard teamName='backend' />
-        <TeamCard teamName='mobile' />
-        <TeamCard teamName='data_ml' />
-        <TeamCard teamName='design' />
+      <TeamCardWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
+        <TeamCard teamName="frontend" />
+        <TeamCard teamName="backend" />
+        <TeamCard teamName="mobile" />
+        <TeamCard teamName="data_ml" />
+        <TeamCard teamName="design" />
       </TeamCardWrapper>
     </Wrapper>
   );
