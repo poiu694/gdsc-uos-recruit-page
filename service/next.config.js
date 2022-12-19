@@ -9,7 +9,6 @@ const withTM = require('next-transpile-modules')([
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  output: 'standalone',
   typescript: {
     ignoreBuildErrors: true
   }
