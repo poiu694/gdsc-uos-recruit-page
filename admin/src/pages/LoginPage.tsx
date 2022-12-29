@@ -8,6 +8,7 @@ import {
 } from '@gdsc-uos-recruit-page/design-system';
 import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../components/Logo';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -20,16 +21,7 @@ function LoginPage() {
         <Center>
           <Gradient />
           <BoxContainer>
-            <LogoContainer>
-              <Logo src="/logo.png" />
-              <Typography
-                type="h2"
-                textAlign="center"
-                color={theme.colors.primary.yellow}
-              >
-                GDSC UOS
-              </Typography>
-            </LogoContainer>
+            <Logo type="icon-text" />
             <InputContainer>
               <Input
                 name="email"
@@ -119,17 +111,6 @@ const Gradient = styled.span`
     ${theme.palette.gray400} 0%,
     ${theme.palette.gray500} 100%
   );
-`;
-
-const LogoContainer = styled.header`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Logo = styled.img`
-  max-width: 100%;
 `;
 
 const InputContainer = styled.div`
