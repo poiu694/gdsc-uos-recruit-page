@@ -4,3 +4,5 @@ export { default as Circle } from './Circle';
 export { default as Icon } from './Icon';
 export { default as Banner } from './Banner';
 export { default as Planet } from './Planet';
+export { default as Input } from './Input';
+export { default as Button } from './Button';
