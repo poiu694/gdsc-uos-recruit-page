@@ -1,6 +1,18 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Blog, Down, Github, Gmail, Left, Right, Up } from '../asset/svg';
+import {
+  Blog,
+  Calender,
+  Down,
+  Form,
+  Github,
+  Gmail,
+  Grid,
+  Left,
+  Right,
+  Up,
+  User,
+} from '../asset/svg';
 
 const ICONS = {
   down: Down,
@@ -10,6 +22,10 @@ const ICONS = {
   github: Github,
   gmail: Gmail,
   blog: Blog,
+  grid: Grid,
+  form: Form,
+  user: User,
+  calender: Calender,
 } as const;
 
 type IconValueType = typeof ICONS;
