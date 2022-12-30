@@ -1,6 +1,7 @@
 {
   "name": "@gdsc-uos-recruit-page/hooks",
   "version": "1.0.0",
+  "author": "LeeSangMin",
   "packageManager": "yarn@3.2.1",
   "main": "./index.ts",
   "types": "./index.ts",
