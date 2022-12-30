@@ -1,36 +1,26 @@
 import styled from '@emotion/styled';
-import { colors } from '../theme/colors';
+
+import { theme } from '../theme';
 import Typography from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
-  desc1: string;
-  desc2: string;
-  desc3?: string;
+  description: string;
 }
 
-function Title({ title, desc1, desc2, ...restProps }: Props) {
+function Title({ title, description, ...restProps }: Props) {
   return (
     <Wrapper {...restProps}>
-      <Typography type="h2" color={colors.text.bold}>
+      <Typography type="h5" color={theme.palette.gray400}>
         {title}
       </Typography>
-      <Typography type="h6" color={colors.text.general}>
-        {desc1}
-      </Typography>
-      <Typography type="h6" color={colors.text.general}>
-        {desc2}
+      <Typography type="body4" color={theme.palette.gray300}>
+        {description}
       </Typography>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.div`
-  word-break: keep-all;
-
-  div:first-of-type {
-    margin-bottom: 8px;
-  }
-`;
+const Wrapper = styled.div``;
 
 export default Title;

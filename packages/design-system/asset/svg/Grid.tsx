@@ -1,6 +1,6 @@
 import { theme } from '../../theme';
 
-const Gmail = ({ ...restProps }) => {
+const Grid = ({ ...restProps }) => {
   return (
     <svg
       width="24"
@@ -11,14 +11,28 @@ const Gmail = ({ ...restProps }) => {
       {...restProps}
     >
       <path
-        d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+        d="M10 3H3V10H10V3Z"
         stroke={theme.palette.gray100}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M22 6L12 13L2 6"
+        d="M21 3H14V10H21V3Z"
+        stroke={theme.palette.gray100}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21 14H14V21H21V14Z"
+        stroke={theme.palette.gray100}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10 14H3V21H10V14Z"
         stroke={theme.palette.gray100}
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -28,4 +42,4 @@ const Gmail = ({ ...restProps }) => {
   );
 };
 
-export default Gmail;
+export default Grid;

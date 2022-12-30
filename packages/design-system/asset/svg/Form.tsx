@@ -1,6 +1,6 @@
 import { theme } from '../../theme';
 
-const Blog = ({ ...restProps }) => {
+const Form = ({ ...restProps }) => {
   return (
     <svg
       width="24"
@@ -49,4 +49,4 @@ const Blog = ({ ...restProps }) => {
   );
 };
 
-export default Blog;
+export default Form;
