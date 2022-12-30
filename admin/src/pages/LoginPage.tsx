@@ -8,7 +8,7 @@ import {
 } from '@gdsc-uos-recruit-page/design-system';
 import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../components/Logo';
+import { Flex, Logo } from '../components';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -18,11 +18,11 @@ function LoginPage() {
   return (
     <Wrapper>
       <BackgroundImage>
-        <Center>
+        <Center justifyContent="center" alignItems="center">
           <Gradient />
           <BoxContainer>
             <Logo type="icon-text" />
-            <InputContainer>
+            <InputContainer flexDirection="column" gap={16}>
               <Input
                 name="email"
                 label="이메일"
@@ -77,12 +77,9 @@ const BackgroundImage = styled.div`
   background-position: 50%;
 `;
 
-const Center = styled.section`
+const Center = styled(Flex)`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const BoxContainer = styled.div`
@@ -113,11 +110,8 @@ const Gradient = styled.span`
   );
 `;
 
-const InputContainer = styled.div`
+const InputContainer = styled(Flex)`
   margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 `;
 
 export default LoginPage;

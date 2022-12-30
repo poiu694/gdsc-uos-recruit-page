@@ -3,6 +3,7 @@ import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import Icon, {
   IconKeyType,
 } from '@gdsc-uos-recruit-page/design-system/components/Icon';
+import { Flex } from './styled';
 
 interface Props {
   icon: IconKeyType;
@@ -11,7 +12,7 @@ interface Props {
 
 function IconText({ icon, text }: Props) {
   return (
-    <Wrapper>
+    <Wrapper gap={12} alignItems="center">
       <Icon type={icon} />
       <Typography type="body4" textAlign="center" color={theme.palette.gray50}>
         {text}
@@ -20,10 +21,6 @@ function IconText({ icon, text }: Props) {
   );
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  gap: 12px;
-  align-items: center;
-`;
+const Wrapper = styled(Flex)``;
 
 export default IconText;

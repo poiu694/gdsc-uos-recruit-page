@@ -6,8 +6,10 @@ import {
 } from '@gdsc-uos-recruit-page/design-system';
 import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
 import { useNavigate } from 'react-router-dom';
-import IconText from './IconText';
+
 import Logo from './Logo';
+import { Flex } from './styled';
+import IconText from './IconText';
 
 interface Props {
   user: '';
@@ -21,7 +23,7 @@ function SideMenu() {
       <Header>
         <Logo type="icon" />
       </Header>
-      <MenuList>
+      <MenuList flexDirection="column" gap={8} as={'ul'}>
         <Typography
           type="body4"
           color={theme.palette.gray200}
@@ -39,7 +41,7 @@ function SideMenu() {
         </MenuItem>
       </MenuList>
 
-      <MenuList>
+      <MenuList flexDirection="column" gap={8} as={'ul'}>
         <Typography
           type="body4"
           color={theme.palette.gray200}
@@ -61,6 +63,7 @@ function SideMenu() {
           type="body4"
           textAlign="center"
           color={theme.palette.gray50}
+          onClick={() => navigate('/')}
         >
           Logout
         </Typography>
@@ -92,12 +95,7 @@ const Header = styled.header`
   margin-bottom: 16px;
 `;
 
-const MenuList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
+const MenuList = styled(Flex)``;
 const MenuItem = styled.li`
   padding: 8px;
   margin-inline: 32px;
