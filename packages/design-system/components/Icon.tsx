@@ -37,7 +37,7 @@ interface Props extends React.SVGProps<SVGSVGElement> {
   hoverAction?: boolean;
 }
 
-function Icon({ type, color, hoverAction = true, ...restProps }: Props) {
+function Icon({ type, color, hoverAction = false, ...restProps }: Props) {
   return (
     <Wrapper color={color} className={hoverAction ? 'hover-action' : ''}>
       {React.createElement(ICONS[type], { ...restProps })}
@@ -46,11 +46,10 @@ function Icon({ type, color, hoverAction = true, ...restProps }: Props) {
 }
 
 const Wrapper = styled.div`
-  cursor: pointer;
-
-  svg {
+  &.hover-action svg {
     -webkit-transition: all 0.1s ease-in-out; /* Safari */
     transition: all 0.1s ease-in-out;
+    cursor: pointer;
   }
 
   &.hover-action:hover svg {
