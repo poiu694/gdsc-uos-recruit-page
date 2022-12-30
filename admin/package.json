@@ -2,6 +2,7 @@
   "name": "admin",
   "private": true,
   "version": "0.1.0",
+  "author": "leeSangMin",
   "packageManager": "yarn@3.2.1",
   "type": "module",
   "scripts": {
