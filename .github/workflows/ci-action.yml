@@ -39,7 +39,6 @@ jobs:
 
       - name: save target files
         run: |
-          echo $GITHUB_OUTPUT
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"service"* ]]; then
             echo "service=true" >> $GITHUB_OUTPUT
           fi
