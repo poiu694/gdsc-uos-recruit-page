@@ -530,7 +530,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-uos-recruit-page/design-system@1.0.0, @gdsc-uos-recruit-page/design-system@workspace:packages/design-system":
+"@gdsc-uos-recruit-page/design-system@1.0.0, @gdsc-uos-recruit-page/design-system@workspace:^, @gdsc-uos-recruit-page/design-system@workspace:packages/design-system":
   version: 0.0.0-use.local
   resolution: "@gdsc-uos-recruit-page/design-system@workspace:packages/design-system"
   dependencies:
@@ -557,7 +557,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gdsc-uos-recruit-page/eslint-config-custom@1.0.0, @gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom":
+"@gdsc-uos-recruit-page/eslint-config-custom@1.0.0, @gdsc-uos-recruit-page/eslint-config-custom@workspace:^, @gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom":
   version: 0.0.0-use.local
   resolution: "@gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom"
   dependencies:
@@ -578,7 +578,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gdsc-uos-recruit-page/hooks@1.0.0, @gdsc-uos-recruit-page/hooks@workspace:packages/hooks":
+"@gdsc-uos-recruit-page/hooks@1.0.0, @gdsc-uos-recruit-page/hooks@workspace:^, @gdsc-uos-recruit-page/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@gdsc-uos-recruit-page/hooks@workspace:packages/hooks"
   dependencies:
@@ -605,7 +605,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gdsc-uos-recruit-page/tsconfig-custom@1.0.0, @gdsc-uos-recruit-page/tsconfig-custom@workspace:packages/tsconfig-custom":
+"@gdsc-uos-recruit-page/tsconfig-custom@1.0.0, @gdsc-uos-recruit-page/tsconfig-custom@workspace:^, @gdsc-uos-recruit-page/tsconfig-custom@workspace:packages/tsconfig-custom":
   version: 0.0.0-use.local
   resolution: "@gdsc-uos-recruit-page/tsconfig-custom@workspace:packages/tsconfig-custom"
   languageName: unknown
@@ -1123,10 +1123,10 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.9.3
     "@emotion/styled": ^11.9.3
-    "@gdsc-uos-recruit-page/design-system": 1.0.0
-    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
-    "@gdsc-uos-recruit-page/hooks": 1.0.0
-    "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
+    "@gdsc-uos-recruit-page/design-system": "workspace:^"
+    "@gdsc-uos-recruit-page/eslint-config-custom": "workspace:^"
+    "@gdsc-uos-recruit-page/hooks": "workspace:^"
+    "@gdsc-uos-recruit-page/tsconfig-custom": "workspace:^"
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@typescript-eslint/eslint-plugin": ^5.30.6
