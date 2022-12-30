@@ -34,22 +34,23 @@ jobs:
 
       - name: save variable output files
         run: |
-          echo ::set-output name=OUTPUT_FILES::$(cat $HOME/files.json)
+          echo "OUTPUT_FILES=$(cat $HOME/files.json)" >> $GITHUB_OUTPUT
         id: files
 
       - name: save target files
         run: |
+          echo $GITHUB_OUTPUT
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"service"* ]]; then
-            echo ::set-output name=service::true
+            echo "service=true" >> $GITHUB_OUTPUT
           fi
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"admin"* ]]; then
-            echo ::set-output name=admin::true
+            echo "admin=true" >> $GITHUB_OUTPUT
           fi
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"hooks"* ]]; then
-            echo ::set-output name=hooks::true
+            echo "hooks=true" >> $GITHUB_OUTPUT
           fi
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"design-system"* ]]; then
-            echo ::set-output name=design-system::true
+            echo "design-system=true" >> $GITHUB_OUTPUT
           fi
         id: changes
 
