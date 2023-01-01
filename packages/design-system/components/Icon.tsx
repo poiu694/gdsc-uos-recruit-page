@@ -3,6 +3,8 @@ import React from 'react';
 import {
   Blog,
   Calender,
+  DoubleLeft,
+  DoubleRight,
   Down,
   Form,
   Github,
@@ -15,17 +17,19 @@ import {
 } from '../asset/svg';
 
 const ICONS = {
-  down: Down,
   up: Up,
   left: Left,
-  right: Right,
-  github: Github,
-  gmail: Gmail,
+  down: Down,
   blog: Blog,
   grid: Grid,
   form: Form,
   user: User,
+  right: Right,
+  gmail: Gmail,
+  github: Github,
   calender: Calender,
+  doubleLeft: DoubleLeft,
+  doubleRight: DoubleRight,
 } as const;
 
 type IconValueType = typeof ICONS;
