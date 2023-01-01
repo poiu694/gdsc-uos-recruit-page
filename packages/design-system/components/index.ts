@@ -6,3 +6,4 @@ export { default as Banner } from './Banner';
 export { default as Planet } from './Planet';
 export { default as Input } from './Input';
 export { default as Button } from './Button';
+export { default as ClickableIcon } from './ClickableIcon';
