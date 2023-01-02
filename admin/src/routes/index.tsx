@@ -1,8 +1,9 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import {
-  LoginPage,
   MainPage,
+  LoginPage,
+  ApplyPage,
   GoogleFormApplicationListPage,
   GoogleFormApplicationDetailPage,
 } from '../pages';
@@ -11,11 +12,12 @@ const MainRoute = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LoginPage />} />
-        <Route path='/main' element={<MainPage />} />
-        <Route path='/list' element={<GoogleFormApplicationListPage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/main" element={<MainPage />} />
+        <Route path="/apply" element={<ApplyPage />} />
+        <Route path="/list" element={<GoogleFormApplicationListPage />} />
         <Route
-          path='/detail/:id'
+          path="/detail/:id"
           element={<GoogleFormApplicationDetailPage />}
         />
       </Routes>

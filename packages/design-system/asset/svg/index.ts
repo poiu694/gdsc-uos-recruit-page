@@ -10,4 +10,6 @@ export { default as Gmail } from './Gmail';
 export { default as Github } from './Github';
 export { default as Calender } from './Calender';
 export { default as CometRain } from './CometRain';
+export { default as DoubleLeft } from './DoubleLeft';
+export { default as DoubleRight } from './DoubleRight';
 export { default as SolarSystem } from "./SolarSystem";
