@@ -23,23 +23,23 @@ function TeamCard({ teamName }: TeamNameProps) {
 
   return (
     <Wrapper teamName={teamName}>
-      <TitleWrapper type='h4' color={theme.colors.primary.white}>
+      <TitleWrapper type="h4" color={theme.colors.primary.white}>
         {getTitleCaseTeam(teamName)}
       </TitleWrapper>
 
       <Description>
-        <Typography type='h6' color={theme.palette.gray50}>
+        <Typography type="h6" color={theme.palette.gray50}>
           {team}
         </Typography>
-        <Typography type='h6' color={theme.palette.gray50}>
+        <Typography type="h6" color={theme.palette.gray50}>
           {Developer}
         </Typography>
       </Description>
 
       <BottomNav onClick={handleClickNav}>
         <Typography
-          type='h4'
-          textAlign='center'
+          type="h4"
+          textAlign="center"
           color={theme.colors.primary.white}
         >
           Detail

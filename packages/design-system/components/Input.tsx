@@ -22,7 +22,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       <Wrapper>
         <Label htmlFor={id}>
           {label && (
-            <LabelTypography type="body4" color={theme.palette.gray200}>
+            <LabelTypography type="body4" color={theme.palette.gray350}>
               {label}
             </LabelTypography>
           )}
@@ -62,6 +62,7 @@ const InputWrapper = styled.input`
   border: 1px solid ${theme.colors.ui.divider};
   border-radius: 4px;
   outline: none;
+  color: ${theme.palette.gray400};
 
   &:hover {
     border: 1px solid ${theme.colors.primary.green};

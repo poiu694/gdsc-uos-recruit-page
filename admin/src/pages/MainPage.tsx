@@ -11,7 +11,7 @@ function MainPage() {
       <ContentWrapper>
         <Title
           title="Dashboard"
-          description={`${currentYear} GSDC UOS Recruit 정보를 요약한 페이지입니다.`}
+          descriptions={`${currentYear} GSDC UOS Recruit 정보를 요약한 페이지입니다.`}
         />
         <Typography type="h4" style={{ marginTop: 32 }}>
           General Statistics

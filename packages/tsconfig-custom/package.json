@@ -2,6 +2,7 @@
   "name": "@gdsc-uos-recruit-page/tsconfig-custom",
   "version": "1.0.0",
   "private": true,
+  "author": "LeeSangMin",
   "main": "index.js",
   "files": [
     "base.json",

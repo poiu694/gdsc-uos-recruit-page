@@ -4,11 +4,15 @@ export const palette = {
   // Gray Scale
   background: '#FCFCFC',
   white: '#F8FAF9',
-  gray50: '#EEEEEE',
-  gray100: '#AFAFAF',
-  gray200: '#898989',
-  gray300: '#676767',
-  gray400: '#353535',
+  gray50: '#F9FAFB',
+  gray100: '#F2F4F6',
+  gray150: '#E5E8EB',
+  gray200: '#D1D6DB',
+  gray250: '#B0B8C1',
+  gray300: '#8B95A1',
+  gray350: '#6B7684',
+  gray400: '#4E5968',
+  gray450: '#333D4B',
   gray500: '#292929',
   black: '#181818',
 
@@ -68,13 +72,13 @@ export const colors = {
   },
   background: palette.background,
   text: {
-    general: palette.gray400,
+    general: palette.gray450,
     bold: palette.black,
   },
   ui: {
-    divider: palette.gray100,
-    border: palette.gray100,
-    hover: palette.gray50,
+    divider: palette.gray300,
+    border: palette.gray200,
+    hover: palette.gray150,
     // overlay: `linear-gradient(180deg, rgba(79, 23, 197, 0) -39.47%, ${palette.purple400} 100%)`,
   },
   team: {

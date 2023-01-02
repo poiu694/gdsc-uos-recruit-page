@@ -14,7 +14,7 @@ function IconText({ icon, text }: Props) {
   return (
     <Wrapper gap={12} alignItems="center">
       <Icon type={icon} />
-      <Typography type="body4" textAlign="center" color={theme.palette.gray50}>
+      <Typography type="body4" textAlign="center" color={theme.palette.gray200}>
         {text}
       </Typography>
     </Wrapper>

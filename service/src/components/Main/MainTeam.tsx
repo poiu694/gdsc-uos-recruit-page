@@ -22,8 +22,7 @@ function MainTeam({ content }: Props) {
         data-aos="fade-up"
         data-aos-duration={defaultDuration}
         title={content.title}
-        desc1={content.desc1}
-        desc2={content.desc2}
+        descriptions={[content.desc1, content.desc2]}
       />
       <TeamCardWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
         <TeamCard teamName="frontend" />

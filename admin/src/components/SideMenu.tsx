@@ -26,7 +26,7 @@ function SideMenu() {
       <MenuList flexDirection="column" gap={8} as={'ul'}>
         <Typography
           type="body4"
-          color={theme.palette.gray200}
+          color={theme.palette.gray250}
           style={{
             margin: '32px 0 8px 48px',
           }}
@@ -44,7 +44,7 @@ function SideMenu() {
       <MenuList flexDirection="column" gap={8} as={'ul'}>
         <Typography
           type="body4"
-          color={theme.palette.gray200}
+          color={theme.palette.gray250}
           style={{
             margin: '32px 0 8px 48px',
           }}
@@ -85,13 +85,13 @@ const Wrapper = styled.aside`
   padding: 0;
   background-image: linear-gradient(
     195deg,
-    ${theme.palette.gray400} 0%,
-    ${theme.palette.gray500} 100%
+    ${theme.palette.gray500} 0%,
+    ${theme.palette.black} 100%
   );
 `;
 
 const Header = styled.header`
-  border: 1px solid ${theme.palette.gray200};
+  border: 1px solid ${theme.palette.gray350};
   margin-bottom: 16px;
 `;
 
@@ -104,7 +104,7 @@ const MenuItem = styled.li`
   transition: 0.15s all ease-in;
 
   &:hover {
-    background-color: ${theme.palette.gray300};
+    background-color: ${theme.palette.gray500};
   }
 `;
 

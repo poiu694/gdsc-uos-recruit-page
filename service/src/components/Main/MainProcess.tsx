@@ -25,8 +25,7 @@ function MainProcess({ content, circle }: Props) {
       </TitleWrapper>
       <Title
         title={content.title}
-        desc1={content.desc1}
-        desc2={content.desc2}
+        descriptions={[content.desc1, content.desc2]}
         data-aos="fade-up"
         data-aos-duration={defaultDuration}
       />

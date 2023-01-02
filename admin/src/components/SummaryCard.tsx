@@ -25,12 +25,12 @@ function SummaryCard({
           type={iconType}
           iconOutFilledColor={iconOutFilledColor}
         />
-        <Typography type="body4" color={theme.palette.gray200} textAlign="end">
+        <Typography type="body4" color={theme.palette.gray350} textAlign="end">
           {label}
         </Typography>
         <Typography
           type="h5"
-          color={theme.palette.gray300}
+          color={theme.palette.gray400}
           textAlign="end"
           style={{ marginBottom: 8 }}
         >
@@ -38,7 +38,7 @@ function SummaryCard({
         </Typography>
       </CardHeader>
       <CardFoorter>
-        <Typography type="body5" color={theme.palette.gray300}>
+        <Typography type="body5" color={theme.palette.gray400}>
           {description}
         </Typography>
       </CardFoorter>
@@ -48,9 +48,10 @@ function SummaryCard({
 
 const Wrapper = styled.div`
   width: 100%;
+  border: 1px solid ${theme.palette.gray150};
   border-radius: 16px;
-  box-shadow: 0 4px 6px -1px ${theme.palette.gray100},
-    0 2px 4px -1px ${theme.palette.gray50};
+  box-shadow: 0 4px 6px -1px ${theme.palette.gray250},
+    0 2px 4px -1px ${theme.palette.gray200};
 `;
 
 const CardHeader = styled.header`
@@ -80,8 +81,8 @@ const OutFilledIcon = styled(Icon)<OutFilledColor>`
   transform: translateY(50%);
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 4px 20px 0 ${theme.palette.gray100},
-    0 7px 10px -5px ${theme.palette.gray50};
+  box-shadow: 0 4px 20px 0 ${theme.palette.gray200},
+    0 7px 10px -5px ${theme.palette.gray350};
 
   path {
     stroke: ${theme.colors.primary.white};
