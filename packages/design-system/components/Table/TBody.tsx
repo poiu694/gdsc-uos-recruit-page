@@ -29,7 +29,7 @@ const Wrapper = styled.tbody`
   }
 
   & > tr:hover {
-    background-color: ${theme.palette.gray150};
+    background-color: ${theme.palette.gray100};
   }
 `;
 
