@@ -35,7 +35,7 @@ const ICONS = {
 type IconValueType = typeof ICONS;
 export type IconKeyType = keyof IconValueType;
 
-interface Props extends React.SVGProps<SVGSVGElement> {
+interface Props extends React.ComponentPropsWithoutRef<'svg'> {
   type: IconKeyType;
   color?: string;
   hoverAction?: boolean;
