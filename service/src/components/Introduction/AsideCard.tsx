@@ -24,19 +24,19 @@ function AsideCard({
     <Wrapper>
       <CardWrapper>
         <Line>
-          <Typography type="body4" color={theme.palette.gray200}>
+          <Typography type="body4" color={theme.palette.gray400}>
             소속
           </Typography>
           <Typography type="body4">{aside.team}</Typography>
         </Line>
         <Line>
-          <Typography type="body4" color={theme.palette.gray200}>
+          <Typography type="body4" color={theme.palette.gray400}>
             경력사항
           </Typography>
           <Typography type="body4">{aside.experience}</Typography>
         </Line>
         <Line>
-          <Typography type="body4" color={theme.palette.gray200}>
+          <Typography type="body4" color={theme.palette.gray400}>
             요구사항
           </Typography>
           <Needs>

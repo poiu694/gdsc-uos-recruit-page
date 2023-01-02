@@ -40,7 +40,7 @@ function QuestionList({ questions, teamName }: Props) {
         >
           <Typography
             type="body3"
-            color={theme.palette.gray200}
+            color={theme.palette.gray350}
             className="question-mark"
           >
             Q

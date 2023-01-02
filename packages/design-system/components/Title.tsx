@@ -5,18 +5,27 @@ import Typography from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
-  description: string;
+  descriptions: string | string[];
 }
 
-function Title({ title, description, ...restProps }: Props) {
+function Title({ title, descriptions, ...restProps }: Props) {
+  const isArrayDescription = Array.isArray(descriptions);
   return (
     <Wrapper {...restProps}>
-      <Typography type="h5" color={theme.palette.gray400}>
+      <Typography type="h5" color={theme.palette.gray450}>
         {title}
       </Typography>
-      <Typography type="body4" color={theme.palette.gray300}>
-        {description}
-      </Typography>
+      {isArrayDescription &&
+        descriptions.map((description) => (
+          <Typography type="body4" color={theme.palette.gray450}>
+            {description}
+          </Typography>
+        ))}
+      {!isArrayDescription && (
+        <Typography type="body4" color={theme.palette.gray450}>
+          {descriptions}
+        </Typography>
+      )}
     </Wrapper>
   );
 }

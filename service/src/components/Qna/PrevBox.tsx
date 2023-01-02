@@ -8,8 +8,8 @@ function PrevBox() {
 
   return (
     <Wrapper onClick={() => router.back()}>
-      <Icon type='left' hoverAction={false} />
-      <Typography type='body4' color={theme.palette.gray300}>
+      <Icon type="left" hoverAction={false} />
+      <Typography type="body4" color={theme.palette.gray350}>
         질문목록 바로가기
       </Typography>
     </Wrapper>
@@ -21,11 +21,10 @@ const Wrapper = styled.div`
     width: 15em;
     padding: 4px;
     margin-bottom: 12px;
-
     display: flex;
     align-items: center;
-
     cursor: pointer;
+    transition: all 0.15s linear;
 
     @media (max-width: ${theme.size.mobile}px) {
       margin-bottom: 0;

@@ -11,9 +11,7 @@ function Introduction({ title, desc, ...restProps }: Props) {
   return (
     <ContentsWrapper {...restProps}>
       <Typography type="h1">{title}</Typography>
-      <Typography type="body3" color={theme.colors.text.general}>
-        {desc}
-      </Typography>
+      <Typography type="body3">{desc}</Typography>
     </ContentsWrapper>
   );
 }
