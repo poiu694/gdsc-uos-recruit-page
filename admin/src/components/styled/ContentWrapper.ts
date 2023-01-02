@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 const ContentWrapper = styled.div`
   margin-top: 16px;
   margin-left: 300px;
+  margin-bottom: 80px;
 `;
 
 export default ContentWrapper;

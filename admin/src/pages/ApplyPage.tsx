@@ -39,7 +39,7 @@ function ApplyPage() {
       <ContentWrapper>
         <Title
           title="Apply"
-          description={`${currentYear} GSDC UOS Recruit에 지원자 관리 페이지입니다.`}
+          descriptions={`${currentYear} GSDC UOS Recruit에 지원자 관리 페이지입니다.`}
         />
         <Typography type="h4" style={{ marginTop: 32 }}>
           지원 서류

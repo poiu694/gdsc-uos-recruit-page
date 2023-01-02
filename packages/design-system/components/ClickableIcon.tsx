@@ -15,7 +15,7 @@ interface Props {
 
 function ClickableIcon({
   iconProps,
-  hoverBackgroundColor = theme.palette.gray300,
+  hoverBackgroundColor = theme.colors.ui.hover,
   disabled = false,
   onClick,
 }: Props) {

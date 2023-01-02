@@ -12,7 +12,7 @@ const Right = ({ ...restProps }) => {
     >
       <path
         d="M9 18L15 12L9 6"
-        stroke={theme.palette.gray100}
+        stroke={theme.palette.gray300}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

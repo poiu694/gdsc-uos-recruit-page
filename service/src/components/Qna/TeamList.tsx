@@ -46,7 +46,7 @@ function TeamList({ teamName }: TeamNameProps) {
           <Typography
             type="body3"
             className={isActive[idx] ? 'bold' : ''}
-            color={theme.palette.gray300}
+            color={theme.palette.gray350}
           >
             {team.title}
           </Typography>

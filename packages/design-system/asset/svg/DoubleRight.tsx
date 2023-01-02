@@ -12,14 +12,14 @@ function DoubleRight({ ...restProps }: React.SVGProps<SVGSVGElement>) {
     >
       <path
         d="M13 17L18 12L13 7"
-        stroke={theme.palette.gray100}
+        stroke={theme.palette.gray300}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M6 17L11 12L6 7"
-        stroke={theme.palette.gray100}
+        stroke={theme.palette.gray300}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"

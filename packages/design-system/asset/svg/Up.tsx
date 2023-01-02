@@ -12,7 +12,7 @@ const Up = ({ ...restProps }) => {
     >
       <path
         d="M20.9864 15L14.2262 9L7.46606 15"
-        stroke={theme.palette.gray100}
+        stroke={theme.palette.gray300}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

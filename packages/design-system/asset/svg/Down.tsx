@@ -12,7 +12,7 @@ const Down = ({ ...restProps }) => {
     >
       <path
         d="M6 9L12 15L18 9"
-        stroke={theme.palette.gray100}
+        stroke={theme.palette.gray300}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
