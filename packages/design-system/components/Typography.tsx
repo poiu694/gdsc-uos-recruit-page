@@ -6,7 +6,7 @@ import { FontKeyType } from '../theme/fonts';
 import { colors, PalleteValueType } from '../theme/colors';
 import { theme } from '../theme';
 
-interface TypographyProps extends React.HTMLAttributes<HTMLDivElement> {
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
   type: FontKeyType;
   className?: string;
   display?: CSSProperties['display'];
@@ -22,7 +22,7 @@ function Typography({
   textAlign = 'start',
   color = colors.text.general,
   ...restProps
-}: PropsWithChildren<TypographyProps>) {
+}: PropsWithChildren<Props>) {
   return (
     <Wrapper
       type={type}
@@ -38,7 +38,7 @@ function Typography({
 }
 
 // TODO: 글자에 따른 모바일 반응형 디자인시스템 만들어 놓기
-const Wrapper = styled.div<TypographyProps>`
+const Wrapper = styled.div<Props>`
   ${(props) => {
     return css`
       ${theme.fonts[props.type]};

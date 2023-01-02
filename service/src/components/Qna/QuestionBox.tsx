@@ -5,16 +5,16 @@ import { Typography } from '@gdsc-uos-recruit-page/design-system';
 import { QuestionListItem } from '../../../@types/question';
 import PrevBox from './PrevBox';
 
-interface QuestionBoxProps {
+interface Props {
   question: QuestionListItem;
 }
 
-function QuestionBox({ question }: QuestionBoxProps) {
+function QuestionBox({ question }: Props) {
   return (
     <Wrapper>
       <PrevBox />
-      <TitleWrapper type='h2'>{question?.title}</TitleWrapper>
-      <ContentWrapper type='body3'>{question?.desc} </ContentWrapper>
+      <TitleWrapper type="h2">{question?.title}</TitleWrapper>
+      <ContentWrapper type="body3">{question?.desc}</ContentWrapper>
     </Wrapper>
   );
 }
@@ -54,6 +54,7 @@ const TitleWrapper = styled(Typography)`
 const ContentWrapper = styled(Typography)`
   ${({ theme }) => css`
     margin-top: ${theme.padding.md}px;
+    white-space: pre-line;
 
     @media (max-width: ${theme.size.mobile}px) {
       margin-bottom: ${theme.padding.xlg}px;

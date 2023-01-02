@@ -5,7 +5,7 @@ import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { QuestionListItem } from '../../../../@types/question';
-import { Helmet, Introduction } from '../../../components/common';
+import { Bottom, Helmet, Introduction } from '../../../components/common';
 import { QuestionBox, TeamList } from '../../../components/Qna';
 import { QuestionContent } from '../../../constants';
 
@@ -15,7 +15,7 @@ interface QnaPageProps {
 
 const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
   const { logPageView } = useGA();
-  logPageView(`/qna/detail/${question?.id ?? ''}`);
+  logPageView(`${question?.title ?? ''} 질문 조회`);
 
   return (
     <>
@@ -31,6 +31,7 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
           <QuestionBox question={question} />
         </ContentsWrapper>
       </Layout>
+      <Bottom />
     </>
   );
 };
@@ -82,6 +83,7 @@ const ContentsWrapper = styled.div`
 
     display: flex;
     justify-content: space-between;
+    white-space: pre-line;
     @media (max-width: ${theme.size.mobile}px) {
       flex-direction: column-reverse;
       gap: 0;

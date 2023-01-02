@@ -1,0 +1,1 @@
+export const GOOGLE_FORM_LINK = 'https://forms.gle/FdoiCr6nwdp6WHvM8';

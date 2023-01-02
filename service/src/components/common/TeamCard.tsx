@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import {
-  get400Color,
+  get600Color,
   getJobByTeam,
   getTitleCaseTeam,
 } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
@@ -17,29 +17,29 @@ function TeamCard({ teamName }: TeamNameProps) {
   const { logEvent } = useGA();
 
   const handleClickNav = useCallback(() => {
-    logEvent('route(team)', `move to ${teamName}`);
+    logEvent('Team', `${teamName} 로 접근`);
     router.push(`/introduction/${teamName}`);
   }, [router, teamName, logEvent]);
 
   return (
     <Wrapper teamName={teamName}>
-      <TitleWrapper type='h4' color={theme.colors.primary.white}>
+      <TitleWrapper type="h4" color={theme.colors.primary.white}>
         {getTitleCaseTeam(teamName)}
       </TitleWrapper>
 
       <Description>
-        <Typography type='h6' color={theme.palette.gray50}>
+        <Typography type="h6" color={theme.palette.gray50}>
           {team}
         </Typography>
-        <Typography type='h6' color={theme.palette.gray50}>
+        <Typography type="h6" color={theme.palette.gray50}>
           {Developer}
         </Typography>
       </Description>
 
       <BottomNav onClick={handleClickNav}>
         <Typography
-          type='h4'
-          textAlign='center'
+          type="h4"
+          textAlign="center"
           color={theme.colors.primary.white}
         >
           Detail
@@ -54,7 +54,8 @@ const Wrapper = styled.section<TeamNameProps>`
     width: 260px;
     height: 300px;
     position: relative;
-    background-color: ${get400Color(teamName)};
+    transition: all 0.1s ease-in;
+    background-color: ${get600Color(teamName)};
     border-radius: 15px;
 
     @media (max-width: ${theme.size.mobile}px) {

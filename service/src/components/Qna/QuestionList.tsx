@@ -1,18 +1,18 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
+
 import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { useRouter } from 'next/router';
 
 import { TeamNameProps, QuestionListItem } from '../../../@types';
 
-interface QuestionListProps extends TeamNameProps{
+interface Props extends TeamNameProps {
   questions: QuestionListItem[];
 }
 
-function QuestionList({ questions, teamName }: QuestionListProps) {
+function QuestionList({ questions, teamName }: Props) {
   const router = useRouter();
   const { logEvent } = useGA();
 
@@ -21,7 +21,7 @@ function QuestionList({ questions, teamName }: QuestionListProps) {
   ) => {
     e.stopPropagation();
     const { dataset } = e.currentTarget;
-    logEvent('Click(QuestionItem)', `${dataset.title} click`);
+    logEvent('Question', `${dataset.title} click`);
     router.push(dataset.url as string);
   };
 
@@ -39,25 +39,25 @@ function QuestionList({ questions, teamName }: QuestionListProps) {
           onClick={handleClickListItem}
         >
           <Typography
-            type='body3'
-            color={theme.palette.gray200}
-            className='question-mark'
+            type="body3"
+            color={theme.palette.gray350}
+            className="question-mark"
           >
             Q
           </Typography>
           <Typography
-            type='body3'
+            type="body3"
             color={theme.colors.text.general}
-            className='title'
+            className="title"
           >
             {question.title}
           </Typography>
-          <Icon type='right' hoverAction={false} />
+          <Icon type="right" hoverAction={false} className="right" />
         </ListItem>
       ))}
       {teamName !== 'common' && (
         <DirectLink
-          type='h6'
+          type="h6"
           teamName={teamName}
           onClick={handleClickDirectTeamLink}
         >
@@ -101,7 +101,6 @@ const ListItem = styled.li`
     border-radius: 5px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     -webkit-transition: all 0.1s ease-in-out; /* Safari */
@@ -115,16 +114,17 @@ const ListItem = styled.li`
       }
     }
 
-    .question-mark {
-      flex-grow: 1;
-    }
-
     .title {
-      flex-grow: 20;
+      margin-left: 30px;
 
       @media (max-width: ${theme.size.mobile}px) {
+        margin-left: 0px;
         padding-left: ${theme.padding.md}px;
       }
+    }
+
+    & div:nth-of-type(3) {
+      margin-left: auto;
     }
   `}
 `;

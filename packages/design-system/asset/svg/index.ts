@@ -1,9 +1,15 @@
 export { default as Up } from './Up';
+export { default as Form } from './Form';
+export { default as Grid } from './Grid';
 export { default as Down } from './Down';
 export { default as Left } from './Left';
-export { default as Right } from './Right';
 export { default as Blog } from './Blog';
-export { default as Github } from './Github';
+export { default as User } from './User';
+export { default as Right } from './Right';
 export { default as Gmail } from './Gmail';
+export { default as Github } from './Github';
+export { default as Calender } from './Calender';
 export { default as CometRain } from './CometRain';
+export { default as DoubleLeft } from './DoubleLeft';
+export { default as DoubleRight } from './DoubleRight';
 export { default as SolarSystem } from "./SolarSystem";

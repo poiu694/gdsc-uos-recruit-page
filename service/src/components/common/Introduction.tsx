@@ -2,18 +2,16 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 
-interface IntroductionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
   desc: string;
 }
 
-function Introduction({ title, desc, ...restProps }: IntroductionProps) {
+function Introduction({ title, desc, ...restProps }: Props) {
   return (
     <ContentsWrapper {...restProps}>
-      <Typography type='h1'>{title}</Typography>
-      <Typography type='body3' color={theme.colors.text.general}>
-        {desc}
-      </Typography>
+      <Typography type="h1">{title}</Typography>
+      <Typography type="body3">{desc}</Typography>
     </ContentsWrapper>
   );
 }

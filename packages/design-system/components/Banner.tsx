@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 import { TeamKeyType } from '../@types/Team';
 import { theme } from '../theme';
 
-interface BannerProps {
+interface Props {
   teamName: TeamKeyType;
 }
 
-const Banner = ({ teamName }: BannerProps) => {
+const Banner = ({ teamName }: Props) => {
   return <Wrapper teamName={teamName} />;
 };
 
-const Wrapper = styled.div<BannerProps>`
+const Wrapper = styled.div<Props>`
   width: 100%;
   height: 240px;
 

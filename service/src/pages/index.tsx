@@ -1,40 +1,48 @@
 import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 import { useAOS, useGA } from '@gdsc-uos-recruit-page/hooks';
-import useSWR from 'swr';
 
-import { fetcher } from '../../src/utils';
+import main from '../constants/Main';
 import { MainBanner, MainProcess, MainTeam } from '../components';
-import { Helmet } from '../components/common';
+import { Bottom, Helmet } from '../components/common';
 
 const Home: NextPage = () => {
-  const { data, error } = useSWR('/api/main', fetcher);
+  const mainData = main;
   const { logPageView } = useGA();
-  logPageView('/');
+  logPageView('메인 화면 조회');
   useAOS();
 
-  if (error) return <div>Failed to load</div>;
-  console.log(data);
-  if (!data) return null;
-
   return (
-    <Layout>
-      <Helmet title='메인' description='GDSC UOS RECRUIT 메인 페이지' />
-      <MainBanner banner={data.banner} />
-      <MainProcess
-        content={data.process.content}
-        circle={data.process.circle}
-      />
-      <MainTeam content={data.team} />
-    </Layout>
+    <>
+      <Layout>
+        <Helmet title='메인' description='GDSC UOS RECRUIT 메인 페이지' />
+        <Content>
+          <MainBanner banner={mainData.banner} />
+          <MainProcess
+            content={mainData.process.content}
+            circle={mainData.process.circle}
+          />
+          <MainTeam content={mainData.team} />
+        </Content>
+      </Layout>
+      <Bottom />
+    </>
   );
 };
 
 const Layout = styled.main`
-  width: 100%;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+`;
 
-  & > img {
-    width: 50%;
+const Content = styled.section`
+  min-height: 300vh;
+
+  &:fisrt-child::before {
+    content: '';
+    min-height: 300vh;
   }
 `;
 

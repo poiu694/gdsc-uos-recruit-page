@@ -1,5 +1,6 @@
 {
   "name": "service",
+  "author": "LeeSangMin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,7 +14,7 @@
     "@emotion/styled": "^11.9.3",
     "@types/aos": "^3.0.4",
     "aos": "^2.3.4",
-    "next": "canary",
+    "next": "^12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swr": "^1.3.0"

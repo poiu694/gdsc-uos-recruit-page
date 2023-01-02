@@ -1,24 +1,27 @@
-import styled from '@emotion/styled';
 import Link from 'next/link';
 import { AnchorHTMLAttributes, PropsWithChildren } from 'react';
 
-interface CustomLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
 }
 function CustomLink({
   href,
   children,
   ...restProps
-}: PropsWithChildren<CustomLinkProps>) {
-  return (
+}: PropsWithChildren<Props>) {
+  const isExternal = /^http/;
+  const isMailTo = /^mailto/;
+  const hasExternalLink = isExternal.test(href) || isMailTo.test(href);
+
+  return hasExternalLink ? (
+    <a href={href} target="_blank" rel="external" {...restProps}>
+      {children}
+    </a>
+  ) : (
     <Link href={href} passHref {...restProps}>
-      <Wrapper>{children}</Wrapper>
+      {children}
     </Link>
   );
 }
-
-const Wrapper = styled.a`
-  text-decoration: none;
-`;
 
 export default CustomLink;

@@ -7,7 +7,7 @@ import { Banner } from '@gdsc-uos-recruit-page/design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 import { QuestionListItem } from '../../../@types/question';
-import { Helmet, Introduction } from '../../components/common';
+import { Bottom, Helmet, Introduction } from '../../components/common';
 import { TeamList } from '../../components/Qna';
 import QuestionList from '../../components/Qna/QuestionList';
 import { QuestionContent } from '../../constants/';
@@ -23,11 +23,14 @@ interface QnaListPageProps extends TeamNameProps {
 
 const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
   const { logPageView } = useGA();
-  logPageView(`/qna/${teamName}`);
+  logPageView(`${teamName} 질문 페이지 조회`);
 
   return (
     <>
-      <Helmet title='자주 묻는 질문' description='GDSC UOS RECRUIT 자주 묻는 질문 페이지' />
+      <Helmet
+        title='자주 묻는 질문'
+        description='GDSC UOS RECRUIT 자주 묻는 질문 페이지'
+      />
       <Layout>
         <Banner teamName={teamName} />
         <IntroductionWrapper
@@ -39,6 +42,7 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
           <QuestionList questions={questions} teamName={teamName} />
         </ContentsWrapper>
       </Layout>
+      <Bottom />
     </>
   );
 };
@@ -51,6 +55,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       { params: { teamName: 'backend' } },
       { params: { teamName: 'mobile' } },
       { params: { teamName: 'data_ml' } },
+      { params: { teamName: 'design' } },
     ],
     fallback: false, // false or 'blocking'
   };

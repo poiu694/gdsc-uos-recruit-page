@@ -1,27 +1,47 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Blog, Down, Github, Gmail, Left, Right, Up } from '../asset/svg';
+import {
+  Blog,
+  Calender,
+  DoubleLeft,
+  DoubleRight,
+  Down,
+  Form,
+  Github,
+  Gmail,
+  Grid,
+  Left,
+  Right,
+  Up,
+  User,
+} from '../asset/svg';
 
 const ICONS = {
-  down: Down,
   up: Up,
   left: Left,
-  right: Right,
-  github: Github,
-  gmail: Gmail,
+  down: Down,
   blog: Blog,
+  grid: Grid,
+  form: Form,
+  user: User,
+  right: Right,
+  gmail: Gmail,
+  github: Github,
+  calender: Calender,
+  doubleLeft: DoubleLeft,
+  doubleRight: DoubleRight,
 } as const;
 
 type IconValueType = typeof ICONS;
 export type IconKeyType = keyof IconValueType;
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
+interface Props extends React.ComponentPropsWithoutRef<'svg'> {
   type: IconKeyType;
   color?: string;
   hoverAction?: boolean;
 }
 
-function Icon({ type, color, hoverAction = true, ...restProps }: IconProps) {
+function Icon({ type, color, hoverAction = false, ...restProps }: Props) {
   return (
     <Wrapper color={color} className={hoverAction ? 'hover-action' : ''}>
       {React.createElement(ICONS[type], { ...restProps })}
@@ -30,11 +50,10 @@ function Icon({ type, color, hoverAction = true, ...restProps }: IconProps) {
 }
 
 const Wrapper = styled.div`
-  cursor: pointer;
-
-  svg {
+  &.hover-action svg {
     -webkit-transition: all 0.1s ease-in-out; /* Safari */
     transition: all 0.1s ease-in-out;
+    cursor: pointer;
   }
 
   &.hover-action:hover svg {

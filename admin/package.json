@@ -1,7 +1,9 @@
 {
   "name": "admin",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "author": "LeeSangMin",
+  "packageManager": "yarn@3.2.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,18 +12,31 @@
     "lint": "eslint --ext **/*.ts **/*.tsx"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "@gdsc-uos-recruit-page/design-system": "1.0.0",
-    "@gdsc-uos-recruit-page/eslint-config-custom": "1.0.0",
-    "@gdsc-uos-recruit-page/hooks": "1.0.0",
-    "@gdsc-uos-recruit-page/tsconfig-custom": "1.0.0",
+    "@gdsc-uos-recruit-page/design-system": "workspace:^",
+    "@gdsc-uos-recruit-page/eslint-config-custom": "workspace:^",
+    "@gdsc-uos-recruit-page/hooks": "workspace:^",
+    "@gdsc-uos-recruit-page/tsconfig-custom": "workspace:^",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
     "@vitejs/plugin-react": "^2.0.0",
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
   }

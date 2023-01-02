@@ -8,30 +8,27 @@ import CustomLink from './CustomLink';
 function Bottom() {
   return (
     <Wrapper>
-      <Typography type='body5' color={theme.palette.gray300}>
+      <Typography type="body5" color={theme.palette.gray400}>
         © CopyRight GDSC UOS. All Right Reserved.
       </Typography>
       <IconWrapper>
         <CustomLink
-          target='_blank'
-          href='https://github.com/GDSC-University-of-Seoul'
-          rel='external'
+          href="https://github.com/GDSC-University-of-Seoul"
+          aria-label="move to gdsc-uos github"
         >
-          <Icon type='github' color={theme.palette.blue400} />
+          <Icon hoverAction type="github" color={theme.palette.blue400} />
         </CustomLink>
         <CustomLink
-          target='_blank'
-          href='https://gdsc-university-of-seoul.github.io'
-          rel='external'
+          href="https://gdsc-university-of-seoul.github.io"
+          aria-label="move to gdsc-uos blog"
         >
-          <Icon type='blog' color={theme.palette.coreYellow} />
+          <Icon hoverAction type="blog" color={theme.palette.coreYellow} />
         </CustomLink>
         <CustomLink
-          target='_blank'
-          href='mailto:olmnuiui70@gmail.com'
-          rel='external'
+          href="mailto:olmnuiui70@gmail.com"
+          aria-label="contact to site developer(gmail)"
         >
-          <Icon type='gmail' color={theme.palette.red200} />
+          <Icon hoverAction type="gmail" color={theme.palette.red200} />
         </CustomLink>
       </IconWrapper>
     </Wrapper>
@@ -40,7 +37,7 @@ function Bottom() {
 
 const Wrapper = styled.div`
   width: 80%;
-  margin: 100px auto 16px auto;
+  margin: 100px auto 32px auto;
 
   display: flex;
   justify-content: space-between;

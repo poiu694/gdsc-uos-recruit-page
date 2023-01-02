@@ -4,12 +4,14 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
+import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { Helmet, Introduction } from '../../components/common';
-import { Activity, AsideCard, Introduce } from '../../components/Introduction';
+import { Bottom, Helmet, Introduction } from '../../components/common';
+import { List, AsideCard } from '../../components/Introduction';
 import { IntroductionType, TeamNameProps } from '../../../@types';
 import { IntroductionContent } from '../../constants';
+import { GOOGLE_FORM_LINK } from '../../constants/form';
 
 interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;
@@ -24,12 +26,14 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
   logPageView(`/introduction/${teamName}`);
 
   const handleClickSupportBtn = () => {
-    logEvent('Application', `click ${teamName} application`);
-    router.push(`/qna/${teamName}`);
+    logEvent('Application', `${teamName}에서 지원하기 클릭`);
+    if (window) {
+      window.open(GOOGLE_FORM_LINK, '_blank');
+    }
   };
 
   const handleClickQuestionListBtn = () => {
-    logEvent('Click(Question)', `click ${teamName} question`);
+    logEvent('Question', `${teamName}에서 자주 묻는 질문 클릭`);
     router.push(`/qna/${teamName}`);
   };
 
@@ -41,8 +45,15 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
         <Wrapper>
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
-            <Introduce desc={introduction.introduction} />
-            <Activity activies={introduction.activities} />
+            <List title='저희를 소개할게요' items={introduction.introduction} />
+            <List
+              title='저희는 이런 활동을 해요'
+              items={introduction.activities}
+            />
+            <List
+              title={`${getTitleCaseTeam(teamName)} 팀은 이런 분을 기다립니다`}
+              items={introduction.wants}
+            />
           </ContentsWrapper>
           <AsideCard
             teamName={teamName}
@@ -52,6 +63,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
           />
         </Wrapper>
       </Layout>
+      <Bottom />
     </>
   );
 };
@@ -63,6 +75,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       { params: { teamName: 'backend' } },
       { params: { teamName: 'mobile' } },
       { params: { teamName: 'data_ml' } },
+      { params: { teamName: 'design' } },
     ],
     fallback: false, // false or 'blocking'
   };

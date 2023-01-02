@@ -10,30 +10,29 @@ import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 
 import { TitleOneDesc, TitleTwoDesc } from '../../../@types';
 
-interface MainProcessProps {
+interface Props {
   content: TitleTwoDesc;
   circle: TitleOneDesc[];
 }
 
-function MainProcess({ content, circle }: MainProcessProps) {
+function MainProcess({ content, circle }: Props) {
   return (
     <Wrapper>
-      <TitleWrapper data-aos='fade-up' data-aos-duration={defaultDuration}>
-        <Typography type='h1' textAlign='center'>
+      <TitleWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
+        <Typography type="h1" textAlign="center">
           Process
         </Typography>
       </TitleWrapper>
       <Title
         title={content.title}
-        desc1={content.desc1}
-        desc2={content.desc2}
-        data-aos='fade-up'
+        descriptions={[content.desc1, content.desc2]}
+        data-aos="fade-up"
         data-aos-duration={defaultDuration}
       />
       <CircleList>
         {circle.map((content, idx) => (
           <CircleItem
-            data-aos='fade-up'
+            data-aos="fade-up"
             data-aos-duration={defaultDuration}
             key={content.title}
           >
@@ -50,10 +49,7 @@ function MainProcess({ content, circle }: MainProcessProps) {
 }
 
 const Wrapper = styled.div`
-  width: 80%;
-  position: relative;
-
-  margin: 60px auto;
+  margin-block: 60px;
 `;
 
 const CircleList = styled.ul`

@@ -5,6 +5,7 @@ import Typography from '@gdsc-uos-recruit-page/design-system/components/Typograp
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { GOOGLE_FORM_LINK } from '../../constants/form';
 
 function Header() {
   const router = useRouter();
@@ -12,7 +13,13 @@ function Header() {
 
   const handleLinkToPage = useCallback(
     (url: string) => {
-      logEvent('route(head)', `move to ${url}`);
+      logEvent('Head', `${url} 로 이동`);
+      if (url === GOOGLE_FORM_LINK) {
+        if (window) {
+          window.open(GOOGLE_FORM_LINK, '_blank');
+        }
+        return;
+      }
       router.push(url);
     },
     [router, logEvent]
@@ -27,7 +34,7 @@ function Header() {
               media={`(max-width: ${theme.size.mobile}px)`}
               srcSet='/logo_small.png'
             />
-            <img src='/logo.png' />
+            <img src='/logo.png' alt='gdsc-uos-logo' />
           </picture>
         </Logo>
         <Navigation>
@@ -37,12 +44,14 @@ function Header() {
           <Typography
             type='body4'
             onClick={() => handleLinkToPage('/qna/common')}
+            aria-label='move to common question to gdsc-uos'
           >
             자주 묻는 질문
           </Typography>
           <Typography
             type='body4'
-            onClick={() => handleLinkToPage('/qna/common')}
+            onClick={() => handleLinkToPage(GOOGLE_FORM_LINK)}
+            aria-label='move to apply google-form link'
           >
             지원 하기
           </Typography>

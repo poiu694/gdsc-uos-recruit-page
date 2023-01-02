@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
+import { useCallback, useState } from 'react';
+
+import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 
 import { teams } from '../../constants';
-import { QuestionListItem } from '../../../@types/question';
 import { TeamNameProps } from '../../../@types';
+import { QuestionListItem } from '../../../@types/question';
 
 const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
   return new Array(teams.length)
@@ -26,7 +27,7 @@ function TeamList({ teamName }: TeamNameProps) {
       const nextIsActive = new Array(teams.length).fill(false);
       nextIsActive[Number(indexToUpdate)] = true;
       setIsActive(nextIsActive);
-      logEvent('Click(TeamQuestion)', `${dataset.title} click`);
+      logEvent('Question', `${dataset.title} click`);
       router.push(dataset.url as string);
     },
     [logEvent, router]
@@ -43,9 +44,9 @@ function TeamList({ teamName }: TeamNameProps) {
           data-url={team.url}
         >
           <Typography
-            type='body3'
+            type="body3"
             className={isActive[idx] ? 'bold' : ''}
-            color={theme.palette.gray300}
+            color={theme.palette.gray350}
           >
             {team.title}
           </Typography>

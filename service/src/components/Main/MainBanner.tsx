@@ -6,30 +6,30 @@ import {
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
 
-interface MainBannerProps {
+interface Props {
   banner: string;
 }
 
-function MainBanner({ banner }: MainBannerProps) {
+function MainBanner({ banner }: Props) {
   return (
     <Wrapper>
       <ContentsWrapper>
         <TitleWrapper>
-          <Typography type='h1' color={theme.colors.primary.red}>
+          <Typography type="h1" color={theme.colors.primary.red}>
             Google
           </Typography>
-          <Typography type='h1' color={theme.colors.primary.yellow}>
+          <Typography type="h1" color={theme.colors.primary.yellow}>
             Developer
           </Typography>
-          <Typography type='h1' color={theme.colors.primary.green}>
+          <Typography type="h1" color={theme.colors.primary.green}>
             Student
           </Typography>
-          <Typography type='h1' color={theme.colors.primary.blue}>
-            Club
+          <Typography type="h1" color={theme.colors.primary.blue}>
+            Clubs
           </Typography>
         </TitleWrapper>
-        <Typography type='h2'>University of Seoul</Typography>
-        <DescWrapper type='h6'>{banner}</DescWrapper>
+        <Typography type="h2">University of Seoul</Typography>
+        <DescWrapper type="h6">{banner}</DescWrapper>
       </ContentsWrapper>
       <Planet />
     </Wrapper>
@@ -37,12 +37,12 @@ function MainBanner({ banner }: MainBannerProps) {
 }
 
 const Wrapper = styled.div`
-  ${({ theme }) => css`
-    width: 80%;
-    min-height: 100vh;
-    position: relative;
-    margin: 60px auto;
-  `}
+  position: relative;
+  height: 100vh;
+
+  @media (max-width: ${theme.size.tabletL}px) {
+    height: 110vh;
+  }
 `;
 
 const ContentsWrapper = styled.div`

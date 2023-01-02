@@ -1,101 +1,102 @@
 import styled from '@emotion/styled';
 import { theme } from '../../theme';
 
-function CometRain() {
+function CometRain({ ...restProps }) {
   return (
     <Wrapper>
       <svg
-        role='presentation'
-        id='svg-comet'
-        className='svg-defs'
-        data-name='comet'
-        viewBox='0 0 195 173.05'
-        width='195'
-        height='173.05'
+        role="presentation"
+        id="svg-comet"
+        className="svg-defs"
+        data-name="comet"
+        viewBox="0 0 195 173.05"
+        width="195"
+        height="173.05"
+        {...restProps}
       >
-        <symbol id='comet'>
-          <path d='M192.39.66c-33.66,31.46-93.3,81.16-129,108.88L3.42,156c-5,3.89-4.29,11.28.74,15.4s12.84-.83,13.1-1.07C51.09,138.62,82.6,104.72,116.64,73c8.89-8.29,66.23-59.5,77.47-70.13C196.17,1,194.24-1.08,192.39.66Z' />
+        <symbol id="comet">
+          <path d="M192.39.66c-33.66,31.46-93.3,81.16-129,108.88L3.42,156c-5,3.89-4.29,11.28.74,15.4s12.84-.83,13.1-1.07C51.09,138.62,82.6,104.72,116.64,73c8.89-8.29,66.23-59.5,77.47-70.13C196.17,1,194.24-1.08,192.39.66Z" />
         </symbol>
       </svg>
 
-      <svg role='presentation' width='0' height='0'>
+      <svg role="presentation" width="0" height="0">
         <defs>
           <linearGradient
-            id='gradient'
-            x1='194.94'
-            y1='4.2'
-            x2='11.72'
-            y2='161.98'
-            gradientUnits='userSpaceOnUse'
+            id="gradient"
+            x1="194.94"
+            y1="4.2"
+            x2="11.72"
+            y2="161.98"
+            gradientUnits="userSpaceOnUse"
           >
             <stop
-              offset='0%'
+              offset="0%"
               stopColor={`${theme.colors.primary.white}`}
-              stopOpacity='0.1'
+              stopOpacity="0.1"
             ></stop>
-            <stop offset='100%' stopColor={`${theme.palette.red200}`}></stop>
+            <stop offset="100%" stopColor={`${theme.palette.red200}`}></stop>
           </linearGradient>
         </defs>
       </svg>
 
       <Comet
-        role='presentation'
-        className='comet-01 comet-instance'
-        width='195'
-        height='173.05'
-        viewBox='0 0 195 173.05'
+        role="presentation"
+        className="comet-01 comet-instance"
+        width="195"
+        height="173.05"
+        viewBox="0 0 195 173.05"
       >
-        <use xlinkHref='#comet' />
+        <use xlinkHref="#comet" />
       </Comet>
 
       <Comet
-        role='presentation'
-        className='comet-02 comet-instance'
-        width='195'
-        height='173.05'
-        viewBox='0 0 195 173.05'
+        role="presentation"
+        className="comet-02 comet-instance"
+        width="195"
+        height="173.05"
+        viewBox="0 0 195 173.05"
       >
-        <use xlinkHref='#comet' />
+        <use xlinkHref="#comet" />
       </Comet>
 
       <Comet
-        role='presentation'
-        className='comet-03 comet-instance'
-        width='195'
-        height='173.05'
-        viewBox='0 0 195 173.05'
+        role="presentation"
+        className="comet-03 comet-instance"
+        width="195"
+        height="173.05"
+        viewBox="0 0 195 173.05"
       >
-        <use xlinkHref='#comet' />
+        <use xlinkHref="#comet" />
       </Comet>
 
       <Comet
-        role='presentation'
-        className='comet-04 comet-instance'
-        width='195'
-        height='173.05'
-        viewBox='0 0 195 173.05'
+        role="presentation"
+        className="comet-04 comet-instance"
+        width="195"
+        height="173.05"
+        viewBox="0 0 195 173.05"
       >
-        <use xlinkHref='#comet' />
+        <use xlinkHref="#comet" />
       </Comet>
 
       <Comet
-        role='presentation'
-        className='comet-05 comet-instance'
-        width='195'
-        height='173.05'
-        viewBox='0 0 195 173.05'
+        role="presentation"
+        className="comet-05 comet-instance"
+        width="195"
+        height="173.05"
+        viewBox="0 0 195 173.05"
       >
-        <use xlinkHref='#comet' />
+        <use xlinkHref="#comet" />
       </Comet>
 
       <Comet
-        role='presentation'
-        className='comet-06 comet-instance'
-        width='195'
-        height='173.05'
-        viewBox='0 0 195 173.05'
+        role="presentation"
+        className="comet-06 comet-instance"
+        width="195"
+        height="173.05"
+        viewBox="0 0 195 173.05"
       >
-        <use xlinkHref='#comet' />
+        <use xlinkHref="#comet" />
       </Comet>
     </Wrapper>
   );

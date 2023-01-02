@@ -3,23 +3,28 @@ import styled from '@emotion/styled';
 import { theme } from '../theme';
 import Typography from './Typography';
 
-export type ProcessCircleType = 'process-0' | 'process-1' | 'process-2' | 'process-3' | 'process-4';
+export type ProcessCircleType =
+  | 'process-0'
+  | 'process-1'
+  | 'process-2'
+  | 'process-3'
+  | 'process-4';
 
-interface Circle {
+interface Props {
   type: ProcessCircleType;
   title: string;
   date: string;
 }
 
-function Circle({ type, title, date }: Circle) {
+function Circle({ type, title, date }: Props) {
   return (
     <Wrapper className={type}>
       <Title>
-        <Typography type='h5' textAlign='center' color={theme.palette.white}>
+        <Typography type="h5" textAlign="center" color={theme.palette.white}>
           {title}
         </Typography>
       </Title>
-      <Typography type='body4' textAlign='center' color={theme.palette.gray50}>
+      <Typography type="body4" textAlign="center" color={theme.palette.white}>
         {date}
       </Typography>
     </Wrapper>
