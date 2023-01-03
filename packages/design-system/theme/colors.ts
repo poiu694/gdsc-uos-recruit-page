@@ -79,7 +79,6 @@ export const colors = {
     divider: palette.gray300,
     border: palette.gray200,
     hover: palette.gray150,
-    // overlay: `linear-gradient(180deg, rgba(79, 23, 197, 0) -39.47%, ${palette.purple400} 100%)`,
   },
   team: {
     frontend: palette.coreYellow,
@@ -88,7 +87,7 @@ export const colors = {
     data_ml: palette.coreBlue,
     design: palette.orange,
     all: palette.orange, // default 
-    common: palette.orange // default 
+    common: palette.orange
   } as TeamContent<PalleteValueType>
 } as const;
 
