@@ -52,7 +52,10 @@ function SideMenu() {
           ADMIN SETTING
         </Typography>
         <MenuItem onClick={() => navigate('/admin-user')}>
-          <IconText text="Admin-User" icon="user" />
+          <IconText text="Admin List" icon="user" />
+        </MenuItem>
+        <MenuItem onClick={() => navigate('/signup-admin-user')}>
+          <IconText text="Add Admin" icon="userPlus" />
         </MenuItem>
         <MenuItem onClick={() => navigate('/recruit')}>
           <IconText text="Recruit" icon="calender" />

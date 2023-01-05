@@ -14,6 +14,7 @@ import {
   Right,
   Up,
   User,
+  UserPlus,
 } from '../asset/svg';
 
 const ICONS = {
@@ -28,6 +29,7 @@ const ICONS = {
   gmail: Gmail,
   github: Github,
   calender: Calender,
+  userPlus: UserPlus,
   doubleLeft: DoubleLeft,
   doubleRight: DoubleRight,
 } as const;

@@ -1,6 +1,6 @@
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { ChipType } from '@gdsc-uos-recruit-page/design-system/components/Chip';
-import type { ApplyState } from '../@types';
+import type { ApplyState, UserType } from '../@types';
 
 export function convertChipColorByState(state: ApplyState) {
   const ChipColor = {
@@ -22,4 +22,12 @@ export function convertChipColorByTeam(team: TeamKeyType) {
     design: 'default',
   } as Record<TeamKeyType, ChipType>;
   return ChipColor[team];
+}
+
+export function convertChipColorByUserType(userType: UserType) {
+  const ChipColor = {
+    super: 'primary',
+    normal: 'warning',
+  } as Record<UserType, ChipType>;
+  return ChipColor[userType];
 }
