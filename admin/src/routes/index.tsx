@@ -6,6 +6,7 @@ import {
   ApplyPage,
   GoogleFormApplicationListPage,
   GoogleFormApplicationDetailPage,
+  ManageAdminUserPage,
 } from '../pages';
 
 const MainRoute = () => {
@@ -15,6 +16,7 @@ const MainRoute = () => {
         <Route path="/" element={<LoginPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/apply" element={<ApplyPage />} />
+        <Route path="/admin-user" element={<ManageAdminUserPage />} />
         <Route path="/list" element={<GoogleFormApplicationListPage />} />
         <Route
           path="/detail/:id"
