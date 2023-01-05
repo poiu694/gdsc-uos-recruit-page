@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 export const DEFAULT_PAGE = {
@@ -16,7 +16,6 @@ export interface PageOptions {
 
 interface Props {
   totalCount: number;
-  pageSize?: number;
   navigationSize?: number;
 }
 
@@ -25,7 +24,7 @@ const getPageOptions = ({
   pageSize,
   pageIndex,
   navigationSize,
-}: Required<Props> & { pageIndex: number }): PageOptions => {
+}: Required<Props> & { pageIndex: number, pageSize: number }): PageOptions => {
   const totalPages = Math.ceil(totalCount / pageSize);
   const startPage = Math.floor(pageIndex / navigationSize) * navigationSize;
   const endPage = startPage + navigationSize;
@@ -41,7 +40,6 @@ const getPageOptions = ({
 
 const usePagination = ({
   totalCount,
-  pageSize = DEFAULT_PAGE.pageSize,
 }: Props) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [pageOptions, setPageOptions] = useState<PageOptions>({
@@ -49,7 +47,7 @@ const usePagination = ({
     startPage: 0,
     endPage: 0,
     totalPages: 0,
-    pageSize: 0,
+    pageSize: DEFAULT_PAGE.pageSize,
   });
 
   const handleChangePage = (page: number) => {
@@ -65,7 +63,13 @@ const usePagination = ({
     setSearchParams(searchParams);
   };
 
-  useEffect(() => {
+  const handleChangePageSize = (pageSize: number) => {
+    searchParams.set('size', String(pageSize));
+    setSearchParams(searchParams);
+    setPageOptions((prev) => ({ ...prev, pageSize }));
+  }
+
+  useLayoutEffect(() => {
     if (!totalCount) return;
 
     const currentPage = searchParams.get('page');
@@ -73,7 +77,7 @@ const usePagination = ({
     const nextPageOptions = getPageOptions({
       totalCount,
       pageIndex: currentPage ? Number(currentPage) - 1 : 0,
-      pageSize: currentSize ? Number(currentPage) : pageSize,
+      pageSize: currentSize ? Number(currentSize) : DEFAULT_PAGE.pageSize,
       navigationSize: DEFAULT_PAGE.navigationSize,
     });
 
@@ -91,6 +95,7 @@ const usePagination = ({
   return {
     pageOptions,
     handleChangePage,
+    handleChangePageSize,
   };
 };
 
