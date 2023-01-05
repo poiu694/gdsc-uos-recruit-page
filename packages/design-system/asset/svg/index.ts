@@ -9,6 +9,7 @@ export { default as Right } from './Right';
 export { default as Gmail } from './Gmail';
 export { default as Github } from './Github';
 export { default as Calender } from './Calender';
+export { default as UserPlus } from './UserPlus';
 export { default as CometRain } from './CometRain';
 export { default as DoubleLeft } from './DoubleLeft';
 export { default as DoubleRight } from './DoubleRight';
