@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import {
   Chip,
   Table,
+  TablePagination,
   TBody,
   Td,
   THead,
@@ -12,19 +13,24 @@ import {
 } from '@gdsc-uos-recruit-page/design-system';
 
 import { usePagination } from '../hooks';
-import { DEFAULT_PAGE } from '../hooks/usePagination';
 import { ContentWrapper, PageNavigation, SideMenu } from '../components';
 import { DUMMY_APPLYS } from '../dummy/apply';
 import { convertChipColorByState, convertChipColorByTeam } from '../utils';
 
 function ApplyPage() {
   const currentYear = new Date().getFullYear();
-  const [pageSize, setPageSize] = React.useState<number>(DEFAULT_PAGE.pageSize);
   const [totalCount, setTotalCount] = React.useState<number>(0);
-  const { pageOptions, handleChangePage } = usePagination({
-    totalCount,
-    pageSize,
-  });
+  const { pageOptions, handleChangePage, handleChangePageSize } = usePagination(
+    {
+      totalCount,
+    }
+  );
+
+  const handleChangePageSizeOption = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    handleChangePageSize(Number(e.target.value));
+  };
 
   React.useEffect(() => {
     (async () => {
@@ -48,6 +54,13 @@ function ApplyPage() {
           데이터를 클릭하면 해당 지원자의 서류를 볼 수 있습니다.
         </Typography>
         <TableWrapper>
+          <TablePagination
+            totalCount={totalCount}
+            pageSizeOptions={[5, 10, 15]}
+            page={pageOptions.currentPage}
+            pageSize={pageOptions.pageSize}
+            onPageSizeOptionsChange={handleChangePageSizeOption}
+          />
           <Table variant="simple">
             <THead>
               <Tr>
@@ -66,7 +79,7 @@ function ApplyPage() {
               </Tr>
             </THead>
             <TBody>
-              {DUMMY_APPLYS.slice(0, 5).map((apply) => (
+              {DUMMY_APPLYS.slice(0, pageOptions.pageSize).map((apply) => (
                 <Tr onClick={() => console.log(apply.id)} key={apply.id}>
                   <Td>
                     <Typography type="body4">{apply.name}</Typography>
