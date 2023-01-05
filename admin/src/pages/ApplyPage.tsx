@@ -113,7 +113,7 @@ const TableWrapper = styled.div`
 `;
 
 const Navigation = styled(PageNavigation)`
-  width: 90%;
+  width: 60%;
   margin: 0 auto;
 `;
 
