@@ -31,6 +31,7 @@ const LogoContainer = styled.header`
 
 const Image = styled.img`
   max-width: 100%;
+  min-height: 100px;
 `;
 
 export default Logo;
