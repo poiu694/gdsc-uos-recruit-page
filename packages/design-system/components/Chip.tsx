@@ -7,13 +7,14 @@ export type ChipType = 'default' | 'success' | 'danger' | 'primary' | 'warning';
 
 interface Props {
   type: ChipType;
-  variants: 'outlined' | 'filled';
   label: string;
+  variants: 'outlined' | 'filled';
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-function Chip({ type, variants, label }: Props) {
+function Chip({ type, variants, label, onClick, ...restProps }: Props) {
   return (
-    <Wrapper type={type} variants={variants}>
+    <Wrapper type={type} variants={variants} onClick={onClick} {...restProps}>
       <Typography type="body5" textAlign="center">
         {label}
       </Typography>
