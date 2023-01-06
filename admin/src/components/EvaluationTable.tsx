@@ -47,11 +47,10 @@ function EvaluationTable({ name, evaluations }: Props) {
 }
 
 const Wrapper = styled.section`
-  margin-top: 32px;
+  width: 100%;
 `;
 
 const TableWrapper = styled(Table)`
-  width: 25%;
   margin-top: 12px;
 
   tr {

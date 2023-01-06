@@ -1,6 +1,7 @@
 export { default as MainPage } from './MainPage';
 export { default as LoginPage } from './LoginPage';
 export { default as ApplyPage } from './ApplyPage';
+export { default as ApplyDetailPage } from './ApplyDetailPage';
 export { default as NewAdminUserPage } from './NewAdminUserPage';
 export { default as ManageAdminUserPage } from './ManageAdminUserPage';
 export { default as GoogleFormApplicationListPage } from './GoogleFormApplicationListPage';

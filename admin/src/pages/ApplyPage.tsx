@@ -16,8 +16,10 @@ import { usePagination } from '../hooks';
 import { ContentWrapper, PageNavigation, SideMenu } from '../components';
 import { DUMMY_APPLYS } from '../dummy/apply';
 import { convertChipColorByState, convertChipColorByTeam } from '../utils';
+import { useNavigate } from 'react-router-dom';
 
 function ApplyPage() {
+  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
   const [totalCount, setTotalCount] = React.useState<number>(0);
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination(
@@ -80,7 +82,10 @@ function ApplyPage() {
             </THead>
             <TBody>
               {DUMMY_APPLYS.slice(0, pageOptions.pageSize).map((apply) => (
-                <Tr onClick={() => console.log(apply.id)} key={apply.id}>
+                <Tr
+                  onClick={() => navigate(`/apply/${apply.id}`)}
+                  key={apply.id}
+                >
                   <Td>
                     <Typography type="body4">{apply.name}</Typography>
                   </Td>

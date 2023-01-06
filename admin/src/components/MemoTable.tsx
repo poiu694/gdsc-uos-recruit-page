@@ -38,11 +38,11 @@ function EvaluationTable({ memos }: Props) {
 }
 
 const Wrapper = styled.section`
-  margin-top: 32px;
+  width: 100%;
 `;
 
 const TableWrapper = styled(Table)`
-  width: 50%;
+  width: 100%;
   margin-top: 12px;
 
   tr {
