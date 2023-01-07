@@ -4,5 +4,6 @@ export { default as ApplyPage } from './ApplyPage';
 export { default as ApplyDetailPage } from './ApplyDetailPage';
 export { default as NewAdminUserPage } from './NewAdminUserPage';
 export { default as ManageAdminUserPage } from './ManageAdminUserPage';
+export { default as ManageRecruitInfoPage } from './ManageRecruitInfoPage';
 export { default as GoogleFormApplicationListPage } from './GoogleFormApplicationListPage';
 export { default as GoogleFormApplicationDetailPage } from './GoogleFormApplicationDetailPage';
