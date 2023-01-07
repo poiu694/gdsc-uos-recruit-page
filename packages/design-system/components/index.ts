@@ -1,3 +1,5 @@
+export * from './Tab';
+export { default as Tab } from './Tab';
 export * from './Table';
 export { default as Chip } from './Chip';
 export { default as Icon } from './Icon';
