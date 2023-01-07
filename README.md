@@ -18,9 +18,9 @@
 
 The repository manages the GDSC-UOS-RECRUIT-PAGE with using monorepo(yarn workspace).
 
-[service](https://gdsc-uos-recruit-page.vercel.app): gdsc-uos-recruit-page service page
+[service](https://recruit-gdsc-uos.vercel.app/): gdsc-uos-recruit-page service page
 
-admin: gdsc-uos-recruit-page admin page (soon)
+[admin](https://admin-gdsc-uos.vercel.app/): gdsc-uos-recruit-page admin page
 
 packages: Put shared component for service, admin
 
@@ -30,8 +30,6 @@ clone it, install it and run it.
 
 ```shell
 git clone https://github.com/poiu694/sample_page.git
-
-yarn install
 
 yarn service # service dev
 yarn admin # admin dev
