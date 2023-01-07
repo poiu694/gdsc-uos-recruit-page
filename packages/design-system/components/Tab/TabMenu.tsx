@@ -18,7 +18,7 @@ function TabMenu({ label, value }: Props) {
       data-value={value}
       hierarchy={ButtonHierarchy.Parent}
       className={isActiveNow ? 'active' : ''}
-      onClick={onClickTabMenu}
+      onClick={() => onClickTabMenu(value)}
     >
       <Typography
         type="h6"

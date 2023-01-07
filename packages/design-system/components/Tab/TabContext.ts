@@ -1,9 +1,8 @@
-import React from 'react';
 import { createGenericContext, createGenericUseContext } from '../../utils/helperContext';
 
 interface TabTriggerEvent {
   value: string;
-  onClickTabMenu: React.MouseEventHandler<HTMLButtonElement>;
+  onClickTabMenu: (nextTabValue: string) => void;
 }
 
 const context = createGenericContext<TabTriggerEvent>();

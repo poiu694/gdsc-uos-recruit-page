@@ -3,18 +3,15 @@ import TabContext, { useTabContext } from './TabContext';
 
 interface Props {
   value: string; // active index
-  onChange: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onChange: (nextTabValue: string) => void;
 }
 
 function Tab({ value, children, onChange }: React.PropsWithChildren<Props>) {
-  const handleClickTabMenu = React.useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (typeof onChange !== 'undefined') {
-        onChange(e);
-      }
-    },
-    []
-  );
+  const handleClickTabMenu = React.useCallback((nextTabValue: string) => {
+    if (typeof onChange !== 'undefined') {
+      onChange(nextTabValue);
+    }
+  }, []);
 
   return (
     <TabContext.Provider value={{ value, onClickTabMenu: handleClickTabMenu }}>
