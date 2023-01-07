@@ -1,4 +1,4 @@
-const Team = {
+export const Team = {
   common: 'common',
   frontend: 'frontend',
   backend: 'backend',
