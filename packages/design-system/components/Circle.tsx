@@ -45,17 +45,17 @@ const Wrapper = styled.div`
 
   &.process-0 {
     background: linear-gradient(
-      46.16deg,
+      30.16deg,
       ${theme.palette.coreYellow} 15.52%,
-      ${theme.palette.yellow200} 108.06%
+      ${theme.palette.yellow300} 108.06%
     );
   }
 
   &.process-1 {
     background: linear-gradient(
-      86.91deg,
+      40.91deg,
       ${theme.palette.coreBlue} 2.22%,
-      ${theme.palette.blue200} 119.78%
+      ${theme.palette.blue300} 119.78%
     );
   }
 
@@ -71,7 +71,7 @@ const Wrapper = styled.div`
     background: linear-gradient(
       265.27deg,
       ${theme.palette.coreRed} 16.03%,
-      ${theme.palette.red200} 96.1%
+      ${theme.palette.red300} 96.1%
     );
   }
 
@@ -79,7 +79,7 @@ const Wrapper = styled.div`
     background: linear-gradient(
       306.53deg,
       ${theme.palette.coreGreen} 16.03%,
-      ${theme.palette.green200} 96.1%
+      ${theme.palette.green300} 96.1%
     );
   }
 
@@ -96,7 +96,7 @@ const Wrapper = styled.div`
       background: linear-gradient(
         340.91deg,
         ${theme.palette.coreBlue} 2.22%,
-        ${theme.palette.blue200} 119.78%
+        ${theme.palette.blue300} 119.78%
       );
     }
 
@@ -104,7 +104,7 @@ const Wrapper = styled.div`
       background: linear-gradient(
         31.16deg,
         ${theme.palette.coreYellow} 32.52%,
-        ${theme.palette.yellow200} 108.06%
+        ${theme.palette.yellow300} 108.06%
       );
     }
 
@@ -120,7 +120,7 @@ const Wrapper = styled.div`
       background: linear-gradient(
         126.53deg,
         ${theme.palette.coreGreen} 32.03%,
-        ${theme.palette.green200} 98.1%
+        ${theme.palette.green300} 98.1%
       );
     }
 
@@ -128,7 +128,7 @@ const Wrapper = styled.div`
       background: linear-gradient(
         212.27deg,
         ${theme.palette.coreRed} 32.03%,
-        ${theme.palette.red200} 96.1%
+        ${theme.palette.red300} 96.1%
       );
     }
   }
