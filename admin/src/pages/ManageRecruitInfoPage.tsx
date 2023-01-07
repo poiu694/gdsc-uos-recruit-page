@@ -1,10 +1,39 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Title } from '@gdsc-uos-recruit-page/design-system';
+import { useSearchParams } from 'react-router-dom';
+import {
+  Tab,
+  TabContent,
+  TabMenu,
+  Title,
+} from '@gdsc-uos-recruit-page/design-system';
 
-import { ContentWrapper, SideMenu } from '../components';
+import {
+  ContentWrapper,
+  MainRecruitInfoBox,
+  QuestionInfoBox,
+  SideMenu,
+} from '../components';
+
+const DEFAULT_PAGE_VALUE = '1';
 
 function ManageRecruitInfoPage() {
+  const [tabValue, setTabValue] = React.useState<string>(DEFAULT_PAGE_VALUE);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleChangeTabMenu = (nextTabValue: string) => {
+    setTabValue(nextTabValue);
+    searchParams.set('value', nextTabValue as string);
+    setSearchParams(searchParams);
+  };
+
+  React.useEffect(() => {
+    const value = searchParams.get('value');
+    if (value) {
+      setTabValue(value);
+    }
+  }, []);
+
   return (
     <Wrapper>
       <SideMenu />
@@ -13,6 +42,24 @@ function ManageRecruitInfoPage() {
           title="Recruit-Info"
           descriptions="리크루팅 관련 정보를 다루는 페이지입니다."
         />
+        <Tab value={tabValue} onChange={handleChangeTabMenu}>
+          <TabMenus>
+            <TabMenu value="1" label="Main" />
+            <TabMenu value="2" label="Question" />
+            <TabMenu value="3" label="Introduction" />
+            <TabMenu value="4" label="Application" />
+          </TabMenus>
+          <TabContents>
+            <TabContent value="1">
+              <MainRecruitInfoBox />
+            </TabContent>
+            <TabContent value="2">
+              <QuestionInfoBox />
+            </TabContent>
+            <TabContent value="3">hi3</TabContent>
+            <TabContent value="4">hi4</TabContent>
+          </TabContents>
+        </Tab>
       </ContentWrapper>
     </Wrapper>
   );
@@ -21,6 +68,16 @@ function ManageRecruitInfoPage() {
 const Wrapper = styled.main`
   width: 100%;
   height: 100%;
+`;
+
+const TabMenus = styled.div`
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+`;
+
+const TabContents = styled.section`
+  margin-top: 16px;
 `;
 
 export default ManageRecruitInfoPage;
