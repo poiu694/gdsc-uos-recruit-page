@@ -72,9 +72,11 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.values(Team).map((teamName) => ({
-    params: { teamName },
-  }));
+  const paths = Object.values(Team)
+    .map((teamName) => ({
+      params: { teamName },
+    }))
+    .filter((path) => path.params.teamName !== 'common');
 
   return {
     paths: paths,
