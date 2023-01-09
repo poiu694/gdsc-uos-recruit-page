@@ -1,3 +1,4 @@
+import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Title, Typography } from '@gdsc-uos-recruit-page/design-system';
@@ -10,7 +11,11 @@ interface Props {
   content: TitleWithDescription;
 }
 
+const DEFAULT_TAB_VALUE = '1';
+
 function MainTeam({ content }: Props) {
+  const [tabValue, setTabValue] = React.useState<string>(DEFAULT_TAB_VALUE);
+
   return (
     <Wrapper>
       <TitleWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
@@ -58,10 +63,9 @@ const TeamCardWrapper = styled.div`
     width: 100%;
     height: 100%;
     margin: 3em auto;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    place-items: center center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: ${theme.padding.xlg}px;
 
     @media (min-width: ${theme.size.tabletL + 300}px) {
