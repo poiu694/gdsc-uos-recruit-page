@@ -51,7 +51,7 @@ function TeamCard({ teamName }: TeamNameProps) {
 
 const Wrapper = styled.section<TeamNameProps>`
   ${({ theme, teamName }) => css`
-    width: 260px;
+    width: 320px;
     height: 300px;
     position: relative;
     transition: all 0.1s ease-in;
