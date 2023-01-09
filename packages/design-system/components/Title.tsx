@@ -9,7 +9,6 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
 }
 
 function Title({ title, descriptions, ...restProps }: Props) {
-  const isArrayDescription = Array.isArray(descriptions);
   return (
     <Wrapper {...restProps}>
       <Typography type="h5" color={theme.palette.gray450}>

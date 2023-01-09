@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { Typography } from '@gdsc-uos-recruit-page/design-system';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;

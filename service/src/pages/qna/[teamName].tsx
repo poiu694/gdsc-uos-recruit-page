@@ -1,4 +1,3 @@
-import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -15,10 +14,6 @@ import { TeamList } from '../../components/Qna';
 import QuestionList from '../../components/Qna/QuestionList';
 import { QuestionContent } from '../../constants/';
 import { TeamNameProps } from '../../../@types';
-
-interface Params extends ParsedUrlQuery {
-  teamName: TeamKeyType;
-}
 
 interface QnaListPageProps extends TeamNameProps {
   questions: QuestionListItem[];

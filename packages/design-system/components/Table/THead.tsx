@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import React, { PropsWithChildren } from 'react';
-import { theme } from '../../theme';
 
 interface Props extends React.ComponentPropsWithoutRef<'thead'> {}
 

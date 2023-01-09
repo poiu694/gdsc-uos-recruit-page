@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Title, Typography } from '@gdsc-uos-recruit-page/design-system';
@@ -11,11 +10,7 @@ interface Props {
   content: TitleWithDescription;
 }
 
-const DEFAULT_TAB_VALUE = '1';
-
 function MainTeam({ content }: Props) {
-  const [tabValue, setTabValue] = React.useState<string>(DEFAULT_TAB_VALUE);
-
   return (
     <Wrapper>
       <TitleWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>

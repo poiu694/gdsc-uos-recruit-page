@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 export const DEFAULT_PAGE = {

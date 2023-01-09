@@ -1,4 +1,3 @@
-import { QuestionListItem } from '../../@types';
 import { QuestionContent } from '../constants';
 
 export const fetcher = (url: string) => fetch(url).then((res) => res.json());

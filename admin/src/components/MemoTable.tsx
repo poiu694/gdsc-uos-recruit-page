@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import {
-  Chip,
   Table,
   TBody,
   Td,

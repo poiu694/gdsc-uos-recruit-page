@@ -6,10 +6,10 @@ import {
   TabContent,
   TabMenu,
 } from '@gdsc-uos-recruit-page/design-system';
+import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 
 import TeamList from '../TeamList';
 import QuestionAndAnswer from '../QuestionAndAnswer';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
 
 const DEFAULT_TEAM_VALUE = 'common';
 const DEFAULT_TAB_VALUE = '1';

@@ -11,12 +11,12 @@ import {
   Tr,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
+import { useNavigate } from 'react-router-dom';
 
 import { usePagination } from '../hooks';
 import { ContentWrapper, PageNavigation, SideMenu } from '../components';
 import { DUMMY_APPLYS } from '../dummy/apply';
 import { convertChipColorByState, convertChipColorByTeam } from '../utils';
-import { useNavigate } from 'react-router-dom';
 
 function ApplyPage() {
   const navigate = useNavigate();

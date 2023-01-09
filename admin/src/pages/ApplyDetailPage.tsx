@@ -4,10 +4,10 @@ import {
   Button,
   Chip,
   Input,
-  theme,
   Title,
   Typography,
 } from '@gdsc-uos-recruit-page/design-system';
+import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
 
 import { DUMMY_APPLICATION } from '../dummy/apply';
 import {
@@ -21,7 +21,6 @@ import {
 } from '../components';
 import { convertChipColorByState } from '../utils';
 import { ApplyState } from '../@types';
-import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
 
 function ApplyDetailPage() {
   const [memo, setMemo] = React.useState<string>('');

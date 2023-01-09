@@ -11,10 +11,6 @@ import Logo from './Logo';
 import { Flex } from './styled';
 import IconText from './IconText';
 
-interface Props {
-  user: '';
-}
-
 function SideMenu() {
   const navigate = useNavigate();
 

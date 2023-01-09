@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-
 import {
   Team,
   TeamKeyType,
