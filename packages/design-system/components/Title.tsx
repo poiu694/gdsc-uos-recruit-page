@@ -5,7 +5,7 @@ import Typography from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
-  descriptions: string | string[];
+  descriptions: string;
 }
 
 function Title({ title, descriptions, ...restProps }: Props) {
@@ -15,21 +15,17 @@ function Title({ title, descriptions, ...restProps }: Props) {
       <Typography type="h5" color={theme.palette.gray450}>
         {title}
       </Typography>
-      {isArrayDescription &&
-        descriptions.map((description) => (
-          <Typography type="body4" color={theme.palette.gray450}>
-            {description}
-          </Typography>
-        ))}
-      {!isArrayDescription && (
-        <Typography type="body4" color={theme.palette.gray450}>
-          {descriptions}
-        </Typography>
-      )}
+      <Description type="body4" color={theme.palette.gray450}>
+        {descriptions}
+      </Description>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div``;
+
+const Description = styled(Typography)`
+  white-space: pre-wrap;
+`;
 
 export default Title;

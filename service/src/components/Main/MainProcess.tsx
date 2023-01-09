@@ -8,11 +8,11 @@ import {
 import { ProcessCircleType } from '@gdsc-uos-recruit-page/design-system/components/Circle';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 
-import { TitleOneDesc, TitleTwoDesc } from '../../../@types';
+import { TitleWithDescription } from '../../../@types';
 
 interface Props {
-  content: TitleTwoDesc;
-  circle: TitleOneDesc[];
+  content: TitleWithDescription;
+  circle: TitleWithDescription[];
 }
 
 function MainProcess({ content, circle }: Props) {
@@ -25,7 +25,7 @@ function MainProcess({ content, circle }: Props) {
       </TitleWrapper>
       <Title
         title={content.title}
-        descriptions={[content.desc1, content.desc2]}
+        descriptions={content.desc}
         data-aos="fade-up"
         data-aos-duration={defaultDuration}
       />
@@ -55,7 +55,6 @@ const Wrapper = styled.div`
 const CircleList = styled.ul`
   display: flex;
   justify-content: space-between;
-
   padding: 0;
   margin-top: 3em;
 
@@ -110,10 +109,6 @@ const CircleItem = styled.li`
         grid-row: 2/2;
         grid-column: 12/4;
       }
-
-      &:nth-of-type(5) {
-        grid-column: 5/7;
-      }
     }
 
     @media (max-width: ${theme.size.tabletS}px) {
@@ -134,11 +129,6 @@ const CircleItem = styled.li`
 
       &:nth-of-type(4) {
         grid-row: 4/6;
-        grid-column: 2/3;
-      }
-
-      &:nth-of-type(5) {
-        grid-row: 5/7;
         grid-column: 2/3;
       }
     }

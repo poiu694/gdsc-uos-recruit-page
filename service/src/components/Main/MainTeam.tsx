@@ -4,10 +4,10 @@ import { Title, Typography } from '@gdsc-uos-recruit-page/design-system';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 
 import { TeamCard } from '../common';
-import { TitleTwoDesc } from '../../../@types';
+import { TitleWithDescription } from '../../../@types';
 
 interface Props {
-  content: TitleTwoDesc;
+  content: TitleWithDescription;
 }
 
 function MainTeam({ content }: Props) {
@@ -22,7 +22,7 @@ function MainTeam({ content }: Props) {
         data-aos="fade-up"
         data-aos-duration={defaultDuration}
         title={content.title}
-        descriptions={[content.desc1, content.desc2]}
+        descriptions={content.desc}
       />
       <TeamCardWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
         <TeamCard teamName="frontend" />

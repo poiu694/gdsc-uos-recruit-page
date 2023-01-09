@@ -1,17 +1,17 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { TitleWithDescription } from '../../../@types';
 import { MainContent } from '../../constants';
-import { TitleOneDesc, TitleTwoDesc } from '../../../@types';
 
 export interface MainProcess {
-  content: TitleTwoDesc;
-  circle: TitleOneDesc[];
+  content: TitleWithDescription;
+  circle: TitleWithDescription[];
 }
 
 interface MainContent {
   banner: string;
   process: MainProcess;
-  team: TitleTwoDesc;
+  team: TitleWithDescription;
 }
 
 export default function handler(
