@@ -5,7 +5,6 @@ export const Team = {
   mobile: 'mobile',
   data_ml: 'data_ml',
   design: 'design',
-  all: 'all',
 } as const;
 
 type TeamType = typeof Team;

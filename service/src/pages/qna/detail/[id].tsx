@@ -19,12 +19,12 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
 
   return (
     <>
-      <Helmet title='질문' description='GDSC UOS RECRUIT 질문 페이지' />
+      <Helmet title="질문" description="GDSC UOS RECRUIT 질문 페이지" />
       <Layout>
         <Banner teamName={question?.type ?? 'frontend'} />
         <IntroductionWrapper
-          title='자주 묻는 질문'
-          desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
+          title="자주 묻는 질문"
+          desc="GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요."
         />
         <ContentsWrapper>
           <TeamList teamName={question?.type} />
@@ -37,8 +37,12 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = QuestionContent.all.map((content) => ({
-    params: { id: content.id },
+  const entireQuestions = Object.values(QuestionContent).reduce(
+    (acc, content) => [...acc, ...content],
+    []
+  );
+  const paths = entireQuestions.map((question) => ({
+    params: { id: question.id },
   }));
 
   return {
@@ -48,13 +52,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const questionIdx = QuestionContent.all.findIndex(
+  const entireQuestions = Object.values(QuestionContent).reduce(
+    (acc, content) => [...acc, ...content],
+    []
+  );
+  const questionIdx = entireQuestions.findIndex(
     (content) => content.id === params!.id
   );
 
   return {
     props: {
-      question: QuestionContent.all[questionIdx],
+      question: entireQuestions[questionIdx],
     },
   };
 };
