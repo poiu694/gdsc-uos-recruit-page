@@ -2,7 +2,10 @@ import { ParsedUrlQuery } from 'querystring';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import {
+  Team,
+  TeamKeyType,
+} from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { Banner } from '@gdsc-uos-recruit-page/design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
@@ -28,14 +31,14 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
   return (
     <>
       <Helmet
-        title='자주 묻는 질문'
-        description='GDSC UOS RECRUIT 자주 묻는 질문 페이지'
+        title="자주 묻는 질문"
+        description="GDSC UOS RECRUIT 자주 묻는 질문 페이지"
       />
       <Layout>
         <Banner teamName={teamName} />
         <IntroductionWrapper
-          title='자주 묻는 질문'
-          desc='GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요.'
+          title="자주 묻는 질문"
+          desc="GDSC UOS에 대해 궁금하시면 질문을 확인해 주세요."
         />
         <ContentsWrapper>
           <TeamList teamName={teamName} />
@@ -48,15 +51,12 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = Object.values(Team).map((teamName) => ({
+    params: { teamName },
+  }));
+
   return {
-    paths: [
-      { params: { teamName: 'common' } },
-      { params: { teamName: 'frontend' } },
-      { params: { teamName: 'backend' } },
-      { params: { teamName: 'mobile' } },
-      { params: { teamName: 'data_ml' } },
-      { params: { teamName: 'design' } },
-    ],
+    paths,
     fallback: false, // false or 'blocking'
   };
 };

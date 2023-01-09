@@ -5,7 +5,10 @@ import { useRouter } from 'next/router';
 
 import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
 import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import {
+  Team,
+  TeamKeyType,
+} from '@gdsc-uos-recruit-page/design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Bottom, Helmet, Introduction } from '../../components/common';
 import { List, AsideCard } from '../../components/Introduction';
@@ -39,15 +42,15 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
 
   return (
     <>
-      <Helmet title='소개' description='GDSC UOS RECRUIT 소개 페이지' />
+      <Helmet title="소개" description="GDSC UOS RECRUIT 소개 페이지" />
       <Layout>
         <Banner teamName={teamName} />
         <Wrapper>
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
-            <List title='저희를 소개할게요' items={introduction.introduction} />
+            <List title="저희를 소개할게요" items={introduction.introduction} />
             <List
-              title='저희는 이런 활동을 해요'
+              title="저희는 이런 활동을 해요"
               items={introduction.activities}
             />
             <List
@@ -69,14 +72,12 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = Object.values(Team).map((teamName) => ({
+    params: { teamName },
+  }));
+
   return {
-    paths: [
-      { params: { teamName: 'frontend' } },
-      { params: { teamName: 'backend' } },
-      { params: { teamName: 'mobile' } },
-      { params: { teamName: 'data_ml' } },
-      { params: { teamName: 'design' } },
-    ],
+    paths: paths,
     fallback: false, // false or 'blocking'
   };
 };
