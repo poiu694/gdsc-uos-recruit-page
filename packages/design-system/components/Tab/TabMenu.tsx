@@ -15,7 +15,6 @@ function TabMenu({ label, value }: Props) {
 
   return (
     <Wrapper
-      data-value={value}
       hierarchy={ButtonHierarchy.Parent}
       className={isActiveNow ? 'active' : ''}
       onClick={() => onClickTabMenu(value)}

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { PropsWithChildren } from 'react';
 import { useTabContext } from './TabContext';
 
-interface Props {
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
   value: string;
 }
 

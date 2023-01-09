@@ -1,5 +1,5 @@
 import React from 'react';
-import TabContext, { useTabContext } from './TabContext';
+import TabContext from './TabContext';
 
 interface Props {
   value: string; // active index
