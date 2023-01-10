@@ -1,5 +1,30 @@
 {
   "extends": "../tsconfig-custom/react-library.json",
-  "include": ["**/*.ts", "**/*.tsx", "@types/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts", "**/*.tsx", "@types/*.ts", "rollup.config2.js", "index.ts"],
+  "exclude": ["**/dist/*", "**/esm/*", "./utils/*"],
+  "compilerOptions": {
+    /* Type Checking */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    /* Interop Constraints */
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Emit */
+    "declaration": true,
+    "downlevelIteration": true,
+    "inlineSources": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true,
+
+    /* Completeness*/
+    "allowJs": false,
+    "skipLibCheck": true
+  }
 }
