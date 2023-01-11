@@ -1,7 +1,8 @@
-import { DEFAULT_EXTENSIONS } from '@babel/core';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import typescript from 'rollup-plugin-typescript2';
+import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
+import { DEFAULT_EXTENSIONS } from '@babel/core';
+import typescript from 'rollup-plugin-typescript2';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 // import packageJSON from './package.json';
 
@@ -26,7 +27,13 @@ const buildJS = (input, output, format) => ({
     // common plugins
     typescriptPlugin,
     commonjs(),
+    babel({
+      babelHelpers: 'runtime',
+      exclude: 'node_modules/**',
+      extensions,
+    }),
   ],
+  external: [/@babel\/runtime/], // babel
 });
 
 export default [
