@@ -47,7 +47,7 @@ export default [
   buildJS(
     './index.ts',
     {
-      file: packageJSON.main
+      file: `./dist/${packageJSON.main}`
     },
     'cjs'
   ),
