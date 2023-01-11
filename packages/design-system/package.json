@@ -4,16 +4,17 @@
   "packageManager": "yarn@3.2.1",
   "author": "LeeSangMin",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "esm"
   ],
   "scripts": {
     "lint": "eslint --ext **/*.ts **/*.tsx",
-    "build": "rm -rf dist/ && rm -rf esm/ && rollup -c && tsc --declaration --emitDeclarationOnly --declarationDir dist"
+    "clean:build": "rm -rf dist/ && rm -rf esm/",
+    "build": "yarn clean:build && rollup -c && tsc --declaration --emitDeclarationOnly --declarationDir dist"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -43,7 +44,8 @@
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "rollup": "^3.9.1",
-    "rollup-plugin-typescript2": "^0.34.1"
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tslib": "^2.4.1"
   },
   "peerDependencies": {
     "@emotion/react": "^11.9.3",

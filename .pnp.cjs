@@ -1072,6 +1072,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:18.2.0"],\
             ["rollup", "npm:3.9.1"],\
             ["rollup-plugin-typescript2", "virtual:2312a4ace14e3419056299780d365d2807c3a31b115cf861988db6e03f3c22822df97a31010f1c572907ade11f2b36f93ebdaf04cdba0ad6994dae8cdf2da11c#npm:0.34.1"],\
+            ["tslib", "npm:2.4.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\
           ],\
           "packagePeers": [\
@@ -1113,6 +1114,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["rollup", "npm:3.9.1"],\
             ["rollup-plugin-typescript2", "virtual:2312a4ace14e3419056299780d365d2807c3a31b115cf861988db6e03f3c22822df97a31010f1c572907ade11f2b36f93ebdaf04cdba0ad6994dae8cdf2da11c#npm:0.34.1"],\
+            ["tslib", "npm:2.4.1"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"]\
           ],\
           "linkType": "SOFT"\
@@ -6664,6 +6666,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tslib-npm-2.4.0-9cb6dc5030-8c4aa6a3c5.zip/node_modules/tslib/",\
           "packageDependencies": [\
             ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:2.4.1", {\
+          "packageLocation": "./.yarn/cache/tslib-npm-2.4.1-36f0ed04db-19480d6e03.zip/node_modules/tslib/",\
+          "packageDependencies": [\
+            ["tslib", "npm:2.4.1"]\
           ],\
           "linkType": "HARD"\
         }]\
