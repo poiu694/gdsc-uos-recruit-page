@@ -3138,6 +3138,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.0.6"],\
             ["@typescript-eslint/eslint-plugin", "virtual:760f40d072c4a51fb59a275fe79a583406952e48c07975f715dbe8c6010860a9858cd724224b445ba47de029efc524761bcd76db73c744566e9bc6a02726cbaa#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:760f40d072c4a51fb59a275fe79a583406952e48c07975f715dbe8c6010860a9858cd724224b445ba47de029efc524761bcd76db73c744566e9bc6a02726cbaa#npm:5.30.6"],\
+            ["cross-env", "npm:7.0.3"],\
             ["emotion-reset", "virtual:2312a4ace14e3419056299780d365d2807c3a31b115cf861988db6e03f3c22822df97a31010f1c572907ade11f2b36f93ebdaf04cdba0ad6994dae8cdf2da11c#npm:3.0.1"],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-airbnb", "virtual:760f40d072c4a51fb59a275fe79a583406952e48c07975f715dbe8c6010860a9858cd724224b445ba47de029efc524761bcd76db73c744566e9bc6a02726cbaa#npm:19.0.4"],\
@@ -3186,6 +3187,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.17"],\
             ["@typescript-eslint/eslint-plugin", "virtual:760f40d072c4a51fb59a275fe79a583406952e48c07975f715dbe8c6010860a9858cd724224b445ba47de029efc524761bcd76db73c744566e9bc6a02726cbaa#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:760f40d072c4a51fb59a275fe79a583406952e48c07975f715dbe8c6010860a9858cd724224b445ba47de029efc524761bcd76db73c744566e9bc6a02726cbaa#npm:5.30.6"],\
+            ["cross-env", "npm:7.0.3"],\
             ["emotion-reset", "virtual:0bd74e3b124a07ae14a0107ad8c6755b7c7b048e6ffef08cdb9da4497f2ff20d6084cdabd1b7604a5659cb62041a595cba2448b446eb26bb9d9464c8eeaadf7c#npm:3.0.1"],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-airbnb", "virtual:760f40d072c4a51fb59a275fe79a583406952e48c07975f715dbe8c6010860a9858cd724224b445ba47de029efc524761bcd76db73c744566e9bc6a02726cbaa#npm:19.0.4"],\
@@ -4814,6 +4816,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["parse-json", "npm:5.2.0"],\
             ["path-type", "npm:4.0.0"],\
             ["yaml", "npm:1.10.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["cross-env", [\
+        ["npm:7.0.3", {\
+          "packageLocation": "./.yarn/cache/cross-env-npm-7.0.3-96d81820f4-26f2f3ea2a.zip/node_modules/cross-env/",\
+          "packageDependencies": [\
+            ["cross-env", "npm:7.0.3"],\
+            ["cross-spawn", "npm:7.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
