@@ -16,37 +16,36 @@ const typescriptPlugin = typescript({
   },
 });
 
-const commonPlugins = [commonjs()];
-
-const configGenerator = ({ output: _output }) => ({
-  input: './index.ts',
-  output: {
-    ..._output,
-  },
+const buildJS = (input, output, format) => ({
+  input,
+  output: { ...output, ...format },
   plugins: [
     nodeResolve({
       extensions,
     }),
+    // common plugins
     typescriptPlugin,
-    ...commonPlugins,
+    commonjs(),
   ],
 });
 
 export default [
   // cjs
-  configGenerator({
-    output: {
-      // file: packageJSON.main,
-      format: 'cjs',
+  buildJS(
+    './index.ts',
+    {
+      // file: packageJSON.main
     },
-  }),
+    'cjs'
+  ),
   // esm
-  configGenerator({
-    output: {
+  buildJS(
+    './index.ts',
+    {
       dir: 'dist',
-      format: 'esm',
       preserveModules: true,
       preserveModulesRoot: '.',
     },
-  }),
+    'esm'
+  ),
 ];
