@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 // import packageJSON from './package.json';
 
@@ -32,6 +33,7 @@ const buildJS = (input, output, format) => ({
       exclude: 'node_modules/**',
       extensions,
     }),
+    peerDepsExternal(),
   ],
   external: [/@babel\/runtime/], // babel
 });
