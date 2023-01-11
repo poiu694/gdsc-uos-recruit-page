@@ -1,3 +1,4 @@
+import fs from 'fs';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
@@ -5,7 +6,10 @@ import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
-// import packageJSON from './package.json';
+const loadJSON = (path) =>
+  JSON.parse(fs.readFileSync(new URL(path, import.meta.url)));
+
+const packageJSON = loadJSON('./package.json');
 
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx'];
 
@@ -33,7 +37,7 @@ const buildJS = (input, output, format) => ({
       exclude: 'node_modules/**',
       extensions,
     }),
-    peerDepsExternal(),
+    peerDepsExternal()
   ],
   external: [/@babel\/runtime/], // babel
 });
@@ -43,7 +47,7 @@ export default [
   buildJS(
     './index.ts',
     {
-      // file: packageJSON.main
+      file: packageJSON.main
     },
     'cjs'
   ),
