@@ -3,6 +3,7 @@ import React from 'react';
 import { theme } from '../../theme';
 import Button, { ButtonHierarchy } from '../Button';
 import Input from '../Input';
+import TextArea from '../TextArea';
 import Typography from '../Typography';
 import { useModalContext } from './ModalContext';
 
@@ -35,6 +36,10 @@ function QNAGeneratorModal({
   };
 
   const onClickConfirm = () => {
+    if (title === '' || answer === '') {
+      alert('질문 혹은 답변칸이 비어있습니다.');
+      return;
+    }
     if (typeof _onClickConfirm !== 'undefined') {
       _onClickConfirm({ title, answer });
     }
@@ -47,16 +52,16 @@ function QNAGeneratorModal({
         <Typography type="h6">
           {teamName}팀의 새로 질문 및 답변을 입력해주세요.
         </Typography>
-        <Typography type="body4" style={{ paddingTop: 32 }}>
-          질문
-        </Typography>
-        <Input value={title} onChange={(e) => setTitle(e.target.value)} />
-        <Typography type="body4" style={{ paddingTop: 8 }}>
-          답변
-        </Typography>
+        <Input
+          label="질문"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          style={{ marginBlock: 16 }}
+        />
         <AnswerTextArea
           required
           value={answer}
+          label="답변"
           onChange={(e) => setAnswer(e.target.value)}
         />
       </Spacer>
@@ -120,10 +125,9 @@ const CancleButton = styled(Button)`
   padding: 12px;
 `;
 
-const AnswerTextArea = styled.textarea`
+const AnswerTextArea = styled(TextArea)`
   width: 500px;
   height: 200px;
-  resize: none;
 `;
 
 export default QNAGeneratorModal;
