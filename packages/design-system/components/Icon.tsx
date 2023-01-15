@@ -56,6 +56,10 @@ function Icon({ type, color, hoverAction = false, ...restProps }: Props) {
 }
 
 const Wrapper = styled.div`
+  path {
+    stroke: ${(props) => props.color};
+  }
+
   &.hover-action svg {
     -webkit-transition: all 0.1s ease-in-out; /* Safari */
     transition: all 0.1s ease-in-out;
