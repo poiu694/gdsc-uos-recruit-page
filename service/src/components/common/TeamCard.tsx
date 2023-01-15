@@ -1,12 +1,13 @@
 import { useCallback } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import {
+  theme,
+  Typography,
   get600Color,
   getJobByTeam,
   getTitleCaseTeam,
-} from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
+} from '@gdsc-uos-recruit-page/design-system';
 import { useRouter } from 'next/router';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { TeamNameProps } from '../../../@types';

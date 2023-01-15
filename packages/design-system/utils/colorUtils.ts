@@ -10,6 +10,8 @@ export const getTitleCaseTeam = (type: TeamValueType) => {
       return `${type[0].toUpperCase()}${type.slice(1)}`
     case 'data_ml':
       return 'Data/ML';
+    case 'common':
+      return 'Common';
     default: 
       return `Error case`
   }

@@ -5,7 +5,7 @@ import {
   PropsWithChildren,
 } from 'react';
 import { theme } from '../theme';
-import { XOR } from '../utils/helperTypes';
+import { XOR } from '../utils';
 
 export enum ButtonHierarchy {
   Primary = 'Primary',

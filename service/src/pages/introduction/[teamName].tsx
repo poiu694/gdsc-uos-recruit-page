@@ -3,8 +3,11 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
-import { Banner, theme } from '@gdsc-uos-recruit-page/design-system';
-import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
+import {
+  Banner,
+  theme,
+  getTitleCaseTeam,
+} from '@gdsc-uos-recruit-page/design-system';
 import {
   Team,
   TeamKeyType,

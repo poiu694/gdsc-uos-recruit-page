@@ -2,8 +2,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
-import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import { getTitleCaseTeam } from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
+import {
+  Icon,
+  theme,
+  Typography,
+  getTitleCaseTeam,
+} from '@gdsc-uos-recruit-page/design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 import { TeamNameProps, QuestionListItem } from '../../../@types';

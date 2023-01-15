@@ -1,5 +1,5 @@
 import { TabType } from '.';
-import { createGenericContext, createGenericUseContext } from '../../utils/helperContext';
+import { createGenericContext, createGenericUseContext } from '../../utils';
 
 interface TabTriggerEvent {
   value: string;

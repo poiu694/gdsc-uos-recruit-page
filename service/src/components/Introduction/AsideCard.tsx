@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
 import {
+  theme,
+  Typography,
   get200Color,
   get400Color,
-} from '@gdsc-uos-recruit-page/design-system/utils/colorUtils';
+} from '@gdsc-uos-recruit-page/design-system';
 
 import type { AsideCardType, TeamNameProps } from '../../../@types/';
 

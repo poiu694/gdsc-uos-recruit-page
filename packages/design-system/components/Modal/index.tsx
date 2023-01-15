@@ -1,10 +1,10 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
 import Portal from './Portal';
 import { theme } from '../../theme';
-import { StrictPropsWithChildren } from '../../utils/helperTypes';
-import React from 'react';
 import ModalContext from './ModalContext';
+import { StrictPropsWithChildren } from '../../utils';
 
 interface Props {
   isOpen: boolean;

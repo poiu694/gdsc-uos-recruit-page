@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { StrictPropsWithChildren } from '../../utils/helperTypes';
+import { StrictPropsWithChildren } from '../../utils';
 
 interface Props {
   id: string;

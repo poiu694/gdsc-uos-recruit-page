@@ -1,7 +1,7 @@
 import {
   createGenericContext,
   createGenericUseContext,
-} from '../../utils/helperContext';
+} from '../../utils';
 
 interface ModalEvent {
   isOpen: boolean;
