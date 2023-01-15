@@ -6,7 +6,7 @@ import { theme } from '../../theme';
 import ModalContext from './ModalContext';
 import { StrictPropsWithChildren } from '../../utils';
 
-interface Props {
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
   isOpen: boolean;
   isClickBackgroundClose?: boolean;
   onClose?: () => void;
