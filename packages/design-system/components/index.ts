@@ -4,6 +4,7 @@ export * from './Table';
 export { default as Chip } from './Chip';
 export { default as Icon } from './Icon';
 export { default as Input } from './Input';
+export { default as Modal } from './Modal';
 export { default as Title } from './Title';
 export { default as Banner } from './Banner';
 export { default as Button } from './Button';
