@@ -12,17 +12,27 @@ interface Props extends React.ComponentPropsWithoutRef<'input'> {
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
   (
-    { label, value, id, required, errorMessage, name, onChange, ...restProps },
+    {
+      label,
+      value,
+      id,
+      required,
+      errorMessage,
+      name,
+      onChange,
+      style,
+      ...restProps
+    },
     ref
   ) => {
     const [isFirstFocused, setIsFirstFocused] = React.useState<boolean>(false);
     const emptyError = required && isFirstFocused && value === '';
 
     return (
-      <Wrapper>
+      <Wrapper style={style}>
         <Label htmlFor={id}>
           {label && (
-            <LabelTypography type="body4" color={theme.palette.gray350}>
+            <LabelTypography type="body4" color={theme.palette.gray400}>
               {label}
             </LabelTypography>
           )}
