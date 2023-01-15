@@ -110,7 +110,7 @@ function IntroductionInfoBox() {
         <Button
           hierarchy={ButtonHierarchy.Danger}
           onClick={() => console.log(introductionList)}
-          style={{ padding: '8px 20px', float: 'right', marginRight: 16 }}
+          style={{ padding: '8px 20px', marginRight: 16 }}
         >
           <Typography
             type="body5"

@@ -9,11 +9,12 @@ import {
 } from '@gdsc-uos-recruit-page/design-system';
 
 import {
-  ContentWrapper,
-  IntroductionInfoBox,
-  MainRecruitInfoBox,
-  QuestionInfoBox,
   SideMenu,
+  ContentWrapper,
+  QuestionInfoBox,
+  MainRecruitInfoBox,
+  IntroductionInfoBox,
+  ApplyQuestionInfoBox,
 } from '../components';
 
 const DEFAULT_PAGE_VALUE = '1';
@@ -60,7 +61,9 @@ function ManageRecruitInfoPage() {
             <TabContent value="3">
               <IntroductionInfoBox />
             </TabContent>
-            <TabContent value="4">hi4</TabContent>
+            <TabContent value="4">
+              <ApplyQuestionInfoBox />
+            </TabContent>
           </TabContents>
         </Tab>
       </ContentWrapper>
