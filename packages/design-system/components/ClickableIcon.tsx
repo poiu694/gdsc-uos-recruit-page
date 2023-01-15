@@ -18,6 +18,7 @@ function ClickableIcon({
   hoverBackgroundColor = theme.colors.ui.hover,
   disabled = false,
   onClick,
+  ...restProps
 }: Props) {
   return (
     <Wrapper
@@ -25,6 +26,7 @@ function ClickableIcon({
       hoverBackgroundColor={hoverBackgroundColor}
       onClick={onClick}
       disabled={disabled}
+      {...restProps}
     >
       <Icon {...iconProps} />
     </Wrapper>
