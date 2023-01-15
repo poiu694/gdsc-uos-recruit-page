@@ -5,6 +5,8 @@ export { default as Down } from './Down';
 export { default as Left } from './Left';
 export { default as Blog } from './Blog';
 export { default as User } from './User';
+export { default as Plus } from './Plus';
+export { default as Close } from './Close';
 export { default as Right } from './Right';
 export { default as Gmail } from './Gmail';
 export { default as Github } from './Github';
