@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Typography } from '@gdsc-uos-recruit-page/design-system';
+import { Typography } from 'gdsc-uos-design-system';
 
 import { Flex } from '../styled';
 

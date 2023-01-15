@@ -5,7 +5,7 @@ import {
   Typography,
   get200Color,
   get400Color,
-} from '@gdsc-uos-recruit-page/design-system';
+} from 'gdsc-uos-design-system';
 
 import type { AsideCardType, TeamNameProps } from '../../../@types/';
 

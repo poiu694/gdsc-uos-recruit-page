@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Title, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { Title, Typography } from 'gdsc-uos-design-system';
 import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
 
 import { TeamCard } from '../common';

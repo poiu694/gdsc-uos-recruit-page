@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Chip, theme } from '@gdsc-uos-recruit-page/design-system';
+import { Chip, theme } from 'gdsc-uos-design-system';
 import { ApplyState } from '../@types';
 import { convertChipColorByState } from '../utils';
 import { Flex } from './styled';

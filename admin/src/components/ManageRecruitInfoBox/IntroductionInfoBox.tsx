@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
 
 import TeamList from '../TeamList';
 import {
@@ -10,9 +10,9 @@ import {
   Input,
   theme,
   Typography,
-} from '@gdsc-uos-recruit-page/design-system';
+} from 'gdsc-uos-design-system';
 import { INTRODUCTION } from '../../dummy/introduction';
-import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
+import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 
 const DEFAULT_TEAM_VALUE = 'common';
 

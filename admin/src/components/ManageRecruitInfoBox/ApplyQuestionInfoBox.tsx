@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
 import {
   theme,
   Input,
@@ -8,8 +8,8 @@ import {
   TextArea,
   Typography,
   Icon,
-} from '@gdsc-uos-recruit-page/design-system';
-import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
+} from 'gdsc-uos-design-system';
+import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 
 import { Flex } from '../styled';
 import TeamList from '../TeamList';

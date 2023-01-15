@@ -7,7 +7,7 @@ import {
   get600Color,
   getJobByTeam,
   getTitleCaseTeam,
-} from '@gdsc-uos-recruit-page/design-system';
+} from 'gdsc-uos-design-system';
 import { useRouter } from 'next/router';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { TeamNameProps } from '../../../@types';

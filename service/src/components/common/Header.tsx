@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
-import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
+import { theme } from 'gdsc-uos-design-system/theme';
+import Typography from 'gdsc-uos-design-system/components/Typography';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
@@ -32,26 +32,26 @@ function Header() {
           <picture>
             <source
               media={`(max-width: ${theme.size.mobile}px)`}
-              srcSet='/logo_small.png'
+              srcSet="/logo_small.png"
             />
-            <img src='/logo.png' alt='gdsc-uos-logo' />
+            <img src="/logo.png" alt="gdsc-uos-logo" />
           </picture>
         </Logo>
         <Navigation>
-          <Typography type='body4' onClick={() => handleLinkToPage('/')}>
+          <Typography type="body4" onClick={() => handleLinkToPage('/')}>
             모집 공고
           </Typography>
           <Typography
-            type='body4'
+            type="body4"
             onClick={() => handleLinkToPage('/qna/common')}
-            aria-label='move to common question to gdsc-uos'
+            aria-label="move to common question to gdsc-uos"
           >
             자주 묻는 질문
           </Typography>
           <Typography
-            type='body4'
+            type="body4"
             onClick={() => handleLinkToPage(GOOGLE_FORM_LINK)}
-            aria-label='move to apply google-form link'
+            aria-label="move to apply google-form link"
           >
             지원 하기
           </Typography>

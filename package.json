@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "yarn service:lint && yarn design-system:lint && yarn hooks:lint yarn admin:lint",
     "hooks:lint": "yarn workspace @gdsc-uos-recruit-page/hooks lint",
-    "design-system:lint": "yarn workspace @gdsc-uos-recruit-page/design-system lint",
+    "design-system:lint": "yarn workspace gdsc-uos-design-system lint",
     "service": "yarn workspace service dev",
     "service:build": "yarn workspace service build",
     "service:lint": "yarn workspace service lint",

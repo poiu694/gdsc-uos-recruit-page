@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import Icon, {
-  IconKeyType,
-} from '@gdsc-uos-recruit-page/design-system/components/Icon';
+import { theme, Typography } from 'gdsc-uos-design-system';
+import Icon, { IconKeyType } from 'gdsc-uos-design-system/components/Icon';
 import { Flex } from './styled';
 
 interface Props {

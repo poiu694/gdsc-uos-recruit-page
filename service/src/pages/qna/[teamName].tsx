@@ -1,11 +1,8 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-  Team,
-  TeamKeyType,
-} from '@gdsc-uos-recruit-page/design-system/@types/Team';
-import { Banner } from '@gdsc-uos-recruit-page/design-system';
+import { Team, TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
+import { Banner } from 'gdsc-uos-design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 import { QuestionListItem } from '../../../@types/question';

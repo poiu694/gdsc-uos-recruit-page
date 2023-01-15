@@ -12,8 +12,8 @@ import {
   Title,
   Tr,
   Typography,
-} from '@gdsc-uos-recruit-page/design-system';
-import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
+} from 'gdsc-uos-design-system';
+import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 import { usePagination } from '../hooks';
 import { DUMMY_ADMIN_USERS } from '../dummy/users';
 import { convertChipColorByUserType } from '../utils';

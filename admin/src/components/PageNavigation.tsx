@@ -4,8 +4,8 @@ import {
   ClickableIcon,
   theme,
   Typography,
-} from '@gdsc-uos-recruit-page/design-system';
-import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
+} from 'gdsc-uos-design-system';
+import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 import { PageOptions } from '../hooks/usePagination';
 
 export interface Props {

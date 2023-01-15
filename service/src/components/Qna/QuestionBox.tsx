@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Typography } from '@gdsc-uos-recruit-page/design-system';
+import { Typography } from 'gdsc-uos-design-system';
 
 import { QuestionListItem } from '../../../@types/question';
 import PrevBox from './PrevBox';

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { theme, Title, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { theme, Title, Typography } from 'gdsc-uos-design-system';
 import { ContentWrapper, Flex, SideMenu, SummaryCard } from '../components';
 
 function MainPage() {

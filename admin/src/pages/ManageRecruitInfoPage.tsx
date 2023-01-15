@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { useSearchParams } from 'react-router-dom';
-import {
-  Tab,
-  TabContent,
-  TabMenu,
-  Title,
-} from '@gdsc-uos-recruit-page/design-system';
+import { Tab, TabContent, TabMenu, Title } from 'gdsc-uos-design-system';
 
 import {
   SideMenu,

@@ -1,13 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  Button,
-  Chip,
-  Input,
-  Title,
-  Typography,
-} from '@gdsc-uos-recruit-page/design-system';
-import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
+import { Button, Chip, Input, Title, Typography } from 'gdsc-uos-design-system';
+import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 
 import { DUMMY_APPLICATION } from '../dummy/apply';
 import {

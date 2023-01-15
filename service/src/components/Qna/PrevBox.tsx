@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Icon, theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { Icon, theme, Typography } from 'gdsc-uos-design-system';
 import { useRouter } from 'next/router';
 
 function PrevBox() {

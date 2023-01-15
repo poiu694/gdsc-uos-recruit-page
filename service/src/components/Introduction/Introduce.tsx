@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import { theme, Typography } from 'gdsc-uos-design-system';
 
 interface Props {
   desc: string;

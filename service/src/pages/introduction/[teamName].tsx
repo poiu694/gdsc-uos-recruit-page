@@ -3,15 +3,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
-import {
-  Banner,
-  theme,
-  getTitleCaseTeam,
-} from '@gdsc-uos-recruit-page/design-system';
-import {
-  Team,
-  TeamKeyType,
-} from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { Banner, theme, getTitleCaseTeam } from 'gdsc-uos-design-system';
+import { Team, TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { Bottom, Helmet, Introduction } from '../../components/common';
 import { List, AsideCard } from '../../components/Introduction';

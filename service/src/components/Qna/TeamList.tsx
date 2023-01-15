@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { theme, Typography } from 'gdsc-uos-design-system';
+import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
 
 import { teams } from '../../constants';
 import { TeamNameProps } from '../../../@types';

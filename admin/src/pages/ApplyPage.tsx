@@ -10,7 +10,7 @@ import {
   Title,
   Tr,
   Typography,
-} from '@gdsc-uos-recruit-page/design-system';
+} from 'gdsc-uos-design-system';
 import { useNavigate } from 'react-router-dom';
 
 import { usePagination } from '../hooks';

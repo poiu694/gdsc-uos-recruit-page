@@ -7,7 +7,7 @@ import {
   THead,
   Tr,
   Typography,
-} from '@gdsc-uos-recruit-page/design-system';
+} from 'gdsc-uos-design-system';
 import { ApplyState } from '../@types';
 import { convertChipColorByState } from '../utils';
 

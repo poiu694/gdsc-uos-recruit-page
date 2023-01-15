@@ -7,7 +7,7 @@ import {
   theme,
   Typography,
   getTitleCaseTeam,
-} from '@gdsc-uos-recruit-page/design-system';
+} from 'gdsc-uos-design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
 import { TeamNameProps, QuestionListItem } from '../../../@types';

@@ -1792,51 +1792,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gdsc-uos-recruit-page/design-system@1.0.0, @gdsc-uos-recruit-page/design-system@workspace:^, @gdsc-uos-recruit-page/design-system@workspace:packages/design-system":
-  version: 0.0.0-use.local
-  resolution: "@gdsc-uos-recruit-page/design-system@workspace:packages/design-system"
-  dependencies:
-    "@babel/core": ^7.20.12
-    "@babel/plugin-transform-runtime": ^7.19.6
-    "@babel/preset-env": ^7.20.2
-    "@babel/preset-react": ^7.18.6
-    "@babel/preset-typescript": ^7.18.6
-    "@babel/runtime": ^7.20.7
-    "@emotion/react": ^11.9.3
-    "@emotion/styled": ^11.9.3
-    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
-    "@rollup/plugin-babel": ^6.0.3
-    "@rollup/plugin-commonjs": ^24.0.0
-    "@rollup/plugin-node-resolve": ^15.0.1
-    "@types/react": ^17.0.37
-    "@types/react-dom": ^17.0.11
-    "@typescript-eslint/eslint-plugin": ^5.30.6
-    "@typescript-eslint/parser": ^5.30.6
-    cross-env: ^7.0.3
-    emotion-reset: ^3.0.1
-    eslint: ^8.19.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-jsx-a11y: ^6.6.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.30.1
-    eslint-plugin-react-hooks: ^4.6.0
-    prettier: ^2.8.1
-    react: 18.2.0
-    rollup: ^3.9.1
-    rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-typescript2: ^0.34.1
-    tslib: ^2.4.1
-    typescript: ^4.7.4
-  peerDependencies:
-    "@emotion/react": ^11.9.3
-    react: ^16.0.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  languageName: unknown
-  linkType: soft
-
 "@gdsc-uos-recruit-page/eslint-config-custom@1.0.0, @gdsc-uos-recruit-page/eslint-config-custom@workspace:^, @gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom":
   version: 0.0.0-use.local
   resolution: "@gdsc-uos-recruit-page/eslint-config-custom@workspace:packages/eslint-config-custom"
@@ -2500,7 +2455,6 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.9.3
     "@emotion/styled": ^11.9.3
-    "@gdsc-uos-recruit-page/design-system": "workspace:^"
     "@gdsc-uos-recruit-page/eslint-config-custom": "workspace:^"
     "@gdsc-uos-recruit-page/hooks": "workspace:^"
     "@gdsc-uos-recruit-page/tsconfig-custom": "workspace:^"
@@ -2518,6 +2472,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
+    gdsc-uos-design-system: "workspace:^"
     react: ^18.2.0
     react-dom: ^18.2.0
     react-router-dom: ^6.3.0
@@ -4122,6 +4077,51 @@ __metadata:
   checksum: 788b6bfe52f1dd8e263cda800c26ac0ca2ff6de0b6eee2fe0d9e3abf15e149b651bd27bf5226be10e6e3edb5c4e5d5985a5a1a98137e7a892f75eff76467ad2d
   languageName: node
   linkType: hard
+
+"gdsc-uos-design-system@1.0.0, gdsc-uos-design-system@workspace:^, gdsc-uos-design-system@workspace:packages/design-system":
+  version: 0.0.0-use.local
+  resolution: "gdsc-uos-design-system@workspace:packages/design-system"
+  dependencies:
+    "@babel/core": ^7.20.12
+    "@babel/plugin-transform-runtime": ^7.19.6
+    "@babel/preset-env": ^7.20.2
+    "@babel/preset-react": ^7.18.6
+    "@babel/preset-typescript": ^7.18.6
+    "@babel/runtime": ^7.20.7
+    "@emotion/react": ^11.9.3
+    "@emotion/styled": ^11.9.3
+    "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
+    "@rollup/plugin-babel": ^6.0.3
+    "@rollup/plugin-commonjs": ^24.0.0
+    "@rollup/plugin-node-resolve": ^15.0.1
+    "@types/react": ^17.0.37
+    "@types/react-dom": ^17.0.11
+    "@typescript-eslint/eslint-plugin": ^5.30.6
+    "@typescript-eslint/parser": ^5.30.6
+    cross-env: ^7.0.3
+    emotion-reset: ^3.0.1
+    eslint: ^8.19.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jsx-a11y: ^6.6.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.30.1
+    eslint-plugin-react-hooks: ^4.6.0
+    prettier: ^2.8.1
+    react: 18.2.0
+    rollup: ^3.9.1
+    rollup-plugin-peer-deps-external: ^2.2.4
+    rollup-plugin-typescript2: ^0.34.1
+    tslib: ^2.4.1
+    typescript: ^4.7.4
+  peerDependencies:
+    "@emotion/react": ^11.9.3
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
 
 "gdsc-uos-recruit-page@workspace:.":
   version: 0.0.0-use.local
@@ -5925,7 +5925,6 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.9.3
     "@emotion/styled": ^11.9.3
-    "@gdsc-uos-recruit-page/design-system": 1.0.0
     "@gdsc-uos-recruit-page/eslint-config-custom": 1.0.0
     "@gdsc-uos-recruit-page/hooks": 1.0.0
     "@gdsc-uos-recruit-page/tsconfig-custom": 1.0.0
@@ -5945,6 +5944,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
+    gdsc-uos-design-system: 1.0.0
     next: ^12.3.0
     next-transpile-modules: ^9.0.0
     react: 18.2.0

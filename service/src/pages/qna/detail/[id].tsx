@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Banner } from '@gdsc-uos-recruit-page/design-system';
+import { Banner } from 'gdsc-uos-design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 

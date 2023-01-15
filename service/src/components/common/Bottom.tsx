@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme } from '@gdsc-uos-recruit-page/design-system/theme';
-import Icon from '@gdsc-uos-recruit-page/design-system/components/Icon';
-import Typography from '@gdsc-uos-recruit-page/design-system/components/Typography';
+import { theme } from 'gdsc-uos-design-system/theme';
+import Icon from 'gdsc-uos-design-system/components/Icon';
+import Typography from 'gdsc-uos-design-system/components/Typography';
 import CustomLink from './CustomLink';
 
 function Bottom() {

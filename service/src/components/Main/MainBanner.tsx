@@ -1,10 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-  Planet,
-  theme,
-  Typography,
-} from '@gdsc-uos-recruit-page/design-system';
+import { Planet, theme, Typography } from 'gdsc-uos-design-system';
 
 interface Props {
   banner: string;

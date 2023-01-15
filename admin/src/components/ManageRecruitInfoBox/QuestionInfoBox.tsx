@@ -10,9 +10,9 @@ import {
   Typography,
   getTitleCaseTeam,
   QNAGeneratorModal,
-} from '@gdsc-uos-recruit-page/design-system';
-import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
-import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
+} from 'gdsc-uos-design-system';
+import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
+import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 
 import TeamList from '../TeamList';
 import QuestionAndAnswer from '../QuestionAndAnswer';
