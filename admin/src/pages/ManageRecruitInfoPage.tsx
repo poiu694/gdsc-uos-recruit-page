@@ -10,6 +10,7 @@ import {
 
 import {
   ContentWrapper,
+  IntroductionInfoBox,
   MainRecruitInfoBox,
   QuestionInfoBox,
   SideMenu,
@@ -56,7 +57,9 @@ function ManageRecruitInfoPage() {
             <TabContent value="2">
               <QuestionInfoBox />
             </TabContent>
-            <TabContent value="3">hi3</TabContent>
+            <TabContent value="3">
+              <IntroductionInfoBox />
+            </TabContent>
             <TabContent value="4">hi4</TabContent>
           </TabContents>
         </Tab>
