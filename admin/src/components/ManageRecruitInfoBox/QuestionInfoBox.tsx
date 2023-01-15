@@ -1,12 +1,18 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {
-  Button,
   Tab,
-  TabContent,
+  theme,
+  Modal,
+  Button,
   TabMenu,
+  TabContent,
+  Typography,
+  getTitleCaseTeam,
+  QNAGeneratorModal,
 } from '@gdsc-uos-recruit-page/design-system';
 import { TeamKeyType } from '@gdsc-uos-recruit-page/design-system/@types/Team';
+import { ButtonHierarchy } from '@gdsc-uos-recruit-page/design-system/components/Button';
 
 import TeamList from '../TeamList';
 import QuestionAndAnswer from '../QuestionAndAnswer';
@@ -18,12 +24,25 @@ function QuestionInfoBox() {
   const [activeTeam, setActiveTeam] =
     React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
   const [tabValue, setTabValue] = React.useState<string>(DEFAULT_TAB_VALUE);
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
 
   const handleClickTeamName = (team: TeamKeyType) => {
     setActiveTeam(team);
+    setTabValue('1');
   };
+
   const handleClickListItem = (nextTabValue: string) => {
     setTabValue(nextTabValue);
+  };
+
+  const handleClickQNAGeneratorConfirmButton = ({
+    title,
+    answer,
+  }: {
+    title: string;
+    answer: string;
+  }) => {
+    console.log(title, answer);
   };
 
   return (
@@ -37,13 +56,22 @@ function QuestionInfoBox() {
             <TabMenu value="3" label="3" />
             <TabMenu value="4" label="4" />
             <TabMenu value="5" label="5" />
-            <AddButton>추가</AddButton>
+            <AddButton
+              hierarchy={ButtonHierarchy.Parent}
+              onClick={() => setIsModalOpen(true)}
+            >
+              <Typography type="body5" color={theme.colors.primary.red}>
+                추가
+              </Typography>
+            </AddButton>
           </TabMenus>
           <TabContents>
             {Array.from({ length: 5 }).map((_, idx) => (
-              <TabContent value={`${idx + 1}`}>
+              <TabContent value={`${idx + 1}`} key={idx}>
                 <QuestionAndAnswer
-                  title={`${activeTeam} 해야 하나요 ? ${idx + 1}`}
+                  title={`${getTitleCaseTeam(activeTeam)} 해야 하나요 ? ${
+                    idx + 1
+                  }`}
                   answer="필요 없습니다."
                 />
               </TabContent>
@@ -51,6 +79,12 @@ function QuestionInfoBox() {
           </TabContents>
         </Tab>
       </TabWrapper>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <QNAGeneratorModal
+          teamName={getTitleCaseTeam(activeTeam)}
+          onClickConfirm={handleClickQNAGeneratorConfirmButton}
+        />
+      </Modal>
     </Wrapper>
   );
 }
@@ -66,17 +100,24 @@ const TabWrapper = styled.div`
 `;
 
 const TabMenus = styled.nav`
-  width: 50%;
+  width: 80%;
+  display: flex;
+  gap: 6px;
 `;
 
 const TabContents = styled.section`
-  width: 50%;
+  width: 80%;
   margin-top: 16px;
 `;
 
 const AddButton = styled(Button)`
   padding: 8px;
-  float: right;
+  transition: all 0.15s linear;
+  margin-left: 16px;
+
+  &:hover {
+    background-color: ${theme.colors.ui.hover};
+  }
 `;
 
 export default QuestionInfoBox;
