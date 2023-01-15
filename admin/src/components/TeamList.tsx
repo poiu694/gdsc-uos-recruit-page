@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { theme, Typography } from '@gdsc-uos-recruit-page/design-system';
+import {
+  getTitleCaseTeam,
+  theme,
+  Typography,
+} from '@gdsc-uos-recruit-page/design-system';
 import {
   Team,
   TeamKeyType,
@@ -26,7 +30,7 @@ function TeamList({ activeTeam, onClickTeamName }: Props) {
                   : theme.palette.gray350
               }
             >
-              {team}
+              {getTitleCaseTeam(team)}
             </Typography>
           </ListItem>
         ))}
