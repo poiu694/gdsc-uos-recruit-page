@@ -54,6 +54,7 @@ const ModalContent = styled.div`
   z-index: 9999;
   border-radius: 8px;
   background-color: ${theme.palette.gray50};
+  box-shadow: 0px 2px 4px 0px ${theme.palette.gray450};
 `;
 
 export default Modal;
