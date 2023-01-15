@@ -19,6 +19,16 @@ function Portal({ id, children }: StrictPropsWithChildren<Props>) {
     }
     const newPortalElementInstance = document.createElement('div');
     newPortalElementInstance.id = id;
+    newPortalElementInstance.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 9995;
+      width: 100vw;
+      height: 100vh;
+    `;
     window.document.body.appendChild(newPortalElementInstance);
   }, []);
 

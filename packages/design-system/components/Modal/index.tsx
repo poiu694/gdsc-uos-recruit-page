@@ -20,33 +20,26 @@ function Modal({
 }: StrictPropsWithChildren<Props>) {
   const id = React.useMemo(() => String(new Date().getTime()), []);
 
-  const onClose = React.useCallback(() => {
+  const onClose = () => {
     if (typeof _onClose !== 'undefined') {
       _onClose();
     }
     window.document.getElementById(id)?.remove();
-  }, []);
+  };
 
   return isOpen ? (
     <ModalContext.Provider value={{ isOpen, onClose }}>
       <Portal id={id}>
-        <Wrapper onClick={isClickBackgroundClose ? onClose : undefined}>
-          <ModalContent>{children}</ModalContent>
-        </Wrapper>
+        <ModalContent>{children}</ModalContent>
+        <Background onClick={isClickBackgroundClose ? onClose : undefined} />
       </Portal>
     </ModalContext.Provider>
   ) : null;
 }
 
-const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 9999;
-  width: 100vw;
-  height: 100vh;
+const Background = styled.div`
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 `;
 
@@ -54,10 +47,14 @@ const ModalContent = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
+  border-radius: 8px;
   background-color: ${theme.palette.gray50};
 `;
 
 export default Modal;
+export { default as QNAGeneratorModal } from './QNAGeneratorModal';
