@@ -39,58 +39,15 @@ function Typography({
 
 // TODO: 글자에 따른 모바일 반응형 디자인시스템 만들어 놓기
 const Wrapper = styled.div<Props>`
-  ${(props) => {
-    return css`
-      ${theme.fonts[props.type]};
-      text-align: ${props.textAlign};
-      display: ${props.display};
-      color: ${props.color};
-    `;
-  }}
+  ${(props) => css`
+    ${theme.fonts.desktop[props.type]};
+    text-align: ${props.textAlign};
+    display: ${props.display};
+    color: ${props.color};
+  `}
+
   @media (max-width: ${theme.size.mobile}px) {
-    &.h1 {
-      ${theme.fonts.h4}
-    }
-
-    &.h2 {
-      ${theme.fonts.h5}
-    }
-
-    &.h3 {
-      ${theme.fonts.h6}
-    }
-
-    &.h4 {
-      font-size: 24px;
-    }
-
-    &.h5 {
-      font-size: 20px;
-    }
-
-    &.h6 {
-      font-size: 14px;
-    }
-
-    &.body1 {
-      font-size: 20px;
-    }
-
-    &.body2 {
-      font-size: 18px;
-    }
-
-    &.body3 {
-      font-size: 16px;
-    }
-
-    &.body4 {
-      font-size: 12px;
-    }
-
-    &.body5 {
-      font-size: 10px;
-    }
+    ${(props) => theme.fonts.mobile[props.type]};
   }
 `;
 
