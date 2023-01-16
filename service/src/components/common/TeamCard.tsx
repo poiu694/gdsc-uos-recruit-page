@@ -39,7 +39,7 @@ function TeamCard({ teamName }: TeamNameProps) {
 
       <BottomNav onClick={handleClickNav}>
         <Typography
-          type="h4"
+          type="h5"
           textAlign="center"
           color={theme.colors.primary.white}
         >
@@ -102,12 +102,10 @@ const BottomNav = styled.button`
     position: absolute;
     bottom: 0;
     cursor: pointer;
-
     border: none;
     border-top: 1px solid ${theme.colors.background};
     outline: none;
     border-radius: 0px 0px 15px 15px;
-
     background-color: transparent;
 
     @media (max-width: ${theme.size.mobile}px) {

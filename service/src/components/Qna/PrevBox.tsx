@@ -18,7 +18,7 @@ function PrevBox() {
 
 const Wrapper = styled.div`
   ${({ theme }) => css`
-    width: 15em;
+    width: 160px;
     padding: 4px;
     margin-bottom: 12px;
     display: flex;

@@ -13,9 +13,8 @@ const Banner = ({ teamName }: Props) => {
 const Wrapper = styled.div<Props>`
   width: 100%;
   height: 240px;
-
-  margin: 80px auto;
-
+  margin-top: 80px;
+  margin-bottom: 32px;
   background-color: ${(props) => theme.colors.team[props.teamName]};
   content: '';
 `;

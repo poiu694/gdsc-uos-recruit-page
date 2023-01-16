@@ -72,7 +72,7 @@ const Layout = styled.div`
 
 const IntroductionWrapper = styled(Introduction)`
   width: 80%;
-  margin: 0 auto;
+  margin-bottom: 20px;
 `;
 
 const ContentsWrapper = styled.div`

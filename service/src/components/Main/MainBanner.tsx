@@ -35,10 +35,6 @@ function MainBanner({ banner }: Props) {
 const Wrapper = styled.div`
   position: relative;
   height: 100vh;
-
-  @media (max-width: ${theme.size.tabletL}px) {
-    height: 110vh;
-  }
 `;
 
 const ContentsWrapper = styled.div`

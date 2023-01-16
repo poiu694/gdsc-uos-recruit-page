@@ -35,20 +35,14 @@ function MainTeam({ content }: Props) {
   );
 }
 
-const Wrapper = styled.div`
-  ${({ theme }) => css`
-    @media (max-width: ${theme.size.mobile}px) {
-      min-height: 50vh;
-    }
-  `}
-`;
+const Wrapper = styled.div``;
 
 const TitleWrapper = styled.div`
   ${({ theme }) => css`
-    margin-bottom: 5em;
+    margin-bottom: 80px;
 
     @media (max-width: ${theme.size.mobile}px) {
-      margin-bottom: 2em;
+      margin-bottom: 32px;
     }
   `}
 `;
@@ -57,14 +51,14 @@ const TeamCardWrapper = styled.div`
   ${({ theme }) => css`
     width: 100%;
     height: 100%;
-    margin: 3em auto;
+    margin: 48px auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: ${theme.padding.xlg}px;
 
     @media (min-width: ${theme.size.tabletL + 300}px) {
-      margin-top: 8em;
+      margin-top: 96px;
     }
   `}
 `;

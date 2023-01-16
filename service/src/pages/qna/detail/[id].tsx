@@ -87,14 +87,14 @@ const IntroductionWrapper = styled(Introduction)`
 const ContentsWrapper = styled.div`
   ${({ theme }) => css`
     width: 80%;
-    margin: 0 auto;
-
+    margin-top: 20px;
+    margin-inline: auto;
     display: flex;
-    justify-content: space-between;
+    gap: 96px;
     white-space: pre-line;
+
     @media (max-width: ${theme.size.mobile}px) {
       flex-direction: column-reverse;
-      gap: 0;
     }
   `}
 `;

@@ -20,7 +20,7 @@ function Circle({ type, title, date }: Props) {
   return (
     <Wrapper className={type}>
       <Title>
-        <Typography type="h5" textAlign="center" color={theme.palette.white}>
+        <Typography type="h6" textAlign="center" color={theme.palette.white}>
           {title}
         </Typography>
       </Title>

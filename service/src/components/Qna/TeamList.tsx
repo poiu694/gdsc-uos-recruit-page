@@ -44,7 +44,7 @@ function TeamList({ teamName }: TeamNameProps) {
           data-url={team.url}
         >
           <Typography
-            type="body3"
+            type="body2"
             className={isActive[idx] ? 'bold' : ''}
             color={theme.palette.gray350}
           >
@@ -57,7 +57,7 @@ function TeamList({ teamName }: TeamNameProps) {
 }
 
 const Wrapper = styled.ul`
-  width: 15rem;
+  width: 168px;
   height: 100%;
 
   @media (max-width: ${theme.size.mobile}px) {
@@ -72,36 +72,29 @@ const ListItem = styled.li`
   height: 32px;
   padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px
     ${theme.padding.md}px;
-
   cursor: pointer;
   border-radius: 5px;
-
   display: flex;
   align-items: center;
-
   white-space: nowrap;
-
   -webkit-transition: all 0.1s ease-in-out; /* Safari */
   transition: all 0.1s ease-in-out;
-
-  @media (max-width: ${theme.size.mobile}px) {
-    .body3 {
-      font-size: 18px;
-    }
-  }
 
   &:hover {
     background-color: ${theme.colors.ui.hover};
 
-    .body3,
-    .body3.bold {
+    & > div {
       color: ${theme.colors.primary.blue};
     }
   }
 
-  .body3.bold {
+  & > div.bold {
     color: ${theme.colors.text.bold};
     font-weight: 700;
+  }
+
+  @media (max-width: ${theme.size.mobile}px) {
+    height: 22px;
   }
 `;
 

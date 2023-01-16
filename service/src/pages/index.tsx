@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Layout>
-        <Helmet title='메인' description='GDSC UOS RECRUIT 메인 페이지' />
+        <Helmet title="메인" description="GDSC UOS RECRUIT 메인 페이지" />
         <Content>
           <MainBanner banner={mainData.banner} />
           <MainProcess
@@ -38,11 +38,8 @@ const Layout = styled.main`
 `;
 
 const Content = styled.section`
-  min-height: 300vh;
-
   &:fisrt-child::before {
     content: '';
-    min-height: 300vh;
   }
 `;
 

@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Typography } from 'gdsc-uos-design-system';
 
@@ -17,27 +16,10 @@ function Introduction({ title, desc, ...restProps }: Props) {
 }
 
 const ContentsWrapper = styled.div`
-  ${({ theme }) => css`
-    width: 100%;
-    height: 100%;
-
-    margin: 0 auto;
-    word-break: keep-all;
-
-    .h1 {
-      margin-bottom: 16px;
-    }
-
-    .body3 {
-      margin-bottom: 48px;
-    }
-
-    @media (max-width: ${theme.size.mobile}px) {
-      .body3 {
-        margin-bottom: 16px;
-      }
-    }
-  `}
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  word-break: keep-all;
 `;
 
 export default Introduction;

@@ -75,19 +75,8 @@ function QuestionList({ questions, teamName }: Props) {
 const Wrapper = styled.ul`
   ${({ theme }) => css`
     width: 100%;
-    margin-left: 12em;
-
-    @media (max-width: ${theme.size.tabletL}px) {
-      margin-left: 4em;
-    }
-
-    @media (max-width: ${theme.size.tabletS}px) {
-      margin-left: 1em;
-    }
 
     @media (max-width: ${theme.size.mobile}px) {
-      margin-left: 0;
-
       svg {
         width: 16px;
       }
@@ -98,22 +87,19 @@ const Wrapper = styled.ul`
 const ListItem = styled.li`
   ${({ theme }) => css`
     width: 100%;
-    height: 2.5em;
+    height: 48px;
     padding: ${theme.padding.sm}px;
-
     cursor: pointer;
     border-radius: 5px;
-
     display: flex;
     align-items: center;
-
     -webkit-transition: all 0.1s ease-in-out; /* Safari */
     transition: all 0.1s ease-in-out;
 
     &:hover {
       background-color: ${theme.colors.ui.hover};
 
-      .body3 {
+      & > div {
         color: ${theme.colors.primary.blue};
       }
     }
@@ -126,9 +112,8 @@ const ListItem = styled.li`
         padding-left: ${theme.padding.md}px;
       }
     }
-
-    & div:nth-of-type(3) {
-      margin-left: auto;
+    @media (max-width: ${theme.size.mobile}px) {
+      height: 28px;
     }
   `}
 `;

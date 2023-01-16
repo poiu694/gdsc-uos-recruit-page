@@ -44,27 +44,23 @@ function MainProcess({ content, circle }: Props) {
 }
 
 const Wrapper = styled.div`
-  margin-block: 60px;
+  margin-bottom: 60px;
 `;
 
 const CircleList = styled.ul`
   display: flex;
   justify-content: space-between;
   padding: 0;
-  margin-top: 3em;
+  margin-top: 48px;
 
   @media (min-width: ${theme.size.tabletL + 300}px) {
-    margin-top: 8em;
+    margin-top: 96px;
   }
 
   @media (max-width: ${theme.size.tabletL}px) {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (max-width: ${theme.size.tabletS}px) {
-    width: 53.6rem;
   }
 
   @media (max-width: ${theme.size.mobile}px) {
@@ -131,10 +127,10 @@ const CircleItem = styled.li`
 `;
 
 const TitleWrapper = styled.div`
-  margin-bottom: 5em;
+  margin-bottom: 90px;
 
   @media (max-width: ${theme.size.mobile}px) {
-    margin-bottom: 2em;
+    margin-bottom: 32px;
   }
 `;
 
