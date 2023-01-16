@@ -8,7 +8,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 const loadJSON = (path) =>
   JSON.parse(fs.readFileSync(new URL(path, import.meta.url)));
-
 const packageJSON = loadJSON('./package.json');
 
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx'];
@@ -22,9 +21,9 @@ const typescriptPlugin = typescript({
   },
 });
 
-const buildJS = (input, output, format) => ({
+const buildJS = (input, _output, format) => ({
   input,
-  output: { ...output, ...format },
+  output: { ..._output, format },
   plugins: [
     nodeResolve({
       extensions,
@@ -37,7 +36,7 @@ const buildJS = (input, output, format) => ({
       exclude: 'node_modules/**',
       extensions,
     }),
-    peerDepsExternal()
+    peerDepsExternal(),
   ],
   external: [/@babel\/runtime/], // babel
 });
@@ -47,7 +46,7 @@ export default [
   buildJS(
     './index.ts',
     {
-      file: `./dist/${packageJSON.main}`
+      file: packageJSON.main,
     },
     'cjs'
   ),
@@ -55,7 +54,7 @@ export default [
   buildJS(
     './index.ts',
     {
-      dir: 'dist',
+      dir: './dist',
       preserveModules: true,
       preserveModulesRoot: '.',
     },

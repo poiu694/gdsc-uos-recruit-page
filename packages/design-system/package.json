@@ -4,7 +4,7 @@
   "packageManager": "yarn@3.2.1",
   "author": "LeeSangMin",
   "type": "module",
-  "main": "index.ts",
+  "sideEffects": false,
   "files": [
     "dist",
     "esm"
@@ -13,7 +13,8 @@
     "lint": "eslint --ext **/*.ts **/*.tsx",
     "clean:build": "rm -rf dist/ && rm -rf esm/",
     "build": "yarn clean:build && cross-env BABEL_ENV=build rollup -c && tsc --declaration --emitDeclarationOnly --declarationDir dist",
-    "test": "cross-env BABEL_ENV=test"
+    "test": "cross-env BABEL_ENV=test",
+    "prepack": "yarn && yarn build"
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
@@ -57,5 +58,8 @@
     "@emotion/react": "^11.9.3",
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
