@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { defaultDuration } from 'gdsc-uos-hooks/useAOS';
+import { defaultDuration } from 'gdsc-uos-hooks';
 import {
   Circle,
   ProcessCircleType,

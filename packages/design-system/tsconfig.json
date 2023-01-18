@@ -1,6 +1,12 @@
 {
   "extends": "../tsconfig-custom/react-library.json",
-  "include": ["**/*.ts", "**/*.tsx", "@types/*.ts", "rollup.config2.js", "index.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "@types/*.ts",
+    "rollup.config.js",
+    "index.ts"
+  ],
   "exclude": ["**/dist/*", "**/esm/*", "./utils/*"],
   "compilerOptions": {
     /* Type Checking */
