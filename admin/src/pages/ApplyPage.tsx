@@ -14,8 +14,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 import { usePagination } from '../hooks';
-import { ContentWrapper, PageNavigation, SideMenu } from '../components';
 import { DUMMY_APPLYS } from '../dummy/apply';
+import { ContentWrapper, PageNavigation, SideMenu } from '../components';
 import { convertChipColorByState, convertChipColorByTeam } from '../utils';
 
 function ApplyPage() {

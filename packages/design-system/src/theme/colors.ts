@@ -1,4 +1,4 @@
-import { TeamContent } from '../@types/Team';
+import { TeamContent } from '../../@types/Team';
 
 export const palette = {
   // Gray Scale

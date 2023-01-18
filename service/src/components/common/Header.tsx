@@ -1,11 +1,10 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme } from 'gdsc-uos-design-system/theme';
-import Typography from 'gdsc-uos-design-system/components/Typography';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 import { GOOGLE_FORM_LINK } from '../../constants/form';
+import { theme, Typography } from 'gdsc-uos-design-system';
 
 function Header() {
   const router = useRouter();

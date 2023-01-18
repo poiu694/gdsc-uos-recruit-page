@@ -1,6 +1,10 @@
 export * from './Tab';
+export * from './Chip';
 export * from './Modal';
 export * from './Table';
+export * from './Button';
+export * from './Circle';
+export * from './Icon';
 export { default as Tab } from './Tab';
 export { default as Chip } from './Chip';
 export { default as Icon } from './Icon';

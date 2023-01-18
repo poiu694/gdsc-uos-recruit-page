@@ -13,3 +13,7 @@ export const theme = {
 } as const;
 
 export type Theme = typeof theme;
+export * from './colors';
+export * from './fonts';
+export * from './sizes';
+export * from './zIndex';

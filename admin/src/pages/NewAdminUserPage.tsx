@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Input, theme, Title, Typography } from 'gdsc-uos-design-system';
+
 import { UserType } from '../@types';
 import { ContentWrapper, Flex, SideMenu } from '../components';
 

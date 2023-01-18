@@ -1,4 +1,4 @@
-import { TeamContent } from 'gdsc-uos-design-system/@types/Team';
+import { TeamContent } from 'gdsc-uos-design-system';
 import { IntroductionType } from '../../@types';
 
 const FrontEndIntroduction = {

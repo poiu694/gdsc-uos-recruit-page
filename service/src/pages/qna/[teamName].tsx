@@ -1,16 +1,15 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Team, TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
-import { Banner } from 'gdsc-uos-design-system';
+import { Banner, Team, TeamKeyType } from 'gdsc-uos-design-system';
 import { useGA } from '@gdsc-uos-recruit-page/hooks';
 
+import { TeamNameProps } from '../../../@types';
+import { TeamList } from '../../components/Qna';
+import { QuestionContent } from '../../constants';
+import QuestionList from '../../components/Qna/QuestionList';
 import { QuestionListItem } from '../../../@types/question';
 import { Bottom, Helmet, Introduction } from '../../components/common';
-import { TeamList } from '../../components/Qna';
-import QuestionList from '../../components/Qna/QuestionList';
-import { QuestionContent } from '../../constants/';
-import { TeamNameProps } from '../../../@types';
 
 interface QnaListPageProps extends TeamNameProps {
   questions: QuestionListItem[];

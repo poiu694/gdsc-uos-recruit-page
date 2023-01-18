@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
-import { Icon, theme, Typography } from 'gdsc-uos-design-system';
-import { IconKeyType } from 'gdsc-uos-design-system/components/Icon';
-import { PalleteValueType } from 'gdsc-uos-design-system/theme/colors';
+import {
+  Icon,
+  theme,
+  Typography,
+  IconKeyType,
+  PalleteValueType,
+} from 'gdsc-uos-design-system';
 
 interface Props {
   label: string;

@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import {
   Button,
-  ClickableIcon,
   theme,
   Typography,
+  ClickableIcon,
+  ButtonHierarchy,
 } from 'gdsc-uos-design-system';
-import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 import { PageOptions } from '../hooks/usePagination';
 
 export interface Props {

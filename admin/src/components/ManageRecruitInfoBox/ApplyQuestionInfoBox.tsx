@@ -2,14 +2,14 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
 import {
+  Icon,
   theme,
   Input,
   Button,
   TextArea,
   Typography,
-  Icon,
+  ButtonHierarchy,
 } from 'gdsc-uos-design-system';
-import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 
 import { Flex } from '../styled';
 import TeamList from '../TeamList';

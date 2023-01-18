@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TeamKeyType } from '../@types/Team';
+import { TeamKeyType } from '../../@types/Team';
 import { theme } from '../theme';
 
 interface Props {

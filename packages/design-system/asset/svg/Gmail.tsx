@@ -1,4 +1,4 @@
-import { theme } from '../../theme';
+import { theme } from '../../src/theme';
 
 const Gmail = ({ ...restProps }) => {
   return (

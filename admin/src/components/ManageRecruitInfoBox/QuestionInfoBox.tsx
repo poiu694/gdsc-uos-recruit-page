@@ -8,11 +8,11 @@ import {
   TabMenu,
   TabContent,
   Typography,
+  TeamKeyType,
+  ButtonHierarchy,
   getTitleCaseTeam,
   QNAGeneratorModal,
 } from 'gdsc-uos-design-system';
-import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
-import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 
 import TeamList from '../TeamList';
 import QuestionAndAnswer from '../QuestionAndAnswer';

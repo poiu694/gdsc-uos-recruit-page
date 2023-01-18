@@ -1,13 +1,21 @@
 {
   "name": "gdsc-uos-design-system",
   "version": "1.0.0",
-  "packageManager": "yarn@3.2.1",
   "author": "LeeSangMin",
-  "type": "module",
+  "packageManager": "yarn@3.2.1",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts"
+    }
+  },
+  "type": "module",
+  "main": "dist/index.ts",
+  "module": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "files": [
-    "dist",
-    "esm"
+    "dist"
   ],
   "scripts": {
     "lint": "eslint --ext **/*.ts **/*.tsx",

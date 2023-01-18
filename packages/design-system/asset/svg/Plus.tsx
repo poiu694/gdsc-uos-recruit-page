@@ -1,4 +1,4 @@
-import { theme } from '../../theme';
+import { theme } from '../../src/theme';
 
 const Plus = ({ ...restProps }) => {
   return (

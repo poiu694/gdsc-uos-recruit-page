@@ -8,7 +8,7 @@ interface Props {
   isRoot?: boolean;
 }
 
-const baseURL = 'https://gdsc-uos-recruit-page.vercel.app';
+const baseURL = 'https://recruit-gdsc-uos-page.vercel.app';
 
 function Helmet({ title, description, url, isRoot = false }: Props) {
   return (

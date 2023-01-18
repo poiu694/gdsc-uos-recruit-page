@@ -4,15 +4,15 @@ import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
 
 import TeamList from '../TeamList';
 import {
-  Button,
-  ClickableIcon,
   Icon,
   Input,
   theme,
+  Button,
   Typography,
+  ClickableIcon,
+  ButtonHierarchy,
 } from 'gdsc-uos-design-system';
 import { INTRODUCTION } from '../../dummy/introduction';
-import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 
 const DEFAULT_TEAM_VALUE = 'common';
 

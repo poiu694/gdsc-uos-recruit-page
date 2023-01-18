@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {
-  Button,
+  Td,
+  Tr,
   Chip,
   Table,
-  TablePagination,
   TBody,
-  Td,
   THead,
   theme,
   Title,
-  Tr,
+  Button,
   Typography,
+  ButtonHierarchy,
+  TablePagination,
 } from 'gdsc-uos-design-system';
-import { ButtonHierarchy } from 'gdsc-uos-design-system/components/Button';
 import { usePagination } from '../hooks';
 import { DUMMY_ADMIN_USERS } from '../dummy/users';
 import { convertChipColorByUserType } from '../utils';
