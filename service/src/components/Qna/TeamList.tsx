@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { useGA } from 'gdsc-uos-hooks';
 import { TeamKeyType, theme, Typography } from 'gdsc-uos-design-system';
 
 import { teams } from '../../constants';

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import styled from '@emotion/styled';
-import { useAOS, useGA } from '@gdsc-uos-recruit-page/hooks';
+import { useAOS, useGA } from 'gdsc-uos-hooks';
 
 import main from '../constants/Main';
 import { MainBanner, MainProcess, MainTeam } from '../components';

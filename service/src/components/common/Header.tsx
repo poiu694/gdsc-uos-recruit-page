@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { useGA } from 'gdsc-uos-hooks';
 import { GOOGLE_FORM_LINK } from '../../constants/form';
 import { theme, Typography } from 'gdsc-uos-design-system';
 

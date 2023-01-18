@@ -1,5 +1,5 @@
 {
-  "name": "@gdsc-uos-recruit-page/eslint-config-custom",
+  "name": "gdsc-uos-eslint-config-custom",
   "version": "1.0.0",
   "author": "LeeSangMin",
   "packageManager": "yarn@3.2.1",
@@ -19,7 +19,7 @@
     "typescript": "^4.7.4"
   },
   "devDependencies": {
-    "@gdsc-uos-recruit-page/tsconfig-custom": "1.0.0"
+    "gdsc-uos-tsconfig-custom": "1.0.0"
   },
   "publishConfig": {
     "access": "public"

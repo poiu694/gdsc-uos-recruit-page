@@ -1,6 +1,12 @@
 import styled from '@emotion/styled';
-import { defaultDuration } from '@gdsc-uos-recruit-page/hooks/useAOS';
-import { Circle, ProcessCircleType, theme, Title, Typography } from 'gdsc-uos-design-system';
+import { defaultDuration } from 'gdsc-uos-hooks/useAOS';
+import {
+  Circle,
+  ProcessCircleType,
+  theme,
+  Title,
+  Typography,
+} from 'gdsc-uos-design-system';
 
 import { TitleWithDescription } from '../../../@types';
 

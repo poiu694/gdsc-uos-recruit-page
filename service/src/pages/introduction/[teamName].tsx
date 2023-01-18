@@ -2,8 +2,14 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
-import { Banner, theme, getTitleCaseTeam, Team, TeamKeyType } from 'gdsc-uos-design-system';
+import { useGA } from 'gdsc-uos-hooks';
+import {
+  Banner,
+  theme,
+  getTitleCaseTeam,
+  Team,
+  TeamKeyType,
+} from 'gdsc-uos-design-system';
 
 import { IntroductionContent } from '../../constants';
 import { GOOGLE_FORM_LINK } from '../../constants/form';

@@ -8,7 +8,7 @@ import {
   Typography,
   getTitleCaseTeam,
 } from 'gdsc-uos-design-system';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { useGA } from 'gdsc-uos-hooks';
 
 import { TeamNameProps, QuestionListItem } from '../../../@types';
 

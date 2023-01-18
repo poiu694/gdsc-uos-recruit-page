@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Banner, Team, TeamKeyType } from 'gdsc-uos-design-system';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { useGA } from 'gdsc-uos-hooks';
 
 import { TeamNameProps } from '../../../@types';
 import { TeamList } from '../../components/Qna';

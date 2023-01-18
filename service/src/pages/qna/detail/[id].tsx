@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Banner } from 'gdsc-uos-design-system';
-import { useGA } from '@gdsc-uos-recruit-page/hooks';
+import { useGA } from 'gdsc-uos-hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { QuestionListItem } from '../../../../@types/question';

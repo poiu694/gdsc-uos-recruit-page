@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const withTM = require('next-transpile-modules')([
-  '@gdsc-uos-recruit-page/hooks',
+  'gdsc-uos-hooks',
   'gdsc-uos-design-system',
-  '@gdsc-uos-recruit-page/eslint-config-custom',
-  '@gdsc-uos-recruit-page/tsconfig-custom',
+  'gdsc-uos-eslint-config-custom',
+  'gdsc-uos-tsconfig-custom',
 ]);
 
 const nextConfig = {
