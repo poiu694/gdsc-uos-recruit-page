@@ -66,22 +66,13 @@ const Wrapper = styled.header`
   height: 60px;
   margin: 0 auto;
   padding-top: 10px;
-
   position: fixed;
   top: 0;
   z-index: ${theme.zIndex.header};
-
   display: flex;
   align-items: center;
-
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: blur(4px);
-
-  @media (max-width: ${theme.size.mobile}px) {
-    div.body4 {
-      font-size: 14px;
-    }
-  }
 `;
 
 const NavigationWrapper = styled.header`
@@ -99,7 +90,7 @@ const Navigation = styled.nav`
       gap: 8px;
     }
 
-    .body4 {
+    & > div {
       cursor: pointer;
     }
   `}

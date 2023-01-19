@@ -1,6 +1,6 @@
-import { theme } from '../../src/theme';
+import { theme } from '../../theme';
 
-const Left = ({ ...restProps }) => {
+const Right = ({ ...restProps }) => {
   return (
     <svg
       width="24"
@@ -11,7 +11,7 @@ const Left = ({ ...restProps }) => {
       {...restProps}
     >
       <path
-        d="M15 6L9 12L15 18"
+        d="M9 18L15 12L9 6"
         stroke={theme.palette.gray300}
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -21,4 +21,4 @@ const Left = ({ ...restProps }) => {
   );
 };
 
-export default Left;
+export default Right;

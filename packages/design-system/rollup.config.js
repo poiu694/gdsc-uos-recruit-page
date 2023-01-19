@@ -44,17 +44,17 @@ const buildJS = (input, _output, format) => ({
 export default [
   // cjs
   buildJS(
-    './index.ts',
+    './src/index.ts',
     {
-      file: packageJSON.main,
+      dir: './dist',
     },
     'cjs'
   ),
   // esm
   buildJS(
-    './index.ts',
+    './src/index.ts',
     {
-      dir: './dist',
+      dir: './esm',
       preserveModules: true,
       preserveModulesRoot: '.',
     },

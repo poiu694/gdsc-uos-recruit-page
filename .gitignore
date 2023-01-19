@@ -45,3 +45,4 @@ yarn-error.log*
 
 # design-system output
 dist
+esm

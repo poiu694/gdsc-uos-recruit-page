@@ -8,7 +8,6 @@ import { colors, PalleteValueType } from '../theme/colors';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   type: FontKeyType;
-  className?: string;
   display?: CSSProperties['display'];
   textAlign?: CSSProperties['textAlign'];
   color?: PalleteValueType;
@@ -16,7 +15,6 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
 
 function Typography({
   type,
-  className,
   children,
   display = 'block',
   textAlign = 'start',
@@ -26,7 +24,6 @@ function Typography({
   return (
     <Wrapper
       type={type}
-      className={`${type} ${className}`}
       display={display}
       textAlign={textAlign}
       color={color}

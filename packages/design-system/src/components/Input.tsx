@@ -13,14 +13,14 @@ interface Props extends React.ComponentPropsWithoutRef<'input'> {
 const Input = React.forwardRef<HTMLInputElement, Props>(
   (
     {
-      label,
-      value,
       id,
+      name,
+      label,
+      style,
+      value,
       required,
       errorMessage,
-      name,
       onChange,
-      style,
       ...restProps
     },
     ref

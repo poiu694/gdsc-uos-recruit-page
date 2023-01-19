@@ -1,6 +1,6 @@
-import { theme } from '../../src/theme';
+import { theme } from '../../theme';
 
-function DoubleRight({ ...restProps }: React.SVGProps<SVGSVGElement>) {
+function DoubleLeft({ ...restProps }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="24"
@@ -11,14 +11,14 @@ function DoubleRight({ ...restProps }: React.SVGProps<SVGSVGElement>) {
       {...restProps}
     >
       <path
-        d="M13 17L18 12L13 7"
+        d="M11 17L6 12L11 7"
         stroke={theme.palette.gray300}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M6 17L11 12L6 7"
+        d="M18 17L13 12L18 7"
         stroke={theme.palette.gray300}
         strokeWidth="3"
         strokeLinecap="round"
@@ -27,4 +27,4 @@ function DoubleRight({ ...restProps }: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-export default DoubleRight;
+export default DoubleLeft;

@@ -8,7 +8,7 @@ export type ChipType = 'default' | 'success' | 'danger' | 'primary' | 'warning';
 interface Props {
   type: ChipType;
   label: string;
-  variants: 'outlined' | 'filled';
+  variants: 'outlined' | 'filled' | 'icon';
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 

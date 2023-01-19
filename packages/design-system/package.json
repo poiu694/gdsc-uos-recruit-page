@@ -1,25 +1,25 @@
 {
   "name": "gdsc-uos-design-system",
-  "version": "1.1.11",
+  "version": "1.1.19",
+  "description": "React components library used in gdsc-uos",
   "author": "LeeSangMin",
   "packageManager": "yarn@3.2.1",
   "sideEffects": false,
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts"
-    }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poiu694/gdsc-uos-recruit-page",
+    "directory": "packages/design-system"
   },
   "type": "module",
-  "main": "dist/index.ts",
-  "module": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "esm"
   ],
+  "main": "./src/index.ts",
+  "module": "./esm/src/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "lint": "eslint --ext **/*.ts **/*.tsx",
-    "clean:build": "rm -rf dist/ && rm -rf esm/",
+    "clean:build": "rm -rf dist && rm -rf esm",
     "build": "yarn clean:build && cross-env BABEL_ENV=build rollup -c && tsc --declaration --emitDeclarationOnly --declarationDir dist",
     "test": "cross-env BABEL_ENV=test",
     "prepack": "yarn && yarn build"
@@ -54,10 +54,25 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11.9.3",
+    "emotion-reset": "^3.0.1",
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "exports": {
+      ".": {
+        "require": "./dist/index.js",
+        "import": "./esm/src/index.js"
+      },
+      "./package.json": "./package.json"
+    }
   }
 }

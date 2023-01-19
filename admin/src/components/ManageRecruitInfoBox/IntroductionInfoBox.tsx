@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
 
 import TeamList from '../TeamList';
 import {
@@ -9,6 +8,7 @@ import {
   theme,
   Button,
   Typography,
+  TeamKeyType,
   ClickableIcon,
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';

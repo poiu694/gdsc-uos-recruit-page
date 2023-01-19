@@ -17,7 +17,7 @@ import {
   Calender,
   DoubleLeft,
   DoubleRight,
-} from '../../asset/svg';
+} from '../asset/svg';
 
 const ICONS = {
   up: Up,

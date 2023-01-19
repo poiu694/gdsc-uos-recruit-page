@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { theme } from '../../src/theme';
+import { theme } from '../../theme';
 
 const SolarSystem = ({ ...restProps }) => {
   return (

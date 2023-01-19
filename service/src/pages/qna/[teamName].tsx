@@ -81,6 +81,7 @@ const ContentsWrapper = styled.div`
 
     display: flex;
     justify-content: space-between;
+    gap: 96px;
     @media (max-width: ${theme.size.mobile}px) {
       flex-direction: column-reverse;
     }

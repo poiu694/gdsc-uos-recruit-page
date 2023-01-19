@@ -1,5 +1,5 @@
 import { theme } from '../theme';
-import { TeamValueType } from '../../@types/Team';
+import { TeamValueType } from '../@types/Team';
 
 export const getTitleCaseTeam = (type: TeamValueType) => {
   switch (type) {
