@@ -1,13 +1,7 @@
 {
   "extends": "../tsconfig-custom/react-library.json",
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "src/@types/*.ts",
-    "rollup.config.js",
-    "index.ts"
-  ],
-  "exclude": ["**/dist/*", "**/esm/*", "./utils/*"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./rollup.config.js"],
+  "exclude": ["**/dist/*", "**/esm/*"],
   "compilerOptions": {
     /* Type Checking */
     "noFallthroughCasesInSwitch": true,
@@ -30,7 +24,7 @@
     "sourceMap": true,
 
     /* Completeness*/
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true
   }
 }
