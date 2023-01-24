@@ -1,6 +1,6 @@
-export { default as Tr } from './Tr';
-export { default as Td } from './Td';
-export { default as Table } from './Table';
-export { default as TBody } from './TBody';
-export { default as THead } from './THead';
-export { default as TablePagination } from './TablePagination';
+export * from './Tr';
+export * from './Td';
+export * from './Table';
+export * from './TBody';
+export * from './THead';
+export * from './TablePagination';

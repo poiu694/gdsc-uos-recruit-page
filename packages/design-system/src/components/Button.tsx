@@ -31,7 +31,7 @@ type WidthProps = ComponentPropsWithoutRef<'button'> & {
   width?: CSSProperties['width'];
 };
 
-function Button({
+export function Button({
   width,
   children,
   disabled = false,
@@ -94,5 +94,3 @@ const Wrapper = styled.button<StyleProps>`
     background-color: ${theme.palette.gray200};
   }
 `;
-
-export default Button;

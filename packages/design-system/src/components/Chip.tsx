@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+
 import { theme } from '../theme';
+import { Typography } from './Typography';
 import { PalleteValueType } from '../theme/colors';
-import Typography from './Typography';
 
 export type ChipType = 'default' | 'success' | 'danger' | 'primary' | 'warning';
 
@@ -12,7 +13,7 @@ interface Props {
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-function Chip({ type, variants, label, onClick, ...restProps }: Props) {
+export function Chip({ type, variants, label, onClick, ...restProps }: Props) {
   return (
     <Wrapper type={type} variants={variants} onClick={onClick} {...restProps}>
       <Typography type="body5" textAlign="center">
@@ -87,5 +88,3 @@ const Wrapper = styled.div<StyleProps>`
     }};
   }
 `;
-
-export default Chip;

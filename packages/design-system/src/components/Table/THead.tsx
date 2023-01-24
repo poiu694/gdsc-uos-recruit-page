@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from 'react';
 
 interface Props extends React.ComponentPropsWithoutRef<'thead'> {}
 
-function THead({ children, ...restProps }: PropsWithChildren<Props>) {
+export function THead({ children, ...restProps }: PropsWithChildren<Props>) {
   return <Wrapper {...restProps}>{children}</Wrapper>;
 }
 
@@ -19,5 +19,3 @@ const Wrapper = styled.thead`
     background-color: transparent;
   }
 `;
-
-export default THead;

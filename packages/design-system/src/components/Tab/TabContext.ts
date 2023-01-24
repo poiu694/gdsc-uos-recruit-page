@@ -7,7 +7,6 @@ interface TabTriggerEvent {
   variant: TabType;
 }
 
-const context = createGenericContext<TabTriggerEvent>();
-export default context;
+export const context = createGenericContext<TabTriggerEvent>();
 
 export const useTabContext = createGenericUseContext<TabTriggerEvent>(context);

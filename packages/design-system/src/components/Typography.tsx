@@ -13,7 +13,7 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
   color?: PalleteValueType;
 }
 
-function Typography({
+export function Typography({
   type,
   children,
   display = 'block',
@@ -46,5 +46,3 @@ const Wrapper = styled.div<Props>`
     ${(props) => theme.fonts.mobile[props.type]};
   }
 `;
-
-export default Typography;

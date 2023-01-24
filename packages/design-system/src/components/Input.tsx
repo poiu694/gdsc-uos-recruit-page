@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { theme } from '../theme';
-import Typography from './Typography';
+import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'input'> {
   label?: string;
@@ -10,7 +10,7 @@ interface Props extends React.ComponentPropsWithoutRef<'input'> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input = React.forwardRef<HTMLInputElement, Props>(
+export const Input = React.forwardRef<HTMLInputElement, Props>(
   (
     {
       id,
@@ -95,5 +95,3 @@ const ErrorMessage = styled(Typography)`
   top: 0;
   right: 0;
 `;
-
-export default Input;

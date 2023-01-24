@@ -1,9 +1,9 @@
 import { ComponentPropsWithoutRef } from 'react';
 import styled from '@emotion/styled';
 
-import Icon from './Icon';
+import { Icon } from './Icon';
 import { theme } from '../theme';
-import Button, { ButtonHierarchy } from './Button';
+import { Button, ButtonHierarchy } from './Button';
 import { PalleteValueType } from '../theme/colors';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
   iconProps: ComponentPropsWithoutRef<typeof Icon>;
 }
 
-function ClickableIcon({
+export function ClickableIcon({
   iconProps,
   hoverBackgroundColor = theme.colors.ui.hover,
   disabled = false,
@@ -54,5 +54,3 @@ const Wrapper = styled(Button)<StyleProps>`
     background-color: transparent;
   }
 `;
-
-export default ClickableIcon;
