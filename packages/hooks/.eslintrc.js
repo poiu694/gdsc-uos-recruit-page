@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['gdsc-uos-eslint-config-custom'],
+  extends: ['../eslint-config-custom'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
