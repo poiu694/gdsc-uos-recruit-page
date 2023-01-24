@@ -1,5 +1,5 @@
 import React from 'react';
-import TabContext from './TabContext';
+import { context as TabContext } from './TabContext';
 
 export type TabType = 'default' | 'chip';
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
   variant?: TabType;
 }
 
-function Tab({
+export function Tab({
   value,
   children,
   variant = 'default',
@@ -29,6 +29,5 @@ function Tab({
   );
 }
 
-export default Tab;
-export { default as TabMenu } from './TabMenu';
-export { default as TabContent } from './TabContent';
+export * from './TabMenu';
+export * from './TabContent';

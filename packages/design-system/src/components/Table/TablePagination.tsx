@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+
 import { theme } from '../../theme';
-import Typography from '../Typography';
+import { Typography } from '../Typography';
 
 interface Props {
   page: number;
@@ -10,7 +11,7 @@ interface Props {
   onPageSizeOptionsChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-function TablePagination({
+export function TablePagination({
   page,
   pageSize,
   totalCount,
@@ -58,5 +59,3 @@ const PageSizeSelect = styled.select`
     background-color: ${theme.colors.ui.hover};
   }
 `;
-
-export default TablePagination;

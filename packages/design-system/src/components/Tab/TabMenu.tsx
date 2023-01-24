@@ -1,16 +1,17 @@
 import styled from '@emotion/styled';
+
+import { Chip } from '../Chip';
 import { theme } from '../../theme';
-import Button, { ButtonHierarchy } from '../Button';
-import Chip from '../Chip';
-import Typography from '../Typography';
+import { Typography } from '../Typography';
 import { useTabContext } from './TabContext';
+import { Button, ButtonHierarchy } from '../Button';
 
 interface Props {
   label: string;
   value: string;
 }
 
-function TabMenu({ label, value, ...restProps }: Props) {
+export function TabMenu({ label, value, ...restProps }: Props) {
   const { value: currentTabValue, variant, onClickTabMenu } = useTabContext();
   const isActiveNow = value === currentTabValue;
 
@@ -62,5 +63,3 @@ const Wrapper = styled(Button)`
     }
   }
 `;
-
-export default TabMenu;

@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
+
 import { theme } from '../../theme';
 
 interface Props extends React.ComponentPropsWithoutRef<'table'> {
@@ -7,7 +8,7 @@ interface Props extends React.ComponentPropsWithoutRef<'table'> {
   variant?: 'simple' | 'striped';
 }
 
-function Table({
+export function Table({
   size = 'md',
   variant = 'simple',
   children,
@@ -56,5 +57,3 @@ const TableWrapper = styled.table<Required<StyleProps>>`
     background-color: ${theme.palette.gray200};
   }
 `;
-
-export default Table;

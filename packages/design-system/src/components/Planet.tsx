@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { CometRain, SolarSystem } from '../asset/svg';
 import { theme } from '../theme';
 
-function Planet() {
+export function Planet() {
   return (
     <Wrapper>
       <CometRain />
@@ -29,5 +29,3 @@ const Wrapper = styled.div`
     width: 100%;
   }
 `;
-
-export default Planet;

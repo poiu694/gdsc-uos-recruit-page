@@ -2,14 +2,14 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { theme } from '../theme';
-import Typography from './Typography';
+import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'textarea'> {
   label?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
+export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
   (
     { label, value, id, required, name, onChange, style, ...restProps },
     ref
@@ -66,5 +66,3 @@ const Label = styled.label`
 `;
 
 const LabelTypography = styled(Typography)``;
-
-export default TextArea;
