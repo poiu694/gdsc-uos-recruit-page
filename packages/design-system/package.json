@@ -1,6 +1,6 @@
 {
   "name": "gdsc-uos-design-system",
-  "version": "1.1.23",
+  "version": "1.1.22",
   "description": "React components library used in gdsc-uos",
   "author": "LeeSangMin",
   "packageManager": "yarn@3.2.1",
@@ -15,7 +15,7 @@
     "dist",
     "esm"
   ],
-  "main": "./dist/index.js",
+  "main": "./dist/index.ts",
   "module": "./esm/src/index.ts",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -61,7 +61,8 @@
   "exports": {
     ".": {
       "require": "./src/index.ts",
-      "import": "./src/index.ts"
+      "import": "./src/index.ts",
+      "types": "./dist/index.ts"
     },
     "./package.json": "./package.json"
   },
