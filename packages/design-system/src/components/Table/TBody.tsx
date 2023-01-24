@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import React, { PropsWithChildren } from 'react';
+
 import { theme } from '../../theme';
 
 interface Props extends React.ComponentPropsWithoutRef<'tbody'> {}
 
-function TBody({ children, ...restProps }: PropsWithChildren<Props>) {
+export function TBody({ children, ...restProps }: PropsWithChildren<Props>) {
   return <Wrapper {...restProps}>{children}</Wrapper>;
 }
 
@@ -32,5 +33,3 @@ const Wrapper = styled.tbody`
     background-color: ${theme.colors.ui.hover};
   }
 `;
-
-export default TBody;

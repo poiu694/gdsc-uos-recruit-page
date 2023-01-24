@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
 import { theme } from '../theme';
-import Typography from './Typography';
+import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
   descriptions: string;
 }
 
-function Title({ title, descriptions, ...restProps }: Props) {
+export function Title({ title, descriptions, ...restProps }: Props) {
   return (
     <Wrapper {...restProps}>
       <Typography type="h5" color={theme.palette.gray450}>
@@ -26,5 +26,3 @@ const Wrapper = styled.div``;
 const Description = styled(Typography)`
   white-space: pre-wrap;
 `;
-
-export default Title;

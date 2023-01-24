@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import { theme } from '../theme';
-import Typography from './Typography';
+import { Typography } from './Typography';
 
 export type ProcessCircleType =
   | 'process-0'
@@ -16,7 +16,7 @@ interface Props {
   date: string;
 }
 
-function Circle({ type, title, date }: Props) {
+export function Circle({ type, title, date }: Props) {
   return (
     <Wrapper className={type}>
       <Title>
@@ -137,5 +137,3 @@ const Wrapper = styled.div`
 const Title = styled.div`
   margin-bottom: 8px;
 `;
-
-export default Circle;

@@ -6,7 +6,7 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
   value: string;
 }
 
-function TabContent({ value, children }: PropsWithChildren<Props>) {
+export function TabContent({ value, children }: PropsWithChildren<Props>) {
   const { value: currentTabValue } = useTabContext();
 
   if (value !== currentTabValue) {
@@ -16,5 +16,3 @@ function TabContent({ value, children }: PropsWithChildren<Props>) {
 }
 
 const Wrapper = styled.div``;
-
-export default TabContent;

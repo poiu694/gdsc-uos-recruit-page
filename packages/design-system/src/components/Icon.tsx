@@ -47,7 +47,12 @@ interface Props extends React.ComponentPropsWithoutRef<'svg'> {
   hoverAction?: boolean;
 }
 
-function Icon({ type, color, hoverAction = false, ...restProps }: Props) {
+export function Icon({
+  type,
+  color,
+  hoverAction = false,
+  ...restProps
+}: Props) {
   return (
     <Wrapper color={color} className={hoverAction ? 'hover-action' : ''}>
       {React.createElement(ICONS[type], { ...restProps })}
@@ -71,5 +76,3 @@ const Wrapper = styled.div`
     transform: scale(1.2);
   }
 `;
-
-export default Icon;

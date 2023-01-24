@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import React from 'react';
+
+import { Input } from '../Input';
 import { theme } from '../../theme';
-import Button, { ButtonHierarchy } from '../Button';
-import Input from '../Input';
-import TextArea from '../TextArea';
-import Typography from '../Typography';
+import { TextArea } from '../TextArea';
+import { Typography } from '../Typography';
 import { useModalContext } from './ModalContext';
+import { Button, ButtonHierarchy } from '../Button';
 
 interface Props {
   teamName: string;

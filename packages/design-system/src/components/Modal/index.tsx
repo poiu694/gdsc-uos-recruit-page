@@ -12,7 +12,7 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
   onClose?: () => void;
 }
 
-function Modal({
+export function Modal({
   isOpen,
   isClickBackgroundClose = true,
   onClose: _onClose,
@@ -57,5 +57,4 @@ const ModalContent = styled.div`
   box-shadow: 0px 2px 4px 0px ${theme.palette.gray450};
 `;
 
-export default Modal;
 export { default as QNAGeneratorModal } from './QNAGeneratorModal';

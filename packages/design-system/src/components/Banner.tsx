@@ -6,9 +6,9 @@ interface Props {
   teamName: TeamKeyType;
 }
 
-const Banner = ({ teamName }: Props) => {
+export function Banner({ teamName }: Props) {
   return <Wrapper teamName={teamName} />;
-};
+}
 
 const Wrapper = styled.div<Props>`
   width: 100%;
@@ -18,5 +18,3 @@ const Wrapper = styled.div<Props>`
   background-color: ${(props) => theme.colors.team[props.teamName]};
   content: '';
 `;
-
-export default Banner;

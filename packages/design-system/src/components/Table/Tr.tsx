@@ -3,12 +3,10 @@ import React, { PropsWithChildren } from 'react';
 
 interface Props extends React.ComponentPropsWithoutRef<'tr'> {}
 
-function Tr({ children, ...restProps }: PropsWithChildren<Props>) {
+export function Tr({ children, ...restProps }: PropsWithChildren<Props>) {
   return <Wrapper {...restProps}>{children}</Wrapper>;
 }
 
 const Wrapper = styled.tr`
   position: relative;
 `;
-
-export default Tr;
