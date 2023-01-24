@@ -48,9 +48,6 @@ jobs:
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"hooks"* ]]; then
             echo "hooks=true" >> $GITHUB_OUTPUT
           fi
-          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"design-system"* ]]; then
-            echo "design-system=true" >> $GITHUB_OUTPUT
-          fi
         id: changes
 
       - name: yarn install
@@ -69,7 +66,3 @@ jobs:
       - name: run hooks eslint
         if: ${{ steps.changes.outputs.hooks == 'true' }}
         run: yarn hooks:lint
-
-      - name: run design-system eslint
-        if: ${{ steps.changes.outputs.design-system == 'true' }}
-        run: yarn design-system:lint
