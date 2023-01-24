@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { StrictPropsWithChildren } from '../../utils';
-
 interface Props {
   id: string;
 }
 
-function Portal({ id, children }: StrictPropsWithChildren<Props>) {
+export function Portal({ id, children }: React.PropsWithChildren<Props>) {
   const [element, setElement] = React.useState<HTMLElement | null>(null);
 
   React.useEffect(() => {
@@ -26,8 +24,6 @@ function Portal({ id, children }: StrictPropsWithChildren<Props>) {
       bottom: 0;
       right: 0;
       z-index: 9995;
-      width: 100vw;
-      height: 100vh;
     `;
     window.document.body.appendChild(newPortalElementInstance);
   }, []);
@@ -37,5 +33,3 @@ function Portal({ id, children }: StrictPropsWithChildren<Props>) {
   }
   return ReactDOM.createPortal(children, element);
 }
-
-export default Portal;

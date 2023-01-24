@@ -8,7 +8,6 @@ interface ModalEvent {
   onClose: () => void;
 }
 
-const context = createGenericContext<ModalEvent>();
-export default context;
+export const context = createGenericContext<ModalEvent>();
 
 export const useModalContext = createGenericUseContext<ModalEvent>(context);
