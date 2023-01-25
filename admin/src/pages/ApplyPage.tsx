@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Title, Typography, TablePagination } from 'gdsc-uos-design-system';
+import {
+  Input,
+  Title,
+  Typography,
+  ClickableIcon,
+  TablePagination,
+} from 'gdsc-uos-design-system';
 
 import { usePagination } from '../hooks';
 import {
   ApplicationTable,
   ContentWrapper,
+  Flex,
   PageNavigation,
   SideMenu,
 } from '../components';
@@ -13,23 +20,20 @@ import { DUMMY_APPLYS } from '../dummy/apply';
 
 function ApplyPage() {
   const currentYear = new Date().getFullYear();
+  const [search, setSearch] = React.useState<string>('');
   const [totalCount, setTotalCount] = React.useState<number>(0);
+  const [applicationList, setApplicationList] = React.useState<
+    typeof DUMMY_APPLYS
+  >([]);
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination(
-    {
-      totalCount,
-    }
+    { totalCount }
   );
-
-  const handleChangePageSizeOption = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    handleChangePageSize(Number(e.target.value));
-  };
 
   React.useEffect(() => {
     (async () => {
       // TODO: Backend연동
       setTotalCount(150);
+      setApplicationList(DUMMY_APPLYS);
     })();
   }, []);
 
@@ -48,16 +52,37 @@ function ApplyPage() {
           데이터를 클릭하면 해당 지원자의 서류를 볼 수 있습니다.
         </Typography>
         <TableWrapper>
-          <TablePagination
-            totalCount={totalCount}
-            pageSizeOptions={[5, 10, 15]}
-            page={pageOptions.currentPage}
-            pageSize={pageOptions.pageSize}
-            onPageSizeOptionsChange={handleChangePageSizeOption}
-          />
+          <Flex>
+            <Flex style={{ marginBottom: 4 }} gap={4}>
+              <SearchInput
+                name="검색어"
+                placeholder="검색어"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyUp={(e) => {
+                  if (e.key === 'Enter') {
+                    console.log(search);
+                  }
+                }}
+              />
+              <ClickableIcon
+                iconProps={{ type: 'search' }}
+                onClick={() => console.log('hi')}
+              />
+            </Flex>
+            <TablePagination
+              totalCount={totalCount}
+              pageSizeOptions={[5, 10, 15]}
+              page={pageOptions.currentPage}
+              pageSize={pageOptions.pageSize}
+              onPageSizeOptionsChange={(e) =>
+                handleChangePageSize(Number(e.target.value))
+              }
+            />
+          </Flex>
           <ApplicationTable
             pageSize={pageOptions.pageSize}
-            applications={DUMMY_APPLYS}
+            applications={applicationList}
           />
         </TableWrapper>
         <Navigation
@@ -82,6 +107,11 @@ const TableWrapper = styled.div`
 const Navigation = styled(PageNavigation)`
   width: 60%;
   margin: 0 auto;
+`;
+
+const SearchInput = styled(Input)`
+  width: 300px;
+  height: 100%;
 `;
 
 export default ApplyPage;
