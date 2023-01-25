@@ -86,7 +86,7 @@ export const colors = {
     mobile: palette.coreGreen,
     data_ml: palette.coreBlue,
     design: palette.orange,
-    all: palette.orange, // default 
+    core: palette.orange, // default 
     common: palette.orange
   } as TeamContent<PalleteValueType>
 } as const;

@@ -7,7 +7,7 @@ import {
   Banner,
   theme,
   getTitleCaseTeam,
-  Team,
+  TEAM_LIST,
   TeamKeyType,
 } from 'gdsc-uos-design-system';
 
@@ -73,7 +73,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.values(Team)
+  const paths = Object.values(TEAM_LIST)
     .map((teamName) => ({
       params: { teamName },
     }))

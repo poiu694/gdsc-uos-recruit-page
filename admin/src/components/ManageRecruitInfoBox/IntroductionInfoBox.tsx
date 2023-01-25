@@ -14,7 +14,7 @@ import {
 } from 'gdsc-uos-design-system';
 import { INTRODUCTION } from '../../dummy/introduction';
 
-const DEFAULT_TEAM_VALUE = 'common';
+const DEFAULT_TEAM_VALUE = 'frontend';
 
 type Introduction = {
   title: string;

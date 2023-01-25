@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Banner, Team, TeamKeyType } from 'gdsc-uos-design-system';
+import { Banner, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
 import { useGA } from 'gdsc-uos-hooks';
 
 import { TeamNameProps } from '../../../@types';
@@ -42,7 +42,7 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.values(Team).map((teamName) => ({
+  const paths = Object.values(TEAM_LIST).map((teamName) => ({
     params: { teamName },
   }));
 

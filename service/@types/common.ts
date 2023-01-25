@@ -1,4 +1,4 @@
-import { TeamKeyType } from 'gdsc-uos-design-system/@types/Team';
+import { TeamKeyType } from 'gdsc-uos-design-system';
 
 export interface TitleWithDescription {
   title: string;
