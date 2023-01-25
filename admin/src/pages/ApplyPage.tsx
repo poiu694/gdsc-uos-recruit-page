@@ -1,43 +1,50 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {
-  Chip,
-  Table,
-  TablePagination,
-  TBody,
-  Td,
-  THead,
+  Input,
   Title,
-  Tr,
   Typography,
+  ClickableIcon,
+  TablePagination,
+  TeamKeyType,
 } from 'gdsc-uos-design-system';
-import { useNavigate } from 'react-router-dom';
 
+import { ApplyState } from '../@types';
 import { usePagination } from '../hooks';
+import {
+  ApplicationTable,
+  ContentWrapper,
+  FilterSelect,
+  Flex,
+  PageNavigation,
+  SideMenu,
+} from '../components';
 import { DUMMY_APPLYS } from '../dummy/apply';
-import { ContentWrapper, PageNavigation, SideMenu } from '../components';
-import { convertChipColorByState, convertChipColorByTeam } from '../utils';
+import ToggleSwitchBox from '../components/ToggleSwitchBox';
 
 function ApplyPage() {
-  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
+  const [search, setSearch] = React.useState<string>('');
   const [totalCount, setTotalCount] = React.useState<number>(0);
+  const [teamFilterValue, setTeamFilterValue] =
+    React.useState<TeamKeyType>('frontend');
+  const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<
+    ApplyState | '전체'
+  >('전체');
+  const [isFinishEvaluationFilterValue, setIsFinishEvaluationFilterValue] =
+    React.useState<boolean>(false);
+  const [applicationList, setApplicationList] = React.useState<
+    typeof DUMMY_APPLYS
+  >([]);
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination(
-    {
-      totalCount,
-    }
+    { totalCount }
   );
-
-  const handleChangePageSizeOption = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    handleChangePageSize(Number(e.target.value));
-  };
 
   React.useEffect(() => {
     (async () => {
       // TODO: Backend연동
       setTotalCount(150);
+      setApplicationList(DUMMY_APPLYS);
     })();
   }, []);
 
@@ -56,60 +63,77 @@ function ApplyPage() {
           데이터를 클릭하면 해당 지원자의 서류를 볼 수 있습니다.
         </Typography>
         <TableWrapper>
-          <TablePagination
-            totalCount={totalCount}
-            pageSizeOptions={[5, 10, 15]}
-            page={pageOptions.currentPage}
+          <Flex gap={4} style={{ width: 300 }}>
+            <SearchInput
+              name="검색어"
+              placeholder="검색어"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyUp={(e) => {
+                if (e.key === 'Enter') {
+                  console.log(search);
+                }
+              }}
+            />
+            <ClickableIcon
+              iconProps={{ type: 'search' }}
+              onClick={() => console.log('hi')}
+            />
+          </Flex>
+
+          <Flex
+            alignItems="center"
+            gap={8}
+            style={{ marginTop: 8, marginBottom: 12 }}
+          >
+            <FilterSelect
+              label="Team"
+              value={teamFilterValue}
+              filterList={[
+                'frontend',
+                'backend',
+                'mobile',
+                'data/ml',
+                'design',
+              ]}
+              onChange={(e) =>
+                setTeamFilterValue(e.target.value as TeamKeyType)
+              }
+            />
+            <FilterSelect
+              label="State"
+              value={applyStateFilterValue}
+              filterList={[
+                '전체',
+                '서류 제출',
+                '서류 불합격',
+                '서류 합격',
+                '최종 불합격',
+                '최종 합격',
+              ]}
+              onChange={(e) =>
+                setApplyStateFilterValue(e.target.value as ApplyState | '전체')
+              }
+            />
+            <ToggleSwitchBox
+              label={'평가 X'}
+              value={isFinishEvaluationFilterValue}
+              onClick={() => setIsFinishEvaluationFilterValue((prev) => !prev)}
+            />
+            <TablePagination
+              totalCount={totalCount}
+              pageSizeOptions={[5, 10, 15]}
+              page={pageOptions.currentPage}
+              pageSize={pageOptions.pageSize}
+              onPageSizeOptionsChange={(e) =>
+                handleChangePageSize(Number(e.target.value))
+              }
+            />
+          </Flex>
+          <ApplicationTable
             pageSize={pageOptions.pageSize}
-            onPageSizeOptionsChange={handleChangePageSizeOption}
+            applications={applicationList}
           />
-          <Table variant="simple">
-            <THead>
-              <Tr>
-                <Td>
-                  <Typography type="body4">이름</Typography>
-                </Td>
-                <Td>
-                  <Typography type="body4">지원 플랫폼</Typography>
-                </Td>
-                <Td>
-                  <Typography type="body4">상태</Typography>
-                </Td>
-                <Td>
-                  <Typography type="body4">지원서 링크</Typography>
-                </Td>
-              </Tr>
-            </THead>
-            <TBody>
-              {DUMMY_APPLYS.slice(0, pageOptions.pageSize).map((apply) => (
-                <Tr
-                  onClick={() => navigate(`/apply/${apply.id}`)}
-                  key={apply.id}
-                >
-                  <Td>
-                    <Typography type="body4">{apply.name}</Typography>
-                  </Td>
-                  <Td>
-                    <Chip
-                      variants="outlined"
-                      type={convertChipColorByTeam(
-                        apply.team.toLocaleLowerCase()
-                      )}
-                      label={apply.team}
-                    />
-                  </Td>
-                  <Td>
-                    <Chip
-                      variants="filled"
-                      type={convertChipColorByState(apply.state)}
-                      label={apply.state}
-                    />
-                  </Td>
-                  <Td></Td>
-                </Tr>
-              ))}
-            </TBody>
-          </Table>
         </TableWrapper>
         <Navigation
           pageOptions={pageOptions}
@@ -133,6 +157,11 @@ const TableWrapper = styled.div`
 const Navigation = styled(PageNavigation)`
   width: 60%;
   margin: 0 auto;
+`;
+
+const SearchInput = styled(Input)`
+  width: 300px;
+  height: 100%;
 `;
 
 export default ApplyPage;

@@ -10,6 +10,7 @@ export { default as Close } from './Close';
 export { default as Right } from './Right';
 export { default as Gmail } from './Gmail';
 export { default as Github } from './Github';
+export { default as Search } from './Search';
 export { default as Calender } from './Calender';
 export { default as UserPlus } from './UserPlus';
 export { default as CometRain } from './CometRain';

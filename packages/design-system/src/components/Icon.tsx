@@ -17,6 +17,7 @@ import {
   Calender,
   DoubleLeft,
   DoubleRight,
+  Search,
 } from '../asset/svg';
 
 const ICONS = {
@@ -32,6 +33,7 @@ const ICONS = {
   right: Right,
   gmail: Gmail,
   github: Github,
+  search: Search,
   calender: Calender,
   userPlus: UserPlus,
   doubleLeft: DoubleLeft,
