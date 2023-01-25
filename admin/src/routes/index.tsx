@@ -7,6 +7,7 @@ import {
   ApplyDetailPage,
   NewAdminUserPage,
   ManageAdminUserPage,
+  InterviewRecordPage,
   ManageRecruitInfoPage,
   GoogleFormApplicationListPage,
   GoogleFormApplicationDetailPage,
@@ -24,6 +25,7 @@ const MainRoute = () => {
         <Route path="/signup-admin-user" element={<NewAdminUserPage />} />
         <Route path="/recruit" element={<ManageRecruitInfoPage />} />
         <Route path="/list" element={<GoogleFormApplicationListPage />} />
+        <Route path="/interview/:id" element={<InterviewRecordPage />} />
         <Route
           path="/detail/:id"
           element={<GoogleFormApplicationDetailPage />}
