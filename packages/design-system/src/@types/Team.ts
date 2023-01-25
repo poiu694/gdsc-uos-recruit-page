@@ -11,7 +11,12 @@ export const TEAM_LIST = {
   common: 'common',
 } as const;
 
-type TeamType = typeof TEAM_LIST;
-export type TeamKeyType = keyof TeamType;
-export type TeamValueType = TeamType[keyof TeamType];
+export const ALL_LIST = {
+  ...TEAM_LIST,
+  core: 'core'
+} as const;
+
+type TeamType = typeof ALL_LIST;
+export type TeamKeyType = keyof TeamType | 'core';
+export type TeamValueType = TeamType[keyof TeamType]; 
 export type TeamContent<T> = { [k in TeamKeyType]: T };

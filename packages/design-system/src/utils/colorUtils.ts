@@ -12,6 +12,8 @@ export const getTitleCaseTeam = (type: TeamValueType) => {
       return 'Data/ML';
     case 'common':
       return 'Common';
+    case 'core':
+      return 'Core';
     default: 
       return `Error case`
   }

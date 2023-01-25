@@ -5,19 +5,33 @@ import {
   Typography,
   TeamKeyType,
   getTitleCaseTeam,
+  BASIC_TEAM,
 } from 'gdsc-uos-design-system';
 
 interface Props {
   activeTeam: TeamKeyType;
+  isCommonNeed?: boolean;
+  isCoreNeed?: boolean;
   onClickTeamName: (teamName: TeamKeyType) => void;
 }
 
-function TeamList({ activeTeam, onClickTeamName }: Props) {
+function TeamList({
+  activeTeam,
+  isCoreNeed = false,
+  isCommonNeed = false,
+  onClickTeamName,
+}: Props) {
+  const teamList = [
+    (isCommonNeed ? 'common' : null) as TeamKeyType,
+    ...Object.values(BASIC_TEAM),
+    (isCoreNeed ? 'core' : null) as TeamKeyType,
+  ].filter((team) => team);
+
   return (
     <Wrapper>
       <TeamListWrapper>
         <Typography type="h5">팀 리스트</Typography>
-        {Object.values(TEAM_LIST).map((team) => (
+        {teamList.map((team) => (
           <ListItem key={team} onClick={() => onClickTeamName(team)}>
             <Typography
               type={activeTeam === team ? 'h6' : 'body3'}

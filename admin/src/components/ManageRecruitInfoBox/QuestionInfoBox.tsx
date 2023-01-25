@@ -47,7 +47,11 @@ function QuestionInfoBox() {
 
   return (
     <Wrapper>
-      <TeamList activeTeam={activeTeam} onClickTeamName={handleClickTeamName} />
+      <TeamList
+        isCommonNeed
+        activeTeam={activeTeam}
+        onClickTeamName={handleClickTeamName}
+      />
       <TabWrapper>
         <Tab value={tabValue} onChange={handleClickListItem}>
           <TabMenus>

@@ -62,7 +62,12 @@ function ApplyQuestionInfoBOx() {
 
   return (
     <Wrapper>
-      <TeamList activeTeam={activeTeam} onClickTeamName={handleClickTeamName} />
+      <TeamList
+        isCommonNeed
+        isCoreNeed
+        activeTeam={activeTeam}
+        onClickTeamName={handleClickTeamName}
+      />
       <Content>
         {questionList.map((question, idx) => {
           return (
