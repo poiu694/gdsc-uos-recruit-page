@@ -1,10 +1,18 @@
-export const Team = {
-  common: 'common',
+export const BASIC_TEAM = {
   frontend: 'frontend',
   backend: 'backend',
   mobile: 'mobile',
   data_ml: 'data_ml',
   design: 'design',
+} as const ;
+
+export const Team = {
+  frontend: 'frontend',
+  backend: 'backend',
+  mobile: 'mobile',
+  data_ml: 'data_ml',
+  design: 'design',
+  common: 'common',
 } as const;
 
 type TeamType = typeof Team;

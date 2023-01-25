@@ -6,22 +6,33 @@ import {
   Typography,
   ClickableIcon,
   TablePagination,
+  TeamKeyType,
 } from 'gdsc-uos-design-system';
 
+import { ApplyState } from '../@types';
 import { usePagination } from '../hooks';
 import {
   ApplicationTable,
   ContentWrapper,
+  FilterSelect,
   Flex,
   PageNavigation,
   SideMenu,
 } from '../components';
 import { DUMMY_APPLYS } from '../dummy/apply';
+import ToggleSwitchBox from '../components/ToggleSwitchBox';
 
 function ApplyPage() {
   const currentYear = new Date().getFullYear();
   const [search, setSearch] = React.useState<string>('');
   const [totalCount, setTotalCount] = React.useState<number>(0);
+  const [teamFilterValue, setTeamFilterValue] =
+    React.useState<TeamKeyType>('frontend');
+  const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<
+    ApplyState | '전체'
+  >('전체');
+  const [isFinishEvaluationFilterValue, setIsFinishEvaluationFilterValue] =
+    React.useState<boolean>(false);
   const [applicationList, setApplicationList] = React.useState<
     typeof DUMMY_APPLYS
   >([]);
@@ -70,7 +81,45 @@ function ApplyPage() {
             />
           </Flex>
 
-          <Flex alignItems="center" style={{ marginBlock: 4 }}>
+          <Flex
+            alignItems="center"
+            gap={8}
+            style={{ marginTop: 8, marginBottom: 12 }}
+          >
+            <FilterSelect
+              label="Team"
+              value={teamFilterValue}
+              filterList={[
+                'frontend',
+                'backend',
+                'mobile',
+                'data/ml',
+                'design',
+              ]}
+              onChange={(e) =>
+                setTeamFilterValue(e.target.value as TeamKeyType)
+              }
+            />
+            <FilterSelect
+              label="State"
+              value={applyStateFilterValue}
+              filterList={[
+                '전체',
+                '서류 제출',
+                '서류 불합격',
+                '서류 합격',
+                '최종 불합격',
+                '최종 합격',
+              ]}
+              onChange={(e) =>
+                setApplyStateFilterValue(e.target.value as ApplyState | '전체')
+              }
+            />
+            <ToggleSwitchBox
+              label={'평가 X'}
+              value={isFinishEvaluationFilterValue}
+              onClick={() => setIsFinishEvaluationFilterValue((prev) => !prev)}
+            />
             <TablePagination
               totalCount={totalCount}
               pageSizeOptions={[5, 10, 15]}
