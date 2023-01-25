@@ -26,8 +26,9 @@ export function Portal({ id, children }: React.PropsWithChildren<Props>) {
       z-index: 9995;
     `;
     window.document.body.appendChild(newPortalElementInstance);
+    setElement(newPortalElementInstance);
   }, []);
-
+  
   if (!element) {
     return null;
   }
