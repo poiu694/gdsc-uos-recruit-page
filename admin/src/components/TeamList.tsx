@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {
-  Team,
+  TEAM_LIST,
   theme,
   Typography,
   TeamKeyType,
@@ -17,7 +17,7 @@ function TeamList({ activeTeam, onClickTeamName }: Props) {
     <Wrapper>
       <TeamListWrapper>
         <Typography type="h5">팀 리스트</Typography>
-        {Object.values(Team).map((team) => (
+        {Object.values(TEAM_LIST).map((team) => (
           <ListItem key={team} onClick={() => onClickTeamName(team)}>
             <Typography
               type={activeTeam === team ? 'h6' : 'body3'}
