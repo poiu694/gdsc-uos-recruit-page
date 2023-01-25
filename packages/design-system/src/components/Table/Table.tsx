@@ -36,8 +36,6 @@ const Wrapper = styled.div`
 const TableContainer = styled.div`
   display: block;
   white-space: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
   max-width: 100%;
 `;
 
