@@ -4,7 +4,8 @@ const dummyApply = {
   id: '',
   name: '홍길동',
   team: 'frontend',
-  state: '1차 합격' as ApplyState
+  state: '1차 합격' as ApplyState,
+  isApplyCore: true
 };
 
 export const DUMMY_APPLYS = Array.from({ length: 50 }).map((_, idx) => ({
@@ -30,6 +31,7 @@ export const DUMMY_APPLYS = Array.from({ length: 50 }).map((_, idx) => ({
       : idx % 2 === 0
       ? ('최종 불합격' as ApplyState)
       : ('서류 제출' as ApplyState),
+    isApplyCore: idx % 2 === 0 ? true : false
 }));
 
 
