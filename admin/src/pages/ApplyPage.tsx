@@ -52,24 +52,25 @@ function ApplyPage() {
           데이터를 클릭하면 해당 지원자의 서류를 볼 수 있습니다.
         </Typography>
         <TableWrapper>
-          <Flex>
-            <Flex style={{ marginBottom: 4 }} gap={4}>
-              <SearchInput
-                name="검색어"
-                placeholder="검색어"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                onKeyUp={(e) => {
-                  if (e.key === 'Enter') {
-                    console.log(search);
-                  }
-                }}
-              />
-              <ClickableIcon
-                iconProps={{ type: 'search' }}
-                onClick={() => console.log('hi')}
-              />
-            </Flex>
+          <Flex gap={4} style={{ width: 300 }}>
+            <SearchInput
+              name="검색어"
+              placeholder="검색어"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyUp={(e) => {
+                if (e.key === 'Enter') {
+                  console.log(search);
+                }
+              }}
+            />
+            <ClickableIcon
+              iconProps={{ type: 'search' }}
+              onClick={() => console.log('hi')}
+            />
+          </Flex>
+
+          <Flex alignItems="center" style={{ marginBlock: 4 }}>
             <TablePagination
               totalCount={totalCount}
               pageSizeOptions={[5, 10, 15]}
