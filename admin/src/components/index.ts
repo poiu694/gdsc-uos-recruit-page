@@ -9,5 +9,6 @@ export { default as TeamList } from './TeamList';
 export { default as SummaryCard } from './SummaryCard';
 export { default as PageNavigation } from './PageNavigation';
 export { default as EvaluationTable } from './EvaluationTable';
+export { default as HistoryLinkList } from './HistoryLinkList';
 export { default as QuestionAndAnswer } from './QuestionAndAnswer';
 export { default as SelectApplyStateBox } from './SelectApplyStateBox';
