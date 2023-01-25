@@ -11,7 +11,6 @@ const Wrapper = styled.thead`
   position: relative;
 
   & > tr td {
-    cursor: default;
     font-weight: 700;
   }
 

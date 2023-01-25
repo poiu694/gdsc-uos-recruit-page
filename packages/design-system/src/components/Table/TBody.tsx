@@ -11,7 +11,6 @@ export function TBody({ children, ...restProps }: PropsWithChildren<Props>) {
 
 const Wrapper = styled.tbody`
   & > tr {
-    cursor: pointer;
     transition: all 0.1s linear;
   }
 
