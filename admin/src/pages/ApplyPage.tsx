@@ -1,25 +1,17 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  Chip,
-  Table,
-  TablePagination,
-  TBody,
-  Td,
-  THead,
-  Title,
-  Tr,
-  Typography,
-} from 'gdsc-uos-design-system';
-import { useNavigate } from 'react-router-dom';
+import { Title, Typography, TablePagination } from 'gdsc-uos-design-system';
 
 import { usePagination } from '../hooks';
+import {
+  ApplicationTable,
+  ContentWrapper,
+  PageNavigation,
+  SideMenu,
+} from '../components';
 import { DUMMY_APPLYS } from '../dummy/apply';
-import { ContentWrapper, PageNavigation, SideMenu } from '../components';
-import { convertChipColorByState, convertChipColorByTeam } from '../utils';
 
 function ApplyPage() {
-  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
   const [totalCount, setTotalCount] = React.useState<number>(0);
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination(
@@ -63,53 +55,10 @@ function ApplyPage() {
             pageSize={pageOptions.pageSize}
             onPageSizeOptionsChange={handleChangePageSizeOption}
           />
-          <Table variant="simple">
-            <THead>
-              <Tr>
-                <Td>
-                  <Typography type="body4">이름</Typography>
-                </Td>
-                <Td>
-                  <Typography type="body4">지원 플랫폼</Typography>
-                </Td>
-                <Td>
-                  <Typography type="body4">상태</Typography>
-                </Td>
-                <Td>
-                  <Typography type="body4">지원서 링크</Typography>
-                </Td>
-              </Tr>
-            </THead>
-            <TBody>
-              {DUMMY_APPLYS.slice(0, pageOptions.pageSize).map((apply) => (
-                <Tr
-                  onClick={() => navigate(`/apply/${apply.id}`)}
-                  key={apply.id}
-                >
-                  <Td>
-                    <Typography type="body4">{apply.name}</Typography>
-                  </Td>
-                  <Td>
-                    <Chip
-                      variants="outlined"
-                      type={convertChipColorByTeam(
-                        apply.team.toLocaleLowerCase()
-                      )}
-                      label={apply.team}
-                    />
-                  </Td>
-                  <Td>
-                    <Chip
-                      variants="filled"
-                      type={convertChipColorByState(apply.state)}
-                      label={apply.state}
-                    />
-                  </Td>
-                  <Td></Td>
-                </Tr>
-              ))}
-            </TBody>
-          </Table>
+          <ApplicationTable
+            pageSize={pageOptions.pageSize}
+            applications={DUMMY_APPLYS}
+          />
         </TableWrapper>
         <Navigation
           pageOptions={pageOptions}
