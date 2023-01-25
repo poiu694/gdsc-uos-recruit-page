@@ -11,10 +11,10 @@ import {
   TeamKeyType,
   ButtonHierarchy,
   getTitleCaseTeam,
-  QNAGeneratorModal,
 } from 'gdsc-uos-design-system';
 
 import TeamList from '../TeamList';
+import { QNAGeneratorModal } from '../Modal';
 import QuestionAndAnswer from '../QuestionAndAnswer';
 
 const DEFAULT_TEAM_VALUE = 'common';

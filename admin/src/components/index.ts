@@ -1,3 +1,4 @@
+export * from './Modal';
 export * from './styled';
 export * from './ManageRecruitInfoBox';
 export { default as Logo } from './Logo';

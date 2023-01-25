@@ -1,12 +1,14 @@
-import styled from '@emotion/styled';
 import React from 'react';
-
-import { Input } from '../Input';
-import { theme } from '../../theme';
-import { TextArea } from '../TextArea';
-import { Typography } from '../Typography';
-import { useModalContext } from './ModalContext';
-import { Button, ButtonHierarchy } from '../Button';
+import styled from '@emotion/styled';
+import {
+  Button,
+  ButtonHierarchy,
+  Input,
+  TextArea,
+  theme,
+  Typography,
+  useModalContext,
+} from 'gdsc-uos-design-system';
 
 interface Props {
   teamName: string;
@@ -20,7 +22,7 @@ interface Props {
   }) => void;
 }
 
-function QNAGeneratorModal({
+export function QNAGeneratorModal({
   teamName,
   onClickCancel: _onClickCancle,
   onClickConfirm: _onClickConfirm,
@@ -130,5 +132,3 @@ const AnswerTextArea = styled(TextArea)`
   width: 500px;
   height: 200px;
 `;
-
-export default QNAGeneratorModal;

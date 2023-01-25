@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import Portal from './Portal';
+import { Portal } from './Portal';
 import { theme } from '../../theme';
-import ModalContext from './ModalContext';
 import { StrictPropsWithChildren } from '../../utils';
+import { context as ModalContext } from './ModalContext';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   isOpen: boolean;
-  isClickBackgroundClose?: boolean;
+  isCloseBackgroundClick?: boolean;
   onClose?: () => void;
 }
 
 export function Modal({
   isOpen,
-  isClickBackgroundClose = true,
+  isCloseBackgroundClick = true,
   onClose: _onClose,
   children,
 }: StrictPropsWithChildren<Props>) {
@@ -31,7 +31,7 @@ export function Modal({
     <ModalContext.Provider value={{ isOpen, onClose }}>
       <Portal id={id}>
         <ModalContent>{children}</ModalContent>
-        <Background onClick={isClickBackgroundClose ? onClose : undefined} />
+        <Background onClick={isCloseBackgroundClick ? onClose : undefined} />
       </Portal>
     </ModalContext.Provider>
   ) : null;
@@ -40,6 +40,7 @@ export function Modal({
 const Background = styled.div`
   width: 100%;
   height: 100%;
+  z-index: 9995;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 `;
 
@@ -57,4 +58,5 @@ const ModalContent = styled.div`
   box-shadow: 0px 2px 4px 0px ${theme.palette.gray450};
 `;
 
-export { default as QNAGeneratorModal } from './QNAGeneratorModal';
+export * from './Portal';
+export * from './ModalContext';
