@@ -4,11 +4,12 @@ const dummyApply = {
   id: '',
   name: '홍길동',
   team: 'frontend',
+  email: '',
   state: '1차 합격' as ApplyState,
   isApplyCore: true,
   isFinishEvaluation: true,
   applicationList: [],
-  interviewList: []
+  interviewList: [],
 };
 
 export const DUMMY_APPLYS = Array.from({ length: 50 }).map((_, idx) => ({
@@ -24,6 +25,7 @@ export const DUMMY_APPLYS = Array.from({ length: 50 }).map((_, idx) => ({
       : idx % 2 === 0
       ? ('DESIGN' as any)
       : ('MOBILE' as any),
+  email: `honggildong${idx}@naver.com`,
   state:
     idx % 5 === 0
       ? ('서류 합격' as ApplyState)
