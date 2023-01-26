@@ -5,7 +5,7 @@ import { Input, theme, Title, Typography } from 'gdsc-uos-design-system';
 import { UserType } from '../@types';
 import { ContentWrapper, Flex, SideMenu } from '../components';
 
-function NewAdminUserPage() {
+function SendMailPage() {
   const [email, setEmail] = React.useState<string>('');
   const [password, setPassword] = React.useState<string>('');
   const [userType, setUserType] = React.useState<UserType>('normal');
@@ -81,4 +81,4 @@ const UserTypeSelect = styled.select`
   }
 `;
 
-export default NewAdminUserPage;
+export default SendMailPage;
