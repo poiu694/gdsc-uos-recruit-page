@@ -13,22 +13,13 @@ import {
 } from 'gdsc-uos-design-system';
 import React from 'react';
 
-import { ApplyState, HistoryType } from '../@types';
+import { HistoryType, UserApplication } from '../@types';
 import HistoryLinkList from './HistoryLinkList';
 import { convertChipColorByState, convertChipColorByTeam } from '../utils';
 
 interface Props {
   pageSize: number;
-  applications: {
-    id: number;
-    team: any;
-    state: ApplyState;
-    name: string;
-    isApplyCore: boolean;
-    isFinishEvaluation: boolean;
-    applicationList: { id: number; title: string }[];
-    interviewList: { id: number; title: string }[];
-  }[];
+  applications: UserApplication[];
 }
 
 const toggleIndexInArray = (list: boolean[], willUpdateIndex: number) => {
@@ -96,7 +87,9 @@ function ApplicationTable({ pageSize, applications }: Props) {
             <Td>
               <Chip
                 variants="outlined"
-                type={convertChipColorByTeam(apply.team.toLocaleLowerCase())}
+                type={convertChipColorByTeam(
+                  String(apply.team).toLocaleLowerCase()
+                )}
                 label={apply.team}
               />
             </Td>
