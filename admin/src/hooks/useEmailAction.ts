@@ -32,7 +32,7 @@ const useEmailAction = () => {
     []
   );
 
-  const formatMailHref = (emailList: UserApplication[], title: string, content: string) =>
+  const FormatMailHref = (emailList: UserApplication[], title: string, content: string) =>
     React.useMemo(
       () =>
         `mailto:${emailList
@@ -75,7 +75,7 @@ const useEmailAction = () => {
 
   return {
     selectedEmailList,
-    formatMailHref,
+    FormatMailHref,
     isSelectedEmail,
     getFilteredList,
     updateEmailList,

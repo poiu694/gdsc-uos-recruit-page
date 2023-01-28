@@ -17,7 +17,7 @@ import { useEmailAction } from '../hooks';
 function ApplyDetailPage() {
   const [title, setTitle] = React.useState<string>('');
   const [content, setContent] = React.useState<string>('');
-  const { selectedEmailList, formatMailHref, updateEmailList, isSelectedEmail } = useEmailAction();
+  const { selectedEmailList, FormatMailHref, updateEmailList, isSelectedEmail } = useEmailAction();
 
   return (
     <Wrapper>
@@ -51,7 +51,7 @@ function ApplyDetailPage() {
               placeholder="메일 내용"
               onChange={(e) => setContent(e.target.value)}
             />
-            <MailSendButton href={formatMailHref(selectedEmailList, title, content)}>
+            <MailSendButton href={FormatMailHref(selectedEmailList, title, content)}>
               전송하기
             </MailSendButton>
           </Flex>
