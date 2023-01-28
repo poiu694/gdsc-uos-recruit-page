@@ -14,3 +14,4 @@ export { default as HistoryLinkList } from './HistoryLinkList';
 export { default as ApplicationTable } from './ApplicationTable';
 export { default as QuestionAndAnswer } from './QuestionAndAnswer';
 export { default as SelectApplyStateBox } from './SelectApplyStateBox';
+export { default as ApplicationEmailList } from './ApplicationEmailList';
