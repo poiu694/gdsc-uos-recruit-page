@@ -1,40 +1,43 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {
-  Chip,
+  theme,
   Input,
   Title,
-  Button,
   Typography,
-  ButtonHierarchy,
   TextArea,
-  theme,
+  Button,
+  ButtonHierarchy,
 } from 'gdsc-uos-design-system';
 
-import { ContentWrapper, Flex, SideMenu } from '../components';
-
-/**
- * textArea와 email의 개행문자를 맞춰주는 유틸
- * @param text 이메일 내용
- * @returns 텍스트의 개행문자를 이메일 형식으로 바꾼 문자열
- */
-const formatEmailBody = (text: string) => {
-  return text.replaceAll('\n', '%0D%0A');
-};
+import { ApplicationEmailList, ContentWrapper, Flex, SideMenu } from '../components';
+import { DUMMY_APPLYS } from '../dummy/apply';
+import { useEmailAction } from '../hooks';
 
 function ApplyDetailPage() {
   const [title, setTitle] = React.useState<string>('');
   const [content, setContent] = React.useState<string>('');
+  const { selectedEmailList, formatMailHref, updateEmailList, isSelectedEmail } = useEmailAction();
 
   return (
     <Wrapper>
       <SideMenu />
       <ContentWrapper>
-        <Title
-          title="Email"
-          descriptions="이메일을 전송할 수 있는 페이지입니다."
-        />
-        <Flex gap={16} style={{ marginTop: 16 }}>
+        <Title title="Email" descriptions="이메일을 전송할 수 있는 페이지입니다." />
+        <Typography type="h6">이메일 대상자</Typography>
+        <Flex gap={4} flexWrap="wrap" style={{ marginBlock: 16 }}>
+          {selectedEmailList.map((application) => (
+            <TargetEmailName key={application.id}>
+              <Button
+                hierarchy={ButtonHierarchy.Parent}
+                onClick={() => updateEmailList(application)}
+              >
+                {application.name} ❌
+              </Button>
+            </TargetEmailName>
+          ))}
+        </Flex>
+        <Flex gap={16}>
           <Flex gap={8} flexDirection="column" flexGrow={1}>
             <Input
               label="제목"
@@ -44,17 +47,20 @@ function ApplyDetailPage() {
             />
             <EmailContent
               label="내용"
-              placeholder="메일 내용"
               value={content}
+              placeholder="메일 내용"
               onChange={(e) => setContent(e.target.value)}
             />
-            <MailSendButton
-              href={`mailto:olmnuiui70@gmail.com,poiu694@naver.com?subject=${title}&body=${formatEmailBody(
-                content
-              )}`}
-            >
+            <MailSendButton href={formatMailHref(selectedEmailList, title, content)}>
               전송하기
             </MailSendButton>
+          </Flex>
+          <Flex style={{ marginRight: 32 }}>
+            <ApplicationEmailList
+              list={DUMMY_APPLYS}
+              updateEmailList={updateEmailList}
+              isSelectedEmail={isSelectedEmail}
+            />
           </Flex>
         </Flex>
       </ContentWrapper>
@@ -79,6 +85,19 @@ const MailSendButton = styled.a`
 
   &:hover {
     color: ${theme.colors.primary.blue};
+  }
+`;
+
+const TargetEmailName = styled.div`
+  padding: 8px 4px;
+  border: 1px solid ${theme.colors.ui.border};
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    background-color: ${theme.palette.red200};
+    border: 1px solid ${theme.palette.red400};
   }
 `;
 
