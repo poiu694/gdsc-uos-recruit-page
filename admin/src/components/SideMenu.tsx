@@ -56,6 +56,9 @@ function SideMenu() {
         <MenuItem onClick={() => navigate('/recruit')}>
           <IconText text="Recruit" icon="calender" />
         </MenuItem>
+        <MenuItem onClick={() => navigate('/email')}>
+          <IconText text="Email" icon="gmail" />
+        </MenuItem>
       </MenuList>
       <LogoutButton hierarchy={ButtonHierarchy.Danger} width={'176px'}>
         <Typography

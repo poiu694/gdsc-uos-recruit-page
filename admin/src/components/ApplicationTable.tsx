@@ -13,50 +13,32 @@ import {
 } from 'gdsc-uos-design-system';
 import React from 'react';
 
-import { ApplyState, HistoryType } from '../@types';
+import { HistoryType, UserApplication } from '../@types';
 import HistoryLinkList from './HistoryLinkList';
 import { convertChipColorByState, convertChipColorByTeam } from '../utils';
 
 interface Props {
   pageSize: number;
-  applications: {
-    id: number;
-    team: any;
-    state: ApplyState;
-    name: string;
-    isApplyCore: boolean;
-    isFinishEvaluation: boolean;
-    applicationList: { id: number; title: string }[];
-    interviewList: { id: number; title: string }[];
-  }[];
+  applications: UserApplication[];
 }
 
 const toggleIndexInArray = (list: boolean[], willUpdateIndex: number) => {
-  return [...list].map((flag, index) =>
-    index === willUpdateIndex ? !flag : flag
-  );
+  return [...list].map((flag, index) => (index === willUpdateIndex ? !flag : flag));
 };
 
 function ApplicationTable({ pageSize, applications }: Props) {
-  const [isApplicationListOpen, setIsApplicationListOpen] = React.useState<
-    boolean[]
-  >([...new Array(pageSize)].fill(false));
-  const [isInterviewListOpen, setIsInterviewListOpen] = React.useState<
-    boolean[]
-  >([...new Array(pageSize)].fill(false));
+  const [isApplicationListOpen, setIsApplicationListOpen] = React.useState<boolean[]>(
+    [...new Array(pageSize)].fill(false)
+  );
+  const [isInterviewListOpen, setIsInterviewListOpen] = React.useState<boolean[]>(
+    [...new Array(pageSize)].fill(false)
+  );
 
-  const handleClickLinkButton = (
-    type: HistoryType,
-    willUpdateIndex: number
-  ) => {
+  const handleClickLinkButton = (type: HistoryType, willUpdateIndex: number) => {
     if (type === 'application') {
-      setIsApplicationListOpen((prev) =>
-        toggleIndexInArray(prev, willUpdateIndex)
-      );
+      setIsApplicationListOpen((prev) => toggleIndexInArray(prev, willUpdateIndex));
     } else if (type === 'interview') {
-      setIsInterviewListOpen((prev) =>
-        toggleIndexInArray(prev, willUpdateIndex)
-      );
+      setIsInterviewListOpen((prev) => toggleIndexInArray(prev, willUpdateIndex));
     }
   };
 
@@ -96,7 +78,7 @@ function ApplicationTable({ pageSize, applications }: Props) {
             <Td>
               <Chip
                 variants="outlined"
-                type={convertChipColorByTeam(apply.team.toLocaleLowerCase())}
+                type={convertChipColorByTeam(apply.team)}
                 label={apply.team}
               />
             </Td>
@@ -107,12 +89,8 @@ function ApplicationTable({ pageSize, applications }: Props) {
                 label={apply.state}
               />
             </Td>
-            <Td style={{ paddingLeft: 40 }}>
-              {apply.isFinishEvaluation ? '⭕️' : '❌'}
-            </Td>
-            <Td style={{ paddingLeft: 40 }}>
-              {apply.isApplyCore ? '⭕️' : '❌'}
-            </Td>
+            <Td style={{ paddingLeft: 40 }}>{apply.isFinishEvaluation ? '⭕️' : '❌'}</Td>
+            <Td style={{ paddingLeft: 40 }}>{apply.isApplyCore ? '⭕️' : '❌'}</Td>
             <Td>
               <Button
                 style={{ padding: 8 }}
@@ -123,10 +101,7 @@ function ApplicationTable({ pageSize, applications }: Props) {
                 </Typography>
               </Button>
               {isApplicationListOpen[index] && (
-                <HistoryLinkList
-                  type="application"
-                  linkList={apply.applicationList}
-                />
+                <HistoryLinkList type="application" linkList={apply.applicationList} />
               )}
             </Td>
             <Td>
@@ -140,10 +115,7 @@ function ApplicationTable({ pageSize, applications }: Props) {
                 </Typography>
               </Button>
               {isInterviewListOpen[index] && (
-                <HistoryLinkList
-                  type="interview"
-                  linkList={apply.interviewList}
-                />
+                <HistoryLinkList type="interview" linkList={apply.interviewList} />
               )}
             </Td>
           </Tr>
