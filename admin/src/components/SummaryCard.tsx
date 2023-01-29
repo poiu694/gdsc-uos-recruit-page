@@ -1,34 +1,19 @@
 import styled from '@emotion/styled';
-import {
-  Icon,
-  theme,
-  Typography,
-  IconKeyType,
-  PalleteValueType,
-} from 'gdsc-uos-design-system';
+import { Icon, theme, Typography, IconKeyType, PalleteValueType } from 'gdsc-uos-design-system';
 
 interface Props {
   label: string;
   value: string;
   description: string;
   iconType: IconKeyType;
-  iconOutFilledColor: PalleteValueType;
+  fill: PalleteValueType;
 }
 
-function SummaryCard({
-  description,
-  value,
-  label,
-  iconType,
-  iconOutFilledColor,
-}: Props) {
+function SummaryCard({ description, value, label, iconType, fill }: Props) {
   return (
     <Wrapper>
       <CardHeader>
-        <OutFilledIcon
-          type={iconType}
-          iconOutFilledColor={iconOutFilledColor}
-        />
+        <OutFilledIcon type={iconType} fill={fill} />
         <Typography type="body4" color={theme.palette.gray350} textAlign="end">
           {label}
         </Typography>
@@ -54,8 +39,7 @@ const Wrapper = styled.div`
   width: 100%;
   border: 1px solid ${theme.palette.gray150};
   border-radius: 16px;
-  box-shadow: 0 4px 6px -1px ${theme.palette.gray250},
-    0 2px 4px -1px ${theme.palette.gray200};
+  box-shadow: 0 4px 6px -1px ${theme.palette.gray250}, 0 2px 4px -1px ${theme.palette.gray200};
 `;
 
 const CardHeader = styled.header`
@@ -77,16 +61,15 @@ const CardHeader = styled.header`
   }
 `;
 
-type OutFilledColor = Pick<Props, 'iconOutFilledColor'>;
+type OutFilledColor = Pick<Props, 'fill'>;
 const OutFilledIcon = styled(Icon)<OutFilledColor>`
   position: absolute;
   top: -50%;
-  background-color: ${(props) => props.iconOutFilledColor};
+  background-color: ${(props) => props.fill};
   transform: translateY(50%);
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 4px 20px 0 ${theme.palette.gray200},
-    0 7px 10px -5px ${theme.palette.gray350};
+  box-shadow: 0 4px 20px 0 ${theme.palette.gray200}, 0 7px 10px -5px ${theme.palette.gray350};
 
   path {
     stroke: ${theme.colors.primary.white};
