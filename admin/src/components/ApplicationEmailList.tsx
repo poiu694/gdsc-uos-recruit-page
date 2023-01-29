@@ -105,14 +105,16 @@ function ApplicationEmailList({ list, updateEmailList, isSelectedEmail, isAllAct
   );
 }
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  width: 100%;
+`;
 
 const ListWrapper = styled.div`
   overflow-y: scroll;
   box-sizing: border-box;
   border: 1px solid ${theme.colors.ui.border};
   border-radius: 10px;
-  width: 320px;
+  width: 100%;
   height: 480px;
   padding: 16px;
 `;

@@ -56,7 +56,7 @@ function ApplyDetailPage() {
               전송하기
             </MailSendButton>
           </Flex>
-          <Flex style={{ marginRight: 32 }}>
+          <Flex style={{ marginRight: 32 }} flexBasis={'350px'}>
             <ApplicationEmailList
               list={DUMMY_APPLYS}
               updateEmailList={updateEmailList}
