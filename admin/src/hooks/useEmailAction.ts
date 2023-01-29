@@ -48,10 +48,20 @@ const useEmailAction = () => {
     [emailSet]
   );
 
-  const toggleEmailList = (set: Set<UserApplication>, item: UserApplication) => {
+  const isAllActive = (email: UserApplication[]) => {
+    return email.every((item) => emailSet.has(item));
+  };
+
+  const toggleEmailList = (
+    set: Set<UserApplication>,
+    item: UserApplication,
+    forceValue?: 'on' | 'off'
+  ) => {
     if (set.has(item)) {
+      if (forceValue === 'on') return set;
       set.delete(item);
     } else {
+      if (forceValue === 'off') return set;
       set.add(item);
     }
     return set;
@@ -61,8 +71,9 @@ const useEmailAction = () => {
     (nextEmailItem: UserApplication[] | UserApplication) => {
       if (Array.isArray(nextEmailItem)) {
         let nextEmailSet = new Set(emailSet);
+        const activeValue = isAllActive(nextEmailItem);
         nextEmailItem.forEach((email) => {
-          nextEmailSet = toggleEmailList(nextEmailSet, email);
+          nextEmailSet = toggleEmailList(nextEmailSet, email, activeValue ? 'off' : 'on');
         });
         setEmailSetList(nextEmailSet);
       } else {
