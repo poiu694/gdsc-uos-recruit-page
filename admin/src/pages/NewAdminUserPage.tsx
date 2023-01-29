@@ -14,10 +14,7 @@ function SendMailPage() {
     <Wrapper>
       <SideMenu />
       <ContentWrapper>
-        <Title
-          title="New Admin User"
-          descriptions="Admin 유저를 추가하는 페이지입니다."
-        />
+        <Title title="New Admin User" descriptions="Admin 유저를 추가하는 페이지입니다." />
         <Typography type="h4" style={{ marginTop: 32 }}>
           New Admin User
         </Typography>
@@ -43,13 +40,10 @@ function SendMailPage() {
           />
         </InputContainer>
         <label>유저 타입</label>
-        <UserTypeSelect
-          value={userType}
-          onChange={(e) => setUserType(e.target.value as UserType)}
-        >
+        <UserTypeSelect value={userType} onChange={(e) => setUserType(e.target.value as UserType)}>
           {['super', 'normal'].map((type) => (
             <option key={type} value={type}>
-              <Typography type="body3">{type}</Typography>
+              {type}
             </option>
           ))}
         </UserTypeSelect>

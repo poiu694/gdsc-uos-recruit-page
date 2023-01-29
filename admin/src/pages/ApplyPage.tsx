@@ -26,19 +26,14 @@ function ApplyPage() {
   const currentYear = new Date().getFullYear();
   const [search, setSearch] = React.useState<string>('');
   const [totalCount, setTotalCount] = React.useState<number>(0);
-  const [teamFilterValue, setTeamFilterValue] =
-    React.useState<TeamKeyType>('frontend');
-  const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<
-    ApplyState | '전체'
-  >('전체');
+  const [teamFilterValue, setTeamFilterValue] = React.useState<TeamKeyType | '전체'>('전체');
+  const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<ApplyState | '전체'>(
+    '전체'
+  );
   const [isFinishEvaluationFilterValue, setIsFinishEvaluationFilterValue] =
     React.useState<boolean>(false);
-  const [applicationList, setApplicationList] = React.useState<
-    typeof DUMMY_APPLYS
-  >([]);
-  const { pageOptions, handleChangePage, handleChangePageSize } = usePagination(
-    { totalCount }
-  );
+  const [applicationList, setApplicationList] = React.useState<typeof DUMMY_APPLYS>([]);
+  const { pageOptions, handleChangePage, handleChangePageSize } = usePagination({ totalCount });
 
   React.useEffect(() => {
     (async () => {
@@ -59,9 +54,7 @@ function ApplyPage() {
         <Typography type="h4" style={{ marginTop: 32 }}>
           지원 서류
         </Typography>
-        <Typography type="body5">
-          데이터를 클릭하면 해당 지원자의 서류를 볼 수 있습니다.
-        </Typography>
+        <Typography type="body5">데이터를 클릭하면 해당 지원자의 서류를 볼 수 있습니다.</Typography>
         <TableWrapper>
           <Flex gap={4} style={{ width: 300 }}>
             <SearchInput
@@ -75,30 +68,15 @@ function ApplyPage() {
                 }
               }}
             />
-            <ClickableIcon
-              iconProps={{ type: 'search' }}
-              onClick={() => console.log('hi')}
-            />
+            <ClickableIcon iconProps={{ type: 'search' }} onClick={() => console.log('hi')} />
           </Flex>
 
-          <Flex
-            alignItems="center"
-            gap={8}
-            style={{ marginTop: 8, marginBottom: 12 }}
-          >
+          <Flex alignItems="center" gap={8} style={{ marginTop: 8, marginBottom: 12 }}>
             <FilterSelect
               label="Team"
               value={teamFilterValue}
-              filterList={[
-                'frontend',
-                'backend',
-                'mobile',
-                'data/ml',
-                'design',
-              ]}
-              onChange={(e) =>
-                setTeamFilterValue(e.target.value as TeamKeyType)
-              }
+              filterList={['전체', 'frontend', 'backend', 'mobile', 'data/ml', 'design']}
+              onChange={(e) => setTeamFilterValue(e.target.value as TeamKeyType)}
             />
             <FilterSelect
               label="State"
@@ -111,9 +89,7 @@ function ApplyPage() {
                 '최종 불합격',
                 '최종 합격',
               ]}
-              onChange={(e) =>
-                setApplyStateFilterValue(e.target.value as ApplyState | '전체')
-              }
+              onChange={(e) => setApplyStateFilterValue(e.target.value as ApplyState | '전체')}
             />
             <ToggleSwitchBox
               label={'평가 X'}
@@ -125,20 +101,12 @@ function ApplyPage() {
               pageSizeOptions={[5, 10, 15]}
               page={pageOptions.currentPage}
               pageSize={pageOptions.pageSize}
-              onPageSizeOptionsChange={(e) =>
-                handleChangePageSize(Number(e.target.value))
-              }
+              onPageSizeOptionsChange={(e) => handleChangePageSize(Number(e.target.value))}
             />
           </Flex>
-          <ApplicationTable
-            pageSize={pageOptions.pageSize}
-            applications={applicationList}
-          />
+          <ApplicationTable pageSize={pageOptions.pageSize} applications={applicationList} />
         </TableWrapper>
-        <Navigation
-          pageOptions={pageOptions}
-          handleChangePage={handleChangePage}
-        />
+        <Navigation pageOptions={pageOptions} handleChangePage={handleChangePage} />
       </ContentWrapper>
     </Wrapper>
   );

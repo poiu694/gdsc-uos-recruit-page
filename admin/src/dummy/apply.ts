@@ -15,6 +15,7 @@ const dummyApply = {
 export const DUMMY_APPLYS = Array.from({ length: 50 }).map((_, idx) => ({
   ...dummyApply,
   id: idx + 1,
+  name: `홍길동${idx + 1}`,
   team:
     idx % 5 === 0
       ? ('FRONTEND' as any)

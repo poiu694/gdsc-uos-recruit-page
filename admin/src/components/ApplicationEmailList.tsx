@@ -13,9 +13,10 @@ interface Props {
   list: UserApplication[];
   updateEmailList: (nextEmailItem: UserApplication | UserApplication[]) => void;
   isSelectedEmail: (emailItem: UserApplication) => boolean;
+  isAllActiveEmail: (emails: UserApplication[]) => boolean;
 }
 
-function ApplicationEmailList({ list, updateEmailList, isSelectedEmail }: Props) {
+function ApplicationEmailList({ list, updateEmailList, isSelectedEmail, isAllActiveEmail }: Props) {
   const [isEntireTarget, setIsEntireTarget] = React.useState<boolean>(false);
   const [seasonFilterValue, setSeasonFilterValue] = React.useState<string>('전체');
   const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<ApplyState | '전체'>(
@@ -33,6 +34,12 @@ function ApplicationEmailList({ list, updateEmailList, isSelectedEmail }: Props)
   const handleClickEmailItem = (email: UserApplication) => {
     updateEmailList(email);
   };
+
+  React.useEffect(() => {
+    // 필터 값이 바뀌면 entire 토글 버튼을 최신 상태로 유지합니다.
+    const isAllActive = isAllActiveEmail(filteredUserList);
+    setIsEntireTarget(isAllActive);
+  }, [filteredUserList]);
 
   return (
     <Wrapper>
@@ -98,14 +105,16 @@ function ApplicationEmailList({ list, updateEmailList, isSelectedEmail }: Props)
   );
 }
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  width: 100%;
+`;
 
 const ListWrapper = styled.div`
   overflow-y: scroll;
   box-sizing: border-box;
   border: 1px solid ${theme.colors.ui.border};
   border-radius: 10px;
-  width: 320px;
+  width: 100%;
   height: 480px;
   padding: 16px;
 `;

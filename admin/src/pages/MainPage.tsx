@@ -16,24 +16,20 @@ function MainPage() {
         <Typography type="h4" style={{ marginTop: 32 }}>
           General Statistics
         </Typography>
-        <Flex
-          style={{ marginTop: 64, width: '60%' }}
-          gap={16}
-          justifyContent={'space-around'}
-        >
+        <Flex style={{ marginTop: 64, width: '60%' }} gap={16} justifyContent={'space-around'}>
           <SummaryCard
             label="Total Apply"
             value={'654'}
             description="지원자 수"
             iconType="form"
-            iconOutFilledColor={theme.colors.primary.green}
+            fill={theme.colors.primary.green}
           />
           <SummaryCard
             label="Today's User"
             value={`2,300`}
             description="오늘 방문한 유저"
             iconType="user"
-            iconOutFilledColor={theme.colors.primary.yellow}
+            fill={theme.colors.primary.yellow}
           />
         </Flex>
       </ContentWrapper>
