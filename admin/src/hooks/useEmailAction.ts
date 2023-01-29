@@ -48,9 +48,12 @@ const useEmailAction = () => {
     [emailSet]
   );
 
-  const isAllActive = (email: UserApplication[]) => {
-    return email.every((item) => emailSet.has(item));
-  };
+  const isAllActiveEmail = React.useCallback(
+    (email: UserApplication[]) => {
+      return email.every((item) => emailSet.has(item));
+    },
+    [emailSet]
+  );
 
   const toggleEmailList = (
     set: Set<UserApplication>,
@@ -71,7 +74,7 @@ const useEmailAction = () => {
     (nextEmailItem: UserApplication[] | UserApplication) => {
       if (Array.isArray(nextEmailItem)) {
         let nextEmailSet = new Set(emailSet);
-        const activeValue = isAllActive(nextEmailItem);
+        const activeValue = isAllActiveEmail(nextEmailItem);
         nextEmailItem.forEach((email) => {
           nextEmailSet = toggleEmailList(nextEmailSet, email, activeValue ? 'off' : 'on');
         });
@@ -86,6 +89,7 @@ const useEmailAction = () => {
 
   return {
     selectedEmailList,
+    isAllActiveEmail,
     FormatMailHref,
     isSelectedEmail,
     getFilteredList,
