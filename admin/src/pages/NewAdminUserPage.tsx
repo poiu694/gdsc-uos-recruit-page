@@ -1,14 +1,28 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Input, theme, Title, Typography } from 'gdsc-uos-design-system';
+import {
+  BASIC_TEAM,
+  Button,
+  ButtonHierarchy,
+  Input,
+  TeamKeyType,
+  theme,
+  Title,
+  Typography,
+} from 'gdsc-uos-design-system';
 
 import { UserType } from '../@types';
 import { ContentWrapper, Flex, SideMenu } from '../components';
 
-function SendMailPage() {
+function NewAdminUserPage() {
   const [email, setEmail] = React.useState<string>('');
   const [password, setPassword] = React.useState<string>('');
   const [userType, setUserType] = React.useState<UserType>('normal');
+  const [userTeam, setUserTeam] = React.useState<TeamKeyType>('frontend');
+
+  const handleClickNewAdminButton = () => {
+    console.log({ email, password, userType, userTeam });
+  };
 
   return (
     <Wrapper>
@@ -39,14 +53,39 @@ function SendMailPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </InputContainer>
-        <label>유저 타입</label>
-        <UserTypeSelect value={userType} onChange={(e) => setUserType(e.target.value as UserType)}>
-          {['super', 'normal'].map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-        </UserTypeSelect>
+        <Flex gap={16} alignItems="center" style={{ marginTop: 16 }}>
+          <label>유저 타입</label>
+          <UserTypeSelect
+            value={userType}
+            onChange={(e) => setUserType(e.target.value as UserType)}
+          >
+            {['super', 'normal'].map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </UserTypeSelect>
+          <label>유저 팀</label>
+          <UserTypeSelect
+            value={userTeam}
+            onChange={(e) => setUserTeam(e.target.value as TeamKeyType)}
+          >
+            {Object.values(BASIC_TEAM).map((team) => (
+              <option key={team} value={team}>
+                {team}
+              </option>
+            ))}
+          </UserTypeSelect>
+          <Button
+            onClick={handleClickNewAdminButton}
+            hierarchy={ButtonHierarchy.Danger}
+            style={{ padding: 8 }}
+          >
+            <Typography type="body4" color={theme.colors.primary.white}>
+              생성
+            </Typography>
+          </Button>
+        </Flex>
       </ContentWrapper>
     </Wrapper>
   );
@@ -63,7 +102,6 @@ const InputContainer = styled(Flex)`
 `;
 
 const UserTypeSelect = styled.select`
-  margin-top: 8px;
   outline: none;
   cursor: pointer;
   transition: all 0.1s ease-in;
@@ -75,4 +113,4 @@ const UserTypeSelect = styled.select`
   }
 `;
 
-export default SendMailPage;
+export default NewAdminUserPage;
