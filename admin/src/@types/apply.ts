@@ -12,12 +12,6 @@ export interface UserApplication {
   state: ApplyState;
   isApplyCore: boolean;
   isFinishEvaluation: boolean;
-  applicationList: {
-    id: number;
-    title: string;
-  }[];
-  interviewList: {
-    id: number;
-    title: string;
-  }[];
+  applicationId: number;
+  interviewId: number;
 }
