@@ -35,14 +35,11 @@ function ManageRecruitInfoPage() {
     <Wrapper>
       <SideMenu />
       <ContentWrapper>
-        <Title
-          title="Recruit-Info"
-          descriptions="리크루팅 관련 정보를 다루는 페이지입니다."
-        />
+        <Title title="Recruit-Info" descriptions="리크루팅 관련 정보를 다루는 페이지입니다." />
         <Tab value={tabValue} onChange={handleChangeTabMenu}>
           <TabMenus>
             <TabMenu value="1" label="Main" />
-            <TabMenu value="2" label="Question" />
+            <TabMenu value="2" label="FAQ" />
             <TabMenu value="3" label="Introduction" />
             <TabMenu value="4" label="Application" />
           </TabMenus>
