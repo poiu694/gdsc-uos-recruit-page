@@ -1,18 +1,34 @@
 import styled from '@emotion/styled';
 import {
+  Button,
+  ButtonHierarchy,
+  Modal,
   Table,
   TBody,
   Td,
   THead,
+  theme,
   Tr,
   Typography,
 } from 'gdsc-uos-design-system';
+import React from 'react';
+import { Memo } from '../@types';
+import { UserMemoModal } from './Modal';
 
 interface Props {
-  memos: { name: string; label: string }[];
+  name: string;
+  memos: Memo[];
 }
 
-function EvaluationTable({ memos }: Props) {
+function EvaluationTable({ name, memos }: Props) {
+  const [selectedMemo, setSelectedMemo] = React.useState<Memo | null>(null);
+  const [isMemoOpen, setIsMemoOpen] = React.useState<boolean>(false);
+
+  const handleClickMemoButton = (memo: Memo) => {
+    setSelectedMemo(memo);
+    setIsMemoOpen(true);
+  };
+
   return (
     <Wrapper>
       <Typography type="h4">메모사항</Typography>
@@ -20,18 +36,33 @@ function EvaluationTable({ memos }: Props) {
         <THead>
           <Tr>
             <Td>이름</Td>
-            <Td>메모</Td>
+            <Td>메모 보기</Td>
           </Tr>
         </THead>
         <TBody>
-          {memos?.map((memo) => (
-            <Tr key={memo.name}>
-              <Td>{memo.name}</Td>
-              <Td>{memo.label}</Td>
+          {memos?.map((memo, idx) => (
+            <Tr key={idx}>
+              <Td>{name}</Td>
+              <Td>
+                <Button
+                  style={{ padding: 8 }}
+                  hierarchy={ButtonHierarchy.Success}
+                  onClick={() => handleClickMemoButton(memo)}
+                >
+                  <Typography type="body5" color={theme.colors.primary.white}>
+                    메모 열람
+                  </Typography>
+                </Button>
+              </Td>
             </Tr>
           ))}
         </TBody>
       </TableWrapper>
+      {
+        <Modal isOpen={isMemoOpen} onClose={() => setIsMemoOpen(false)}>
+          <UserMemoModal memo={selectedMemo!} name={name} />
+        </Modal>
+      }
     </Wrapper>
   );
 }
