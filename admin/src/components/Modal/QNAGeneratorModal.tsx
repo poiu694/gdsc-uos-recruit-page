@@ -9,17 +9,12 @@ import {
   Typography,
   useModalContext,
 } from 'gdsc-uos-design-system';
+import { FAQ } from '../../@types';
 
 interface Props {
   teamName: string;
   onClickCancel?: () => void;
-  onClickConfirm?: ({
-    title,
-    answer,
-  }: {
-    title: string;
-    answer: string;
-  }) => void;
+  onClickConfirm?: ({ title, description }: FAQ) => void;
 }
 
 export function QNAGeneratorModal({
@@ -28,7 +23,7 @@ export function QNAGeneratorModal({
   onClickConfirm: _onClickConfirm,
 }: Props) {
   const [title, setTitle] = React.useState<string>('');
-  const [answer, setAnswer] = React.useState<string>('');
+  const [description, setdescription] = React.useState<string>('');
   const { onClose } = useModalContext();
 
   const onClickCancle = () => {
@@ -39,12 +34,12 @@ export function QNAGeneratorModal({
   };
 
   const onClickConfirm = () => {
-    if (title === '' || answer === '') {
+    if (title === '' || description === '') {
       alert('질문 혹은 답변칸이 비어있습니다.');
       return;
     }
     if (typeof _onClickConfirm !== 'undefined') {
-      _onClickConfirm({ title, answer });
+      _onClickConfirm({ title, description });
     }
     onClose();
   };
@@ -52,33 +47,23 @@ export function QNAGeneratorModal({
   return (
     <Wrapper>
       <Spacer>
-        <Typography type="h6">
-          {teamName}팀의 새로 질문 및 답변을 입력해주세요.
-        </Typography>
+        <Typography type="h6">{teamName}팀의 새로 질문 및 답변을 입력해주세요.</Typography>
         <Input
           label="질문"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           style={{ marginBlock: 16 }}
         />
-        <AnswerTextArea
+        <DescriptionTextArea
           required
-          value={answer}
+          value={description}
           label="답변"
-          onChange={(e) => setAnswer(e.target.value)}
+          onChange={(e) => setdescription(e.target.value)}
         />
       </Spacer>
       <BottomButtonList>
-        <CancleButton
-          hierarchy={ButtonHierarchy.Danger}
-          borderRadius={0}
-          onClick={onClickCancle}
-        >
-          <Typography
-            type="body4"
-            textAlign="center"
-            color={theme.colors.primary.white}
-          >
+        <CancleButton hierarchy={ButtonHierarchy.Danger} borderRadius={0} onClick={onClickCancle}>
+          <Typography type="body4" textAlign="center" color={theme.colors.primary.white}>
             취소
           </Typography>
         </CancleButton>
@@ -87,11 +72,7 @@ export function QNAGeneratorModal({
           borderRadius={0}
           onClick={onClickConfirm}
         >
-          <Typography
-            type="body4"
-            textAlign="center"
-            color={theme.colors.primary.white}
-          >
+          <Typography type="body4" textAlign="center" color={theme.colors.primary.white}>
             생성
           </Typography>
         </ConfirmButton>
@@ -128,7 +109,7 @@ const CancleButton = styled(Button)`
   padding: 12px;
 `;
 
-const AnswerTextArea = styled(TextArea)`
+const DescriptionTextArea = styled(TextArea)`
   width: 500px;
   height: 200px;
 `;

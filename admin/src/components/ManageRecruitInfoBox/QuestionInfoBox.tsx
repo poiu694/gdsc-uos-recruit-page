@@ -14,17 +14,18 @@ import {
 } from 'gdsc-uos-design-system';
 
 import TeamList from '../TeamList';
+import { FAQ } from '../../@types';
 import { QNAGeneratorModal } from '../Modal';
-import QuestionAndAnswer from '../QuestionAndAnswer';
+import QuestionAndDescription from '../QuestionAndDescription';
 
 const DEFAULT_TEAM_VALUE = 'common';
 const DEFAULT_TAB_VALUE = '1';
 
 function QuestionInfoBox() {
-  const [activeTeam, setActiveTeam] =
-    React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
-  const [tabValue, setTabValue] = React.useState<string>(DEFAULT_TAB_VALUE);
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const [tabValue, setTabValue] = React.useState<string>(DEFAULT_TAB_VALUE);
+  const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
+  const [FAQList, setFAQList] = React.useState<FAQ[]>([]);
 
   const handleClickTeamName = (team: TeamKeyType) => {
     setActiveTeam(team);
@@ -35,48 +36,49 @@ function QuestionInfoBox() {
     setTabValue(nextTabValue);
   };
 
-  const handleClickQNAGeneratorConfirmButton = ({
-    title,
-    answer,
-  }: {
-    title: string;
-    answer: string;
-  }) => {
-    console.log(title, answer);
+  const handleClickQNAGeneratorConfirmButton = ({ title, description }: FAQ) => {
+    setFAQList((prev) => [...prev, { title, description }]);
   };
+
+  const handleClickQuestionDeleteButton = (faq: FAQ) => {
+    const nextFAQList = [...FAQList].filter((item) => item.title !== faq.title);
+    setFAQList(nextFAQList);
+  };
+
+  React.useEffect(() => {
+    (async () => {
+      setFAQList(() =>
+        [...Array.from({ length: 5 })].map((_, idx) => ({
+          title: `${getTitleCaseTeam(activeTeam)} 해야 하나요 ? ${idx + 1}`,
+          description: '필요 없습니다.',
+        }))
+      );
+    })();
+  }, [activeTeam]);
 
   return (
     <Wrapper>
-      <TeamList
-        isCommonNeed
-        activeTeam={activeTeam}
-        onClickTeamName={handleClickTeamName}
-      />
+      <TeamList isCommonNeed activeTeam={activeTeam} onClickTeamName={handleClickTeamName} />
       <TabWrapper>
         <Tab value={tabValue} onChange={handleClickListItem}>
           <TabMenus>
-            <TabMenu value="1" label="1" />
-            <TabMenu value="2" label="2" />
-            <TabMenu value="3" label="3" />
-            <TabMenu value="4" label="4" />
-            <TabMenu value="5" label="5" />
-            <AddButton
-              hierarchy={ButtonHierarchy.Parent}
-              onClick={() => setIsModalOpen(true)}
-            >
+            {FAQList.map((_, idx) => (
+              <TabMenu key={idx} value={`${idx + 1}`} label={`${idx + 1}`} />
+            ))}
+            <AddButton hierarchy={ButtonHierarchy.Parent} onClick={() => setIsModalOpen(true)}>
               <Typography type="body5" color={theme.colors.primary.red}>
                 추가
               </Typography>
             </AddButton>
           </TabMenus>
           <TabContents>
-            {Array.from({ length: 5 }).map((_, idx) => (
+            {FAQList.map((faq, idx) => (
               <TabContent value={`${idx + 1}`} key={idx}>
-                <QuestionAndAnswer
-                  title={`${getTitleCaseTeam(activeTeam)} 해야 하나요 ? ${
-                    idx + 1
-                  }`}
-                  answer="필요 없습니다."
+                <QuestionAndDescription
+                  type="edit"
+                  title={faq.title}
+                  description={faq.description}
+                  onDeleteClick={handleClickQuestionDeleteButton}
                 />
               </TabContent>
             ))}

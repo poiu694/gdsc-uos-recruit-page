@@ -1,19 +1,11 @@
 import styled from '@emotion/styled';
-import {
-  Chip,
-  Table,
-  TBody,
-  Td,
-  THead,
-  Tr,
-  Typography,
-} from 'gdsc-uos-design-system';
+import { Chip, Table, TBody, Td, THead, Tr, Typography } from 'gdsc-uos-design-system';
 import { ApplyState } from '../@types';
 import { convertChipColorByState } from '../utils';
 
 interface Props {
   name: string;
-  evaluations: { name: string; state: ApplyState }[];
+  evaluations: { name: string; status: ApplyState }[];
 }
 
 function EvaluationTable({ name, evaluations }: Props) {
@@ -28,14 +20,14 @@ function EvaluationTable({ name, evaluations }: Props) {
           </Tr>
         </THead>
         <TBody>
-          {evaluations?.map((evalution) => (
-            <Tr key={evalution.name}>
-              <Td>{evalution.name}</Td>
+          {evaluations?.map((evaluation, idx) => (
+            <Tr key={idx}>
+              <Td>{evaluation.name}</Td>
               <Td>
                 <Chip
                   variants="filled"
-                  label={evalution.state}
-                  type={convertChipColorByState(evalution.state)}
+                  label={evaluation.status}
+                  type={convertChipColorByState(evaluation.status)}
                 />
               </Td>
             </Tr>

@@ -9,7 +9,7 @@ import {
   TeamKeyType,
 } from 'gdsc-uos-design-system';
 
-import { ApplyState } from '../@types';
+import { ApplyState, UserApplication } from '../@types';
 import { usePagination } from '../hooks';
 import {
   ApplicationTable,
@@ -32,7 +32,7 @@ function ApplyPage() {
   );
   const [isFinishEvaluationFilterValue, setIsFinishEvaluationFilterValue] =
     React.useState<boolean>(false);
-  const [applicationList, setApplicationList] = React.useState<typeof DUMMY_APPLYS>([]);
+  const [applicationList, setApplicationList] = React.useState<UserApplication[]>([]);
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination({ totalCount });
 
   React.useEffect(() => {
@@ -40,6 +40,7 @@ function ApplyPage() {
       // TODO: Backend연동
       setTotalCount(150);
       setApplicationList(DUMMY_APPLYS);
+      console.log(DUMMY_APPLYS);
     })();
   }, []);
 
