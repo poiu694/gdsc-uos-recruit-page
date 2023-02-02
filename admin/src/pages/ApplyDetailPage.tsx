@@ -9,7 +9,7 @@ import {
   MemoTable,
   ContentWrapper,
   EvaluationTable,
-  QuestionAndAnswer,
+  QuestionAndDescription,
   SelectApplyStateBox,
 } from '../components';
 import { convertChipColorByState } from '../utils';
@@ -46,10 +46,10 @@ function ApplyDetailPage() {
           자기소개서 문항
         </Typography>
         {info?.questions.map((questionInfo: any) => (
-          <QuestionAndAnswer
+          <QuestionAndDescription
             key={questionInfo.title}
             title={questionInfo.title}
-            answer={questionInfo.answer}
+            description={questionInfo.description}
           />
         ))}
         <Typography type="h5" style={{ marginTop: 16 }}>
