@@ -25,8 +25,8 @@ export function convertChipColorByTeam(team: TeamKeyType) {
 
 export function convertChipColorByUserType(userType: UserType) {
   const ChipColor = {
-    super: 'primary',
-    normal: 'warning',
+    lead: 'primary',
+    core: 'warning',
   } as Record<UserType, ChipType>;
   return ChipColor[userType];
 }

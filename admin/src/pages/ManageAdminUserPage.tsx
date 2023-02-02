@@ -92,7 +92,7 @@ function ManageAdminUserPage() {
                     />
                   </Td>
                   <Td>
-                    <Button disabled={user.type === 'super'} hierarchy={ButtonHierarchy.Danger}>
+                    <Button disabled={user.type === 'core'} hierarchy={ButtonHierarchy.Danger}>
                       <Typography
                         type="body4"
                         textAlign="center"

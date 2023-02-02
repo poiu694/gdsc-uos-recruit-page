@@ -11,7 +11,7 @@ import {
   Typography,
 } from 'gdsc-uos-design-system';
 
-import { UserType } from '../@types';
+import { UserType, UserRole } from '../@types';
 import { ContentWrapper, Flex, SideMenu } from '../components';
 
 function NewAdminUserPage() {
@@ -19,6 +19,7 @@ function NewAdminUserPage() {
   const [password, setPassword] = React.useState<string>('');
   const [userType, setUserType] = React.useState<UserType>('normal');
   const [userTeam, setUserTeam] = React.useState<TeamKeyType>('frontend');
+  const userRoleList = Object.values(UserRole).filter((role) => role !== 'normal');
 
   const handleClickNewAdminButton = () => {
     console.log({ email, password, userType, userTeam });
@@ -59,7 +60,7 @@ function NewAdminUserPage() {
             value={userType}
             onChange={(e) => setUserType(e.target.value as UserType)}
           >
-            {['super', 'normal'].map((type) => (
+            {userRoleList.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>

@@ -1,3 +1,5 @@
+import { UserType } from '../@types';
+
 const user = {
   name: '홍길동',
   type: 'normal',
@@ -9,7 +11,7 @@ export const DUMMY_ADMIN_USERS = Array.from({ length: 150 }).map((_, idx) => {
   return {
     ...user,
     id: idx,
-    type: idx % 5 === 0 ? 'super' : ('normal' as 'super' | 'normal'),
+    type: idx % 5 === 0 ? ('lead' as UserType) : ('core' as UserType),
     team:
       idx % 5 === 0
         ? ('frontend' as any)
