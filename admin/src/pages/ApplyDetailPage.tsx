@@ -1,23 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  Chip,
-  Input,
-  Title,
-  Button,
-  Typography,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+import { Chip, Input, Title, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
 
 import { DUMMY_APPLICATION } from '../dummy/apply';
 import {
+  Flex,
+  SideMenu,
+  MemoTable,
   ContentWrapper,
   EvaluationTable,
-  Flex,
-  MemoTable,
   QuestionAndAnswer,
   SelectApplyStateBox,
-  SideMenu,
 } from '../components';
 import { convertChipColorByState } from '../utils';
 import { ApplyState } from '../@types';
@@ -33,7 +26,7 @@ function ApplyDetailPage() {
 
   React.useEffect(() => {
     setInfo(DUMMY_APPLICATION);
-    setApplyState(DUMMY_APPLICATION.state);
+    setApplyState(DUMMY_APPLICATION.status);
   }, []);
 
   return (
@@ -43,11 +36,7 @@ function ApplyDetailPage() {
         <Title title="Application" descriptions={`지원서 상세 페이지입니다.`} />
         <Flex gap={10} alignItems="center" style={{ marginTop: 32 }}>
           <Typography type="h4">{info?.name}님의 현재 상태</Typography>
-          <Chip
-            variants="filled"
-            label={info?.state}
-            type={convertChipColorByState(info?.state)}
-          />
+          <Chip variants="filled" label={info?.state} type={convertChipColorByState(info?.state)} />
         </Flex>
         <Typography type="h4" style={{ marginTop: 32 }}>
           자기소개서 문항
@@ -69,11 +58,7 @@ function ApplyDetailPage() {
             placeholder="memo"
             onChange={(e) => setMemo(e.target.value)}
           />
-          <Button
-            hierarchy={ButtonHierarchy.Warning}
-            type="button"
-            style={{ padding: 10 }}
-          >
+          <Button hierarchy={ButtonHierarchy.Warning} type="button" style={{ padding: 10 }}>
             <Typography type="body4" style={{ wordBreak: 'keep-all' }}>
               메모하기
             </Typography>
@@ -82,10 +67,7 @@ function ApplyDetailPage() {
         <Typography type="h5" style={{ marginTop: 16 }}>
           평가하기
         </Typography>
-        <SelectApplyStateBox
-          value={applyState}
-          onClickState={handleClickApplyState}
-        />
+        <SelectApplyStateBox value={applyState} onClickState={handleClickApplyState} />
         <Flex gap={32} style={{ marginTop: 32 }}>
           <MemoTable memos={info?.memos} />
           <EvaluationTable name={info?.name} evaluations={info?.evaluations} />

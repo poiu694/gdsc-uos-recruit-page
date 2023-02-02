@@ -18,14 +18,14 @@ const useEmailAction = () => {
    * filter에 따라 보여지는 list를 관리하는 유틸 함수
    */
   const getFilteredList = React.useCallback(
-    (list: UserApplication[], stateFilter: ApplyState | '전체', seasonFilter: string) => {
+    (list: UserApplication[], statusFilter: ApplyState | '전체', seasonFilter: string) => {
       let result = [...list];
 
-      result = result.filter((item) => stateFilter === '전체' || item.state === stateFilter);
+      result = result.filter((item) => statusFilter === '전체' || item.status === statusFilter);
       result = result.filter(
         (item) =>
           seasonFilter === '전체' ||
-          item.applicationList.find((application) => application.title === seasonFilter)
+          item.season === seasonFilter
       );
       return result;
     },

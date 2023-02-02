@@ -6,7 +6,7 @@ import { Flex } from './styled';
 import FilterSelect from './FilterSelect';
 import ToggleSwitchBox from './ToggleSwitchBox';
 import { convertChipColorByState } from '../utils';
-import { ApplyState, UserApplication, UserEmail } from '../@types';
+import { ApplyState, UserApplication } from '../@types';
 import { useEmailAction } from '../hooks';
 
 interface Props {
@@ -89,11 +89,11 @@ function ApplicationEmailList({ list, updateEmailList, isSelectedEmail, isAllAct
               >
                 <Flex gap={16} justifyContent="space-around">
                   <Typography type="body4">{application.name}</Typography>
-                  <Typography type="body4">{application.applicationList[0].title}</Typography>
+                  <Typography type="body4">{application.season}</Typography>
                   <Chip
                     variants="filled"
-                    type={convertChipColorByState(application.state)}
-                    label={application.state}
+                    type={convertChipColorByState(application.status)}
+                    label={application.status}
                   />
                 </Flex>
               </Button>

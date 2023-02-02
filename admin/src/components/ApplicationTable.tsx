@@ -35,13 +35,16 @@ function ApplicationTable({ pageSize, applications }: Props) {
             <Typography type="body4">지원 플랫폼</Typography>
           </Td>
           <Td>
-            <Typography type="body4">상태</Typography>
+            <Typography type="body4">시즌</Typography>
+          </Td>
+          <Td>
+            <Typography type="body4">평과 결과</Typography>
           </Td>
           <Td>
             <Typography type="body4">평가 여부</Typography>
           </Td>
           <Td>
-            <Typography type="body4">코어 여부</Typography>
+            <Typography type="body4">코어 신청 여부</Typography>
           </Td>
           <Td>
             <Typography type="body4">지원서</Typography>
@@ -64,11 +67,12 @@ function ApplicationTable({ pageSize, applications }: Props) {
                 label={apply.team}
               />
             </Td>
+            <Td>{apply.season}</Td>
             <Td style={{ textAlign: 'center' }}>
               <Chip
                 variants="filled"
-                type={convertChipColorByState(apply.state)}
-                label={apply.state}
+                type={convertChipColorByState(apply.status)}
+                label={apply.status}
               />
             </Td>
             <Td style={{ paddingLeft: 40 }}>{apply.isFinishEvaluation ? '⭕️' : '❌'}</Td>

@@ -1,33 +1,34 @@
-import { ApplyState } from '../@types';
+import { ApplyState, UserApplication } from '../@types';
 
 const dummyApply = {
   id: '',
   name: '홍길동',
   team: 'frontend',
   email: '',
-  state: '1차 합격' as ApplyState,
+  status: '1차 합격' as ApplyState,
+  season: '2021 F/W',
   isApplyCore: true,
   isFinishEvaluation: true,
   applicationId: 1,
   interviewId: 1,
 };
 
-export const DUMMY_APPLYS = Array.from({ length: 50 }).map((_, idx) => ({
+export const DUMMY_APPLYS: UserApplication[] = Array.from({ length: 50 }).map((_, idx) => ({
   ...dummyApply,
   id: idx + 1,
   name: `홍길동${idx + 1}`,
   team:
     idx % 5 === 0
-      ? ('FRONTEND' as any)
+      ? ('frontend' as any)
       : idx % 4 === 0
-      ? ('BACKEND' as any)
+      ? ('backend' as any)
       : idx % 3 === 0
-      ? ('DATA_ML' as any)
+      ? ('data_ml' as any)
       : idx % 2 === 0
-      ? ('DESIGN' as any)
-      : ('MOBILE' as any),
+      ? ('design' as any)
+      : ('mobile' as any),
   email: `honggildong${idx}@naver.com`,
-  state:
+  status:
     idx % 5 === 0
       ? ('서류 합격' as ApplyState)
       : idx % 4 === 0
@@ -73,12 +74,12 @@ export const DUMMY_APPLICATION = {
       label: '같이 하고 싶은 사람'
     }
   ],
-  state: '서류 합격' as ApplyState,
+  status: '서류 합격' as ApplyState,
   evaluations: [
-    {name: '관리인1', state: '서류 합격'},
-    {name: '관리인2', state: '서류 불합격'},
-    {name: '관리인3', state: '최종 불합격'},
-    {name: '관리인4', state: '최종 합격'},
+    {name: '관리인1', status: '서류 합격'},
+    {name: '관리인2', status: '서류 불합격'},
+    {name: '관리인3', status: '최종 불합격'},
+    {name: '관리인4', status: '최종 합격'},
   ]
 }
 

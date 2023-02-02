@@ -9,7 +9,8 @@ export interface UserApplication {
   name: string;
   email: string;
   team: TeamKeyType;
-  state: ApplyState;
+  status: ApplyState;
+  season: string;
   isApplyCore: boolean;
   isFinishEvaluation: boolean;
   applicationId: number;
