@@ -16,20 +16,16 @@ import {
 } from 'gdsc-uos-design-system';
 import { usePagination } from '../hooks';
 import { DUMMY_ADMIN_USERS } from '../dummy/users';
-import { convertChipColorByUserType } from '../utils';
+import { convertChipColorByTeam, convertChipColorByUserType } from '../utils';
 import { ContentWrapper, PageNavigation, SideMenu } from '../components';
 
 function ManageAdminUserPage() {
   const [totalCount, setTotalCount] = React.useState<number>(0);
-  const { pageOptions, handleChangePage, handleChangePageSize } = usePagination(
-    {
-      totalCount,
-    }
-  );
+  const { pageOptions, handleChangePage, handleChangePageSize } = usePagination({
+    totalCount,
+  });
 
-  const handleChangePageSizeOption = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleChangePageSizeOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
     handleChangePageSize(Number(e.target.value));
   };
 
@@ -44,10 +40,7 @@ function ManageAdminUserPage() {
     <Wrapper>
       <SideMenu />
       <ContentWrapper>
-        <Title
-          title="Manage Admin User"
-          descriptions="Admin 유저를 관리하는 페이지입니다."
-        />
+        <Title title="Manage Admin User" descriptions="Admin 유저를 관리하는 페이지입니다." />
         <Typography type="h4" style={{ marginTop: 32 }}>
           Admin Users
         </Typography>
@@ -66,6 +59,9 @@ function ManageAdminUserPage() {
                   <Typography type="body4">이름</Typography>
                 </Td>
                 <Td>
+                  <Typography type="body4">유저 팀</Typography>
+                </Td>
+                <Td>
                   <Typography type="body4">유저 타입</Typography>
                 </Td>
                 <Td>
@@ -80,6 +76,15 @@ function ManageAdminUserPage() {
                     <Typography type="body4">{user.name}</Typography>
                   </Td>
                   <Td>
+                    <Typography type="body4">
+                      <Chip
+                        variants="outlined"
+                        type={convertChipColorByTeam(user.team)}
+                        label={user.team}
+                      />
+                    </Typography>
+                  </Td>
+                  <Td>
                     <Chip
                       variants="filled"
                       type={convertChipColorByUserType(user.type)}
@@ -87,10 +92,7 @@ function ManageAdminUserPage() {
                     />
                   </Td>
                   <Td>
-                    <Button
-                      disabled={user.type === 'super'}
-                      hierarchy={ButtonHierarchy.Danger}
-                    >
+                    <Button disabled={user.type === 'super'} hierarchy={ButtonHierarchy.Danger}>
                       <Typography
                         type="body4"
                         textAlign="center"
@@ -106,10 +108,7 @@ function ManageAdminUserPage() {
             </TBody>
           </Table>
         </TableWrapper>
-        <Navigation
-          pageOptions={pageOptions}
-          handleChangePage={handleChangePage}
-        />
+        <Navigation pageOptions={pageOptions} handleChangePage={handleChangePage} />
       </ContentWrapper>
     </Wrapper>
   );
