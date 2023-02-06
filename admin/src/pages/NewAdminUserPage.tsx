@@ -12,7 +12,7 @@ import {
 } from 'gdsc-uos-design-system';
 
 import { UserType, UserRole } from '../@types';
-import { ContentWrapper, Flex, SideMenu } from '../components';
+import { ContentWrapper, Flex, SelectOption, SideMenu } from '../components';
 
 function NewAdminUserPage() {
   const [email, setEmail] = React.useState<string>('');
@@ -55,32 +55,22 @@ function NewAdminUserPage() {
           />
         </InputContainer>
         <Flex gap={16} alignItems="center" style={{ marginTop: 16 }}>
-          <label>유저 타입</label>
-          <UserTypeSelect
+          <SelectOption
             value={userType}
+            label="유저 타입"
+            optionList={userRoleList}
             onChange={(e) => setUserType(e.target.value as UserType)}
-          >
-            {userRoleList.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </UserTypeSelect>
-          <label>유저 팀</label>
-          <UserTypeSelect
+          />
+          <SelectOption
             value={userTeam}
+            label="유저 팀"
+            optionList={Object.values(BASIC_TEAM)}
             onChange={(e) => setUserTeam(e.target.value as TeamKeyType)}
-          >
-            {Object.values(BASIC_TEAM).map((team) => (
-              <option key={team} value={team}>
-                {team}
-              </option>
-            ))}
-          </UserTypeSelect>
+          />
           <Button
             onClick={handleClickNewAdminButton}
             hierarchy={ButtonHierarchy.Danger}
-            style={{ padding: 8 }}
+            style={{ padding: '8px 12px', marginTop: 8 }}
           >
             <Typography type="body4" color={theme.colors.primary.white}>
               생성
