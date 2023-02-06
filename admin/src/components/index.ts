@@ -7,7 +7,7 @@ export { default as SideMenu } from './SideMenu';
 export { default as TeamList } from './TeamList';
 export { default as MemoTable } from './MemoTable';
 export { default as SummaryCard } from './SummaryCard';
-export { default as FilterSelect } from './FilterSelect';
+export { default as SelectOption } from './SelectOption';
 export { default as PageNavigation } from './PageNavigation';
 export { default as EvaluationTable } from './EvaluationTable';
 export { default as ApplicationTable } from './ApplicationTable';

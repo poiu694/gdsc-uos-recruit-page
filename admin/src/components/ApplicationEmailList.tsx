@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Button, ButtonHierarchy, Chip, theme, Typography } from 'gdsc-uos-design-system';
 
 import { Flex } from './styled';
-import FilterSelect from './FilterSelect';
+import SelectOption from './SelectOption';
 import ToggleSwitchBox from './ToggleSwitchBox';
 import { convertChipColorByState } from '../utils';
 import { ApplyState, UserApplication } from '../@types';
@@ -44,16 +44,16 @@ function ApplicationEmailList({ list, updateEmailList, isSelectedEmail, isAllAct
   return (
     <Wrapper>
       <Flex gap={16} style={{ marginBottom: 16 }}>
-        <FilterSelect
+        <SelectOption
           label="합격 상태"
           value={applyStateFilterValue}
-          filterList={['전체', '서류 제출', '서류 불합격', '서류 합격', '최종 불합격', '최종 합격']}
+          optionList={['전체', '서류 제출', '서류 불합격', '서류 합격', '최종 불합격', '최종 합격']}
           onChange={(e) => setApplyStateFilterValue(e.target.value as ApplyState | '전체')}
         />
-        <FilterSelect
+        <SelectOption
           label="지원 시즌"
           value={seasonFilterValue}
-          filterList={[
+          optionList={[
             '전체',
             '2021 S/S',
             '2021 F/W',

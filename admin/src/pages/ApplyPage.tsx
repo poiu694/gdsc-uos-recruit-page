@@ -14,7 +14,7 @@ import { usePagination } from '../hooks';
 import {
   ApplicationTable,
   ContentWrapper,
-  FilterSelect,
+  SelectOption,
   Flex,
   PageNavigation,
   SideMenu,
@@ -40,7 +40,6 @@ function ApplyPage() {
       // TODO: Backend연동
       setTotalCount(150);
       setApplicationList(DUMMY_APPLYS);
-      console.log(DUMMY_APPLYS);
     })();
   }, []);
 
@@ -73,16 +72,16 @@ function ApplyPage() {
           </Flex>
 
           <Flex alignItems="center" gap={8} style={{ marginTop: 8, marginBottom: 12 }}>
-            <FilterSelect
+            <SelectOption
               label="Team"
               value={teamFilterValue}
-              filterList={['전체', 'frontend', 'backend', 'mobile', 'data/ml', 'design']}
+              optionList={['전체', 'frontend', 'backend', 'mobile', 'data/ml', 'design']}
               onChange={(e) => setTeamFilterValue(e.target.value as TeamKeyType)}
             />
-            <FilterSelect
+            <SelectOption
               label="State"
               value={applyStateFilterValue}
-              filterList={[
+              optionList={[
                 '전체',
                 '서류 제출',
                 '서류 불합격',
