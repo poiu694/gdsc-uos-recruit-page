@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "yarn service:lint && yarn hooks:lint && yarn admin:lint",
+    "lint": "yarn workspaces foreach -p run lint",
     "hooks:lint": "yarn workspace gdsc-uos-hooks lint",
     "service": "yarn workspace service dev",
     "service:build": "yarn workspace service build",
