@@ -3652,6 +3652,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/svg-path-parser", [\
+        ["npm:1.1.3", {\
+          "packageLocation": "./.yarn/cache/@types-svg-path-parser-npm-1.1.3-21e5690b31-534e5945c9.zip/node_modules/@types/svg-path-parser/",\
+          "packageDependencies": [\
+            ["@types/svg-path-parser", "npm:1.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@typescript-eslint/eslint-plugin", [\
         ["npm:5.30.6", {\
           "packageLocation": "./.yarn/cache/@typescript-eslint-eslint-plugin-npm-5.30.6-17622c5db2-ee020a171c.zip/node_modules/@typescript-eslint/eslint-plugin/",\
@@ -4155,6 +4164,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gdsc-uos-tsconfig-custom", "workspace:packages/tsconfig-custom"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:18.2.0"],\
+            ["react-minimal-pie-chart", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:8.4.0"],\
             ["react-router-dom", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:6.3.0"],\
             ["typescript", "patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"],\
             ["vite", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:3.0.4"]\
@@ -8212,6 +8222,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-f7a19ac349.zip/node_modules/react-is/",\
           "packageDependencies": [\
             ["react-is", "npm:16.13.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-minimal-pie-chart", [\
+        ["npm:8.4.0", {\
+          "packageLocation": "./.yarn/cache/react-minimal-pie-chart-npm-8.4.0-157bcbb3f9-46c52805a3.zip/node_modules/react-minimal-pie-chart/",\
+          "packageDependencies": [\
+            ["react-minimal-pie-chart", "npm:8.4.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:8.4.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-minimal-pie-chart-virtual-49bde8d16d/0/cache/react-minimal-pie-chart-npm-8.4.0-157bcbb3f9-46c52805a3.zip/node_modules/react-minimal-pie-chart/",\
+          "packageDependencies": [\
+            ["react-minimal-pie-chart", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:8.4.0"],\
+            ["@types/react", "npm:18.0.15"],\
+            ["@types/react-dom", "npm:18.0.6"],\
+            ["@types/svg-path-parser", "npm:1.1.3"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

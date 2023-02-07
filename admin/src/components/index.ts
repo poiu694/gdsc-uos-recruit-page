@@ -13,4 +13,6 @@ export { default as EvaluationTable } from './EvaluationTable';
 export { default as ApplicationTable } from './ApplicationTable';
 export { default as SelectApplyStateBox } from './SelectApplyStateBox';
 export { default as ApplicationEmailList } from './ApplicationEmailList';
+export { default as ApplicationStatusChart } from './ApplicationStatusChart';
 export { default as QuestionAndDescription } from './QuestionAndDescription';
+export { default as TeamColorDescriptionBox } from './TeamColorDescriptionBox';
