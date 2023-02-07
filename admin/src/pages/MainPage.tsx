@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import { theme, Title, Typography } from 'gdsc-uos-design-system';
-import { ContentWrapper, Flex, SideMenu, SummaryCard } from '../components';
+
+import {
+  ApplicationStatusChart,
+  ContentWrapper,
+  Flex,
+  SideMenu,
+  SummaryCard,
+  TeamColorDescriptionBox,
+} from '../components';
 
 function MainPage() {
   const currentYear = new Date().getFullYear();
@@ -31,6 +39,10 @@ function MainPage() {
             iconType="user"
             fill={theme.colors.primary.yellow}
           />
+        </Flex>
+        <Flex style={{ marginTop: 32 }} gap={32}>
+          <ApplicationStatusChart />
+          <TeamColorDescriptionBox />
         </Flex>
       </ContentWrapper>
     </Wrapper>
