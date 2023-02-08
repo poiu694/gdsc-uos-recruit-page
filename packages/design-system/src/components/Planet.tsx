@@ -15,17 +15,9 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  content-visibility: auto;
-
   z-index: ${theme.zIndex.background};
 
-  svg.animation-scene,
-  svg.transition-scene {
-    margin: 3em auto;
-    z-index: ${theme.zIndex.background};
-  }
-
-  svg.animation-scene {
+  & > svg.animation-scene {
     width: 100%;
   }
 `;
