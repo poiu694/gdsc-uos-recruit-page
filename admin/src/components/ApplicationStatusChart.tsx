@@ -1,13 +1,17 @@
 import styled from '@emotion/styled';
-import { PalleteValueType, theme, Typography } from 'gdsc-uos-design-system';
+import { theme, Typography } from 'gdsc-uos-design-system';
 import { PieChart } from 'react-minimal-pie-chart';
 import { Flex } from './styled';
 
-function ApplicationStatusChart() {
+interface Props {
+  title: string;
+}
+
+function ApplicationStatusChart({ title }: Props) {
   return (
     <Wrapper>
       <Flex flexDirection="column" alignItems="center" gap={16}>
-        <Typography type="h4">지원 현황</Typography>
+        <Typography type="h4">{title}</Typography>
         <PieChart
           animate
           label={({ dataEntry }) => `${dataEntry.value}(${Math.round(dataEntry.percentage)}%)`}

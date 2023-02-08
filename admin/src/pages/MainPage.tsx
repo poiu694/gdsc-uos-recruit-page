@@ -41,7 +41,8 @@ function MainPage() {
           />
         </Flex>
         <Flex style={{ marginTop: 32 }} gap={32}>
-          <ApplicationStatusChart />
+          <ApplicationStatusChart title={'현재 지원 현황'} />
+          <ApplicationStatusChart title={'임시 저장 현황'} />
           <TeamColorDescriptionBox />
         </Flex>
       </ContentWrapper>
