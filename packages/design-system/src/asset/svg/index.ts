@@ -7,6 +7,7 @@ export { default as Blog } from './Blog';
 export { default as User } from './User';
 export { default as Plus } from './Plus';
 export { default as Close } from './Close';
+export { default as Check } from './Check';
 export { default as Right } from './Right';
 export { default as Gmail } from './Gmail';
 export { default as Github } from './Github';
