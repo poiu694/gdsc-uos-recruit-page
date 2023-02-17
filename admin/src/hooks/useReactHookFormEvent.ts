@@ -16,7 +16,11 @@ const useReactHookFormEvent = <T extends FieldValues>(
 
   const handleClickResetIcon = React.useCallback(
     (formKey: Path<T>) => {
-      resetField(formKey);
+      resetField(formKey, {
+        defaultValue: '',
+        keepError: true,
+        keepDirty: true,
+      });
       setFocus(formKey);
     },
     [resetField, setFocus]
