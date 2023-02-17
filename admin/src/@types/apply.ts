@@ -19,3 +19,7 @@ export interface FAQ {
   title: string;
   description: string;
 }
+
+export interface IntroductionList {
+  introductions: { title: string; list: string[] }[];
+}
