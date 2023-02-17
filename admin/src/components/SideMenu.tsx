@@ -1,10 +1,5 @@
 import styled from '@emotion/styled';
-import {
-  theme,
-  Button,
-  Typography,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+import { theme, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
 import { useNavigate } from 'react-router-dom';
 
 import Logo from './Logo';
@@ -49,9 +44,6 @@ function SideMenu() {
         </Typography>
         <MenuItem onClick={() => navigate('/admin-user')}>
           <IconText text="Admin List" icon="user" />
-        </MenuItem>
-        <MenuItem onClick={() => navigate('/signup-admin-user')}>
-          <IconText text="Add Admin" icon="userPlus" />
         </MenuItem>
         <MenuItem onClick={() => navigate('/recruit')}>
           <IconText text="Recruit" icon="calender" />
