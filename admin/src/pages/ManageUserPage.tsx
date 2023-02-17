@@ -40,7 +40,7 @@ function ManageAdminUserPage() {
     <Wrapper>
       <SideMenu />
       <ContentWrapper>
-        <Title title="Manage Admin User" descriptions="Admin 유저를 관리하는 페이지입니다." />
+        <Title title="Manage User" descriptions="유저를 관리하는 페이지입니다." />
         <Typography type="h4" style={{ marginTop: 32 }}>
           Admin Users
         </Typography>
