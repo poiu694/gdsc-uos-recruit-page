@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+import { Icon } from './Icon';
 import { theme } from '../theme';
 import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'input'> {
   label?: string;
+  isDirty?: boolean;
+  isValid?: boolean;
+  isError?: boolean;
   errorMessage?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onReset?: () => void;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, Props>(
@@ -20,38 +24,32 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
       value,
       required,
       errorMessage,
-      onChange,
+      isDirty,
+      isError,
+      isValid,
+      onReset,
       ...restProps
     },
     ref
   ) => {
-    const [isFirstFocused, setIsFirstFocused] = React.useState<boolean>(false);
-    const emptyError = required && isFirstFocused && value === '';
-
+    const status = !isDirty ? 'editing' : isValid ? 'success' : 'fail';
     return (
       <Wrapper style={style}>
-        <Label htmlFor={id}>
-          {label && (
-            <LabelTypography type="body4" color={theme.palette.gray400}>
-              {label}
-            </LabelTypography>
-          )}
-        </Label>
-        <InputWrapper
-          id={id}
-          ref={ref}
-          name={name}
-          value={value}
-          onClick={() => setIsFirstFocused(true)}
-          onChange={onChange}
-          {...restProps}
-        />
-        {emptyError && (
-          <ErrorMessage
-            type="body5"
-            color={theme.colors.primary.red}
-            textAlign="end"
-          >
+        {label && <Label htmlFor={id}>{label}</Label>}
+        <InputWrapper id={id} ref={ref} name={name} value={value} status={status} {...restProps} />
+        {!isDirty ? null : isValid ? (
+          <ActiveIcon status={status} type="check" color={theme.colors.primary.green} />
+        ) : (
+          <ActiveIcon
+            status={status}
+            type="close"
+            onClick={() => {
+              onReset?.();
+            }}
+          />
+        )}
+        {isError && (
+          <ErrorMessage type="body5" color={theme.colors.primary.red} textAlign="end">
             {errorMessage}
           </ErrorMessage>
         )}
@@ -65,11 +63,20 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const InputWrapper = styled.input`
+const inputBorderColorByStatus = {
+  editing: theme.palette.gray300,
+  success: theme.colors.primary.green,
+  fail: theme.colors.primary.red,
+};
+
+type StyleProps = {
+  status: 'editing' | 'success' | 'fail';
+};
+const InputWrapper = styled.input<StyleProps>`
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  border: 1px solid ${theme.colors.ui.divider};
+  border: ${(props) => `1px solid ${inputBorderColorByStatus[props.status]}`};
   border-radius: 4px;
   outline: none;
   color: ${theme.palette.gray400};
@@ -88,10 +95,16 @@ const Label = styled.label`
   align-items: center;
 `;
 
-const LabelTypography = styled(Typography)``;
+const ActiveIcon = styled(Icon)<StyleProps>`
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  cursor: ${(props) => (props.status === 'fail' ? 'pointer' : 'default')};
+`;
 
 const ErrorMessage = styled(Typography)`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 108%;
+  left: 0;
 `;
