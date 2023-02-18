@@ -10,6 +10,7 @@ import {
   Left,
   Plus,
   Right,
+  Check,
   Gmail,
   Close,
   Github,
@@ -30,6 +31,7 @@ const ICONS = {
   user: User,
   plus: Plus,
   close: Close,
+  check: Check,
   right: Right,
   gmail: Gmail,
   github: Github,
@@ -49,12 +51,7 @@ interface Props extends React.ComponentPropsWithoutRef<'svg'> {
   hoverAction?: boolean;
 }
 
-export function Icon({
-  type,
-  color,
-  hoverAction = false,
-  ...restProps
-}: Props) {
+export function Icon({ type, color, hoverAction = false, ...restProps }: Props) {
   return (
     <Wrapper color={color} className={hoverAction ? 'hover-action' : ''}>
       {React.createElement(ICONS[type], { ...restProps })}
