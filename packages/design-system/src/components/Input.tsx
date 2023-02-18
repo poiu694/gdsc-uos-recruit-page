@@ -40,13 +40,15 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
         {!isDirty ? null : isValid ? (
           <ActiveIcon status={status} type="check" color={theme.colors.primary.green} />
         ) : (
-          <ActiveIcon
-            status={status}
-            type="close"
-            onClick={() => {
-              onReset?.();
-            }}
-          />
+          onReset && (
+            <ActiveIcon
+              status={status}
+              type="close"
+              onClick={() => {
+                onReset();
+              }}
+            />
+          )
         )}
         {isError && (
           <ErrorMessage type="body5" color={theme.colors.primary.red} textAlign="end">

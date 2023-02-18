@@ -9,10 +9,9 @@ import {
   ClickableIcon,
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
-import { Path, useWatch, FieldError, useFieldArray, useFormContext } from 'react-hook-form';
+import { Path, FieldError, useFieldArray, useFormContext } from 'react-hook-form';
 
 import { IntroductionList } from '../../../@types';
-import { useIntroductionContext } from './IntroductionContext';
 import { get, isCurrentTypeValid, validateChecker } from '../../../utils';
 
 interface Props {
@@ -24,12 +23,8 @@ function TitleWithIntroductions({ index }: Props) {
     formState: { errors, dirtyFields },
     control,
     register,
+    getValues,
   } = useFormContext();
-  const { handleValidForm, handleClickResetIcon } = useIntroductionContext();
-  const title = useWatch({
-    control,
-    name: `introductions.${index}.title`,
-  });
   const { fields, remove, append } = useFieldArray({
     control,
     name: `introductions.${index}.list`,
@@ -45,27 +40,26 @@ function TitleWithIntroductions({ index }: Props) {
         alert('질문에 대한 답변은 5개를 넘어갈 수 없습니다.');
       }
     },
-    []
+    [fields]
   );
 
   const handleRemoveField = React.useCallback(
     (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, index: number) => {
       e.preventDefault();
       e.stopPropagation();
-      console.log(index);
       remove(index);
     },
-    []
+    [fields]
   );
 
   return (
     <div>
       <Typography type="h5" style={{ marginTop: 12 }}>
-        {title}
+        {getValues(`introductions.${index}.title`)}
       </Typography>
       <AnswerList>
         {fields?.map((introduction, itemIndex) => {
-          const name = `introductions.${index}.list.${itemIndex}` as Path<IntroductionList>;
+          const name: Path<IntroductionList> = `introductions.${index}.list.${itemIndex}`;
           const isDirty = !!get(dirtyFields, name);
           const isError = typeof get(errors, name) !== 'undefined';
           return (
@@ -73,14 +67,13 @@ function TitleWithIntroductions({ index }: Props) {
               <Typography type="body5">•</Typography>
               <Input
                 {...register(name, validateChecker('essential'))}
-                key={introduction?.id}
+                id={name}
+                placeholder="소개글을 입력해주세요."
+                key={name}
                 isError={isError}
                 isDirty={isDirty}
-                placeholder="소개글을 입력해주세요."
                 isValid={isCurrentTypeValid(isDirty, name, errors)}
                 errorMessage={(get(errors, name) as FieldError)?.message}
-                onBlur={() => handleValidForm(name)}
-                onReset={() => handleClickResetIcon(name)}
               />
               <ClickableIcon
                 iconProps={{

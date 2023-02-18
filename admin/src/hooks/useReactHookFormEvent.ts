@@ -18,8 +18,6 @@ const useReactHookFormEvent = <T extends FieldValues>(
     (formKey: Path<T>) => {
       resetField(formKey, {
         defaultValue: '',
-        keepError: true,
-        keepDirty: true,
       });
       setFocus(formKey);
     },
