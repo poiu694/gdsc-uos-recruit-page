@@ -6,14 +6,13 @@ import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'textarea'> {
   label?: string;
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  isDirty?: boolean;
+  isValid?: boolean;
 }
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
-  (
-    { label, value, id, required, name, onChange, style, ...restProps },
-    ref
-  ) => {
+  ({ label, value, id, required, name, style, isDirty, isValid, ...restProps }, ref) => {
+    const status = !isDirty ? 'editing' : isValid ? 'success' : 'fail';
     return (
       <Wrapper style={style}>
         <Label htmlFor={id}>
@@ -28,7 +27,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
           ref={ref}
           name={name}
           value={value}
-          onChange={onChange}
+          status={status}
           {...restProps}
         />
       </Wrapper>
@@ -41,11 +40,20 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const TextAreaWrapper = styled.textarea`
+const textAreaBorderColorByStatus = {
+  editing: theme.palette.gray300,
+  success: theme.colors.primary.green,
+  fail: theme.colors.primary.red,
+};
+
+type StyleProps = {
+  status: 'editing' | 'success' | 'fail';
+};
+const TextAreaWrapper = styled.textarea<StyleProps>`
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  border: 1px solid ${theme.colors.ui.divider};
+  border: ${(props) => `1px solid ${textAreaBorderColorByStatus[props.status]}`};
   border-radius: 4px;
   outline: none;
   resize: none;
