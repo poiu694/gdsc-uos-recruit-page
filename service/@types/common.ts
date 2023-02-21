@@ -8,3 +8,9 @@ export interface TitleWithDescription {
 export interface TeamNameProps {
   teamName: TeamKeyType;
 }
+
+export interface ApplyQuestion {
+  title: string;
+  required: boolean;
+  maxLength: number;
+}
