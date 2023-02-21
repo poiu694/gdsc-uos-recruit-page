@@ -1,9 +1,5 @@
 import styled from '@emotion/styled';
-import {
-  ComponentPropsWithoutRef,
-  CSSProperties,
-  PropsWithChildren,
-} from 'react';
+import { ComponentPropsWithoutRef, CSSProperties, PropsWithChildren } from 'react';
 import { theme } from '../theme';
 import { XOR } from '../utils';
 
@@ -63,8 +59,8 @@ const ButtonColor = {
   [ButtonHierarchy.Primary]: theme.colors.primary.blue,
   [ButtonHierarchy.Danger]: theme.colors.primary.red,
   [ButtonHierarchy.Success]: theme.colors.primary.green,
-  [ButtonHierarchy.DarkGray]: theme.palette.gray300,
-  [ButtonHierarchy.Gray]: theme.palette.gray100,
+  [ButtonHierarchy.DarkGray]: theme.palette.gray350,
+  [ButtonHierarchy.Gray]: theme.palette.gray250,
   [ButtonHierarchy.Warning]: theme.colors.primary.yellow,
   [ButtonHierarchy.Parent]: 'transparent',
 } as const;
