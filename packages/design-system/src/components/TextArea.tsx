@@ -17,18 +17,32 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
     ref
   ) => {
     const status = !isDirty ? 'editing' : isValid ? 'success' : 'fail';
+
     return (
       <Wrapper style={style}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Label htmlFor={id}>
+          <Label htmlFor={id} required={required}>
             {label && (
-              <Typography type="body4" color={theme.palette.gray400}>
+              <Typography
+                type="body4"
+                color={theme.palette.gray400}
+                style={{ whiteSpace: 'pre-line' }}
+                display={'inline'}
+              >
                 {label}
               </Typography>
             )}
           </Label>
           {maxLength && (
-            <Typography type="body5">{`${Number(length ?? 0)} / ${maxLength}`}</Typography>
+            <Typography
+              type="body5"
+              style={{ flex: 1, textAlign: 'end', whiteSpace: 'nowrap', alignSelf: 'end' }}
+            >
+              {`${Number(value?.toString().length ?? 0)} / `}
+              <Typography type="body5" display={'inline'} color={theme.palette.gray350}>
+                {maxLength}
+              </Typography>
+            </Typography>
           )}
         </div>
         <TextAreaWrapper
@@ -68,6 +82,7 @@ const TextAreaWrapper = styled.textarea<StyleProps>`
   outline: none;
   resize: none;
   color: ${theme.palette.gray400};
+  margin-top: 8px;
 
   &:hover {
     border: 1px solid ${theme.colors.primary.green};
@@ -78,7 +93,23 @@ const TextAreaWrapper = styled.textarea<StyleProps>`
   }
 `;
 
-const Label = styled.label`
-  display: flex;
-  align-items: center;
+const Label = styled.label<Pick<Props, 'required'>>`
+  display: inline-block;
+
+  &::after {
+    display: ${(props) => (props.required ? 'inline-block' : 'none')};
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 2px;
+    margin-left: 6px;
+    content: '';
+    width: 6px;
+    min-width: 6px;
+    height: 6px;
+    background-color: rgb(234, 67, 53);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
 `;
