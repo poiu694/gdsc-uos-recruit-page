@@ -6,28 +6,38 @@ import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'textarea'> {
   label?: string;
+  length?: number;
   isDirty?: boolean;
   isValid?: boolean;
 }
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
-  ({ label, value, id, required, name, style, isDirty, isValid, ...restProps }, ref) => {
+  (
+    { label, value, id, required, name, style, length, maxLength, isDirty, isValid, ...restProps },
+    ref
+  ) => {
     const status = !isDirty ? 'editing' : isValid ? 'success' : 'fail';
     return (
       <Wrapper style={style}>
-        <Label htmlFor={id}>
-          {label && (
-            <LabelTypography type="body4" color={theme.palette.gray400}>
-              {label}
-            </LabelTypography>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Label htmlFor={id}>
+            {label && (
+              <Typography type="body4" color={theme.palette.gray400}>
+                {label}
+              </Typography>
+            )}
+          </Label>
+          {maxLength && (
+            <Typography type="body5">{`${Number(length ?? 0)} / ${maxLength}`}</Typography>
           )}
-        </Label>
+        </div>
         <TextAreaWrapper
           id={id}
           ref={ref}
           name={name}
           value={value}
           status={status}
+          maxLength={maxLength}
           {...restProps}
         />
       </Wrapper>
@@ -72,5 +82,3 @@ const Label = styled.label`
   display: flex;
   align-items: center;
 `;
-
-const LabelTypography = styled(Typography)``;
