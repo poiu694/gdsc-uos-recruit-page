@@ -30,10 +30,7 @@ function Header() {
       <NavigationWrapper>
         <Logo onClick={() => handleLinkToPage('/')}>
           <picture>
-            <source
-              media={`(max-width: ${theme.size.mobile}px)`}
-              srcSet="/logo_small.png"
-            />
+            <source media={`(max-width: ${theme.size.mobile}px)`} srcSet="/logo_small.png" />
             <img src="/logo.png" alt="gdsc-uos-logo" />
           </picture>
         </Logo>
@@ -50,7 +47,7 @@ function Header() {
           </Typography>
           <Typography
             type="body4"
-            onClick={() => handleLinkToPage(GOOGLE_FORM_LINK)}
+            onClick={() => handleLinkToPage('/apply/1')}
             aria-label="move to apply google-form link"
           >
             지원 하기
