@@ -45,9 +45,6 @@ jobs:
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"admin"* ]]; then
             echo "admin=true" >> $GITHUB_OUTPUT
           fi
-          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"hooks"* ]]; then
-            echo "hooks=true" >> $GITHUB_OUTPUT
-          fi
         id: changes
 
       - name: yarn install
@@ -57,12 +54,7 @@ jobs:
         if: ${{ steps.changes.outputs.service == 'true' }}
         run: |
           yarn service:lint
-          echo ${{ steps.changes.outputs.service == 'true' }}
 
       - name: run admin eslint
         if: ${{ steps.changes.outputs.admin == 'true' }}
         run: yarn admin:lint
-
-      - name: run hooks eslint
-        if: ${{ steps.changes.outputs.hooks == 'true' }}
-        run: yarn hooks:lint

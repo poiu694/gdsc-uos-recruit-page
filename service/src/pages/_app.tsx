@@ -2,8 +2,9 @@ import { Suspense, useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import { Global, ThemeProvider } from '@emotion/react';
 import { globalStyle, theme } from 'gdsc-uos-design-system';
-import { useGA } from 'gdsc-uos-hooks';
-import { Header, ScriptHeader, Spinner } from '../components/common';
+
+import { useGA } from '@/hooks';
+import { Header, ScriptHeader, Spinner } from '@/components/common';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { initGA } = useGA();

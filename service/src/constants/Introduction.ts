@@ -1,5 +1,5 @@
 import { TeamContent } from 'gdsc-uos-design-system';
-import { IntroductionType } from '../../@types';
+import { IntroductionType } from '@types';
 
 const FrontEndIntroduction = {
   title: 'Frontend Developer',

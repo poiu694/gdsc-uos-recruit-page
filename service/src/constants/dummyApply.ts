@@ -1,4 +1,4 @@
-import { ApplyQuestion } from '../../@types';
+import { ApplyQuestion } from '@types';
 
 const COMMON_QUESTIONS: ApplyQuestion[] = [
   {

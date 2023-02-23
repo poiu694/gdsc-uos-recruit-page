@@ -11,10 +11,10 @@ import {
 import { useRouter } from 'next/router';
 import { GetServerSideProps, NextPage } from 'next';
 
-import { Bottom, Helmet, ToggleBox } from '../../components/common';
-import { QUESTIONS } from '../../constants/dummyApply';
-import { ApplyQuestion } from '../../../@types';
-import { formIntroduction } from '../../constants/form';
+import { ApplyQuestion } from '@types';
+import { QUESTIONS } from '@/constants/dummyApply';
+import { formIntroduction } from '@/constants/form';
+import { Bottom, Helmet, ToggleBox } from '@/components/common';
 
 interface Props {
   step: `${number}`;

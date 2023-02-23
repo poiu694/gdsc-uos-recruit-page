@@ -2,8 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Typography } from 'gdsc-uos-design-system';
 
-import { QuestionListItem } from '../../../@types/question';
 import PrevBox from './PrevBox';
+import { QuestionListItem } from '@types';
 
 interface Props {
   question: QuestionListItem;
