@@ -6,13 +6,10 @@ import {
   ApplyPage,
   SendMailPage,
   ApplyDetailPage,
-  NewAdminUserPage,
-  ManageAdminUserPage,
+  ManageUserPage,
   InterviewRecordPage,
   ManageRecruitInfoPage,
-  GoogleFormApplicationListPage,
-  GoogleFormApplicationDetailPage,
-} from '../pages';
+} from '@/pages';
 
 const MainRoute = () => {
   return (
@@ -22,16 +19,10 @@ const MainRoute = () => {
         <Route path="/main" element={<MainPage />} />
         <Route path="/apply" element={<ApplyPage />} />
         <Route path="/apply/:id" element={<ApplyDetailPage />} />
-        <Route path="/admin-user" element={<ManageAdminUserPage />} />
-        <Route path="/signup-admin-user" element={<NewAdminUserPage />} />
+        <Route path="/user" element={<ManageUserPage />} />
         <Route path="/recruit" element={<ManageRecruitInfoPage />} />
-        <Route path="/list" element={<GoogleFormApplicationListPage />} />
         <Route path="/interview/:id" element={<InterviewRecordPage />} />
         <Route path="/email" element={<SendMailPage />} />
-        <Route
-          path="/detail/:id"
-          element={<GoogleFormApplicationDetailPage />}
-        />
       </Routes>
     </BrowserRouter>
   );

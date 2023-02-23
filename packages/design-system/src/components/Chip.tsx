@@ -4,7 +4,7 @@ import { theme } from '../theme';
 import { Typography } from './Typography';
 import { PalleteValueType } from '../theme/colors';
 
-export type ChipType = 'default' | 'success' | 'danger' | 'primary' | 'warning';
+export type ChipType = 'default' | 'success' | 'danger' | 'primary' | 'warning' | 'darkGray';
 
 interface Props {
   type: ChipType;
@@ -25,7 +25,11 @@ export function Chip({ type, variants, label, onClick, ...restProps }: Props) {
 
 type StyleProps = Pick<Props, 'type' | 'variants'>;
 
-const ChipColor = {
+type ChipColorType = Record<
+  ChipType,
+  Record<'outlined' | 'filled' | 'filledColor' | 'outlinedColor', PalleteValueType>
+>;
+const ChipColor: ChipColorType = {
   default: {
     filled: theme.palette.gray300,
     outlined: theme.palette.gray300,
@@ -56,19 +60,19 @@ const ChipColor = {
     filledColor: theme.palette.gray400,
     outlinedColor: theme.colors.primary.yellow,
   },
-} as Record<
-  ChipType,
-  Record<
-    'outlined' | 'filled' | 'filledColor' | 'outlinedColor',
-    PalleteValueType
-  >
->;
+  darkGray: {
+    filled: theme.palette.gray350,
+    outlined: theme.palette.gray400,
+    filledColor: theme.colors.primary.white,
+    outlinedColor: theme.colors.primary.black,
+  },
+};
+
 const Wrapper = styled.div<StyleProps>`
   max-width: 100px;
   max-height: 20px;
   background-color: ${({ variants, type }) => {
-    if (variants === 'filled' && type in ChipColor)
-      return ChipColor[type][variants];
+    if (variants === 'filled' && type in ChipColor) return ChipColor[type][variants];
     return 'transparent';
   }};
   border: ${({ variants, type }) => {
@@ -80,10 +84,8 @@ const Wrapper = styled.div<StyleProps>`
   border-radius: 16px;
   & > div {
     color: ${({ variants, type }) => {
-      if (variants === 'filled' && type in ChipColor)
-        return ChipColor[type]['filledColor'];
-      if (variants === 'outlined' && type in ChipColor)
-        return ChipColor[type]['outlinedColor'];
+      if (variants === 'filled' && type in ChipColor) return ChipColor[type]['filledColor'];
+      if (variants === 'outlined' && type in ChipColor) return ChipColor[type]['outlinedColor'];
       return 'transparent';
     }};
   }

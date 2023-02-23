@@ -13,10 +13,10 @@ import {
   getTitleCaseTeam,
 } from 'gdsc-uos-design-system';
 
-import TeamList from '../TeamList';
-import { FAQ } from '../../@types';
-import { QNAGeneratorModal } from '../Modal';
-import QuestionAndDescription from '../QuestionAndDescription';
+import TeamList from '@/components/TeamList';
+import { FAQ } from '@/@types';
+import { QNAGeneratorModal } from '@/components/Modal';
+import QuestionAndDescription from '@/components/QuestionAndDescription';
 
 const DEFAULT_TEAM_VALUE = 'common';
 const DEFAULT_TAB_VALUE = '1';

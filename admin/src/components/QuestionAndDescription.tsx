@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Button, ButtonHierarchy, theme, Typography } from 'gdsc-uos-design-system';
-import { FAQ } from '../@types';
+
+import { FAQ } from '@/@types';
 import { Flex } from './styled';
 
 interface Props {

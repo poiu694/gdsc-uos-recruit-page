@@ -9,8 +9,8 @@ import {
   TeamKeyType,
 } from 'gdsc-uos-design-system';
 
-import { ApplyState, UserApplication } from '../@types';
-import { usePagination } from '../hooks';
+import { ApplyState, UserApplication } from '@/@types';
+import { usePagination } from '@/hooks';
 import {
   ApplicationTable,
   ContentWrapper,
@@ -18,9 +18,9 @@ import {
   Flex,
   PageNavigation,
   SideMenu,
-} from '../components';
-import { DUMMY_APPLYS } from '../dummy/apply';
-import ToggleSwitchBox from '../components/ToggleSwitchBox';
+} from '@/components';
+import { DUMMY_APPLYS } from '@/dummy/apply';
+import ToggleSwitchBox from '@/components/ToggleSwitchBox';
 
 function ApplyPage() {
   const currentYear = new Date().getFullYear();

@@ -12,7 +12,8 @@ import {
   Typography,
 } from 'gdsc-uos-design-system';
 import React from 'react';
-import { Memo } from '../@types';
+
+import { Memo } from '@/@types';
 import { UserMemoModal } from './Modal';
 
 interface Props {

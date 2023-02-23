@@ -1,4 +1,4 @@
-import { ApplyState, UserApplication } from '../@types';
+import { ApplyState, UserApplication } from '@/@types';
 
 const dummyApply = {
   id: '',

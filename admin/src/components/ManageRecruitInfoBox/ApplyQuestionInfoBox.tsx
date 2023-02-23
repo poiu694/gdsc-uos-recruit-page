@@ -11,9 +11,9 @@ import {
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
 
-import { Flex } from '../styled';
-import TeamList from '../TeamList';
-import { QUESTIONS } from '../../dummy/apply';
+import { Flex } from '@/components/styled';
+import TeamList from '@/components/TeamList';
+import { QUESTIONS } from '@/dummy/apply';
 
 const DEFAULT_TEAM_VALUE = 'common';
 
@@ -24,8 +24,7 @@ type Question = {
 };
 
 function ApplyQuestionInfoBOx() {
-  const [activeTeam, setActiveTeam] =
-    React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
+  const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
   const [questionList, setQuestionList] = React.useState<Question[]>(QUESTIONS);
 
   const handleClickTeamName = (team: TeamKeyType) => {
@@ -46,17 +45,12 @@ function ApplyQuestionInfoBOx() {
   };
 
   const handleClickAddFiled = () => {
-    const nextQuestionList = [
-      ...questionList,
-      { title: '', maxLength: 0, required: false },
-    ];
+    const nextQuestionList = [...questionList, { title: '', maxLength: 0, required: false }];
     setQuestionList(nextQuestionList);
   };
 
   const handleClickDeleteFiled = (targetIndex: number) => {
-    const nextQuestionList = [...questionList].filter(
-      (_, idx) => idx !== targetIndex
-    );
+    const nextQuestionList = [...questionList].filter((_, idx) => idx !== targetIndex);
     setQuestionList(nextQuestionList);
   };
 
@@ -75,23 +69,15 @@ function ApplyQuestionInfoBOx() {
               <TextArea
                 label={'질문'}
                 value={question.title}
-                onChange={(e) =>
-                  handleChangeInput<string>(e.target.value, idx, 'title')
-                }
+                onChange={(e) => handleChangeInput<string>(e.target.value, idx, 'title')}
               />
-              <Option
-                gap={8}
-                flexDirection="column"
-                style={{ flexShrink: 0, width: 160 }}
-              >
+              <Option gap={8} flexDirection="column" style={{ flexShrink: 0, width: 160 }}>
                 <Flex alignItems="center">
                   <Description type="body5">필수여부</Description>
                   <Input
                     type="checkbox"
                     checked={question.required}
-                    onChange={(e) =>
-                      handleChangeInput<string>(e.target.value, idx, 'required')
-                    }
+                    onChange={(e) => handleChangeInput<string>(e.target.value, idx, 'required')}
                   />
                 </Flex>
                 <Flex alignItems="center">
@@ -100,13 +86,7 @@ function ApplyQuestionInfoBOx() {
                     type="number"
                     value={question.maxLength}
                     style={{ flexShrink: 0, width: 70 }}
-                    onChange={(e) =>
-                      handleChangeInput<string>(
-                        e.target.value,
-                        idx,
-                        'maxLength'
-                      )
-                    }
+                    onChange={(e) => handleChangeInput<string>(e.target.value, idx, 'maxLength')}
                   />
                 </Flex>
                 <HoverButton
@@ -124,10 +104,7 @@ function ApplyQuestionInfoBOx() {
             </Row>
           );
         })}
-        <HoverButton
-          hierarchy={ButtonHierarchy.Parent}
-          onClick={handleClickAddFiled}
-        >
+        <HoverButton hierarchy={ButtonHierarchy.Parent} onClick={handleClickAddFiled}>
           <Icon type="plus" color={theme.colors.primary.red} />
           <Typography type="body5" color={theme.colors.primary.red}>
             필드 추가
@@ -141,11 +118,7 @@ function ApplyQuestionInfoBOx() {
             marginTop: 16,
           }}
         >
-          <Typography
-            type="body5"
-            color={theme.colors.primary.white}
-            textAlign="end"
-          >
+          <Typography type="body5" color={theme.colors.primary.white} textAlign="end">
             업데이트
           </Typography>
         </Button>

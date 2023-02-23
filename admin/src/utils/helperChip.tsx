@@ -1,5 +1,6 @@
 import { ChipType, TeamKeyType } from 'gdsc-uos-design-system';
-import type { ApplyState, UserType } from '../@types';
+
+import type { ApplyState, UserType } from '@/@types';
 
 export function convertChipColorByState(state: ApplyState) {
   const ChipColor = {
@@ -12,7 +13,7 @@ export function convertChipColorByState(state: ApplyState) {
   return ChipColor[state];
 }
 
-export function convertChipColorByTeam(team: TeamKeyType) {
+export function convertChipColorByTeam(team: string) {
   const ChipColor = {
     mobile: 'success',
     data_ml: 'primary',
@@ -20,7 +21,10 @@ export function convertChipColorByTeam(team: TeamKeyType) {
     backend: 'danger',
     design: 'default',
   } as Record<TeamKeyType, ChipType>;
-  return ChipColor[team];
+  if (team in ChipColor) {
+    return ChipColor[team as TeamKeyType];
+  }
+  return 'darkGray' as ChipType;
 }
 
 export function convertChipColorByUserType(userType: UserType) {

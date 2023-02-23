@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import {
   theme,
@@ -8,8 +7,8 @@ import {
   useModalContext,
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
-import { Memo } from '../../@types';
-import { Flex } from '../styled';
+import { Memo } from '@/@types';
+import { Flex } from '@/components/styled';
 
 interface Props {
   name: string;

@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
-import TeamList from '../TeamList';
 import {
   Icon,
   Input,
@@ -12,7 +10,9 @@ import {
   ClickableIcon,
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
-import { INTRODUCTION } from '../../dummy/introduction';
+
+import TeamList from '@/components/TeamList';
+import { INTRODUCTION } from '@/dummy/introduction';
 
 const DEFAULT_TEAM_VALUE = 'frontend';
 
@@ -22,10 +22,8 @@ type Introduction = {
 };
 
 function IntroductionInfoBox() {
-  const [activeTeam, setActiveTeam] =
-    React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
-  const [introductionList, setIntroductionList] =
-    React.useState<Introduction[]>(INTRODUCTION);
+  const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
+  const [introductionList, setIntroductionList] = React.useState<Introduction[]>(INTRODUCTION);
 
   const handleClickTeamName = (team: TeamKeyType) => {
     setActiveTeam(team);
@@ -43,19 +41,16 @@ function IntroductionInfoBox() {
 
   const handleClickDeleteButton = (titleIndex: number, itemIndex: number) => {
     const nextIntroductionList = [...introductionList];
-    nextIntroductionList[titleIndex].list = nextIntroductionList[
-      titleIndex
-    ].list.filter((_, idx) => idx !== itemIndex);
+    nextIntroductionList[titleIndex].list = nextIntroductionList[titleIndex].list.filter(
+      (_, idx) => idx !== itemIndex
+    );
     setIntroductionList(nextIntroductionList);
   };
 
   const handleClickAddFiled = (titleIndex: number) => {
     if (introductionList[titleIndex].list.length < 5) {
       const nextIntroductionList = [...introductionList];
-      nextIntroductionList[titleIndex].list = [
-        ...nextIntroductionList[titleIndex].list,
-        '',
-      ];
+      nextIntroductionList[titleIndex].list = [...nextIntroductionList[titleIndex].list, ''];
       setIntroductionList(nextIntroductionList);
     } else {
       alert('질문에 대한 답변은 5개를 넘어갈 수 없습니다.');
@@ -78,9 +73,7 @@ function IntroductionInfoBox() {
                     <Typography type="body5">•</Typography>
                     <Input
                       value={answer}
-                      onChange={(e) =>
-                        handleChangeInput(e, titleIndex, itemIndex)
-                      }
+                      onChange={(e) => handleChangeInput(e, titleIndex, itemIndex)}
                       placeholder="소개글을 입력해주세요."
                     />
                     <ClickableIcon
@@ -88,9 +81,7 @@ function IntroductionInfoBox() {
                         type: 'close',
                         color: theme.colors.primary.red,
                       }}
-                      onClick={() =>
-                        handleClickDeleteButton(titleIndex, itemIndex)
-                      }
+                      onClick={() => handleClickDeleteButton(titleIndex, itemIndex)}
                     />
                   </BulletListItem>
                 ))}
@@ -112,11 +103,7 @@ function IntroductionInfoBox() {
           onClick={() => console.log(introductionList)}
           style={{ padding: '8px 20px', marginRight: 16 }}
         >
-          <Typography
-            type="body5"
-            color={theme.colors.primary.white}
-            textAlign="end"
-          >
+          <Typography type="body5" color={theme.colors.primary.white} textAlign="end">
             업데이트
           </Typography>
         </Button>

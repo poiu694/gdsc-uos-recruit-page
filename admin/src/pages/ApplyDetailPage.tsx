@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Chip, Title, Button, Typography, ButtonHierarchy, TextArea } from 'gdsc-uos-design-system';
 
-import { DUMMY_APPLICATION } from '../dummy/apply';
+import { DUMMY_APPLICATION } from '@/dummy/apply';
 import {
   Flex,
   SideMenu,
@@ -11,9 +11,9 @@ import {
   EvaluationTable,
   QuestionAndDescription,
   SelectApplyStateBox,
-} from '../components';
-import { convertChipColorByState } from '../utils';
-import { ApplyState, Memo } from '../@types';
+} from '@/components';
+import { convertChipColorByState } from '@/utils';
+import { ApplyState, Memo } from '@/@types';
 
 function ApplyDetailPage() {
   const [memo, setMemo] = React.useState<Memo>({ advantage: '', disadvantage: '', question: '' });
