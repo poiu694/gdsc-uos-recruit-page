@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { Banner } from 'gdsc-uos-design-system';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import { useGA } from '../../../hooks';
-import { QuestionContent } from '../../../constants';
-import { QuestionListItem } from '../../../../@types/question';
-import { QuestionBox, TeamList } from '../../../components/Qna';
-import { Bottom, Helmet, Introduction } from '../../../components/common';
+import { useGA } from '@/hooks';
+import { QuestionListItem } from '@types';
+import { QuestionContent } from '@/constants';
+import { QuestionBox, TeamList } from '@/components';
+import { Bottom, Helmet, Introduction } from '@/components/common';
 
 interface QnaPageProps {
   question: QuestionListItem;

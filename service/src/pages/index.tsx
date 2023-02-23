@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 
-import { useGA, useAOSSideEffect } from '../hooks';
-import main from '../constants/Main';
-import { MainBanner, MainProcess, MainTeam } from '../components';
-import { Bottom, Helmet } from '../components/common';
+import main from '@/constants/Main';
+import { useGA, useAOSSideEffect } from '@/hooks';
+import { Bottom, Helmet } from '@/components/common';
+import { MainBanner, MainProcess, MainTeam } from '@/components';
 
 const Home: NextPage = () => {
   const mainData = main;

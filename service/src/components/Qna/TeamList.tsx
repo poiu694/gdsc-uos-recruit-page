@@ -3,10 +3,9 @@ import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import { TeamKeyType, theme, Typography } from 'gdsc-uos-design-system';
 
-import { useGA } from '../../hooks';
-import { teams } from '../../constants';
-import { TeamNameProps } from '../../../@types';
-import { QuestionListItem } from '../../../@types/question';
+import { useGA } from '@/hooks';
+import { teams } from '@/constants';
+import { TeamNameProps, QuestionListItem } from '@types';
 
 const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
   return new Array(teams.length).fill(false).map((_, idx) => teamName === teams[idx].type);

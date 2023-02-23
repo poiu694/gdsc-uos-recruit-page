@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Circle, ProcessCircleType, theme, Title, Typography } from 'gdsc-uos-design-system';
 
-import { TitleWithDescription } from '../../../@types';
-import { defaultDuration } from '../../hooks/useAOSSideEffect';
+import { TitleWithDescription } from '@types';
+import { defaultDuration } from '@/hooks/useAOSSideEffect';
 
 interface Props {
   content: TitleWithDescription;

@@ -3,13 +3,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Banner, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
 
-import { useGA } from '../../hooks';
-import { TeamNameProps } from '../../../@types';
-import { TeamList } from '../../components/Qna';
-import { QuestionContent } from '../../constants';
-import QuestionList from '../../components/Qna/QuestionList';
-import { QuestionListItem } from '../../../@types/question';
-import { Bottom, Helmet, Introduction } from '../../components/common';
+import { useGA } from '@/hooks';
+import { TeamList } from '@/components/Qna';
+import { QuestionContent } from '@/constants';
+import { TeamNameProps, QuestionListItem } from '@types';
+import QuestionList from '@/components/Qna/QuestionList';
+import { Bottom, Helmet, Introduction } from '@/components/common';
 
 interface QnaListPageProps extends TeamNameProps {
   questions: QuestionListItem[];
@@ -21,10 +20,7 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
 
   return (
     <>
-      <Helmet
-        title="자주 묻는 질문"
-        description="GDSC UOS RECRUIT 자주 묻는 질문 페이지"
-      />
+      <Helmet title="자주 묻는 질문" description="GDSC UOS RECRUIT 자주 묻는 질문 페이지" />
       <Layout>
         <Banner teamName={teamName} />
         <IntroductionWrapper

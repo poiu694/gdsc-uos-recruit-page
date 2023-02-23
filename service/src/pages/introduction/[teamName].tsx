@@ -4,12 +4,12 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { Banner, theme, getTitleCaseTeam, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
 
-import { useGA } from '../../hooks';
-import { IntroductionContent } from '../../constants';
-import { GOOGLE_FORM_LINK } from '../../constants/form';
-import { List, AsideCard } from '../../components/Introduction';
-import { IntroductionType, TeamNameProps } from '../../../@types';
-import { Bottom, Helmet, Introduction } from '../../components/common';
+import { useGA } from '@/hooks';
+import { IntroductionContent } from '@/constants';
+import { GOOGLE_FORM_LINK } from '@/constants/form';
+import { IntroductionType, TeamNameProps } from '@types';
+import { List, AsideCard } from '@/components/Introduction';
+import { Bottom, Helmet, Introduction } from '@/components/common';
 
 interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;

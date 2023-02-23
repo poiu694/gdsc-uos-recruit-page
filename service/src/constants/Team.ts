@@ -1,4 +1,4 @@
-import { QuestionListItem } from '../../@types/question';
+import { QuestionListItem } from '@types';
 
 export const teams: QuestionListItem[] = [
     { type: 'common', title: '공통 질문', url: '/qna/common' },

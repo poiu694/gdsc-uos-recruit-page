@@ -1,4 +1,4 @@
-import { QuestionContent } from '../constants';
+import { QuestionContent } from '@/constants';
 
 export const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

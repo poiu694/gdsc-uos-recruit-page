@@ -2,8 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { TeamContent } from 'gdsc-uos-design-system';
 
-import { IntroductionContent } from '../../constants';
-import { IntroductionType } from '../../../@types';
+import { IntroductionType } from '@types';
+import { IntroductionContent } from '@/constants';
 
 export default function handler(
   req: NextApiRequest,

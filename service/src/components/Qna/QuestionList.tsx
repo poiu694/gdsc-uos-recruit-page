@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 
 import { Icon, theme, Typography, getTitleCaseTeam } from 'gdsc-uos-design-system';
 
-import { useGA } from '../../hooks';
-import { TeamNameProps, QuestionListItem } from '../../../@types';
+import { useGA } from '@/hooks';
+import { TeamNameProps, QuestionListItem } from '@types';
 
 interface Props extends TeamNameProps {
   questions: QuestionListItem[];

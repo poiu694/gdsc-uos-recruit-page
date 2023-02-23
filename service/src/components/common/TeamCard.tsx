@@ -10,8 +10,8 @@ import {
 } from 'gdsc-uos-design-system';
 import { useRouter } from 'next/router';
 
-import { useGA } from '../../hooks';
-import { TeamNameProps } from '../../../@types';
+import { useGA } from '@/hooks';
+import { TeamNameProps } from '@types';
 
 function TeamCard({ teamName }: TeamNameProps) {
   const [team, Developer] = getJobByTeam(teamName); // [0]: Team, [1]: Developer
