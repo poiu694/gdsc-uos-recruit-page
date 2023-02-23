@@ -10,7 +10,7 @@ const user = {
 export const DUMMY_ADMIN_USERS = Array.from({ length: 150 }).map((_, idx) => {
   return {
     ...user,
-    id: idx,
+    id: `${idx}`,
     type: idx % 5 === 0 ? ('lead' as UserType) : ('core' as UserType),
     team:
       idx % 5 === 0

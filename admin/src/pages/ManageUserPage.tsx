@@ -15,13 +15,15 @@ import {
   TablePagination,
 } from 'gdsc-uos-design-system';
 
+import { UserType } from '@/@types';
 import { usePagination } from '@/hooks';
+import { convertChipColorByTeam } from '@/utils';
 import { DUMMY_ADMIN_USERS } from '@/dummy/users';
-import { ContentWrapper, PageNavigation, SideMenu } from '@/components';
-import { convertChipColorByTeam, convertChipColorByUserType } from '@/utils';
+import { ContentWrapper, PageNavigation, SelectOption, SideMenu } from '@/components';
 
-function ManageAdminUserPage() {
+function ManageUserPage() {
   const [totalCount, setTotalCount] = React.useState<number>(0);
+  const [userRoles, setUserRoles] = React.useState<Record<string, UserType>>({});
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination({
     totalCount,
   });
@@ -30,10 +32,20 @@ function ManageAdminUserPage() {
     handleChangePageSize(Number(e.target.value));
   };
 
+  const handeChangeUserType = (e: React.ChangeEvent<HTMLSelectElement>, userId: string) => {
+    const nextUserType = e.target.value as UserType;
+    setUserRoles((prev) => ({ ...prev, [userId]: nextUserType }));
+  };
+
+  const handleClickUpdateButton = (userId: string) => {
+    console.log(userId, userRoles[userId]);
+  };
+
   React.useEffect(() => {
     (async () => {
       // TODO: Backend연동
-      setTotalCount(150);
+      setTotalCount(DUMMY_ADMIN_USERS.length);
+      setUserRoles(DUMMY_ADMIN_USERS.reduce((acc, user) => ({ ...acc, [user.id]: user.type }), {}));
     })();
   }, []);
 
@@ -66,13 +78,16 @@ function ManageAdminUserPage() {
                   <Typography type="body4">유저 타입</Typography>
                 </Td>
                 <Td>
+                  <Typography type="body4">변경</Typography>
+                </Td>
+                <Td>
                   <Typography type="body4">탈퇴</Typography>
                 </Td>
               </Tr>
             </THead>
             <TBody>
               {DUMMY_ADMIN_USERS.slice(0, pageOptions.pageSize).map((user) => (
-                <Tr onClick={() => console.log(user.id)} key={user.id}>
+                <Tr key={user.id}>
                   <Td>
                     <Typography type="body4">{user.name}</Typography>
                   </Td>
@@ -86,14 +101,30 @@ function ManageAdminUserPage() {
                     </Typography>
                   </Td>
                   <Td>
-                    <Chip
-                      variants="filled"
-                      type={convertChipColorByUserType(user.type)}
-                      label={user.type}
+                    <SelectOption
+                      value={userRoles[user.id]}
+                      optionList={['lead', 'core', 'normal']}
+                      onChange={(e) => handeChangeUserType(e, user.id)}
                     />
                   </Td>
                   <Td>
-                    <Button disabled={user.type === 'core'} hierarchy={ButtonHierarchy.Danger}>
+                    <Button hierarchy={ButtonHierarchy.Success}>
+                      <Typography
+                        type="body4"
+                        textAlign="center"
+                        style={{ padding: 6 }}
+                        color={theme.colors.primary.white}
+                        onClick={() => handleClickUpdateButton(user.id)}
+                      >
+                        변경
+                      </Typography>
+                    </Button>
+                  </Td>
+                  <Td>
+                    <Button
+                      disabled={userRoles[user.id] === 'lead'}
+                      hierarchy={ButtonHierarchy.Danger}
+                    >
                       <Typography
                         type="body4"
                         textAlign="center"
@@ -130,4 +161,4 @@ const Navigation = styled(PageNavigation)`
   margin: 0 auto;
 `;
 
-export default ManageAdminUserPage;
+export default ManageUserPage;
