@@ -1,5 +1,6 @@
 import { ChipType, TeamKeyType } from 'gdsc-uos-design-system';
-import type { ApplyState, UserType } from '../@types';
+
+import type { ApplyState, UserType } from '@/@types';
 
 export function convertChipColorByState(state: ApplyState) {
   const ChipColor = {

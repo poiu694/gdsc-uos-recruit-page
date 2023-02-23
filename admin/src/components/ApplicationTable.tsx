@@ -11,10 +11,10 @@ import {
   Typography,
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
-
-import { UserApplication } from '../@types';
-import { convertChipColorByState, convertChipColorByTeam } from '../utils';
 import { useNavigate } from 'react-router-dom';
+
+import { UserApplication } from '@/@types';
+import { convertChipColorByState, convertChipColorByTeam } from '@/utils';
 
 interface Props {
   pageSize: number;

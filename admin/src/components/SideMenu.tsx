@@ -1,10 +1,5 @@
 import styled from '@emotion/styled';
-import {
-  theme,
-  Button,
-  Typography,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+import { theme, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
 import { useNavigate } from 'react-router-dom';
 
 import Logo from './Logo';

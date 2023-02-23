@@ -1,4 +1,4 @@
-import { UserType } from '../@types';
+import { UserType } from '@/@types';
 
 const user = {
   name: '홍길동',

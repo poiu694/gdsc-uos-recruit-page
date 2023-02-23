@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { Button, ButtonHierarchy, Chip, theme, Typography } from 'gdsc-uos-design-system';
 
 import { Flex } from './styled';
+import { useEmailAction } from '@/hooks';
 import SelectOption from './SelectOption';
 import ToggleSwitchBox from './ToggleSwitchBox';
-import { convertChipColorByState } from '../utils';
-import { ApplyState, UserApplication } from '../@types';
-import { useEmailAction } from '../hooks';
+import { convertChipColorByState } from '@/utils';
+import { ApplyState, UserApplication } from '@/@types';
 
 interface Props {
   list: UserApplication[];

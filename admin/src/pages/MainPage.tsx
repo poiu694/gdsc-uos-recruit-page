@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import { theme, Title, Typography } from 'gdsc-uos-design-system';
 
 import {
-  ApplicationStatusChart,
-  ContentWrapper,
   Flex,
   SideMenu,
   SummaryCard,
+  ContentWrapper,
+  ApplicationStatusChart,
   TeamColorDescriptionBox,
-} from '../components';
+} from '@/components';
 
 function MainPage() {
   const currentYear = new Date().getFullYear();

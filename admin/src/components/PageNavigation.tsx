@@ -1,29 +1,17 @@
 import styled from '@emotion/styled';
-import {
-  Button,
-  theme,
-  Typography,
-  ClickableIcon,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
-import { PageOptions } from '../hooks/usePagination';
+import { Button, theme, Typography, ClickableIcon, ButtonHierarchy } from 'gdsc-uos-design-system';
+import { PageOptions } from '@/hooks/usePagination';
 
 export interface Props {
   pageOptions: PageOptions;
   handleChangePage: (page: number) => void;
 }
 
-function PageNavigation({
-  pageOptions,
-  handleChangePage,
-  ...restProps
-}: Props) {
+function PageNavigation({ pageOptions, handleChangePage, ...restProps }: Props) {
   const { startPage, endPage, currentPage, totalPages } = pageOptions;
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
-  const pages = [...Array(endPage - startPage + 1).keys()].map(
-    (_, idx) => startPage + idx
-  );
+  const pages = [...Array(endPage - startPage + 1).keys()].map((_, idx) => startPage + idx);
 
   return (
     <Wrapper {...restProps}>
@@ -50,11 +38,7 @@ function PageNavigation({
               >
                 <Typography
                   type="body3"
-                  color={
-                    isCurrentPage
-                      ? theme.colors.primary.white
-                      : theme.palette.gray400
-                  }
+                  color={isCurrentPage ? theme.colors.primary.white : theme.palette.gray400}
                 >
                   {page}
                 </Typography>

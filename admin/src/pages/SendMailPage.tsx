@@ -10,9 +10,9 @@ import {
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
 
-import { ApplicationEmailList, ContentWrapper, Flex, SideMenu } from '../components';
-import { DUMMY_APPLYS } from '../dummy/apply';
-import { useEmailAction } from '../hooks';
+import { useEmailAction } from '@/hooks';
+import { DUMMY_APPLYS } from '@/dummy/apply';
+import { ApplicationEmailList, ContentWrapper, Flex, SideMenu } from '@/components';
 
 function ApplyDetailPage() {
   const [title, setTitle] = React.useState<string>('');

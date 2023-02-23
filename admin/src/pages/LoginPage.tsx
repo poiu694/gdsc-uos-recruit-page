@@ -1,14 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  Input,
-  theme,
-  Button,
-  Typography,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+import { Input, theme, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
 import { useNavigate } from 'react-router-dom';
-import { Flex, Logo } from '../components';
+
+import { Flex, Logo } from '@/components';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -49,11 +44,7 @@ function LoginPage() {
               fullWidth
               onClick={() => navigate('/main')}
             >
-              <Typography
-                type="body3"
-                color={theme.palette.gray50}
-                textAlign="center"
-              >
+              <Typography type="body3" color={theme.palette.gray50} textAlign="center">
                 로그인
               </Typography>
             </Button>
@@ -90,8 +81,7 @@ const BoxContainer = styled.div`
   border-radius: 16px;
   background-color: ${theme.colors.background};
   box-sizing: border-box;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
-    0 7px 10px -5px rgba(233, 30, 99, 0.4);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
 `;
 
 const Gradient = styled.span`

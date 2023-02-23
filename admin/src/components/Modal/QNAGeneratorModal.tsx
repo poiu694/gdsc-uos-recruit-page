@@ -9,7 +9,7 @@ import {
   Typography,
   useModalContext,
 } from 'gdsc-uos-design-system';
-import { FAQ } from '../../@types';
+import { FAQ } from '@/@types';
 
 interface Props {
   teamName: string;

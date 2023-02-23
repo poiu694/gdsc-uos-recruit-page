@@ -10,7 +10,7 @@ import {
   MainRecruitInfoBox,
   IntroductionInfoBox,
   ApplyQuestionInfoBox,
-} from '../components';
+} from '@/components';
 
 const DEFAULT_PAGE_VALUE = '1';
 

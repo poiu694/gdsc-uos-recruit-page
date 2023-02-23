@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import { theme, Typography } from 'gdsc-uos-design-system';
-import { Link } from 'react-router-dom';
 
-import { Flex } from '../styled';
+import { Flex } from '@/components/styled';
 
 function MainRecruitInfoBox() {
   return (

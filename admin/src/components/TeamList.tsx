@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import {
-  TEAM_LIST,
   theme,
   Typography,
   TeamKeyType,
@@ -35,11 +34,7 @@ function TeamList({
           <ListItem key={team} onClick={() => onClickTeamName(team)}>
             <Typography
               type={activeTeam === team ? 'h6' : 'body3'}
-              color={
-                activeTeam === team
-                  ? theme.colors.primary.blue
-                  : theme.palette.gray350
-              }
+              color={activeTeam === team ? theme.colors.primary.blue : theme.palette.gray350}
             >
               {getTitleCaseTeam(team)}
             </Typography>
@@ -59,8 +54,7 @@ const TeamListWrapper = styled.ul`
 
 const ListItem = styled.li`
   height: 32px;
-  padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px
-    ${theme.padding.md}px;
+  padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px ${theme.padding.md}px;
   cursor: pointer;
   border-radius: 5px;
   display: flex;

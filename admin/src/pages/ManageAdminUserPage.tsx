@@ -14,10 +14,11 @@ import {
   ButtonHierarchy,
   TablePagination,
 } from 'gdsc-uos-design-system';
-import { usePagination } from '../hooks';
-import { DUMMY_ADMIN_USERS } from '../dummy/users';
-import { convertChipColorByTeam, convertChipColorByUserType } from '../utils';
-import { ContentWrapper, PageNavigation, SideMenu } from '../components';
+
+import { usePagination } from '@/hooks';
+import { DUMMY_ADMIN_USERS } from '@/dummy/users';
+import { ContentWrapper, PageNavigation, SideMenu } from '@/components';
+import { convertChipColorByTeam, convertChipColorByUserType } from '@/utils';
 
 function ManageAdminUserPage() {
   const [totalCount, setTotalCount] = React.useState<number>(0);

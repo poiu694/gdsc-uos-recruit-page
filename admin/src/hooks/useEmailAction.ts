@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApplyState, UserApplication } from '../@types';
+import { ApplyState, UserApplication } from '@/@types';
 
 /**
  * textArea와 email의 개행문자를 맞춰주는 유틸

@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { Chip, theme } from 'gdsc-uos-design-system';
-import { ApplyState } from '../@types';
-import { convertChipColorByState } from '../utils';
+
 import { Flex } from './styled';
+import { ApplyState } from '@/@types';
+import { convertChipColorByState } from '@/utils';
 
 interface Props {
   value: ApplyState | null;
@@ -12,13 +13,7 @@ interface Props {
 function SelectApplyStateBox({ value, onClickState }: Props) {
   return (
     <Wrapper gap={10}>
-      {[
-        '서류 제출',
-        '서류 불합격',
-        '서류 합격',
-        '최종 불합격',
-        '최종 합격',
-      ].map((status) => (
+      {['서류 제출', '서류 불합격', '서류 합격', '최종 불합격', '최종 합격'].map((status) => (
         <ClickableChip
           key={status}
           label={status}
