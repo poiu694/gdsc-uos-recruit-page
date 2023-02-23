@@ -10,6 +10,7 @@ export interface TeamNameProps {
 }
 
 export interface ApplyQuestion {
+  id: string;
   title: string;
   required: boolean;
   maxLength: number;
