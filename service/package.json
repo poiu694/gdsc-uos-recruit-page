@@ -37,7 +37,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "gdsc-uos-design-system": "workspace:^",
     "gdsc-uos-eslint-config-custom": "workspace:^",
-    "gdsc-uos-hooks": "workspace:^",
     "gdsc-uos-tsconfig-custom": "workspace:^",
     "next-transpile-modules": "^9.0.0",
     "typescript": "^4.7.4"

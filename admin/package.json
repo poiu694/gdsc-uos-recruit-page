@@ -37,7 +37,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "gdsc-uos-design-system": "^1.1.23",
     "gdsc-uos-eslint-config-custom": "workspace:^",
-    "gdsc-uos-hooks": "workspace:^",
     "gdsc-uos-tsconfig-custom": "workspace:^",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
