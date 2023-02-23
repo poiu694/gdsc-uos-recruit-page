@@ -3579,6 +3579,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:18.0.4"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:18.14.0", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.14.0-ddc1a221d2-d83fcf5e4e.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:18.14.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/parse-json", [\
@@ -4148,6 +4155,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["admin", "workspace:admin"],\
             ["@emotion/react", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:11.9.3"],\
             ["@emotion/styled", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:11.9.3"],\
+            ["@types/node", "npm:18.14.0"],\
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@typescript-eslint/eslint-plugin", "virtual:a6bd6461f5c9b78899b10702ef2e68b5d11bf2609572dc6fcfd4c9faba012845894edd8c4b3d3e3472954bc0d6e4b6d1d264cde0400e990a0a0a02231ca78585#npm:5.30.6"],\

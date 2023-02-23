@@ -2168,6 +2168,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.14.0":
+  version: 18.14.0
+  resolution: "@types/node@npm:18.14.0"
+  checksum: d83fcf5e4ed544755dd9028f5cbb6b9d46235043159111bb2ad62223729aee581c0144a9f6df8ba73d74011db9ed4ebd7af2fd5e0996714e3beb508a5da8ac5c
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -2417,6 +2424,7 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.9.3
     "@emotion/styled": ^11.9.3
+    "@types/node": ^18.14.0
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@typescript-eslint/eslint-plugin": ^5.30.6
