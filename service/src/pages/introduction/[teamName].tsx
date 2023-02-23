@@ -2,15 +2,9 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import { useGA } from 'gdsc-uos-hooks';
-import {
-  Banner,
-  theme,
-  getTitleCaseTeam,
-  TEAM_LIST,
-  TeamKeyType,
-} from 'gdsc-uos-design-system';
+import { Banner, theme, getTitleCaseTeam, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
 
+import { useGA } from '../../hooks';
 import { IntroductionContent } from '../../constants';
 import { GOOGLE_FORM_LINK } from '../../constants/form';
 import { List, AsideCard } from '../../components/Introduction';
@@ -21,10 +15,7 @@ interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;
 }
 
-const IntroductionPage: NextPage<IntroductionProps> = ({
-  introduction,
-  teamName,
-}) => {
+const IntroductionPage: NextPage<IntroductionProps> = ({ introduction, teamName }) => {
   const router = useRouter();
   const { logEvent, logPageView } = useGA();
   logPageView(`/introduction/${teamName}`);
@@ -50,10 +41,7 @@ const IntroductionPage: NextPage<IntroductionProps> = ({
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
             <List title="저희를 소개할게요" items={introduction.introduction} />
-            <List
-              title="저희는 이런 활동을 해요"
-              items={introduction.activities}
-            />
+            <List title="저희는 이런 활동을 해요" items={introduction.activities} />
             <List
               title={`${getTitleCaseTeam(teamName)} 팀은 이런 분을 기다립니다`}
               items={introduction.wants}

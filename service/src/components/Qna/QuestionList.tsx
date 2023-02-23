@@ -2,14 +2,9 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
-import {
-  Icon,
-  theme,
-  Typography,
-  getTitleCaseTeam,
-} from 'gdsc-uos-design-system';
-import { useGA } from 'gdsc-uos-hooks';
+import { Icon, theme, Typography, getTitleCaseTeam } from 'gdsc-uos-design-system';
 
+import { useGA } from '../../hooks';
 import { TeamNameProps, QuestionListItem } from '../../../@types';
 
 interface Props extends TeamNameProps {
@@ -20,9 +15,7 @@ function QuestionList({ questions, teamName }: Props) {
   const router = useRouter();
   const { logEvent } = useGA();
 
-  const handleClickListItem = (
-    e: React.MouseEvent<HTMLLIElement, MouseEvent>
-  ) => {
+  const handleClickListItem = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
     e.stopPropagation();
     const { dataset } = e.currentTarget;
     logEvent('Question', `${dataset.title} click`);
@@ -42,29 +35,17 @@ function QuestionList({ questions, teamName }: Props) {
           data-url={question.url}
           onClick={handleClickListItem}
         >
-          <Typography
-            type="body3"
-            color={theme.palette.gray350}
-            className="question-mark"
-          >
+          <Typography type="body3" color={theme.palette.gray350} className="question-mark">
             Q
           </Typography>
-          <Typography
-            type="body3"
-            color={theme.colors.text.general}
-            className="title"
-          >
+          <Typography type="body3" color={theme.colors.text.general} className="title">
             {question.title}
           </Typography>
           <Icon type="right" hoverAction={false} className="right" />
         </ListItem>
       ))}
       {teamName !== 'common' && (
-        <DirectLink
-          type="h6"
-          teamName={teamName}
-          onClick={handleClickDirectTeamLink}
-        >
+        <DirectLink type="h6" teamName={teamName} onClick={handleClickDirectTeamLink}>
           {getTitleCaseTeam(teamName)} Team 으로 바로가기
         </DirectLink>
       )}

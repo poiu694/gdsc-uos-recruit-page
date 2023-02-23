@@ -1,18 +1,12 @@
-/** @type {import('next').NextConfig} */
-const withTM = require('next-transpile-modules')([
-  'gdsc-uos-hooks',
-  'gdsc-uos-design-system',
-  'gdsc-uos-eslint-config-custom',
-  'gdsc-uos-tsconfig-custom',
-]);
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  typescript: {
-    ignoreBuildErrors: true
-  }
-}
+  transpilePackages: [
+    'gdsc-uos-hooks',
+    'gdsc-uos-design-system',
+    'gdsc-uos-eslint-config-custom',
+    'gdsc-uos-tsconfig-custom',
+  ],
+};
 
-module.exports = withTM(nextConfig);
-
+module.exports = nextConfig;

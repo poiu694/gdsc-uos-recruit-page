@@ -2,8 +2,8 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Banner, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
-import { useGA } from 'gdsc-uos-hooks';
 
+import { useGA } from '../../hooks';
 import { TeamNameProps } from '../../../@types';
 import { TeamList } from '../../components/Qna';
 import { QuestionContent } from '../../constants';

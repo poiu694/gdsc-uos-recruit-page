@@ -1,14 +1,8 @@
 import styled from '@emotion/styled';
-import { defaultDuration } from 'gdsc-uos-hooks';
-import {
-  Circle,
-  ProcessCircleType,
-  theme,
-  Title,
-  Typography,
-} from 'gdsc-uos-design-system';
+import { Circle, ProcessCircleType, theme, Title, Typography } from 'gdsc-uos-design-system';
 
 import { TitleWithDescription } from '../../../@types';
+import { defaultDuration } from '../../hooks/useAOSSideEffect';
 
 interface Props {
   content: TitleWithDescription;
@@ -31,11 +25,7 @@ function MainProcess({ content, circle }: Props) {
       />
       <CircleList>
         {circle.map((content, idx) => (
-          <CircleItem
-            data-aos="fade-up"
-            data-aos-duration={defaultDuration}
-            key={content.title}
-          >
+          <CircleItem data-aos="fade-up" data-aos-duration={defaultDuration} key={content.title}>
             <Circle
               type={`process-${idx}` as ProcessCircleType}
               title={content.title}

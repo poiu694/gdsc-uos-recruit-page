@@ -2425,7 +2425,6 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     gdsc-uos-design-system: ^1.1.23
     gdsc-uos-eslint-config-custom: "workspace:^"
-    gdsc-uos-hooks: "workspace:^"
     gdsc-uos-tsconfig-custom: "workspace:^"
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -3116,16 +3115,6 @@ __metadata:
   dependencies:
     iconv-lite: ^0.6.2
   checksum: bb98632f8ffa823996e508ce6a58ffcf5856330fde839ae42c9e1f436cc3b5cc651d4aeae72222916545428e54fd0f6aa8862fd8d25bdbcc4589f1e3f3715e7f
-  languageName: node
-  linkType: hard
-
-"enhanced-resolve@npm:^5.7.0":
-  version: 5.10.0
-  resolution: "enhanced-resolve@npm:5.10.0"
-  dependencies:
-    graceful-fs: ^4.2.4
-    tapable: ^2.2.0
-  checksum: 0bb9830704db271610f900e8d79d70a740ea16f251263362b0c91af545576d09fe50103496606c1300a05e588372d6f9780a9bc2e30ce8ef9b827ec8f44687ff
   languageName: node
   linkType: hard
 
@@ -4076,7 +4065,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"gdsc-uos-eslint-config-custom@1.0.0, gdsc-uos-eslint-config-custom@workspace:^, gdsc-uos-eslint-config-custom@workspace:packages/eslint-config-custom":
+"gdsc-uos-eslint-config-custom@workspace:^, gdsc-uos-eslint-config-custom@workspace:packages/eslint-config-custom":
   version: 0.0.0-use.local
   resolution: "gdsc-uos-eslint-config-custom@workspace:packages/eslint-config-custom"
   dependencies:
@@ -4093,33 +4082,6 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     gdsc-uos-tsconfig-custom: 1.0.0
     prettier: ^2.7.1
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
-
-"gdsc-uos-hooks@workspace:^, gdsc-uos-hooks@workspace:packages/hooks":
-  version: 0.0.0-use.local
-  resolution: "gdsc-uos-hooks@workspace:packages/hooks"
-  dependencies:
-    "@types/aos": ^3.0.4
-    "@types/react": ^17.0.37
-    "@typescript-eslint/eslint-plugin": ^5.30.6
-    "@typescript-eslint/parser": ^5.30.6
-    aos: ^2.3.4
-    eslint: ^8.19.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-import: ^2.26.0
-    eslint-plugin-jsx-a11y: ^6.6.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.30.1
-    eslint-plugin-react-hooks: ^4.6.0
-    gdsc-uos-eslint-config-custom: 1.0.0
-    gdsc-uos-tsconfig-custom: 1.0.0
-    prettier: ^2.8.1
-    react: 18.2.0
-    react-ga4: ^1.4.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -4250,7 +4212,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6":
+"graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.6":
   version: 4.2.10
   resolution: "graceful-fs@npm:4.2.10"
   checksum: 3f109d70ae123951905d85032ebeae3c2a5a7a997430df00ea30df0e3a6c60cf6689b109654d6fdacd28810a053348c4d14642da1d075049e6be1ba5216218da
@@ -5086,16 +5048,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-transpile-modules@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "next-transpile-modules@npm:9.0.0"
-  dependencies:
-    enhanced-resolve: ^5.7.0
-    escalade: ^3.1.1
-  checksum: 9a5d86d80cedc2404b2b1d5bd4994f2f7bf60e5e20f24e8cc5cfec34da1418b4a439916f37a95ca336bcf6d81094c3647354ac6a0c6737b3df59e62b6380507d
-  languageName: node
-  linkType: hard
-
 "next@npm:^13.1.6":
   version: 13.1.6
   resolution: "next@npm:13.1.6"
@@ -5512,15 +5464,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "prettier@npm:2.8.1"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
-  languageName: node
-  linkType: hard
-
 "promise-inflight@npm:^1.0.1":
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
@@ -5575,10 +5518,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ga4@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "react-ga4@npm:1.4.1"
-  checksum: 4c33ecb47dfc26c241a6af8e2b08b29b6c059f40e456e93d1c2b65c995edce18f32d9777295774ec992d968d7c5efdd105eb62398972d85ff2e2b6dad8646a26
+"react-ga4@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "react-ga4@npm:2.0.0"
+  checksum: 7cb9f2d7863466f429e0256ed4903c84e3e7c3f21d913455716555ea7649240d142ad36586994daece67d1a8383482f58a35898d432fb43e4884ce0234235e68
   languageName: node
   linkType: hard
 
@@ -5962,12 +5905,11 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     gdsc-uos-design-system: "workspace:^"
     gdsc-uos-eslint-config-custom: "workspace:^"
-    gdsc-uos-hooks: "workspace:^"
     gdsc-uos-tsconfig-custom: "workspace:^"
     next: ^13.1.6
-    next-transpile-modules: ^9.0.0
     react: 18.2.0
     react-dom: 18.2.0
+    react-ga4: ^2.0.0
     swr: ^1.3.0
     typescript: ^4.7.4
   languageName: unknown
@@ -6214,13 +6156,6 @@ __metadata:
   peerDependencies:
     react: ^16.11.0 || ^17.0.0 || ^18.0.0
   checksum: e7a184f0d560e9c8be85c023cc8e65e56a88a6ed46f9394b301b07f838edca23d2e303685319a4fcd620b81d447a7bcb489c7fa0a752c259f91764903c690cdb
-  languageName: node
-  linkType: hard
-
-"tapable@npm:^2.2.0":
-  version: 2.2.1
-  resolution: "tapable@npm:2.2.1"
-  checksum: 3b7a1b4d86fa940aad46d9e73d1e8739335efd4c48322cb37d073eb6f80f5281889bf0320c6d8ffcfa1a0dd5bfdbd0f9d037e252ef972aca595330538aac4d51
   languageName: node
   linkType: hard
 

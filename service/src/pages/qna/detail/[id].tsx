@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Banner } from 'gdsc-uos-design-system';
-import { useGA } from 'gdsc-uos-hooks';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import { QuestionListItem } from '../../../../@types/question';
-import { Bottom, Helmet, Introduction } from '../../../components/common';
-import { QuestionBox, TeamList } from '../../../components/Qna';
+import { useGA } from '../../../hooks';
 import { QuestionContent } from '../../../constants';
+import { QuestionListItem } from '../../../../@types/question';
+import { QuestionBox, TeamList } from '../../../components/Qna';
+import { Bottom, Helmet, Introduction } from '../../../components/common';
 
 interface QnaPageProps {
   question: QuestionListItem;
@@ -56,9 +56,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     (acc, content) => [...acc, ...content],
     []
   );
-  const questionIdx = entireQuestions.findIndex(
-    (content) => content.id === params!.id
-  );
+  const questionIdx = entireQuestions.findIndex((content) => content.id === params!.id);
 
   return {
     props: {

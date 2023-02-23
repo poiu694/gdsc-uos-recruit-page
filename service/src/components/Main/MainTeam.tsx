@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Title, Typography } from 'gdsc-uos-design-system';
-import { defaultDuration } from 'gdsc-uos-hooks/useAOS';
 
 import { TeamCard } from '../common';
 import { TitleWithDescription } from '../../../@types';
+import { defaultDuration } from '../../hooks/useAOSSideEffect';
 
 interface Props {
   content: TitleWithDescription;

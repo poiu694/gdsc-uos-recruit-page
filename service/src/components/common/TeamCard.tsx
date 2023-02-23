@@ -9,7 +9,8 @@ import {
   getTitleCaseTeam,
 } from 'gdsc-uos-design-system';
 import { useRouter } from 'next/router';
-import { useGA } from 'gdsc-uos-hooks';
+
+import { useGA } from '../../hooks';
 import { TeamNameProps } from '../../../@types';
 
 function TeamCard({ teamName }: TeamNameProps) {
@@ -38,11 +39,7 @@ function TeamCard({ teamName }: TeamNameProps) {
       </Description>
 
       <BottomNav onClick={handleClickNav}>
-        <Typography
-          type="h5"
-          textAlign="center"
-          color={theme.colors.primary.white}
-        >
+        <Typography type="h5" textAlign="center" color={theme.colors.primary.white}>
           Detail
         </Typography>
       </BottomNav>

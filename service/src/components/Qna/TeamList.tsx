@@ -1,18 +1,15 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
-
-import { useGA } from 'gdsc-uos-hooks';
 import { TeamKeyType, theme, Typography } from 'gdsc-uos-design-system';
 
+import { useGA } from '../../hooks';
 import { teams } from '../../constants';
 import { TeamNameProps } from '../../../@types';
 import { QuestionListItem } from '../../../@types/question';
 
 const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
-  return new Array(teams.length)
-    .fill(false)
-    .map((_, idx) => teamName === teams[idx].type);
+  return new Array(teams.length).fill(false).map((_, idx) => teamName === teams[idx].type);
 };
 
 function TeamList({ teamName }: TeamNameProps) {
@@ -69,8 +66,7 @@ const Wrapper = styled.ul`
 
 const ListItem = styled.li`
   height: 32px;
-  padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px
-    ${theme.padding.md}px;
+  padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px ${theme.padding.md}px;
   cursor: pointer;
   border-radius: 5px;
   display: flex;
