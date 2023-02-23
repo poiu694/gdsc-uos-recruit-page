@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import styled from '@emotion/styled';
 import {
   Banner,
@@ -8,52 +8,69 @@ import {
   theme,
   Typography,
 } from 'gdsc-uos-design-system';
-import { useRouter } from 'next/router';
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 
 import { ApplyQuestion } from '@types';
 import { QUESTIONS } from '@/constants/dummyApply';
 import { formIntroduction } from '@/constants/form';
 import { Bottom, Helmet, ToggleBox } from '@/components/common';
+import { ApplyFormStepReducer, ApplyFormStep } from '@/reducers';
 
 interface Props {
-  step: `${number}`;
-  isFirstStep: boolean;
-  isFinishStep: boolean;
-  questions: ApplyQuestion[];
+  questions: Record<number, ApplyQuestion[]>;
 }
 
-const TitleWithStep: Record<`${number}`, string> = {
+const TitleWithStep: Record<string, string> = {
   '1': '공통 질문지',
   '2': '팀 질문지',
   '3': '코어 질문지',
 };
 
-const ApplyPage: NextPage<Props> = ({ step, isFirstStep, isFinishStep, questions }: Props) => {
-  const router = useRouter();
+const defaultStepState = {
+  step: ApplyFormStep.COMMON_QUESTIONS,
+  isFirstStep: true,
+  isLastStep: false,
+  isApplyCore: false,
+};
+
+const defaultAnswerData = (questions: ApplyQuestion[]): Record<string, string> => {
+  return questions.reduce(
+    (acc, question) => ({
+      ...acc,
+      [question.id]: '',
+    }),
+    {}
+  );
+};
+
+const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
+  const [stepState, dispatch] = useReducer(ApplyFormStepReducer, defaultStepState);
   const currentYear = new Date().getFullYear();
-  const [isApplyCore, setIsApplyCore] = React.useState<boolean>(false);
-  const [answerData, setAnswerData] = React.useState<string[]>(
-    [...Array(questions.length)].fill('')
+  // TODO: API에 따라 형태 변경
+  const [answerData, setAnswerData] = React.useState<Record<string, string>>(
+    defaultAnswerData([...questions['1'], ...questions['2'], ...questions['3']])
   );
 
-  const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>, targetIndex: number) => {
-    const nextAnswerData = [...answerData];
-    nextAnswerData[targetIndex] = e.target.value;
-    setAnswerData(nextAnswerData);
-  };
-
-  const toggleApplyCore = React.useCallback(() => {
-    setIsApplyCore((prev) => !prev);
+  const handleClickNextStep = React.useCallback(() => {
+    dispatch({ type: 'next' });
   }, []);
 
-  // TODO: API 나오면 연동
-  const handleClickStepButton = async () => {
-    if (isFinishStep) {
-    } else {
-      router.push(`/apply/${Number(step) + 1}`);
-    }
+  const handleClickPrevStep = React.useCallback(() => {
+    dispatch({ type: 'prev' });
+  }, []);
+
+  const handleClickToggleApplyCore = React.useCallback(() => {
+    dispatch({ type: 'toggle' });
+  }, []);
+
+  const handleChangeTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>, targetId: string) => {
+    setAnswerData((prev) => ({ ...prev, [targetId]: e.target.value }));
   };
+
+  const handleClickSubmitButton = React.useCallback(() => {
+    //TODO: api 연동
+    console.log(answerData);
+  }, [answerData]);
 
   return (
     <>
@@ -68,24 +85,24 @@ const ApplyPage: NextPage<Props> = ({ step, isFirstStep, isFinishStep, questions
             </Typography>
           </IntroductionSection>
           <Typography type="h3" style={{ marginBlock: 16 }}>
-            {TitleWithStep[step]}
+            {TitleWithStep[stepState.step]}
           </Typography>
           <QuestionSection>
-            {questions?.map((question, idx) => (
+            {questions[stepState.step]?.map((question, idx) => (
               <AnswerTextarea
                 key={question.title}
                 label={`${idx + 1}. ${question.title}`}
-                value={answerData[idx]}
+                value={answerData[question.id]}
                 required={question.required}
                 maxLength={question.maxLength}
-                onChange={(e) => handleChangeTextArea(e, idx)}
+                onChange={(e) => handleChangeTextArea(e, question.id)}
               />
             ))}
-            {isFirstStep && (
+            {stepState.isFirstStep && (
               <ToggleBox
-                label={`${questions?.length + 1}. Core Member에 지원하시겠습니까?`}
-                value={isApplyCore}
-                onClick={toggleApplyCore}
+                label={`${questions[stepState.step]?.length + 1}. Core Member에 지원하시겠습니까?`}
+                value={stepState.isApplyCore}
+                onClick={handleClickToggleApplyCore}
               />
             )}
           </QuestionSection>
@@ -95,19 +112,19 @@ const ApplyPage: NextPage<Props> = ({ step, isFirstStep, isFinishStep, questions
                 임시 저장
               </Typography>
             </StepButton>
-            {!isFirstStep && (
-              <StepButton
-                hierarchy={ButtonHierarchy.DarkGray}
-                onClick={() => router.push(`/apply/${Number(step) - 1}`)}
-              >
+            {!stepState.isFirstStep && (
+              <StepButton hierarchy={ButtonHierarchy.DarkGray} onClick={handleClickPrevStep}>
                 <Typography type="body5" color={theme.colors.primary.white}>
                   이전 단계
                 </Typography>
               </StepButton>
             )}
-            <StepButton hierarchy={ButtonHierarchy.Success} onClick={handleClickStepButton}>
+            <StepButton
+              hierarchy={ButtonHierarchy.Success}
+              onClick={stepState.isLastStep ? handleClickSubmitButton : handleClickNextStep}
+            >
               <Typography type="body5" color={theme.colors.primary.white}>
-                {!isFinishStep ? '다음 단계' : '지원 하기'}
+                {!stepState.isLastStep ? '다음 단계' : '지원 하기'}
               </Typography>
             </StepButton>
           </ButtonSection>
@@ -118,16 +135,11 @@ const ApplyPage: NextPage<Props> = ({ step, isFirstStep, isFinishStep, questions
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const step = context.params!.step as `${number}`;
-
+export const getStaticProps: GetStaticProps = async (context) => {
   try {
     return {
       props: {
-        step,
-        isFirstStep: step === '1' ? true : false,
-        isFinishStep: step === '3' ? true : false,
-        questions: QUESTIONS[step],
+        questions: QUESTIONS,
       },
     };
   } catch (error) {
