@@ -6,7 +6,7 @@ import {
   ApplyPage,
   SendMailPage,
   ApplyDetailPage,
-  ManageAdminUserPage,
+  ManageUserPage,
   InterviewRecordPage,
   ManageRecruitInfoPage,
 } from '@/pages';
@@ -19,7 +19,7 @@ const MainRoute = () => {
         <Route path="/main" element={<MainPage />} />
         <Route path="/apply" element={<ApplyPage />} />
         <Route path="/apply/:id" element={<ApplyDetailPage />} />
-        <Route path="/admin-user" element={<ManageAdminUserPage />} />
+        <Route path="/user" element={<ManageUserPage />} />
         <Route path="/recruit" element={<ManageRecruitInfoPage />} />
         <Route path="/interview/:id" element={<InterviewRecordPage />} />
         <Route path="/email" element={<SendMailPage />} />
