@@ -1,4 +1,4 @@
-const MainBannerDesc = '2022년부터 함께 할 사람을 찾습니다.'
+const MainBannerDesc = '2022년부터 함께 할 사람을 찾습니다.';
 
 const MainProcess = {
   content: {
