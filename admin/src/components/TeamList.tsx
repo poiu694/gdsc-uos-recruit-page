@@ -1,11 +1,6 @@
+import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-  theme,
-  Typography,
-  TeamKeyType,
-  getTitleCaseTeam,
-  BASIC_TEAM,
-} from 'gdsc-uos-design-system';
+import { Typography, TeamKeyType, getTitleCaseTeam, BASIC_TEAM } from 'gdsc-uos-design-system';
 
 interface Props {
   activeTeam: TeamKeyType;
@@ -20,6 +15,7 @@ function TeamList({
   isCommonNeed = false,
   onClickTeamName,
 }: Props) {
+  const theme = useTheme();
   const teamList = [
     (isCommonNeed ? 'common' : null) as TeamKeyType,
     ...Object.values(BASIC_TEAM),
@@ -53,17 +49,20 @@ const TeamListWrapper = styled.ul`
 `;
 
 const ListItem = styled.li`
-  height: 32px;
-  padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px ${theme.padding.md}px;
-  cursor: pointer;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  transition: all 0.1s ease-in-out;
+  ${({ theme }) => css`
+    height: 32px;
+    padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px
+      ${theme.padding.md}px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
 
-  &:hover {
-    background-color: ${theme.colors.ui.hover};
-  }
+    &:hover {
+      background-color: ${theme.colors.ui.hover};
+    }
+  `}
 `;
 
 export default TeamList;

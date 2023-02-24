@@ -1,8 +1,12 @@
 import styled from '@emotion/styled';
-import { PalleteValueType, theme, Typography } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { PalleteValueType, Typography } from 'gdsc-uos-design-system';
+
 import { Flex } from './styled';
 
 function TeamColorDescriptionBox() {
+  const theme = useTheme();
+
   return (
     <Wrapper flexDirection="column" gap={16}>
       <ColorBox color={theme.colors.team.frontend} alignItems="center" justifyContent="center">

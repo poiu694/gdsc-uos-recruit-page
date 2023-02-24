@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Input, theme, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Input, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
 import { useNavigate } from 'react-router-dom';
 
 import { Flex, Logo } from '@/components';
 
 function LoginPage() {
+  const theme = useTheme();
   const navigate = useNavigate();
   const [email, setEmail] = React.useState<string>('');
   const [password, setPassword] = React.useState<string>('');
@@ -74,30 +76,34 @@ const Center = styled(Flex)`
 `;
 
 const BoxContainer = styled.div`
-  position: relative;
-  width: 30%;
-  padding: 16px;
-  border: 1px solid ${theme.colors.ui.divider};
-  border-radius: 16px;
-  background-color: ${theme.colors.background};
-  box-sizing: border-box;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+  ${({ theme }) => css`
+    position: relative;
+    width: 30%;
+    padding: 16px;
+    border: 1px solid ${theme.colors.ui.divider};
+    border-radius: 16px;
+    background-color: ${theme.colors.background};
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+  `}
 `;
 
 const Gradient = styled.span`
-  position: absolute;
-  background-size: cover;
-  background-position: center center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background-image: linear-gradient(
-    195deg,
-    ${theme.palette.gray400} 0%,
-    ${theme.palette.gray500} 100%
-  );
+  ${({ theme }) => css`
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: linear-gradient(
+      195deg,
+      ${theme.palette.gray400} 0%,
+      ${theme.palette.gray500} 100%
+    );
+  `}
 `;
 
 const InputContainer = styled(Flex)`

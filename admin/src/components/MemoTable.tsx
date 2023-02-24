@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 import {
-  Button,
-  ButtonHierarchy,
+  Td,
+  Tr,
   Modal,
   Table,
   TBody,
-  Td,
   THead,
-  theme,
-  Tr,
+  Button,
   Typography,
+  ButtonHierarchy,
 } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
 import React from 'react';
 
 import { Memo } from '@/@types';
@@ -22,8 +22,9 @@ interface Props {
 }
 
 function EvaluationTable({ name, memos }: Props) {
-  const [selectedMemo, setSelectedMemo] = React.useState<Memo | null>(null);
+  const theme = useTheme();
   const [isMemoOpen, setIsMemoOpen] = React.useState<boolean>(false);
+  const [selectedMemo, setSelectedMemo] = React.useState<Memo | null>(null);
 
   const handleClickMemoButton = (memo: Memo) => {
     setSelectedMemo(memo);

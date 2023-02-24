@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css, useTheme } from '@emotion/react';
 import {
   Icon,
   Input,
-  theme,
   Button,
   Typography,
   TeamKeyType,
@@ -22,6 +22,7 @@ type Introduction = {
 };
 
 function IntroductionInfoBox() {
+  const theme = useTheme();
   const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
   const [introductionList, setIntroductionList] = React.useState<Introduction[]>(INTRODUCTION);
 
@@ -137,14 +138,16 @@ const BulletListItem = styled.li`
 `;
 
 const FiledAddButton = styled(Button)`
-  display: flex;
-  align-self: center;
-  align-items: center;
-  transition: all 0.15s ease-in;
+  ${({ theme }) => css`
+    display: flex;
+    align-self: center;
+    align-items: center;
+    transition: all 0.15s ease-in;
 
-  &:hover {
-    background-color: ${theme.palette.red100};
-  }
+    &:hover {
+      background-color: ${theme.palette.red100};
+    }
+  `}
 `;
 
 export default IntroductionInfoBox;

@@ -1,14 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  Chip,
-  theme,
-  Title,
-  Button,
-  Typography,
-  ButtonHierarchy,
-  Modal,
-} from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Chip, Title, Button, Typography, ButtonHierarchy, Modal } from 'gdsc-uos-design-system';
 
 import { ApplyState } from '@/@types';
 import { convertChipColorByState } from '@/utils';
@@ -22,6 +15,7 @@ import {
 } from '../components';
 
 function InterviewRecordPage() {
+  const theme = useTheme();
   const [info, setInfo] = React.useState<any>();
   const [applyState, setApplyState] = React.useState<ApplyState>(info?.state);
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);

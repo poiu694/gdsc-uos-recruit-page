@@ -1,5 +1,7 @@
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme, Typography, Icon, IconKeyType } from 'gdsc-uos-design-system';
+import { Typography, Icon, IconKeyType } from 'gdsc-uos-design-system';
+
 import { Flex } from './styled';
 
 interface Props {
@@ -8,6 +10,8 @@ interface Props {
 }
 
 function IconText({ icon, text }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper gap={12} alignItems="center">
       <Icon type={icon} />

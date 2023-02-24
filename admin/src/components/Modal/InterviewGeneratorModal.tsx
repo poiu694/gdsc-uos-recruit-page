@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {
-  theme,
   Button,
   TextArea,
   Typography,
   useModalContext,
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
 
 interface Props {
   name: string;
@@ -20,6 +20,7 @@ export function InterviewGeneratorModal({
   onClickCancel: _onClickCancle,
   onClickConfirm: _onClickConfirm,
 }: Props) {
+  const theme = useTheme();
   const [record, setRecord] = React.useState<string>('');
   const { onClose } = useModalContext();
 
@@ -53,16 +54,8 @@ export function InterviewGeneratorModal({
         />
       </Spacer>
       <BottomButtonList>
-        <CancleButton
-          hierarchy={ButtonHierarchy.Danger}
-          borderRadius={0}
-          onClick={onClickCancle}
-        >
-          <Typography
-            type="body4"
-            textAlign="center"
-            color={theme.colors.primary.white}
-          >
+        <CancleButton hierarchy={ButtonHierarchy.Danger} borderRadius={0} onClick={onClickCancle}>
+          <Typography type="body4" textAlign="center" color={theme.colors.primary.white}>
             취소
           </Typography>
         </CancleButton>
@@ -71,11 +64,7 @@ export function InterviewGeneratorModal({
           borderRadius={0}
           onClick={onClickConfirm}
         >
-          <Typography
-            type="body4"
-            textAlign="center"
-            color={theme.colors.primary.white}
-          >
+          <Typography type="body4" textAlign="center" color={theme.colors.primary.white}>
             생성
           </Typography>
         </ConfirmButton>

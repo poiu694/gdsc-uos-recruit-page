@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Button, ButtonHierarchy, theme, Typography } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Button, ButtonHierarchy, Typography } from 'gdsc-uos-design-system';
 
 import { FAQ } from '@/@types';
 import { Flex } from './styled';
@@ -12,6 +13,8 @@ interface Props {
 }
 
 function QuestionAndDescription({ title, description, type = 'show', onDeleteClick }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper flexDirection="column" as={'section'}>
       <Flex
@@ -41,10 +44,12 @@ function QuestionAndDescription({ title, description, type = 'show', onDeleteCli
 }
 
 const Wrapper = styled(Flex)`
-  padding: 16px;
-  border: 1px solid ${theme.colors.ui.border};
-  border-radius: 16px;
-  margin-top: 32px;
+  ${({ theme }) => css`
+    padding: 16px;
+    border: 1px solid ${theme.colors.ui.border};
+    border-radius: 16px;
+    margin-top: 32px;
+  `}
 `;
 
 export default QuestionAndDescription;

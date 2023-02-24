@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { theme, Typography } from 'gdsc-uos-design-system';
+import { css } from '@emotion/react';
+import { Typography } from 'gdsc-uos-design-system';
 
 import { Flex } from '@/components/styled';
 
@@ -20,10 +21,12 @@ function MainRecruitInfoBox() {
 }
 
 const Wrapper = styled.section`
-  & div > a {
-    text-decoration: none;
-    color: ${theme.colors.primary.blue};
-  }
+  ${({ theme }) => css`
+    & div > a {
+      text-decoration: none;
+      color: ${theme.colors.primary.blue};
+    }
+  `}
 `;
 
 export default MainRecruitInfoBox;

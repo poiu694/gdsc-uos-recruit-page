@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
-import { Button, theme, Typography, ClickableIcon, ButtonHierarchy } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Button, Typography, ClickableIcon, ButtonHierarchy } from 'gdsc-uos-design-system';
+
 import { PageOptions } from '@/hooks/usePagination';
 
 export interface Props {
@@ -8,6 +10,7 @@ export interface Props {
 }
 
 function PageNavigation({ pageOptions, handleChangePage, ...restProps }: Props) {
+  const theme = useTheme();
   const { startPage, endPage, currentPage, totalPages } = pageOptions;
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;

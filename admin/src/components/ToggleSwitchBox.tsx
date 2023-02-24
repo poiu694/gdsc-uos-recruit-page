@@ -1,5 +1,6 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme, Typography } from 'gdsc-uos-design-system';
+import { Typography } from 'gdsc-uos-design-system';
 
 interface Props {
   label?: string;
@@ -22,24 +23,26 @@ function ToggleSwitchBox({ label, value, onClick }: Props) {
 const Wrapper = styled.div``;
 
 const ToggleSwitch = styled.label`
-  width: 64px;
-  height: 24px;
-  display: block;
-  position: relative;
-  border-radius: 2rem;
-  background-color: ${theme.colors.background};
-  border: 1px solid ${theme.colors.ui.border};
-  cursor: pointer;
-  transition: all 0.2s ease-in;
+  ${({ theme }) => css`
+    width: 64px;
+    height: 24px;
+    display: block;
+    position: relative;
+    border-radius: 2rem;
+    background-color: ${theme.colors.background};
+    border: 1px solid ${theme.colors.ui.border};
+    cursor: pointer;
+    transition: all 0.2s ease-in;
 
-  &.toggle {
-    background-color: ${theme.palette.red200};
-    border: 1px solid ${theme.palette.red300};
-  }
+    &.toggle {
+      background-color: ${theme.palette.red200};
+      border: 1px solid ${theme.palette.red300};
+    }
 
-  &.toggle span {
-    left: calc(100% - 20px);
-  }
+    &.toggle span {
+      left: calc(100% - 20px);
+    }
+  `}
 `;
 
 const ToggleButton = styled.span`
@@ -50,7 +53,7 @@ const ToggleButton = styled.span`
   left: 4px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: ${theme.colors.primary.red};
+  background: ${(props) => props.theme.colors.primary.red};
   transition: all 0.2s ease-in;
 `;
 

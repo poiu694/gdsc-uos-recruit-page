@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import {
   Icon,
-  theme,
   Input,
   Button,
   TextArea,
@@ -11,9 +10,10 @@ import {
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
 
+import { QUESTIONS } from '@/dummy/apply';
 import { Flex } from '@/components/styled';
 import TeamList from '@/components/TeamList';
-import { QUESTIONS } from '@/dummy/apply';
+import { css, useTheme } from '@emotion/react';
 
 const DEFAULT_TEAM_VALUE = 'common';
 
@@ -24,8 +24,9 @@ type Question = {
 };
 
 function ApplyQuestionInfoBOx() {
-  const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
+  const theme = useTheme();
   const [questionList, setQuestionList] = React.useState<Question[]>(QUESTIONS);
+  const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
 
   const handleClickTeamName = (team: TeamKeyType) => {
     setActiveTeam(team);
@@ -160,13 +161,15 @@ const Description = styled(Typography)`
 `;
 
 const HoverButton = styled(Button)`
-  display: flex;
-  align-items: center;
-  transition: all 0.15s ease-in;
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    transition: all 0.15s ease-in;
 
-  &:hover {
-    background-color: ${theme.palette.red100};
-  }
+    &:hover {
+      background-color: ${theme.palette.red100};
+    }
+  `}
 `;
 
 export default ApplyQuestionInfoBOx;

@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useTheme } from '@emotion/react';
 import {
   Button,
   ButtonHierarchy,
   Input,
   TextArea,
-  theme,
   Typography,
   useModalContext,
 } from 'gdsc-uos-design-system';
+
 import { FAQ } from '@/@types';
 
 interface Props {
@@ -22,6 +23,7 @@ export function QNAGeneratorModal({
   onClickCancel: _onClickCancle,
   onClickConfirm: _onClickConfirm,
 }: Props) {
+  const theme = useTheme();
   const [title, setTitle] = React.useState<string>('');
   const [description, setdescription] = React.useState<string>('');
   const { onClose } = useModalContext();

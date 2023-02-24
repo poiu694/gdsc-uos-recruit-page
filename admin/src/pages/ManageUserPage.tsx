@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useTheme } from '@emotion/react';
 import {
   Td,
   Tr,
@@ -7,7 +8,6 @@ import {
   Table,
   TBody,
   THead,
-  theme,
   Title,
   Button,
   Typography,
@@ -22,6 +22,7 @@ import { DUMMY_ADMIN_USERS } from '@/dummy/users';
 import { ContentWrapper, PageNavigation, SelectOption, SideMenu } from '@/components';
 
 function ManageUserPage() {
+  const theme = useTheme();
   const [totalCount, setTotalCount] = React.useState<number>(0);
   const [userRoles, setUserRoles] = React.useState<Record<string, UserType>>({});
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination({

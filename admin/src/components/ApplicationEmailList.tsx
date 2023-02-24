@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Button, ButtonHierarchy, Chip, theme, Typography } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Button, ButtonHierarchy, Chip, Typography } from 'gdsc-uos-design-system';
 
 import { Flex } from './styled';
 import { useEmailAction } from '@/hooks';
@@ -17,6 +18,7 @@ interface Props {
 }
 
 function ApplicationEmailList({ list, updateEmailList, isSelectedEmail, isAllActiveEmail }: Props) {
+  const theme = useTheme();
   const [isEntireTarget, setIsEntireTarget] = React.useState<boolean>(false);
   const [seasonFilterValue, setSeasonFilterValue] = React.useState<string>('전체');
   const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<ApplyState | '전체'>(
@@ -110,44 +112,48 @@ const Wrapper = styled.section`
 `;
 
 const ListWrapper = styled.div`
-  overflow-y: scroll;
-  box-sizing: border-box;
-  border: 1px solid ${theme.colors.ui.border};
-  border-radius: 10px;
-  width: 100%;
-  height: 480px;
-  padding: 16px;
+  ${({ theme }) => css`
+    overflow-y: scroll;
+    box-sizing: border-box;
+    border: 1px solid ${theme.colors.ui.border};
+    border-radius: 10px;
+    width: 100%;
+    height: 480px;
+    padding: 16px;
+  `}
 `;
 
 const UserList = styled.ul`
-  border-top: 1px solid ${theme.colors.ui.border};
+  border-top: 1px solid ${(props) => props.theme.colors.ui.border};
 `;
 
 const UserEmailItem = styled.li`
-  height: 48px;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: all 0.12s ease-in;
+  ${({ theme }) => css`
+    height: 48px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.12s ease-in;
 
-  & > button {
-    height: 100%;
-  }
+    & > button {
+      height: 100%;
+    }
 
-  &:nth-of-type(n + 2) {
-    border-top: 1px solid ${theme.colors.ui.border};
-  }
+    &:nth-of-type(n + 2) {
+      border-top: 1px solid ${theme.colors.ui.border};
+    }
 
-  &:hover {
-    background-color: ${theme.colors.ui.hover};
-  }
+    &:hover {
+      background-color: ${theme.colors.ui.hover};
+    }
 
-  &.active {
-    background-color: ${theme.palette.gray200};
-  }
+    &.active {
+      background-color: ${theme.palette.gray200};
+    }
 
-  &.active:hover {
-    background-color: ${theme.palette.gray250};
-  }
+    &.active:hover {
+      background-color: ${theme.palette.gray250};
+    }
+  `}
 `;
 
 export default ApplicationEmailList;

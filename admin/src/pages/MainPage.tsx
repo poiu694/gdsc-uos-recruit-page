@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { theme, Title, Typography } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Title, Typography } from 'gdsc-uos-design-system';
 
 import {
   Flex,
@@ -11,6 +12,7 @@ import {
 } from '@/components';
 
 function MainPage() {
+  const theme = useTheme();
   const currentYear = new Date().getFullYear();
 
   return (

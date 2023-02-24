@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css, useTheme } from '@emotion/react';
 import {
   Tab,
-  theme,
   Modal,
   Button,
   TabMenu,
@@ -22,10 +22,11 @@ const DEFAULT_TEAM_VALUE = 'common';
 const DEFAULT_TAB_VALUE = '1';
 
 function QuestionInfoBox() {
+  const theme = useTheme();
+  const [FAQList, setFAQList] = React.useState<FAQ[]>([]);
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
   const [tabValue, setTabValue] = React.useState<string>(DEFAULT_TAB_VALUE);
   const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
-  const [FAQList, setFAQList] = React.useState<FAQ[]>([]);
 
   const handleClickTeamName = (team: TeamKeyType) => {
     setActiveTeam(team);
@@ -117,13 +118,15 @@ const TabContents = styled.section`
 `;
 
 const AddButton = styled(Button)`
-  padding: 8px;
-  transition: all 0.15s linear;
-  margin-left: 16px;
+  ${({ theme }) => css`
+    padding: 8px;
+    transition: all 0.15s linear;
+    margin-left: 16px;
 
-  &:hover {
-    background-color: ${theme.colors.ui.hover};
-  }
+    &:hover {
+      background-color: ${theme.colors.ui.hover};
+    }
+  `}
 `;
 
 export default QuestionInfoBox;

@@ -1,20 +1,19 @@
 import styled from '@emotion/styled';
-import { theme, Typography } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Typography } from 'gdsc-uos-design-system';
 
 interface Props {
   type: 'icon' | 'icon-text';
 }
 
 function Logo({ type }: Props) {
+  const theme = useTheme();
+
   return (
     <LogoContainer>
       <Image src="/logo.png" />
       {type === 'icon-text' && (
-        <Typography
-          type="h2"
-          textAlign="center"
-          color={theme.colors.primary.yellow}
-        >
+        <Typography type="h2" textAlign="center" color={theme.colors.primary.yellow}>
           GDSC UOS
         </Typography>
       )}

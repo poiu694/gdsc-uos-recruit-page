@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
-import { theme, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
+import { Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
 
 import Logo from './Logo';
 import { Flex } from './styled';
 import IconText from './IconText';
 
 function SideMenu() {
+  const theme = useTheme();
   const navigate = useNavigate();
 
   return (
@@ -67,25 +69,27 @@ function SideMenu() {
 }
 
 const Wrapper = styled.aside`
-  display: block;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  margin: 16px 0 16px 16px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 240px;
-  overflow-y: auto;
-  padding: 0;
-  background-image: linear-gradient(
-    195deg,
-    ${theme.palette.gray500} 0%,
-    ${theme.palette.black} 100%
-  );
+  ${({ theme }) => css`
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: 16px 0 16px 16px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 240px;
+    overflow-y: auto;
+    padding: 0;
+    background-image: linear-gradient(
+      195deg,
+      ${theme.palette.gray500} 0%,
+      ${theme.palette.black} 100%
+    );
+  `}
 `;
 
 const Header = styled.header`
-  border: 1px solid ${theme.palette.gray350};
+  border: 1px solid ${(props) => props.theme.palette.gray350};
   margin-bottom: 16px;
 `;
 
@@ -98,7 +102,7 @@ const MenuItem = styled.li`
   transition: 0.15s all ease-in;
 
   &:hover {
-    background-color: ${theme.palette.gray500};
+    background-color: ${(props) => props.theme.palette.gray500};
   }
 `;
 

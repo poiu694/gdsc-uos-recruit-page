@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { theme, Typography } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Typography } from 'gdsc-uos-design-system';
 import { PieChart } from 'react-minimal-pie-chart';
 
 import { Flex } from './styled';
@@ -9,6 +10,8 @@ interface Props {
 }
 
 function ApplicationStatusChart({ title }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <Flex flexDirection="column" alignItems="center" gap={16}>

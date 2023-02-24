@@ -1,12 +1,7 @@
 import styled from '@emotion/styled';
-import {
-  theme,
-  Button,
-  TextArea,
-  Typography,
-  useModalContext,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Button, Typography, useModalContext, ButtonHierarchy } from 'gdsc-uos-design-system';
+
 import { Memo } from '@/@types';
 import { Flex } from '@/components/styled';
 
@@ -16,6 +11,7 @@ interface Props {
 }
 
 export function UserMemoModal({ name, memo }: Props) {
+  const theme = useTheme();
   const { onClose } = useModalContext();
 
   return (

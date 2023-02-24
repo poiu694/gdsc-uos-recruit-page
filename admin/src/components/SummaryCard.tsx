@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Icon, theme, Typography, IconKeyType, PalleteValueType } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Icon, Typography, IconKeyType, PalleteValueType } from 'gdsc-uos-design-system';
 
 interface Props {
   label: string;
@@ -10,6 +11,8 @@ interface Props {
 }
 
 function SummaryCard({ description, value, label, iconType, fill }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <CardHeader>
@@ -36,44 +39,50 @@ function SummaryCard({ description, value, label, iconType, fill }: Props) {
 }
 
 const Wrapper = styled.div`
-  width: 100%;
-  border: 1px solid ${theme.palette.gray150};
-  border-radius: 16px;
-  box-shadow: 0 4px 6px -1px ${theme.palette.gray250}, 0 2px 4px -1px ${theme.palette.gray200};
+  ${({ theme }) => css`
+    width: 100%;
+    border: 1px solid ${theme.palette.gray150};
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px ${theme.palette.gray250}, 0 2px 4px -1px ${theme.palette.gray200};
+  `}
 `;
 
 const CardHeader = styled.header`
-  position: relative;
-  padding: 16px;
-  box-sizing: border-box;
+  ${({ theme }) => css`
+    position: relative;
+    padding: 16px;
+    box-sizing: border-box;
 
-  &::after {
-    position: absolute;
-    content: '';
-    width: 90%;
-    height: 1px;
-    background-image: linear-gradient(
-      to right,
-      ${theme.colors.primary.white},
-      ${theme.colors.ui.divider},
-      ${theme.colors.primary.white}
-    );
-  }
+    &::after {
+      position: absolute;
+      content: '';
+      width: 90%;
+      height: 1px;
+      background-image: linear-gradient(
+        to right,
+        ${theme.colors.primary.white},
+        ${theme.colors.ui.divider},
+        ${theme.colors.primary.white}
+      );
+    }
+  `}
 `;
 
 type OutFilledColor = Pick<Props, 'fill'>;
 const OutFilledIcon = styled(Icon)<OutFilledColor>`
-  position: absolute;
-  top: -50%;
-  background-color: ${(props) => props.fill};
-  transform: translateY(50%);
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px 0 ${theme.palette.gray200}, 0 7px 10px -5px ${theme.palette.gray350};
+  ${({ theme, fill }) => css`
+    position: absolute;
+    top: -50%;
+    background-color: ${fill};
+    transform: translateY(50%);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px 0 ${theme.palette.gray200}, 0 7px 10px -5px ${theme.palette.gray350};
 
-  path {
-    stroke: ${theme.colors.primary.white};
-  }
+    path {
+      stroke: ${theme.colors.primary.white};
+    }
+  `}
 `;
 
 const CardFoorter = styled.footer`

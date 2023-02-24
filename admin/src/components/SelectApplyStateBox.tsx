@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Chip, theme } from 'gdsc-uos-design-system';
+import { css } from '@emotion/react';
+import { Chip } from 'gdsc-uos-design-system';
 
 import { Flex } from './styled';
 import { ApplyState } from '@/@types';
@@ -31,13 +32,15 @@ const Wrapper = styled(Flex)`
 `;
 
 const ClickableChip = styled(Chip)`
-  cursor: pointer;
-  transition: all 0.15s ease-in;
+  ${({ theme }) => css`
+    cursor: pointer;
+    transition: all 0.15s ease-in;
 
-  &:hover {
-    background-color: ${theme.palette.gray300};
-    border-color: ${theme.palette.gray350};
-  }
+    &:hover {
+      background-color: ${theme.palette.gray300};
+      border-color: ${theme.palette.gray350};
+    }
+  `}
 `;
 
 export default SelectApplyStateBox;

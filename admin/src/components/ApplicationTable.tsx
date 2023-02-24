@@ -6,11 +6,11 @@ import {
   Table,
   TBody,
   THead,
-  theme,
   Button,
   Typography,
   ButtonHierarchy,
 } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
 
 import { UserApplication } from '@/@types';
@@ -22,6 +22,7 @@ interface Props {
 }
 
 function ApplicationTable({ pageSize, applications }: Props) {
+  const theme = useTheme();
   const navigate = useNavigate();
 
   return (

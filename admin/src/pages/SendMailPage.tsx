@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import {
-  theme,
   Input,
   Title,
   Typography,
@@ -80,27 +80,31 @@ const EmailContent = styled(TextArea)`
 `;
 
 const MailSendButton = styled.a`
-  text-align: end;
-  text-decoration: none;
-  color: ${theme.colors.text.general};
-  transition: all 0.1s ease-in;
+  ${({ theme }) => css`
+    text-align: end;
+    text-decoration: none;
+    color: ${theme.colors.text.general};
+    transition: all 0.1s ease-in;
 
-  &:hover {
-    color: ${theme.colors.primary.blue};
-  }
+    &:hover {
+      color: ${theme.colors.primary.blue};
+    }
+  `}
 `;
 
 const TargetEmailName = styled.div`
-  padding: 8px 4px;
-  border: 1px solid ${theme.colors.ui.border};
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.1s ease-in;
+  ${({ theme }) => css`
+    padding: 8px 4px;
+    border: 1px solid ${theme.colors.ui.border};
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
 
-  &:hover {
-    background-color: ${theme.palette.red200};
-    border: 1px solid ${theme.palette.red400};
-  }
+    &:hover {
+      background-color: ${theme.palette.red200};
+      border: 1px solid ${theme.palette.red400};
+    }
+  `}
 `;
 
 export default ApplyDetailPage;
