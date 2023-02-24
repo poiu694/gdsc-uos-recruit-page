@@ -20,7 +20,7 @@ export const ApplyFormStepReducer: React.Reducer<ApplyForm, ApplyActions> = (sta
     case 'toggle':
       return { ...state, isApplyCore: !state.isApplyCore };
     case 'prev':
-      const prevStep = Math.max(state.step - 1, ApplyFormStep.COMMON_QUESTIONS);
+      const prevStep: ApplyFormStep = Math.max(state.step - 1, ApplyFormStep.COMMON_QUESTIONS);
       return {
         ...state,
         isFirstStep: prevStep === ApplyFormStep.COMMON_QUESTIONS,
@@ -31,7 +31,7 @@ export const ApplyFormStepReducer: React.Reducer<ApplyForm, ApplyActions> = (sta
       const lastStep = state.isApplyCore
         ? ApplyFormStep.CORE_QUESTIONS
         : ApplyFormStep.TEAM_QUESTIONS;
-      const nextStep = Math.min(state.step + 1, lastStep);
+      const nextStep: ApplyFormStep = Math.min(state.step + 1, lastStep);
       return { ...state, isLastStep: nextStep === lastStep, isFirstStep: false, step: nextStep };
     default:
       return state;
