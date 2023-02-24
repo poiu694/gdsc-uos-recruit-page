@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Circle, ProcessCircleType, theme, Title, Typography } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Circle, ProcessCircleType, Title, Typography } from 'gdsc-uos-design-system';
 
 import { TitleWithDescription } from '@types';
 import { defaultDuration } from '@/hooks/useAOSSideEffect';
@@ -10,6 +11,8 @@ interface Props {
 }
 
 function MainProcess({ content, circle }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <TitleWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
@@ -43,30 +46,33 @@ const Wrapper = styled.div`
 `;
 
 const CircleList = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin-top: 48px;
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 48px;
 
-  @media (min-width: ${theme.size.tabletL + 300}px) {
-    margin-top: 96px;
-  }
+    @media (min-width: ${theme.size.tabletL + 300}px) {
+      margin-top: 96px;
+    }
 
-  @media (max-width: ${theme.size.tabletL}px) {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-  }
+    @media (max-width: ${theme.size.tabletL}px) {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-  @media (max-width: ${theme.size.mobile}px) {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+  `}
 `;
 
 const CircleItem = styled.li`
+  ${({ theme }) => css`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -118,15 +124,17 @@ const CircleItem = styled.li`
         grid-column: 2/3;
       }
     }
-  };
+  }`}
 `;
 
 const TitleWrapper = styled.div`
-  margin-bottom: 90px;
+  ${({ theme }) => css`
+    margin-bottom: 90px;
 
-  @media (max-width: ${theme.size.mobile}px) {
-    margin-bottom: 32px;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      margin-bottom: 32px;
+    }
+  `}
 `;
 
 export default MainProcess;

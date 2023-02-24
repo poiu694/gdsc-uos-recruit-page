@@ -1,12 +1,14 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Planet, theme, Typography } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Planet, Typography } from 'gdsc-uos-design-system';
 
 interface Props {
   banner: string;
 }
 
 function MainBanner({ banner }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <ContentsWrapper>

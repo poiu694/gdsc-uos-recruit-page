@@ -1,8 +1,7 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-
-import { Icon, theme, Typography, getTitleCaseTeam } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Icon, Typography, getTitleCaseTeam } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
 import { TeamNameProps, QuestionListItem } from '@types';
@@ -12,6 +11,7 @@ interface Props extends TeamNameProps {
 }
 
 function QuestionList({ questions, teamName }: Props) {
+  const theme = useTheme();
   const router = useRouter();
   const { logEvent } = useGA();
 

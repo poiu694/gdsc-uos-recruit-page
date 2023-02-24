@@ -1,20 +1,22 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
-import { TeamKeyType, theme, Typography } from 'gdsc-uos-design-system';
+import { TeamKeyType, Typography } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
 import { teams } from '@/constants';
 import { TeamNameProps, QuestionListItem } from '@types';
+import { css, useTheme } from '@emotion/react';
 
 const initalIsActive = (teams: QuestionListItem[], teamName: TeamKeyType) => {
   return new Array(teams.length).fill(false).map((_, idx) => teamName === teams[idx].type);
 };
 
 function TeamList({ teamName }: TeamNameProps) {
-  const [isActive, setIsActive] = useState(initalIsActive(teams, teamName!));
+  const theme = useTheme();
   const router = useRouter();
   const { logEvent } = useGA();
+  const [isActive, setIsActive] = useState(initalIsActive(teams, teamName!));
 
   const handleClickTeamItem = useCallback(
     (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
@@ -52,44 +54,49 @@ function TeamList({ teamName }: TeamNameProps) {
 }
 
 const Wrapper = styled.ul`
-  width: 168px;
-  height: 100%;
+  ${({ theme }) => css`
+    width: 168px;
+    height: 100%;
 
-  @media (max-width: ${theme.size.mobile}px) {
-    width: 100%;
-    margin: 40px 0;
-    border: 1px solid ${theme.colors.ui.divider};
-    border-radius: 5px;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      width: 100%;
+      margin: 40px 0;
+      border: 1px solid ${theme.colors.ui.divider};
+      border-radius: 5px;
+    }
+  `}
 `;
 
 const ListItem = styled.li`
-  height: 32px;
-  padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px ${theme.padding.md}px;
-  cursor: pointer;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  -webkit-transition: all 0.1s ease-in-out; /* Safari */
-  transition: all 0.1s ease-in-out;
+  ${({ theme }) => css`
+    height: 32px;
+    padding: ${theme.padding.md}px ${theme.padding.xlg}px ${theme.padding.md}px
+      ${theme.padding.md}px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    -webkit-transition: all 0.1s ease-in-out; /* Safari */
+    transition: all 0.1s ease-in-out;
 
-  &:hover {
-    background-color: ${theme.colors.ui.hover};
+    &:hover {
+      background-color: ${theme.colors.ui.hover};
 
-    & > div {
-      color: ${theme.colors.primary.blue};
+      & > div {
+        color: ${theme.colors.primary.blue};
+      }
     }
-  }
 
-  & > div.bold {
-    color: ${theme.colors.text.bold};
-    font-weight: 700;
-  }
+    & > div.bold {
+      color: ${theme.colors.text.bold};
+      font-weight: 700;
+    }
 
-  @media (max-width: ${theme.size.mobile}px) {
-    height: 22px;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      height: 22px;
+    }
+  `}
 `;
 
 export default TeamList;

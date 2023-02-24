@@ -1,9 +1,10 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Icon, theme, Typography } from 'gdsc-uos-design-system';
 import { useRouter } from 'next/router';
+import { css, useTheme } from '@emotion/react';
+import { Icon, Typography } from 'gdsc-uos-design-system';
 
 function PrevBox() {
+  const theme = useTheme();
   const router = useRouter();
 
   return (

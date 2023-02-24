@@ -1,8 +1,8 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import { Banner, theme, getTitleCaseTeam, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { Banner, getTitleCaseTeam, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
 import { IntroductionContent } from '@/constants';
@@ -16,6 +16,7 @@ interface IntroductionProps extends TeamNameProps {
 }
 
 const IntroductionPage: NextPage<IntroductionProps> = ({ introduction, teamName }) => {
+  const theme = useTheme();
   const router = useRouter();
   const { logEvent, logPageView } = useGA();
   logPageView(`/introduction/${teamName}`);
@@ -90,16 +91,18 @@ const Layout = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
+  ${({ theme }) => css`
+    width: 80%;
+    margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  justify-content: space-between;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: space-between;
 
-  @media (max-width: ${theme.size.mobile}px) {
-    grid-template-columns: 1fr;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      grid-template-columns: 1fr;
+    }
+  `}
 `;
 
 const ContentsWrapper = styled.div`

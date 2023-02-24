@@ -1,10 +1,12 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Icon, theme, Typography } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Icon, Typography } from 'gdsc-uos-design-system';
 
 import CustomLink from './CustomLink';
 
 function Bottom() {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <Typography type="body5" color={theme.palette.gray400}>
@@ -41,10 +43,8 @@ const Wrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    gap: ${theme.padding.md}px;
-  `}
+  display: flex;
+  gap: ${(props) => props.theme.padding.md}px;
 `;
 
 export default Bottom;

@@ -1,13 +1,14 @@
 import { useCallback } from 'react';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import { theme, Typography } from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Typography } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
 import { GOOGLE_FORM_LINK } from '@/constants/form';
 
 function Header() {
+  const theme = useTheme();
   const router = useRouter();
   const { logEvent } = useGA();
 
@@ -65,7 +66,7 @@ const Wrapper = styled.header`
   padding-top: 10px;
   position: fixed;
   top: 0;
-  z-index: ${theme.zIndex.header};
+  z-index: ${(props) => props.theme.zIndex.header};
   display: flex;
   align-items: center;
   -webkit-backdrop-filter: saturate(50%) blur(4px);

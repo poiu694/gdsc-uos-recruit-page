@@ -1,5 +1,6 @@
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme, Typography } from 'gdsc-uos-design-system';
+import { Typography } from 'gdsc-uos-design-system';
 
 interface Props {
   title: string;
@@ -7,6 +8,8 @@ interface Props {
 }
 
 function List({ title, items }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <Typography type="h5" color={theme.colors.text.bold}>

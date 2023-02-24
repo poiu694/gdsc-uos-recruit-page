@@ -1,11 +1,6 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-  theme,
-  Typography,
-  get200Color,
-  get400Color,
-} from 'gdsc-uos-design-system';
+import { css, useTheme } from '@emotion/react';
+import { Typography, get200Color, get400Color } from 'gdsc-uos-design-system';
 
 import type { AsideCardType, TeamNameProps } from '@types';
 
@@ -15,12 +10,9 @@ interface Props extends TeamNameProps {
   handleClickSupportBtn: () => void;
 }
 
-function AsideCard({
-  teamName,
-  aside,
-  handleClickQuestionListBtn,
-  handleClickSupportBtn,
-}: Props) {
+function AsideCard({ teamName, aside, handleClickQuestionListBtn, handleClickSupportBtn }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <CardWrapper>

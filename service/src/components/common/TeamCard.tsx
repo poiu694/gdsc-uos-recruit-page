@@ -1,22 +1,17 @@
 import { useCallback } from 'react';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-  theme,
-  Typography,
-  get600Color,
-  getJobByTeam,
-  getTitleCaseTeam,
-} from 'gdsc-uos-design-system';
 import { useRouter } from 'next/router';
+import { css, useTheme } from '@emotion/react';
+import { Typography, get600Color, getJobByTeam, getTitleCaseTeam } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
 import { TeamNameProps } from '@types';
 
 function TeamCard({ teamName }: TeamNameProps) {
-  const [team, Developer] = getJobByTeam(teamName); // [0]: Team, [1]: Developer
+  const theme = useTheme();
   const router = useRouter();
   const { logEvent } = useGA();
+  const [team, Developer] = getJobByTeam(teamName); // [0]: Team, [1]: Developer
 
   const handleClickNav = useCallback(() => {
     logEvent('Team', `${teamName} 로 접근`);
@@ -84,11 +79,13 @@ const TitleWrapper = styled(Typography)`
 `;
 
 const Description = styled.div`
-  padding-left: ${theme.padding.xlg}px;
+  ${({ theme }) => css`
+    padding-left: ${theme.padding.xlg}px;
 
-  @media (max-width: ${theme.size.mobile}px) {
-    display: none;
-  }
+    @media (max-width: ${theme.size.mobile}px) {
+      display: none;
+    }
+  `}
 `;
 
 const BottomNav = styled.button`

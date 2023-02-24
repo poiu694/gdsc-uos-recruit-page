@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
-import { theme, Typography } from 'gdsc-uos-design-system';
+import { useTheme } from '@emotion/react';
+import { Typography } from 'gdsc-uos-design-system';
 
 interface Props {
   desc: string;
 }
 
 function Introduce({ desc }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <Typography type="h5" color={theme.colors.text.bold}>

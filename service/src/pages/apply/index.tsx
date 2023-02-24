@@ -1,13 +1,7 @@
-import React, { useReducer } from 'react';
 import styled from '@emotion/styled';
-import {
-  Banner,
-  Button,
-  ButtonHierarchy,
-  TextArea,
-  theme,
-  Typography,
-} from 'gdsc-uos-design-system';
+import React, { useReducer } from 'react';
+import { useTheme } from '@emotion/react';
+import { Banner, Button, ButtonHierarchy, TextArea, Typography } from 'gdsc-uos-design-system';
 import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 
 import { ApplyQuestion } from '@types';
@@ -44,8 +38,9 @@ const defaultAnswerData = (questions: ApplyQuestion[]): Record<string, string> =
 };
 
 const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
-  const [stepState, dispatch] = useReducer(ApplyFormStepReducer, defaultStepState);
+  const theme = useTheme();
   const currentYear = new Date().getFullYear();
+  const [stepState, dispatch] = useReducer(ApplyFormStepReducer, defaultStepState);
   // TODO: API에 따라 형태 변경
   const [answerData, setAnswerData] = React.useState<Record<string, string>>(
     defaultAnswerData([...questions['1'], ...questions['2'], ...questions['3']])
