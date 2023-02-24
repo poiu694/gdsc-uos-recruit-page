@@ -23,10 +23,7 @@ function Bottom() {
         >
           <Icon hoverAction type="blog" color={theme.palette.coreYellow} />
         </CustomLink>
-        <CustomLink
-          href="mailto:olmnuiui70@gmail.com"
-          aria-label="contact to site developer(gmail)"
-        >
+        <CustomLink href="mailto:poiu694@naver.com" aria-label="contact to site developer(naver)">
           <Icon hoverAction type="gmail" color={theme.palette.red200} />
         </CustomLink>
       </IconWrapper>
