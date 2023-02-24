@@ -4,7 +4,7 @@ import { Global, ThemeProvider } from '@emotion/react';
 import { globalStyle, theme } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
-import { Header, ScriptHeader, Spinner } from '@/components/common';
+import { Bottom, Header, ScriptHeader, Spinner } from '@/components/common';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { initGA } = useGA();
@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Suspense fallback={<Spinner />}>
         <Component {...pageProps} />
       </Suspense>
+      <Bottom />
     </ThemeProvider>
   );
 }

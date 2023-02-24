@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import styled from '@emotion/styled';
 
 import main from '@/constants/Main';
+import { Helmet } from '@/components/common';
 import { useGA, useAOSSideEffect } from '@/hooks';
-import { Bottom, Helmet } from '@/components/common';
 import { MainBanner, MainProcess, MainTeam } from '@/components';
 
 const Home: NextPage = () => {
@@ -22,7 +22,6 @@ const Home: NextPage = () => {
           <MainTeam content={mainData.team} />
         </Content>
       </Layout>
-      <Bottom />
     </>
   );
 };

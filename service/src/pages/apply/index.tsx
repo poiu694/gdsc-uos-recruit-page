@@ -13,7 +13,7 @@ import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 import { ApplyQuestion } from '@types';
 import { QUESTIONS } from '@/constants/dummyApply';
 import { formIntroduction } from '@/constants/form';
-import { Bottom, Helmet, ToggleBox } from '@/components/common';
+import { Helmet, ToggleBox } from '@/components/common';
 import { ApplyFormStepReducer, ApplyFormStep } from '@/reducers';
 
 interface Props {
@@ -130,7 +130,6 @@ const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
           </ButtonSection>
         </ContentsWrapper>
       </Layout>
-      <Bottom />
     </>
   );
 };

@@ -6,9 +6,9 @@ import { Banner, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
 import { useGA } from '@/hooks';
 import { TeamList } from '@/components/Qna';
 import { QuestionContent } from '@/constants';
-import { TeamNameProps, QuestionListItem } from '@types';
 import QuestionList from '@/components/Qna/QuestionList';
-import { Bottom, Helmet, Introduction } from '@/components/common';
+import { TeamNameProps, QuestionListItem } from '@types';
+import { Helmet, Introduction } from '@/components/common';
 
 interface QnaListPageProps extends TeamNameProps {
   questions: QuestionListItem[];
@@ -32,7 +32,6 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
           <QuestionList questions={questions} teamName={teamName} />
         </ContentsWrapper>
       </Layout>
-      <Bottom />
     </>
   );
 };

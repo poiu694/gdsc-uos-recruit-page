@@ -8,8 +8,8 @@ import { useGA } from '@/hooks';
 import { IntroductionContent } from '@/constants';
 import { GOOGLE_FORM_LINK } from '@/constants/form';
 import { IntroductionType, TeamNameProps } from '@types';
+import { Helmet, Introduction } from '@/components/common';
 import { List, AsideCard } from '@/components/Introduction';
-import { Bottom, Helmet, Introduction } from '@/components/common';
 
 interface IntroductionProps extends TeamNameProps {
   introduction: IntroductionType;
@@ -55,7 +55,6 @@ const IntroductionPage: NextPage<IntroductionProps> = ({ introduction, teamName 
           />
         </Wrapper>
       </Layout>
-      <Bottom />
     </>
   );
 };

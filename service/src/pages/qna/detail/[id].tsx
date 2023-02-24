@@ -7,7 +7,7 @@ import { useGA } from '@/hooks';
 import { QuestionListItem } from '@types';
 import { QuestionContent } from '@/constants';
 import { QuestionBox, TeamList } from '@/components';
-import { Bottom, Helmet, Introduction } from '@/components/common';
+import { Helmet, Introduction } from '@/components/common';
 
 interface QnaPageProps {
   question: QuestionListItem;
@@ -31,7 +31,6 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
           <QuestionBox question={question} />
         </ContentsWrapper>
       </Layout>
-      <Bottom />
     </>
   );
 };
