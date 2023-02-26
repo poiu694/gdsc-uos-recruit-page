@@ -2440,7 +2440,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
-    gdsc-uos-design-system: ^1.1.23
+    gdsc-uos-design-system: "workspace:^"
     gdsc-uos-eslint-config-custom: "workspace:^"
     gdsc-uos-tsconfig-custom: "workspace:^"
     react: ^18.2.0
@@ -4046,7 +4046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gdsc-uos-design-system@^1.1.23, gdsc-uos-design-system@workspace:^, gdsc-uos-design-system@workspace:packages/design-system":
+"gdsc-uos-design-system@workspace:^, gdsc-uos-design-system@workspace:packages/design-system":
   version: 0.0.0-use.local
   resolution: "gdsc-uos-design-system@workspace:packages/design-system"
   dependencies:
@@ -4067,6 +4067,15 @@ __metadata:
     "@typescript-eslint/parser": ^5.30.6
     cross-env: ^7.0.3
     emotion-reset: ^3.0.1
+    eslint: ^8.30.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jsx-a11y: ^6.6.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.30.1
+    eslint-plugin-react-hooks: ^4.6.0
     gdsc-uos-eslint-config-custom: "workspace:^"
     react: 18.2.0
     rollup: ^3.9.1
