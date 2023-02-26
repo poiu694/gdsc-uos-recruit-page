@@ -41,7 +41,7 @@ function ApplicationEmailList({ list, updateEmailList, isSelectedEmail, isAllAct
     // 필터 값이 바뀌면 entire 토글 버튼을 최신 상태로 유지합니다.
     const isAllActive = isAllActiveEmail(filteredUserList);
     setIsEntireTarget(isAllActive);
-  }, [filteredUserList]);
+  }, [isAllActiveEmail, filteredUserList]);
 
   return (
     <Wrapper>

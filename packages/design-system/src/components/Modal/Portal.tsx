@@ -27,8 +27,8 @@ export function Portal({ id, children }: React.PropsWithChildren<Props>) {
     `;
     window.document.body.appendChild(newPortalElementInstance);
     setElement(newPortalElementInstance);
-  }, []);
-  
+  }, [id]);
+
   if (!element) {
     return null;
   }

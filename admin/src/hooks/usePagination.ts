@@ -90,7 +90,7 @@ const usePagination = ({
     }
 
     setPageOptions(nextPageOptions);
-  }, [totalCount, searchParams]);
+  }, [totalCount, searchParams, setSearchParams]);
 
   return {
     pageOptions,

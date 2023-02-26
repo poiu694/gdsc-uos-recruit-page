@@ -19,14 +19,9 @@ const useEmailAction = () => {
    */
   const getFilteredList = React.useCallback(
     (list: UserApplication[], statusFilter: ApplyState | '전체', seasonFilter: string) => {
-      let result = [...list];
-
-      result = result.filter((item) => statusFilter === '전체' || item.status === statusFilter);
-      result = result.filter(
-        (item) =>
-          seasonFilter === '전체' ||
-          item.season === seasonFilter
-      );
+      const result = [...list]
+        .filter((item) => statusFilter === '전체' || item.status === statusFilter)
+        .filter((item) => seasonFilter === '전체' || item.season === seasonFilter);
       return result;
     },
     []
@@ -84,7 +79,7 @@ const useEmailAction = () => {
         setEmailSetList(nextEmailSet);
       }
     },
-    [emailSet]
+    [emailSet, isAllActiveEmail]
   );
 
   return {

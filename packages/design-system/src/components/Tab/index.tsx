@@ -14,16 +14,17 @@ export function Tab({
   variant = 'default',
   onChange,
 }: React.PropsWithChildren<Props>) {
-  const handleClickTabMenu = React.useCallback((nextTabValue: string) => {
-    if (typeof onChange !== 'undefined') {
-      onChange(nextTabValue);
-    }
-  }, []);
+  const handleClickTabMenu = React.useCallback(
+    (nextTabValue: string) => {
+      if (typeof onChange !== 'undefined') {
+        onChange(nextTabValue);
+      }
+    },
+    [onChange]
+  );
 
   return (
-    <TabContext.Provider
-      value={{ value, onClickTabMenu: handleClickTabMenu, variant }}
-    >
+    <TabContext.Provider value={{ value, onClickTabMenu: handleClickTabMenu, variant }}>
       {children}
     </TabContext.Provider>
   );

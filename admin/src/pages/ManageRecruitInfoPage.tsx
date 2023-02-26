@@ -29,7 +29,7 @@ function ManageRecruitInfoPage() {
     if (value) {
       setTabValue(value);
     }
-  }, []);
+  }, [searchParams]);
 
   return (
     <Wrapper>
