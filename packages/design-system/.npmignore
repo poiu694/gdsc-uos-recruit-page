@@ -15,7 +15,7 @@ cypress
 cypress.json
 .npmignore
 .babelrc
-.eslintrc
+.eslintrc.json
 jest.config.js
 tsconfig.json
 .prettierrc
