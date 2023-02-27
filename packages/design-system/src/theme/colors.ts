@@ -86,11 +86,40 @@ export const colors = {
     mobile: palette.coreGreen,
     data_ml: palette.coreBlue,
     design: palette.orange,
-    core: palette.orange, // default 
-    common: palette.orange
-  } as TeamContent<PalleteValueType>
+    core: palette.orange, // default
+    common: palette.orange,
+  } as TeamContent<PalleteValueType>,
 } as const;
 
+export const darkTheme = {
+  primary: {
+    red: palette.coreRed,
+    yellow: palette.coreYellow,
+    green: palette.coreGreen,
+    blue: palette.coreBlue,
+    black: palette.black,
+    white: palette.white,
+  },
+  background: palette.black,
+  text: {
+    general: palette.gray250,
+    bold: palette.white,
+  },
+  ui: {
+    divider: palette.gray150,
+    border: palette.gray150,
+    hover: palette.gray400,
+  },
+  team: {
+    frontend: palette.coreYellow,
+    backend: palette.coreRed,
+    mobile: palette.coreGreen,
+    data_ml: palette.coreBlue,
+    design: palette.orange,
+    core: palette.orange, // default
+    common: palette.orange,
+  } as TeamContent<PalleteValueType>,
+} as const;
 
 type PalleteType = typeof palette;
 export type PalleteValueType = PalleteType[keyof PalleteType];
