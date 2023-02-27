@@ -1,18 +1,21 @@
-import { useCallback } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
-import { Typography } from 'gdsc-uos-design-system';
+import { ClickableIcon, Typography } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
 import { GOOGLE_FORM_LINK } from '@/constants/form';
+import { useThemeContext } from './CustomThemeProvider';
 
 function Header() {
   const theme = useTheme();
   const router = useRouter();
+  const { theme: userTheme, toggleTheme } = useThemeContext();
+  const isDark = React.useMemo(() => userTheme === 'dark', [userTheme]);
   const { logEvent } = useGA();
 
-  const handleLinkToPage = useCallback(
+  const handleLinkToPage = React.useCallback(
     (url: string) => {
       logEvent('Head', `${url} 로 이동`);
       if (url === GOOGLE_FORM_LINK) {
@@ -36,11 +39,24 @@ function Header() {
           </picture>
         </Logo>
         <Navigation>
-          <Typography type="body4" onClick={() => handleLinkToPage('/')}>
+          <ClickableIcon
+            hoverBackgroundColor={theme.colors.ui.hover}
+            iconProps={{
+              type: userTheme === 'dark' ? 'moon' : 'sun',
+              color: isDark ? theme.colors.primary.yellow : theme.colors.primary.black,
+            }}
+            onClick={toggleTheme}
+          />
+          <Typography
+            type="body4"
+            color={theme.colors.text.general}
+            onClick={() => handleLinkToPage('/')}
+          >
             모집 공고
           </Typography>
           <Typography
             type="body4"
+            color={theme.colors.text.general}
             onClick={() => handleLinkToPage('/qna/common')}
             aria-label="move to common question to gdsc-uos"
           >
@@ -48,6 +64,7 @@ function Header() {
           </Typography>
           <Typography
             type="body4"
+            color={theme.colors.text.general}
             onClick={() => handleLinkToPage('/apply')}
             aria-label="move to apply google-form link"
           >
@@ -71,6 +88,7 @@ const Wrapper = styled.header`
   align-items: center;
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: blur(4px);
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 const NavigationWrapper = styled.header`
@@ -82,8 +100,9 @@ const Navigation = styled.nav`
   ${({ theme }) => css`
     display: flex;
     float: right;
-
     gap: ${theme.padding.md}px;
+    align-items: center;
+
     @media (max-width: ${theme.size.mobile}px) {
       gap: 8px;
     }

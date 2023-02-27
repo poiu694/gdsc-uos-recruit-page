@@ -13,7 +13,11 @@ function ToggleBox({ label, value, onClick }: Props) {
 
   return (
     <Wrapper>
-      {label && <Typography type="body4">{label}</Typography>}
+      {label && (
+        <Typography type="body4" color={theme.colors.text.general}>
+          {label}
+        </Typography>
+      )}
       <input type="checkbox" id="toggle" hidden />
       <ToggleSwitch htmlFor="toggle" className={value ? 'toggle' : ''} onClick={onClick}>
         <ToggleButton />

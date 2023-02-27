@@ -1,6 +1,7 @@
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import { Theme } from '../theme';
 
-import { theme } from '../theme';
 import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
@@ -9,12 +10,14 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
 }
 
 export function Title({ title, descriptions, ...restProps }: Props) {
+  const theme = useTheme() as Theme;
+
   return (
     <Wrapper {...restProps}>
-      <Typography type="h5" color={theme.palette.gray450}>
+      <Typography type="h5" color={theme.colors.text.bold}>
         {title}
       </Typography>
-      <Description type="body4" color={theme.palette.gray450}>
+      <Description type="body4" color={theme.colors.text.general}>
         {descriptions}
       </Description>
     </Wrapper>

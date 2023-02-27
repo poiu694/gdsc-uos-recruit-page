@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Title, Typography } from 'gdsc-uos-design-system';
 
@@ -11,10 +11,12 @@ interface Props {
 }
 
 function MainTeam({ content }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <TitleWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
-        <Typography type="h1" textAlign="center">
+        <Typography type="h1" textAlign="center" color={theme.colors.text.bold}>
           Team
         </Typography>
       </TitleWrapper>

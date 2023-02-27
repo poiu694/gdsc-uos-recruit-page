@@ -74,12 +74,18 @@ const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
         <Banner teamName="frontend" />
         <ContentsWrapper>
           <IntroductionSection>
-            <Typography type="h3">지원하기</Typography>
-            <Typography type="body4" style={{ whiteSpace: 'pre-line' }}>
+            <Typography type="h3" color={theme.colors.text.bold}>
+              지원하기
+            </Typography>
+            <Typography
+              type="body4"
+              style={{ whiteSpace: 'pre-line' }}
+              color={theme.colors.text.general}
+            >
               {formIntroduction(currentYear)}
             </Typography>
           </IntroductionSection>
-          <Typography type="h3" style={{ marginBlock: 16 }}>
+          <Typography type="h3" style={{ marginBlock: 16 }} color={theme.colors.text.bold}>
             {TitleWithStep[stepState.step]}
           </Typography>
           <QuestionSection>

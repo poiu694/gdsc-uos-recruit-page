@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Typography } from 'gdsc-uos-design-system';
 
@@ -10,11 +10,17 @@ interface Props {
 }
 
 function QuestionBox({ question }: Props) {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <PrevBox />
-      <TitleWrapper type="h2">{question?.title}</TitleWrapper>
-      <ContentWrapper type="body3">{question?.desc}</ContentWrapper>
+      <TitleWrapper type="h2" color={theme.colors.text.bold}>
+        {question?.title}
+      </TitleWrapper>
+      <ContentWrapper type="body3" color={theme.colors.text.general}>
+        {question?.desc}
+      </ContentWrapper>
     </Wrapper>
   );
 }

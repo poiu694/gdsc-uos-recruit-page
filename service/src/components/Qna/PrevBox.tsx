@@ -10,7 +10,7 @@ function PrevBox() {
   return (
     <Wrapper onClick={() => router.back()}>
       <Icon type="left" hoverAction={false} />
-      <Typography type="body4" color={theme.palette.gray350}>
+      <Typography type="body4" color={theme.colors.text.general}>
         질문목록 바로가기
       </Typography>
     </Wrapper>

@@ -1,3 +1,4 @@
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Typography } from 'gdsc-uos-design-system';
 
@@ -7,10 +8,16 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
 }
 
 function Introduction({ title, desc, ...restProps }: Props) {
+  const theme = useTheme();
+
   return (
     <ContentsWrapper {...restProps}>
-      <Typography type="h1">{title}</Typography>
-      <Typography type="body3">{desc}</Typography>
+      <Typography type="h1" color={theme.colors.text.bold}>
+        {title}
+      </Typography>
+      <Typography type="body3" color={theme.colors.text.general}>
+        {desc}
+      </Typography>
     </ContentsWrapper>
   );
 }
