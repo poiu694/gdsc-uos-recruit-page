@@ -2,13 +2,21 @@ import { useCallback } from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
-import { Typography, get600Color, getJobByTeam, getTitleCaseTeam } from 'gdsc-uos-design-system';
+import {
+  Typography,
+  get600Color,
+  getJobByTeam,
+  getTitleCaseTeam,
+  get400Color,
+} from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
 import { TeamNameProps } from '@types';
+import { useThemeContext } from './CustomThemeProvider';
 
 function TeamCard({ teamName }: TeamNameProps) {
   const theme = useTheme();
+  const { theme: userTheme } = useThemeContext();
   const router = useRouter();
   const { logEvent } = useGA();
   const [team, Developer] = getJobByTeam(teamName); // [0]: Team, [1]: Developer
@@ -19,7 +27,7 @@ function TeamCard({ teamName }: TeamNameProps) {
   }, [router, teamName, logEvent]);
 
   return (
-    <Wrapper teamName={teamName}>
+    <Wrapper teamName={teamName} isDark={userTheme === 'dark'}>
       <TitleWrapper type="h4" color={theme.colors.primary.white}>
         {getTitleCaseTeam(teamName)}
       </TitleWrapper>
@@ -42,13 +50,14 @@ function TeamCard({ teamName }: TeamNameProps) {
   );
 }
 
-const Wrapper = styled.section<TeamNameProps>`
-  ${({ theme, teamName }) => css`
+type StyleProps = TeamNameProps & { isDark: boolean };
+const Wrapper = styled.section<StyleProps>`
+  ${({ theme, teamName, isDark }) => css`
     width: 320px;
     height: 300px;
     position: relative;
     transition: all 0.1s ease-in;
-    background-color: ${get600Color(teamName)};
+    background-color: ${isDark ? get400Color(teamName) : get600Color(teamName)};
     border-radius: 15px;
 
     @media (max-width: ${theme.size.mobile}px) {
@@ -57,7 +66,7 @@ const Wrapper = styled.section<TeamNameProps>`
     }
 
     &:hover {
-      background-color: ${theme.colors.team[teamName]};
+      background-color: ${isDark ? get600Color(teamName) : theme.colors.team[teamName]};
     }
   `}
 `;
@@ -97,7 +106,7 @@ const BottomNav = styled.button`
     bottom: 0;
     cursor: pointer;
     border: none;
-    border-top: 1px solid ${theme.colors.background};
+    border-top: 1px solid ${theme.colors.ui.border};
     outline: none;
     border-radius: 0px 0px 15px 15px;
     background-color: transparent;

@@ -26,10 +26,10 @@ function MainBanner({ banner }: Props) {
             Clubs
           </Typography>
         </TitleWrapper>
-        <Typography type="h2" color={theme.colors.text.bold}>
+        <Typography type="h2" color={theme.colors?.text.bold}>
           University of Seoul
         </Typography>
-        <DescWrapper type="h6" color={theme.colors.text.general}>
+        <DescWrapper type="h6" color={theme.colors?.text.general}>
           {banner}
         </DescWrapper>
       </ContentsWrapper>

@@ -16,7 +16,7 @@ function MainProcess({ content, circle }: Props) {
   return (
     <Wrapper>
       <TitleWrapper data-aos="fade-up" data-aos-duration={defaultDuration}>
-        <Typography type="h1" textAlign="center" color={theme.colors.text.bold}>
+        <Typography type="h1" textAlign="center" color={theme.colors?.text.bold}>
           Process
         </Typography>
       </TitleWrapper>

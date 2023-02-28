@@ -50,7 +50,7 @@ const desktopFonts = {
   body3: css`
     letter-spacing: -0.018em;
     line-height: 1.6;
-    font-size: 20px;
+    font-size: 18px;
   `,
   body4: css`
     letter-spacing: -0.018em;
