@@ -17,7 +17,7 @@ function List({ title, items }: Props) {
       </Typography>
       <Lists>
         {items.map((item) => (
-          <ListItem key={item} type="body3">
+          <ListItem key={item} type="body3" color={theme.colors.text.general}>
             • {item}
           </ListItem>
         ))}
