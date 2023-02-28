@@ -35,7 +35,7 @@ function Header() {
         <Logo onClick={() => handleLinkToPage('/')}>
           <picture>
             <source media={`(max-width: ${theme.size.mobile}px)`} srcSet="/logo_small.png" />
-            <img src="/logo.png" alt="gdsc-uos-logo" />
+            <img src={isDark ? '/logo_white.png' : '/logo.png'} alt="gdsc-uos-logo" />
           </picture>
         </Logo>
         <Navigation>
@@ -88,7 +88,6 @@ const Wrapper = styled.header`
   align-items: center;
   -webkit-backdrop-filter: saturate(50%) blur(4px);
   backdrop-filter: blur(4px);
-  background-color: ${(props) => props.theme.colors.background};
 `;
 
 const NavigationWrapper = styled.header`
