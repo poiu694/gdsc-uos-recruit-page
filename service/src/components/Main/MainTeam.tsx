@@ -1,9 +1,10 @@
-import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import { css, useTheme } from '@emotion/react';
 import { Title, Typography } from 'gdsc-uos-design-system';
 
-import { TeamCard } from '@/components/common';
+import { useDarkTheme } from '@/hooks';
 import { TitleWithDescription } from '@types';
+import { TeamCard } from '@/components/common';
 import { defaultDuration } from '@/hooks/useAOSSideEffect';
 
 interface Props {
@@ -12,6 +13,7 @@ interface Props {
 
 function MainTeam({ content }: Props) {
   const theme = useTheme();
+  const { isDark } = useDarkTheme();
 
   return (
     <Wrapper>
@@ -21,6 +23,7 @@ function MainTeam({ content }: Props) {
         </Typography>
       </TitleWrapper>
       <Title
+        isDark={isDark}
         data-aos="fade-up"
         data-aos-duration={defaultDuration}
         title={content.title}

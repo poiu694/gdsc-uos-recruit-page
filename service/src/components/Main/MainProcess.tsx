@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
 import { Circle, ProcessCircleType, Title, Typography } from 'gdsc-uos-design-system';
 
+import { useDarkTheme } from '@/hooks';
 import { TitleWithDescription } from '@types';
 import { defaultDuration } from '@/hooks/useAOSSideEffect';
 
@@ -12,6 +13,7 @@ interface Props {
 
 function MainProcess({ content, circle }: Props) {
   const theme = useTheme();
+  const { isDark } = useDarkTheme();
 
   return (
     <Wrapper>
@@ -21,6 +23,7 @@ function MainProcess({ content, circle }: Props) {
         </Typography>
       </TitleWrapper>
       <Title
+        isDark={isDark}
         title={content.title}
         descriptions={content.desc}
         data-aos="fade-up"

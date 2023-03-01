@@ -9,6 +9,7 @@ import { QUESTIONS } from '@/constants/dummyApply';
 import { formIntroduction } from '@/constants/form';
 import { Helmet, ToggleBox } from '@/components/common';
 import { ApplyFormStepReducer, ApplyFormStep } from '@/reducers';
+import { useDarkTheme } from '@/hooks';
 
 interface Props {
   questions: Record<number, ApplyQuestion[]>;
@@ -40,6 +41,7 @@ const defaultAnswerData = (questions: ApplyQuestion[]): Record<string, string> =
 const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
   const theme = useTheme();
   const currentYear = new Date().getFullYear();
+  const { isDark } = useDarkTheme();
   const [stepState, dispatch] = useReducer(ApplyFormStepReducer, defaultStepState);
   // TODO: API에 따라 형태 변경
   const [answerData, setAnswerData] = React.useState<Record<string, string>>(
@@ -92,6 +94,7 @@ const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
             {questions[stepState.step]?.map((question, idx) => (
               <AnswerTextarea
                 key={question.title}
+                isDark={isDark}
                 label={`${idx + 1}. ${question.title}`}
                 value={answerData[question.id]}
                 required={question.required}

@@ -4,15 +4,13 @@ import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
 import { ClickableIcon, Typography } from 'gdsc-uos-design-system';
 
-import { useGA } from '@/hooks';
+import { useDarkTheme, useGA } from '@/hooks';
 import { GOOGLE_FORM_LINK } from '@/constants/form';
-import { useThemeContext } from './CustomThemeProvider';
 
 function Header() {
   const theme = useTheme();
   const router = useRouter();
-  const { theme: userTheme, toggleTheme } = useThemeContext();
-  const isDark = React.useMemo(() => userTheme === 'dark', [userTheme]);
+  const { isDark, toggleTheme } = useDarkTheme();
   const { logEvent } = useGA();
 
   const handleLinkToPage = React.useCallback(
@@ -42,7 +40,7 @@ function Header() {
           <ClickableIcon
             hoverBackgroundColor={theme.colors.ui.hover}
             iconProps={{
-              type: userTheme === 'dark' ? 'moon' : 'sun',
+              type: isDark ? 'moon' : 'sun',
               color: isDark ? theme.colors.primary.yellow : theme.colors.primary.black,
             }}
             onClick={toggleTheme}
