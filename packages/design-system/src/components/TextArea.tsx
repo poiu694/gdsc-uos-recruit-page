@@ -1,19 +1,33 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { theme } from '../theme';
+import { darkTheme, theme } from '../theme';
 import { Typography } from './Typography';
 
 interface Props extends React.ComponentPropsWithoutRef<'textarea'> {
   label?: string;
   length?: number;
+  isDark?: boolean;
   isDirty?: boolean;
   isValid?: boolean;
 }
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
   (
-    { label, value, id, required, name, style, length, maxLength, isDirty, isValid, ...restProps },
+    {
+      label,
+      value,
+      id,
+      required,
+      name,
+      style,
+      length,
+      maxLength,
+      isDirty,
+      isValid,
+      isDark = false,
+      ...restProps
+    },
     ref
   ) => {
     const status = !isDirty ? 'editing' : isValid ? 'success' : 'fail';
@@ -25,7 +39,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
             {label && (
               <Typography
                 type="body4"
-                color={theme.palette.gray400}
+                color={isDark ? darkTheme.text.general : theme.colors.text.general}
                 style={{ whiteSpace: 'pre-line' }}
                 display={'inline'}
               >
@@ -37,6 +51,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
             <Typography
               type="body5"
               style={{ flex: 1, textAlign: 'end', whiteSpace: 'nowrap', alignSelf: 'end' }}
+              color={isDark ? darkTheme.text.general : theme.colors.text.general}
             >
               {`${Number(value?.toString().length ?? 0)} / `}
               <Typography type="body5" display={'inline'} color={theme.palette.gray350}>

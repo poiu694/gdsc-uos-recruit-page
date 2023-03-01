@@ -1,20 +1,21 @@
 import styled from '@emotion/styled';
 
-import { theme } from '../theme';
 import { Typography } from './Typography';
+import { darkTheme, theme } from '../theme';
 
 interface Props extends React.ComponentPropsWithoutRef<'div'> {
   title: string;
   descriptions: string;
+  isDark?: boolean;
 }
 
-export function Title({ title, descriptions, ...restProps }: Props) {
+export function Title({ title, descriptions, isDark = true, ...restProps }: Props) {
   return (
     <Wrapper {...restProps}>
-      <Typography type="h5" color={theme.palette.gray450}>
+      <Typography type="h5" color={isDark ? darkTheme.text.bold : theme.colors.text.bold}>
         {title}
       </Typography>
-      <Description type="body4" color={theme.palette.gray450}>
+      <Description type="body4" color={isDark ? darkTheme.text.general : theme.colors.text.general}>
         {descriptions}
       </Description>
     </Wrapper>

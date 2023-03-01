@@ -9,6 +9,7 @@ import { QUESTIONS } from '@/constants/dummyApply';
 import { formIntroduction } from '@/constants/form';
 import { Helmet, ToggleBox } from '@/components/common';
 import { ApplyFormStepReducer, ApplyFormStep } from '@/reducers';
+import { useDarkTheme } from '@/hooks';
 
 interface Props {
   questions: Record<number, ApplyQuestion[]>;
@@ -40,6 +41,7 @@ const defaultAnswerData = (questions: ApplyQuestion[]): Record<string, string> =
 const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
   const theme = useTheme();
   const currentYear = new Date().getFullYear();
+  const { isDark } = useDarkTheme();
   const [stepState, dispatch] = useReducer(ApplyFormStepReducer, defaultStepState);
   // TODO: API에 따라 형태 변경
   const [answerData, setAnswerData] = React.useState<Record<string, string>>(
@@ -74,18 +76,25 @@ const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
         <Banner teamName="frontend" />
         <ContentsWrapper>
           <IntroductionSection>
-            <Typography type="h3">지원하기</Typography>
-            <Typography type="body4" style={{ whiteSpace: 'pre-line' }}>
+            <Typography type="h3" color={theme.colors.text.bold}>
+              지원하기
+            </Typography>
+            <Typography
+              type="body4"
+              style={{ whiteSpace: 'pre-line' }}
+              color={theme.colors.text.general}
+            >
               {formIntroduction(currentYear)}
             </Typography>
           </IntroductionSection>
-          <Typography type="h3" style={{ marginBlock: 16 }}>
+          <Typography type="h3" style={{ marginBlock: 16 }} color={theme.colors.text.bold}>
             {TitleWithStep[stepState.step]}
           </Typography>
           <QuestionSection>
             {questions[stepState.step]?.map((question, idx) => (
               <AnswerTextarea
                 key={question.title}
+                isDark={isDark}
                 label={`${idx + 1}. ${question.title}`}
                 value={answerData[question.id]}
                 required={question.required}

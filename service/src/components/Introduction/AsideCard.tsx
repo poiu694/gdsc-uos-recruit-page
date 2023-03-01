@@ -17,24 +17,28 @@ function AsideCard({ teamName, aside, handleClickQuestionListBtn, handleClickSup
     <Wrapper>
       <CardWrapper>
         <Line>
-          <Typography type="body4" color={theme.palette.gray400}>
+          <Typography type="body4" color={theme.colors.text.bold}>
             소속
           </Typography>
-          <Typography type="body4">{aside.team}</Typography>
+          <Typography type="body4" color={theme.colors.text.general}>
+            {aside.team}
+          </Typography>
         </Line>
         <Line>
-          <Typography type="body4" color={theme.palette.gray400}>
+          <Typography type="body4" color={theme.colors.text.bold}>
             경력사항
           </Typography>
-          <Typography type="body4">{aside.experience}</Typography>
+          <Typography type="body4" color={theme.colors.text.general}>
+            {aside.experience}
+          </Typography>
         </Line>
         <Line>
-          <Typography type="body4" color={theme.palette.gray400}>
+          <Typography type="body4" color={theme.colors.text.bold}>
             요구사항
           </Typography>
           <Needs>
             {aside.needs.map((need, idx) => (
-              <Typography type="body4" key={need}>
+              <Typography type="body4" key={need} color={theme.colors.text.general}>
                 {need}
                 {idx !== aside.needs.length - 1 ? ',' : ''}
               </Typography>

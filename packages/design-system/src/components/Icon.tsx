@@ -2,10 +2,12 @@ import styled from '@emotion/styled';
 import React from 'react';
 import {
   Up,
+  Sun,
   Blog,
   User,
   Down,
   Form,
+  Moon,
   Grid,
   Left,
   Plus,
@@ -23,12 +25,14 @@ import {
 
 const ICONS = {
   up: Up,
+  sun: Sun,
   left: Left,
   down: Down,
   blog: Blog,
   grid: Grid,
   form: Form,
   user: User,
+  moon: Moon,
   plus: Plus,
   close: Close,
   check: Check,

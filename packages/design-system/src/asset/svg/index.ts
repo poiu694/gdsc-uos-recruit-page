@@ -1,4 +1,5 @@
 export { default as Up } from './Up';
+export { default as Sun } from './Sun';
 export { default as Form } from './Form';
 export { default as Grid } from './Grid';
 export { default as Down } from './Down';
@@ -6,6 +7,7 @@ export { default as Left } from './Left';
 export { default as Blog } from './Blog';
 export { default as User } from './User';
 export { default as Plus } from './Plus';
+export { default as Moon } from './Moon';
 export { default as Close } from './Close';
 export { default as Check } from './Check';
 export { default as Right } from './Right';

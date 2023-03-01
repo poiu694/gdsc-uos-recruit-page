@@ -1,10 +1,19 @@
-import { Suspense, useEffect } from 'react';
+import { css, Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
-import { Global, ThemeProvider } from '@emotion/react';
-import { globalStyle, theme } from 'gdsc-uos-design-system';
+import { Suspense, useEffect } from 'react';
+import { globalStyle as FontGlobalStyle, theme } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
-import { Bottom, Header, ScriptHeader, Spinner } from '@/components/common';
+import { Bottom, CustomThemeProvider, Header, ScriptHeader, Spinner } from '@/components/common';
+import styled from '@emotion/styled';
+
+const globalStyle = css`
+  ${FontGlobalStyle}
+
+  body {
+    background-color: ${theme.colors.background};
+  }
+`;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { initGA } = useGA();
@@ -14,16 +23,23 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [initGA]);
 
   return (
-    <ThemeProvider theme={theme}>
+    <CustomThemeProvider theme={theme}>
       <Global styles={globalStyle} />
       <ScriptHeader />
       <Header />
       <Suspense fallback={<Spinner />}>
-        <Component {...pageProps} />
+        <BodyBackgroundBox>
+          <Component {...pageProps} />
+        </BodyBackgroundBox>
       </Suspense>
       <Bottom />
-    </ThemeProvider>
+    </CustomThemeProvider>
   );
 }
+
+const BodyBackgroundBox = styled.div`
+  background-color: ${(props) => props.theme.colors.background};
+  overflow-x: hidden;
+`;
 
 export default MyApp;

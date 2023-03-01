@@ -1,11 +1,12 @@
-import { colors, palette } from './colors';
+import { colors, darkTheme, palette } from './colors';
 import { fonts } from './fonts';
 import { padding, size } from './sizes';
 import { zIndex } from './zIndex';
 
+type Colors = typeof colors | typeof darkTheme;
 export const theme = {
   palette,
-  colors,
+  colors: colors as Colors,
   fonts,
   size,
   padding,

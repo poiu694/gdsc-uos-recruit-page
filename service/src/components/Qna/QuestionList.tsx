@@ -35,7 +35,7 @@ function QuestionList({ questions, teamName }: Props) {
           data-url={question.url}
           onClick={handleClickListItem}
         >
-          <Typography type="body3" color={theme.palette.gray350} className="question-mark">
+          <Typography type="body3" color={theme.colors.text.general} className="question-mark">
             Q
           </Typography>
           <Typography type="body3" color={theme.colors.text.general} className="title">
