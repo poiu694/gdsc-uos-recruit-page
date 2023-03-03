@@ -7,12 +7,18 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "yarn workspaces foreach -p run lint",
     "service": "yarn workspace service dev",
     "service:build": "yarn workspace service build",
     "service:lint": "yarn workspace service lint",
+    "service:prettier": "yarn workspace service prettier",
     "admin": "yarn workspace admin dev",
-    "admin:lint": "yarn workspace admin lint"
+    "admin:lint": "yarn workspace admin lint",
+    "admin:prettier": "yarn workspace admin prettier",
+    "ds:lint": "yarn workspace gdsc-uos-design-system lint",
+    "ds:prettier": "yarn workspace gdsc-uos-design-system prettier",
+    "lint": "yarn service:lint && yarn admin:lint && yarn ds:lint",
+    "prettier": "yarn service:prettier && yarn admin:prettier && yarn ds:prettier",
+    "postinstall": "husky install"
   },
   "workspaces": [
     "admin",
@@ -22,5 +28,23 @@
   "packageManager": "yarn@3.2.3",
   "dependencies": {
     "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2"
+  },
+  "lint-staged": {
+    "packages/**/*.{js,jsx,ts,tsx}": [
+      "yarn ds:prettier",
+      "yarn ds:lint"
+    ],
+    "admin/**/*.{js,jsx,ts,tsx}": [
+      "yarn admin:prettier",
+      "yarn admin:lint"
+    ],
+    "service/**/*.{js,jsx,ts,tsx}": [
+      "yarn service:prettier",
+      "yarn service:lint"
+    ]
   }
 }
