@@ -22,13 +22,7 @@ export function Typography({
   ...restProps
 }: PropsWithChildren<Props>) {
   return (
-    <Wrapper
-      type={type}
-      display={display}
-      textAlign={textAlign}
-      color={color}
-      {...restProps}
-    >
+    <Wrapper type={type} display={display} textAlign={textAlign} color={color} {...restProps}>
       {children}
     </Wrapper>
   );

@@ -28,7 +28,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
       isDark = false,
       ...restProps
     },
-    ref
+    ref,
   ) => {
     const status = !isDirty ? 'editing' : isValid ? 'success' : 'fail';
 
@@ -71,7 +71,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
         />
       </Wrapper>
     );
-  }
+  },
 );
 
 const Wrapper = styled.div`

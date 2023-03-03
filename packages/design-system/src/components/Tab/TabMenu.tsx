@@ -26,9 +26,7 @@ export function TabMenu({ label, value, ...restProps }: Props) {
         <Typography
           type="h6"
           style={{ display: 'inline' }}
-          color={
-            isActiveNow ? theme.colors.primary.blue : theme.colors.text.general
-          }
+          color={isActiveNow ? theme.colors.primary.blue : theme.colors.text.general}
         >
           {label}
         </Typography>

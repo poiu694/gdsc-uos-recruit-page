@@ -1,7 +1,4 @@
-import {
-  createGenericContext,
-  createGenericUseContext,
-} from '../../utils';
+import { createGenericContext, createGenericUseContext } from '../../utils';
 
 interface ModalEvent {
   isOpen: boolean;

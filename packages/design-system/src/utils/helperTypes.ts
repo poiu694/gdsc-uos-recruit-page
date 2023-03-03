@@ -7,7 +7,9 @@ export type XOR<T, U> = T | U extends Record<string, unknown>
 
 type RequiredChildren = {
   children: ReactNode;
-}
-export type StrictPropsWithChildren<T extends unknown | void = void> = T extends void ? RequiredChildren : T & {
-  children: ReactNode;
-}
+};
+export type StrictPropsWithChildren<T extends unknown | void = void> = T extends void
+  ? RequiredChildren
+  : T & {
+      children: ReactNode;
+    };

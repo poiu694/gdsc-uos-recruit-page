@@ -20,7 +20,7 @@ export function Tab({
         onChange(nextTabValue);
       }
     },
-    [onChange]
+    [onChange],
   );
 
   return (

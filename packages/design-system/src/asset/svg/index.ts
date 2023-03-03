@@ -19,4 +19,4 @@ export { default as UserPlus } from './UserPlus';
 export { default as CometRain } from './CometRain';
 export { default as DoubleLeft } from './DoubleLeft';
 export { default as DoubleRight } from './DoubleRight';
-export { default as SolarSystem } from "./SolarSystem";
+export { default as SolarSystem } from './SolarSystem';

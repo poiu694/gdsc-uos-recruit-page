@@ -3,12 +3,7 @@ import styled from '@emotion/styled';
 import { theme } from '../theme';
 import { Typography } from './Typography';
 
-export type ProcessCircleType =
-  | 'process-0'
-  | 'process-1'
-  | 'process-2'
-  | 'process-3'
-  | 'process-4';
+export type ProcessCircleType = 'process-0' | 'process-1' | 'process-2' | 'process-3' | 'process-4';
 
 interface Props {
   type: ProcessCircleType;

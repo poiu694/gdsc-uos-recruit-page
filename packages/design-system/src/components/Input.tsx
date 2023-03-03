@@ -30,7 +30,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
       onReset,
       ...restProps
     },
-    ref
+    ref,
   ) => {
     const status = !isDirty ? 'editing' : isValid ? 'success' : 'fail';
     return (
@@ -57,7 +57,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
         )}
       </Wrapper>
     );
-  }
+  },
 );
 
 const Wrapper = styled.div`

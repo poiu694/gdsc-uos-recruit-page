@@ -7,17 +7,17 @@ export const getTitleCaseTeam = (type: TeamValueType) => {
     case 'backend':
     case 'mobile':
     case 'design':
-      return `${type[0].toUpperCase()}${type.slice(1)}`
+      return `${type[0].toUpperCase()}${type.slice(1)}`;
     case 'data_ml':
       return 'Data/ML';
     case 'common':
       return 'Common';
     case 'core':
       return 'Core';
-    default: 
-      return `Error case`
+    default:
+      return `Error case`;
   }
-}
+};
 
 export const getJobByTeam = (type: TeamValueType) => {
   switch (type) {

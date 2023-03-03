@@ -4,19 +4,9 @@ import { theme } from '../../theme';
 const SolarSystem = ({ ...restProps }) => {
   return (
     <Wrapper className="solar-system-animation" {...restProps}>
-      <svg
-        id="animation-scene"
-        className="animation-scene"
-        viewBox="0 0 1400 1400"
-      >
+      <svg id="animation-scene" className="animation-scene" viewBox="0 0 1400 1400">
         <g id="Solar-system">
-          <circle
-            id="sun-path"
-            className="astral-paths earth-path"
-            cx="700"
-            cy="700"
-            r="446.73"
-          />
+          <circle id="sun-path" className="astral-paths earth-path" cx="700" cy="700" r="446.73" />
           <g id="system-sun" className="system-sun">
             <g className="shadow-02-container">
               <path
@@ -34,13 +24,7 @@ const SolarSystem = ({ ...restProps }) => {
             </g>
             <g id="Sun-Center" className="sun-center">
               <g id="sun-bg">
-                <ellipse
-                  className="sun-system-bg"
-                  cx="700.1"
-                  cy="700.02"
-                  rx="112.62"
-                  ry="111.31"
-                />
+                <ellipse className="sun-system-bg" cx="700.1" cy="700.02" rx="112.62" ry="111.31" />
               </g>
               <g id="solar-pattern" className="sun-system-patterns">
                 <path d="M645.23,691.65c-22.92-1.52-43.41,35.65-17.18,45.57,23.25,3.94,10-15.63,23.57-22C666.1,709.92,671.45,691.23,645.23,691.65Z" />
@@ -56,12 +40,7 @@ const SolarSystem = ({ ...restProps }) => {
           </g>
           <g className="system-earth-moon-container">
             <g id="system-earth" className="system-earth-moon">
-              <circle
-                className="astral-paths moon-path"
-                cx="700"
-                cy="257.25"
-                r="163.79"
-              />
+              <circle className="astral-paths moon-path" cx="700" cy="257.25" r="163.79" />
               <g id="earth" className="system-earth">
                 <circle
                   id="Shadow-2-2"
@@ -78,13 +57,7 @@ const SolarSystem = ({ ...restProps }) => {
                   r="76.5"
                 />
                 <g id="Planet" className="planet">
-                  <circle
-                    id="water-bg"
-                    className="earth-water"
-                    cx="699.7"
-                    cy="256.09"
-                    r="56.15"
-                  />
+                  <circle id="water-bg" className="earth-water" cx="699.7" cy="256.09" r="56.15" />
                   <g id="continents" className="earth-continent">
                     <path d="M687.11,207.26c2,4.53,8.75,4.4,11.32.86,1.82-3.13,1.9-8.09,6.22-8C702.06,200.07,679.4,198.12,687.11,207.26Z" />
                     <path d="M726.44,287.35c-6.77-1.25-15.74,18.37-7.09,17.24C725.52,302.43,734.86,289.49,726.44,287.35Z" />
@@ -94,20 +67,8 @@ const SolarSystem = ({ ...restProps }) => {
                 </g>
               </g>
               <g id="system-moonlight" className="system-moonlight">
-                <circle
-                  id="Shadow-2-3"
-                  className="moon-shadow-02"
-                  cx="700"
-                  cy="92.85"
-                  r="40"
-                />
-                <circle
-                  id="Shadow-1-3"
-                  className="moon-shadow-01"
-                  cx="700"
-                  cy="92.85"
-                  r="30.66"
-                />
+                <circle id="Shadow-2-3" className="moon-shadow-02" cx="700" cy="92.85" r="40" />
+                <circle id="Shadow-1-3" className="moon-shadow-01" cx="700" cy="92.85" r="30.66" />
                 <g id="moon-system-center">
                   <circle
                     id="moon-system-bg"
@@ -238,9 +199,7 @@ const Wrapper = styled.div`
   }
 
   .system-moonlight {
-    offset-path: path(
-      'M536.21,257.25a163.79,163.79 0 1,0 327.58,0a163.79,163.79 0 1,0 -327.58,0'
-    );
+    offset-path: path('M536.21,257.25a163.79,163.79 0 1,0 327.58,0a163.79,163.79 0 1,0 -327.58,0');
     offset-distance: 100%;
     transform-origin: 700px 92px;
   }

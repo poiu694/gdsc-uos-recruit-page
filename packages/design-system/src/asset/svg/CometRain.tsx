@@ -29,11 +29,7 @@ function CometRain({ ...restProps }) {
             y2="161.98"
             gradientUnits="userSpaceOnUse"
           >
-            <stop
-              offset="0%"
-              stopColor={`${theme.colors.primary.white}`}
-              stopOpacity="0.1"
-            ></stop>
+            <stop offset="0%" stopColor={`${theme.colors.primary.white}`} stopOpacity="0.1"></stop>
             <stop offset="100%" stopColor={`${theme.palette.red200}`}></stop>
           </linearGradient>
         </defs>
