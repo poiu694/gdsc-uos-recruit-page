@@ -4,11 +4,7 @@ import { AnchorHTMLAttributes, PropsWithChildren } from 'react';
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
 }
-function CustomLink({
-  href,
-  children,
-  ...restProps
-}: PropsWithChildren<Props>) {
+function CustomLink({ href, children, ...restProps }: PropsWithChildren<Props>) {
   const isExternal = /^http/;
   const isMailTo = /^mailto/;
   const hasExternalLink = isExternal.test(href) || isMailTo.test(href);

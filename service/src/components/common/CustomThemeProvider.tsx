@@ -34,7 +34,7 @@ function CustomThemeProvider({
   const [isMounted, setIsMounted] = React.useState<boolean>(false);
   const [userTheme, setUserTheme] = useLocalStorage<ThemeMode | undefined>(
     storageKey,
-    defaultTheme
+    defaultTheme,
   );
 
   const toggleTheme = React.useCallback(() => {

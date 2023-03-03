@@ -38,7 +38,7 @@ const QnaPage: NextPage<QnaPageProps> = ({ question }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const entireQuestions = Object.values(QuestionContent).reduce(
     (acc, content) => [...acc, ...content],
-    []
+    [],
   );
   const paths = entireQuestions.map((question) => ({
     params: { id: question.id },
@@ -53,7 +53,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const entireQuestions = Object.values(QuestionContent).reduce(
     (acc, content) => [...acc, ...content],
-    []
+    [],
   );
   const questionIdx = entireQuestions.findIndex((content) => content.id === params!.id);
 

@@ -104,5 +104,5 @@ const CORE_QUESTIONS: ApplyQuestion[] = [
 export const QUESTIONS: Record<`${number}`, ApplyQuestion[]> = {
   '1': COMMON_QUESTIONS,
   '2': TEAM_QUESTIONS,
-  '3': CORE_QUESTIONS
+  '3': CORE_QUESTIONS,
 };

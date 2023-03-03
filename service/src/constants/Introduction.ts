@@ -137,10 +137,9 @@ const DesignIntroduction = {
     '사용자의 관점에서 더 나은 서비스를 제공하고 싶어하시는 분',
     '책임감을 갖고 꾸준한 활동을 진행하실 수 있는 분',
     '개발자와 소통하여 문제를 해결하실 수 있는 분',
-    '함께 하는 것을 좋아하시는 분'
+    '함께 하는 것을 좋아하시는 분',
   ],
 } as IntroductionType;
-
 
 export default {
   frontend: FrontEndIntroduction,

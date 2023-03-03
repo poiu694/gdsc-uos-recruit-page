@@ -5,7 +5,7 @@ export const fetcher = (url: string) => fetch(url).then((res) => res.json());
 export const getQuestion = (type: string) => {
   switch (type) {
     case 'common':
-      return QuestionContent.common;     
+      return QuestionContent.common;
     case 'frontend':
       return QuestionContent.frontend;
     case 'backend':
@@ -19,4 +19,4 @@ export const getQuestion = (type: string) => {
     default:
       return QuestionContent.common;
   }
-}
+};

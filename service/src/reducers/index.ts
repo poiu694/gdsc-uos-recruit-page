@@ -1,1 +1,1 @@
-export * from './ApplyFormStepReducer'
+export * from './ApplyFormStepReducer';

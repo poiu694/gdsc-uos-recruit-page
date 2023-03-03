@@ -145,4 +145,4 @@ export default {
   mobile: MobileQuestion,
   data_ml: DataMLQuestion,
   design: DesignQuestion,
-} as TeamContent<QuestionListItem[]>
+} as TeamContent<QuestionListItem[]>;

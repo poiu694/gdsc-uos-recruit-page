@@ -34,7 +34,7 @@ const defaultAnswerData = (questions: ApplyQuestion[]): Record<string, string> =
       ...acc,
       [question.id]: '',
     }),
-    {}
+    {},
   );
 };
 
@@ -45,7 +45,7 @@ const ApplyPage: NextPage<Props> = ({ questions }: Props) => {
   const [stepState, dispatch] = useReducer(ApplyFormStepReducer, defaultStepState);
   // TODO: API에 따라 형태 변경
   const [answerData, setAnswerData] = React.useState<Record<string, string>>(
-    defaultAnswerData([...questions['1'], ...questions['2'], ...questions['3']])
+    defaultAnswerData([...questions['1'], ...questions['2'], ...questions['3']]),
   );
 
   const handleClickNextStep = React.useCallback(() => {

@@ -24,7 +24,7 @@ function Header() {
       }
       router.push(url);
     },
-    [router, logEvent]
+    [router, logEvent],
   );
 
   return (

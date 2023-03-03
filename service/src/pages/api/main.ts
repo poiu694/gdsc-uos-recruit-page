@@ -15,10 +15,7 @@ interface MainContent {
   team: TitleWithDescription;
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<MainContent>
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<MainContent>) {
   if (req.method === 'GET') {
     res.status(200).json(MainContent);
   }

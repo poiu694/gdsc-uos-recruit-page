@@ -27,7 +27,7 @@ function TeamList({ teamName }: TeamNameProps) {
       logEvent('Question', `${dataset.title} click`);
       router.push(dataset.url as string);
     },
-    [logEvent, router]
+    [logEvent, router],
   );
 
   return (

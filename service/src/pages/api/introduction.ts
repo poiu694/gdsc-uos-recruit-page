@@ -7,7 +7,7 @@ import { IntroductionContent } from '@/constants';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<TeamContent<IntroductionType>>
+  res: NextApiResponse<TeamContent<IntroductionType>>,
 ) {
   if (req.method === 'GET') {
     res.status(200).json(IntroductionContent);

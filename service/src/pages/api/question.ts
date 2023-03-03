@@ -7,7 +7,7 @@ import { QuestionContent } from '@/constants';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<TeamContent<QuestionListItem[]>>
+  res: NextApiResponse<TeamContent<QuestionListItem[]>>,
 ) {
   if (req.method === 'GET') {
     res.status(200).json(QuestionContent);

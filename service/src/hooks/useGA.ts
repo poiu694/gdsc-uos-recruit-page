@@ -6,12 +6,12 @@ const useGA = () => {
   };
 
   const logPageView = (url: string) => {
-    ReactGA.send({ hitType: 'pageview', page: url});
-  }
+    ReactGA.send({ hitType: 'pageview', page: url });
+  };
 
   const logEvent = (category: string, action: string) => {
     ReactGA.event({ category, action });
-  }
+  };
 
   return { initGA, logPageView, logEvent };
 };
