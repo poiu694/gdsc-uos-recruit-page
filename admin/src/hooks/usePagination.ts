@@ -24,7 +24,7 @@ const getPageOptions = ({
   pageSize,
   pageIndex,
   navigationSize,
-}: Required<Props> & { pageIndex: number, pageSize: number }): PageOptions => {
+}: Required<Props> & { pageIndex: number; pageSize: number }): PageOptions => {
   const totalPages = Math.ceil(totalCount / pageSize);
   const startPage = Math.floor(pageIndex / navigationSize) * navigationSize;
   const endPage = startPage + navigationSize;
@@ -38,9 +38,7 @@ const getPageOptions = ({
   };
 };
 
-const usePagination = ({
-  totalCount,
-}: Props) => {
+const usePagination = ({ totalCount }: Props) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [pageOptions, setPageOptions] = useState<PageOptions>({
     currentPage: 0,
@@ -67,7 +65,7 @@ const usePagination = ({
     searchParams.set('size', String(pageSize));
     setSearchParams(searchParams);
     setPageOptions((prev) => ({ ...prev, pageSize }));
-  }
+  };
 
   useLayoutEffect(() => {
     if (!totalCount) return;

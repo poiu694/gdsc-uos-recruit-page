@@ -35,7 +35,7 @@ function ApplyQuestionInfoBOx() {
   const handleChangeInput = <T extends string | number>(
     nextValue: T,
     targetIndex: number,
-    property: keyof Question
+    property: keyof Question,
   ) => {
     const nextQuestionList = [...questionList];
     nextQuestionList[targetIndex][property] =

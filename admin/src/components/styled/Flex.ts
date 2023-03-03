@@ -14,7 +14,7 @@ interface Props {
 
 const Flex = styled.div<Partial<Props>>`
   display: flex;
-  gap: ${(props) => typeof props.gap === 'number' ? `${props.gap}px` : props.gap};
+  gap: ${(props) => (typeof props.gap === 'number' ? `${props.gap}px` : props.gap)};
   flex-direction: ${(props) => props.flexDirection};
   flex-wrap: ${(props) => props.flexWrap};
   flex-grow: ${(props) => props.flexGrow};
@@ -22,6 +22,6 @@ const Flex = styled.div<Partial<Props>>`
   flex-shirink: ${(props) => props.flexShrink};
   justify-content: ${(props) => props.justifyContent};
   align-items: ${(props) => props.alignItems};
-`
+`;
 
 export default Flex;

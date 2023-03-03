@@ -22,7 +22,7 @@ function ApplicationEmailList({ list, updateEmailList, isSelectedEmail, isAllAct
   const [isEntireTarget, setIsEntireTarget] = React.useState<boolean>(false);
   const [seasonFilterValue, setSeasonFilterValue] = React.useState<string>('전체');
   const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<ApplyState | '전체'>(
-    '전체'
+    '전체',
   );
 
   const { getFilteredList } = useEmailAction();

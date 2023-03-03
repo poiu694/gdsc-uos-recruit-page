@@ -24,7 +24,7 @@ const useEmailAction = () => {
         .filter((item) => seasonFilter === '전체' || item.season === seasonFilter);
       return result;
     },
-    []
+    [],
   );
 
   const FormatMailHref = (emailList: UserApplication[], title: string, content: string) =>
@@ -33,27 +33,27 @@ const useEmailAction = () => {
         `mailto:${emailList
           .map((user) => user.email)
           .join(',')}?subject=${title}&body=${formatEmailBody(content)}`,
-      [emailList, title, content]
+      [emailList, title, content],
     );
 
   const isSelectedEmail = React.useCallback(
     (email: UserApplication) => {
       return emailSet.has(email);
     },
-    [emailSet]
+    [emailSet],
   );
 
   const isAllActiveEmail = React.useCallback(
     (email: UserApplication[]) => {
       return email.every((item) => emailSet.has(item));
     },
-    [emailSet]
+    [emailSet],
   );
 
   const toggleEmailList = (
     set: Set<UserApplication>,
     item: UserApplication,
-    forceValue?: 'on' | 'off'
+    forceValue?: 'on' | 'off',
   ) => {
     if (set.has(item)) {
       if (forceValue === 'on') return set;
@@ -79,7 +79,7 @@ const useEmailAction = () => {
         setEmailSetList(nextEmailSet);
       }
     },
-    [emailSet, isAllActiveEmail]
+    [emailSet, isAllActiveEmail],
   );
 
   return {

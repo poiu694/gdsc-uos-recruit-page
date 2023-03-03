@@ -28,7 +28,7 @@ function ApplyPage() {
   const [totalCount, setTotalCount] = React.useState<number>(0);
   const [teamFilterValue, setTeamFilterValue] = React.useState<TeamKeyType | '전체'>('전체');
   const [applyStateFilterValue, setApplyStateFilterValue] = React.useState<ApplyState | '전체'>(
-    '전체'
+    '전체',
   );
   const [isFinishEvaluationFilterValue, setIsFinishEvaluationFilterValue] =
     React.useState<boolean>(false);

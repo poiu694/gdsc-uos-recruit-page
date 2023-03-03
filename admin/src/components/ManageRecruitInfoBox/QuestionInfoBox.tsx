@@ -52,7 +52,7 @@ function QuestionInfoBox() {
         [...Array.from({ length: 5 })].map((_, idx) => ({
           title: `${getTitleCaseTeam(activeTeam)} 해야 하나요 ? ${idx + 1}`,
           description: '필요 없습니다.',
-        }))
+        })),
       );
     })();
   }, [activeTeam]);

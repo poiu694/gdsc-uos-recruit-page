@@ -33,7 +33,7 @@ function IntroductionInfoBox() {
   const handleChangeInput = (
     e: React.ChangeEvent<HTMLInputElement>,
     titleIndex: number,
-    itemIndex: number
+    itemIndex: number,
   ) => {
     const nextIntroductionList = [...introductionList];
     nextIntroductionList[titleIndex].list[itemIndex] = e.target.value;
@@ -43,7 +43,7 @@ function IntroductionInfoBox() {
   const handleClickDeleteButton = (titleIndex: number, itemIndex: number) => {
     const nextIntroductionList = [...introductionList];
     nextIntroductionList[titleIndex].list = nextIntroductionList[titleIndex].list.filter(
-      (_, idx) => idx !== itemIndex
+      (_, idx) => idx !== itemIndex,
     );
     setIntroductionList(nextIntroductionList);
   };
