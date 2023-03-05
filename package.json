@@ -13,6 +13,7 @@
     "service:prettier": "yarn workspace service prettier",
     "admin": "yarn workspace admin dev",
     "admin:lint": "yarn workspace admin lint",
+    "admin:build": "yarn workspace admin build",
     "admin:prettier": "yarn workspace admin prettier",
     "ds:lint": "yarn workspace gdsc-uos-design-system lint",
     "ds:prettier": "yarn workspace gdsc-uos-design-system prettier",
