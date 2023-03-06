@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "author": "LeeSangMin",
   "packageManager": "yarn@3.2.1",
+  "main": "./index.ts",
+  "types": "./index.ts",
   "scripts": {
     "prettier": "prettier --write ./lib",
     "lint": "eslint --ext **/*.ts"
