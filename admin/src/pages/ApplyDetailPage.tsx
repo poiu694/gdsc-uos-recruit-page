@@ -5,9 +5,7 @@ import { Chip, Title, Button, Typography, ButtonHierarchy, TextArea } from 'gdsc
 import { DUMMY_APPLICATION } from '@/dummy/apply';
 import {
   Flex,
-  SideMenu,
   MemoTable,
-  ContentWrapper,
   EvaluationTable,
   QuestionAndDescription,
   SelectApplyStateBox,
@@ -35,65 +33,62 @@ function ApplyDetailPage() {
 
   return (
     <Wrapper>
-      <SideMenu />
-      <ContentWrapper>
-        <Title title="Application" descriptions={`지원서 상세 페이지입니다.`} />
-        <Flex gap={10} alignItems="center" style={{ marginTop: 32 }}>
-          <Typography type="h4">{info?.name}님의 현재 상태</Typography>
-          <Chip variants="filled" label={info?.state} type={convertChipColorByState(info?.state)} />
-        </Flex>
-        <Typography type="h4" style={{ marginTop: 32 }}>
-          자기소개서 문항
-        </Typography>
-        {info?.questions.map((questionInfo: any) => (
-          <QuestionAndDescription
-            key={questionInfo.title}
-            title={questionInfo.title}
-            description={questionInfo.description}
-          />
-        ))}
-        <Typography type="h5" style={{ marginTop: 16 }}>
-          메모하기
-        </Typography>
-        <Flex gap={12} flexDirection="column" alignItems="center" style={{ width: '80%' }}>
-          <MemoTextArea
-            name="advantage"
-            placeholder="장점"
-            value={memo.advantage}
-            style={{ marginTop: 16 }}
-            onChange={(e) => setMemo((prev) => ({ ...prev, advantage: e.target.value }))}
-          />
-          <MemoTextArea
-            name="disadvantage"
-            placeholder="단점"
-            value={memo.disadvantage}
-            onChange={(e) => setMemo((prev) => ({ ...prev, disadvantage: e.target.value }))}
-          />
-          <MemoTextArea
-            name="question"
-            placeholder="질문"
-            value={memo.question}
-            onChange={(e) => setMemo((prev) => ({ ...prev, question: e.target.value }))}
-          />
-          <Button
-            hierarchy={ButtonHierarchy.Warning}
-            style={{ padding: 10 }}
-            onClick={handleClickSubmitMemo}
-          >
-            <Typography type="body4" style={{ wordBreak: 'keep-all' }}>
-              메모하기
-            </Typography>
-          </Button>
-        </Flex>
-        <Typography type="h5" style={{ marginTop: 16 }}>
-          평가하기
-        </Typography>
-        <SelectApplyStateBox value={applyState} onClickState={handleClickApplyState} />
-        <Flex flexDirection="column" gap={32} style={{ width: '50%', marginTop: 32 }}>
-          <MemoTable memos={info?.memos} name={info?.name} />
-          <EvaluationTable name={info?.name} evaluations={info?.evaluations} />
-        </Flex>
-      </ContentWrapper>
+      <Title title="Application" descriptions={`지원서 상세 페이지입니다.`} />
+      <Flex gap={10} alignItems="center" style={{ marginTop: 32 }}>
+        <Typography type="h4">{info?.name}님의 현재 상태</Typography>
+        <Chip variants="filled" label={info?.state} type={convertChipColorByState(info?.state)} />
+      </Flex>
+      <Typography type="h4" style={{ marginTop: 32 }}>
+        자기소개서 문항
+      </Typography>
+      {info?.questions.map((questionInfo: any) => (
+        <QuestionAndDescription
+          key={questionInfo.title}
+          title={questionInfo.title}
+          description={questionInfo.description}
+        />
+      ))}
+      <Typography type="h5" style={{ marginTop: 16 }}>
+        메모하기
+      </Typography>
+      <Flex gap={12} flexDirection="column" alignItems="center" style={{ width: '80%' }}>
+        <MemoTextArea
+          name="advantage"
+          placeholder="장점"
+          value={memo.advantage}
+          style={{ marginTop: 16 }}
+          onChange={(e) => setMemo((prev) => ({ ...prev, advantage: e.target.value }))}
+        />
+        <MemoTextArea
+          name="disadvantage"
+          placeholder="단점"
+          value={memo.disadvantage}
+          onChange={(e) => setMemo((prev) => ({ ...prev, disadvantage: e.target.value }))}
+        />
+        <MemoTextArea
+          name="question"
+          placeholder="질문"
+          value={memo.question}
+          onChange={(e) => setMemo((prev) => ({ ...prev, question: e.target.value }))}
+        />
+        <Button
+          hierarchy={ButtonHierarchy.Warning}
+          style={{ padding: 10 }}
+          onClick={handleClickSubmitMemo}
+        >
+          <Typography type="body4" style={{ wordBreak: 'keep-all' }}>
+            메모하기
+          </Typography>
+        </Button>
+      </Flex>
+      <Typography type="h5" style={{ marginTop: 16 }}>
+        평가하기
+      </Typography>
+      <SelectApplyStateBox value={applyState} onClickState={handleClickApplyState} />
+      <Flex flexDirection="column" gap={32} style={{ width: '50%', marginTop: 32 }}>
+        <MemoTable memos={info?.memos} name={info?.name} />
+        <EvaluationTable name={info?.name} evaluations={info?.evaluations} />
+      </Flex>
     </Wrapper>
   );
 }

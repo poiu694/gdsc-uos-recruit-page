@@ -4,8 +4,6 @@ import { useSearchParams } from 'react-router-dom';
 import { Tab, TabContent, TabMenu, Title } from 'gdsc-uos-design-system';
 
 import {
-  SideMenu,
-  ContentWrapper,
   QuestionInfoBox,
   MainRecruitInfoBox,
   IntroductionInfoBox,
@@ -33,32 +31,29 @@ function ManageRecruitInfoPage() {
 
   return (
     <Wrapper>
-      <SideMenu />
-      <ContentWrapper>
-        <Title title="Recruit-Info" descriptions="리크루팅 관련 정보를 다루는 페이지입니다." />
-        <Tab value={tabValue} onChange={handleChangeTabMenu}>
-          <TabMenus>
-            <TabMenu value="1" label="Main" />
-            <TabMenu value="2" label="FAQ" />
-            <TabMenu value="3" label="Introduction" />
-            <TabMenu value="4" label="Application" />
-          </TabMenus>
-          <TabContents>
-            <TabContent value="1">
-              <MainRecruitInfoBox />
-            </TabContent>
-            <TabContent value="2">
-              <QuestionInfoBox />
-            </TabContent>
-            <TabContent value="3">
-              <IntroductionInfoBox />
-            </TabContent>
-            <TabContent value="4">
-              <ApplyQuestionInfoBox />
-            </TabContent>
-          </TabContents>
-        </Tab>
-      </ContentWrapper>
+      <Title title="Recruit-Info" descriptions="리크루팅 관련 정보를 다루는 페이지입니다." />
+      <Tab value={tabValue} onChange={handleChangeTabMenu}>
+        <TabMenus>
+          <TabMenu value="1" label="Main" />
+          <TabMenu value="2" label="FAQ" />
+          <TabMenu value="3" label="Introduction" />
+          <TabMenu value="4" label="Application" />
+        </TabMenus>
+        <TabContents>
+          <TabContent value="1">
+            <MainRecruitInfoBox />
+          </TabContent>
+          <TabContent value="2">
+            <QuestionInfoBox />
+          </TabContent>
+          <TabContent value="3">
+            <IntroductionInfoBox />
+          </TabContent>
+          <TabContent value="4">
+            <ApplyQuestionInfoBox />
+          </TabContent>
+        </TabContents>
+      </Tab>
     </Wrapper>
   );
 }
