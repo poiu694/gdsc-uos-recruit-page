@@ -3,9 +3,12 @@ import React, { PropsWithChildren } from 'react';
 
 interface Props extends React.ComponentPropsWithoutRef<'thead'> {}
 
-export function THead({ children, ...restProps }: PropsWithChildren<Props>) {
+export const THead = React.memo(function THead({
+  children,
+  ...restProps
+}: PropsWithChildren<Props>) {
   return <Wrapper {...restProps}>{children}</Wrapper>;
-}
+});
 
 const Wrapper = styled.thead`
   position: relative;

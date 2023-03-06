@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
@@ -114,4 +115,4 @@ const LogoutButton = styled(Button)`
   box-sizing: border-box;
 `;
 
-export default SideMenu;
+export default React.memo(SideMenu);

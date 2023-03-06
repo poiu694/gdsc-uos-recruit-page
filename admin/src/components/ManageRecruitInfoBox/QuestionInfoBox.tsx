@@ -28,23 +28,27 @@ function QuestionInfoBox() {
   const [tabValue, setTabValue] = React.useState<string>(DEFAULT_TAB_VALUE);
   const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
 
-  const handleClickTeamName = (team: TeamKeyType) => {
+  const handleModalOpen = React.useCallback((isOpen: boolean) => {
+    setIsModalOpen(isOpen);
+  }, []);
+
+  const handleClickTeamName = React.useCallback((team: TeamKeyType) => {
     setActiveTeam(team);
     setTabValue('1');
-  };
+  }, []);
 
-  const handleClickListItem = (nextTabValue: string) => {
+  const handleClickListItem = React.useCallback((nextTabValue: string) => {
     setTabValue(nextTabValue);
-  };
+  }, []);
 
-  const handleClickQNAGeneratorConfirmButton = ({ title, description }: FAQ) => {
+  const handleClickQNAGeneratorConfirmButton = React.useCallback(({ title, description }: FAQ) => {
     setFAQList((prev) => [...prev, { title, description }]);
-  };
+  }, []);
 
-  const handleClickQuestionDeleteButton = (faq: FAQ) => {
+  const handleClickQuestionDeleteButton = React.useCallback((faq: FAQ) => {
     const nextFAQList = [...FAQList].filter((item) => item.title !== faq.title);
     setFAQList(nextFAQList);
-  };
+  }, []);
 
   React.useEffect(() => {
     (async () => {
@@ -66,7 +70,7 @@ function QuestionInfoBox() {
             {FAQList.map((_, idx) => (
               <TabMenu key={idx} value={`${idx + 1}`} label={`${idx + 1}`} />
             ))}
-            <AddButton hierarchy={ButtonHierarchy.Parent} onClick={() => setIsModalOpen(true)}>
+            <AddButton hierarchy={ButtonHierarchy.Parent} onClick={() => handleModalOpen(true)}>
               <Typography type="body5" color={theme.colors.primary.red}>
                 추가
               </Typography>
@@ -86,7 +90,7 @@ function QuestionInfoBox() {
           </TabContents>
         </Tab>
       </TabWrapper>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => handleModalOpen(false)}>
         <QNAGeneratorModal
           teamName={getTitleCaseTeam(activeTeam)}
           onClickConfirm={handleClickQNAGeneratorConfirmButton}
@@ -129,4 +133,4 @@ const AddButton = styled(Button)`
   `}
 `;
 
-export default QuestionInfoBox;
+export default React.memo(QuestionInfoBox);

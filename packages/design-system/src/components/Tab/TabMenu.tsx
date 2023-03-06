@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
 import { Chip } from '../Chip';
@@ -11,15 +12,19 @@ interface Props {
   value: string;
 }
 
-export function TabMenu({ label, value, ...restProps }: Props) {
+export const TabMenu = React.memo(function TabMenu({ label, value, ...restProps }: Props) {
   const { value: currentTabValue, variant, onClickTabMenu } = useTabContext();
   const isActiveNow = value === currentTabValue;
+
+  const handleClickTabMenu = React.useCallback((value: string) => {
+    onClickTabMenu(value);
+  }, []);
 
   return (
     <Wrapper
       hierarchy={ButtonHierarchy.Parent}
       className={isActiveNow ? `active ${variant}` : `${variant}`}
-      onClick={() => onClickTabMenu(value)}
+      onClick={() => handleClickTabMenu(value)}
       {...restProps}
     >
       {variant === 'default' && (
@@ -40,7 +45,7 @@ export function TabMenu({ label, value, ...restProps }: Props) {
       )}
     </Wrapper>
   );
-}
+});
 
 const Wrapper = styled(Button)`
   display: inline-block;

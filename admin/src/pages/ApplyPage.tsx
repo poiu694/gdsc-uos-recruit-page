@@ -28,6 +28,24 @@ function ApplyPage() {
   const [applicationList, setApplicationList] = React.useState<UserApplication[]>([]);
   const { pageOptions, handleChangePage, handleChangePageSize } = usePagination({ totalCount });
 
+  const handleChangeTeamSelectOption = React.useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setTeamFilterValue(e.target.value as TeamKeyType);
+    },
+    [],
+  );
+
+  const handleChangeApplyStateSelectOption = React.useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setApplyStateFilterValue(e.target.value as ApplyState | '전체');
+    },
+    [],
+  );
+
+  const toggleSwitch = React.useCallback(() => {
+    setIsFinishEvaluationFilterValue((prev) => !prev);
+  }, []);
+
   React.useEffect(() => {
     (async () => {
       // TODO: Backend연동
@@ -67,7 +85,7 @@ function ApplyPage() {
             label="Team"
             value={teamFilterValue}
             optionList={['전체', 'frontend', 'backend', 'mobile', 'data/ml', 'design']}
-            onChange={(e) => setTeamFilterValue(e.target.value as TeamKeyType)}
+            onChange={handleChangeTeamSelectOption}
           />
           <SelectOption
             label="State"
@@ -80,12 +98,12 @@ function ApplyPage() {
               '최종 불합격',
               '최종 합격',
             ]}
-            onChange={(e) => setApplyStateFilterValue(e.target.value as ApplyState | '전체')}
+            onChange={handleChangeApplyStateSelectOption}
           />
           <ToggleSwitchBox
             label={'평가 X'}
             value={isFinishEvaluationFilterValue}
-            onClick={() => setIsFinishEvaluationFilterValue((prev) => !prev)}
+            onClick={toggleSwitch}
           />
           <TablePagination
             totalCount={totalCount}

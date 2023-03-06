@@ -8,7 +8,7 @@ interface Props extends React.ComponentPropsWithoutRef<'table'> {
   variant?: 'simple' | 'striped';
 }
 
-export function Table({
+export const Table = React.memo(function Table({
   size = 'md',
   variant = 'simple',
   children,
@@ -23,7 +23,7 @@ export function Table({
       </TableContainer>
     </Wrapper>
   );
-}
+});
 
 const Wrapper = styled.div`
   border: 1px solid ${theme.colors.ui.divider};

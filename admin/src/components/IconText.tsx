@@ -1,5 +1,6 @@
-import { useTheme } from '@emotion/react';
+import React from 'react';
 import styled from '@emotion/styled';
+import { useTheme } from '@emotion/react';
 import { Typography, Icon, IconKeyType } from 'gdsc-uos-design-system';
 
 import { Flex } from './styled';
@@ -24,4 +25,4 @@ function IconText({ icon, text }: Props) {
 
 const Wrapper = styled(Flex)``;
 
-export default IconText;
+export default React.memo(IconText);
