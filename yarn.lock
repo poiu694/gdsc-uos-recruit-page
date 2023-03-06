@@ -7506,6 +7506,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.30.1
     eslint-plugin-react-hooks: ^4.6.0
+    gdsc-uos-api: "workspace:^"
     gdsc-uos-design-system: "workspace:^"
     gdsc-uos-eslint-config-custom: "workspace:^"
     gdsc-uos-tsconfig-custom: "workspace:^"
