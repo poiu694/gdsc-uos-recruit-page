@@ -10314,6 +10314,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:24b8d75432356b9a2c8fd3c998aa00f126c4332f8aacea8502c3764e1813149b6f1eb94c905498b9676ac9284ec9d04a2b0101e131fdf859b619b6de6d7f79c2#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:24b8d75432356b9a2c8fd3c998aa00f126c4332f8aacea8502c3764e1813149b6f1eb94c905498b9676ac9284ec9d04a2b0101e131fdf859b619b6de6d7f79c2#npm:5.30.6"],\
             ["aos", "npm:2.3.4"],\
+            ["axios", "npm:1.3.4"],\
             ["emotion-reset", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#npm:3.0.1"],\
             ["eslint", "npm:8.19.0"],\
             ["eslint-config-airbnb", "virtual:24b8d75432356b9a2c8fd3c998aa00f126c4332f8aacea8502c3764e1813149b6f1eb94c905498b9676ac9284ec9d04a2b0101e131fdf859b619b6de6d7f79c2#npm:19.0.4"],\
@@ -10327,6 +10328,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gdsc-uos-design-system", "virtual:3ca0dd94dd60fa1f94b3a8796a6f7d05f3ea6a6a8360624286dd656b942ace4b7cf1c53a052353a391367c8cc3bb18ba434641e8d213521ab0b431ccbc03efa0#workspace:packages/design-system"],\
             ["gdsc-uos-eslint-config-custom", "workspace:packages/eslint-config-custom"],\
             ["gdsc-uos-tsconfig-custom", "workspace:packages/tsconfig-custom"],\
+            ["msw", "virtual:5aaec6d68ad2089fb5db81fd2b3bb3917e1555ce78ebdb943ae1ea48d080ca1fe89f1d765074a2cf50a04a4608ec60eda9ef42aa01d42861640bbcace291a770#npm:1.1.0"],\
             ["next", "virtual:24b8d75432356b9a2c8fd3c998aa00f126c4332f8aacea8502c3764e1813149b6f1eb94c905498b9676ac9284ec9d04a2b0101e131fdf859b619b6de6d7f79c2#npm:13.1.6"],\
             ["prettier", "npm:2.8.4"],\
             ["react", "npm:18.2.0"],\
