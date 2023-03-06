@@ -10,10 +10,19 @@ import {
   ApplicationStatusChart,
   TeamColorDescriptionBox,
 } from '@/components';
+import React from 'react';
+import axios from 'axios';
 
 function MainPage() {
   const theme = useTheme();
   const currentYear = new Date().getFullYear();
+
+  React.useEffect(() => {
+    (async () => {
+      const res = await axios.get('/todos2');
+      console.log(res);
+    })();
+  }, []);
 
   return (
     <Wrapper>
