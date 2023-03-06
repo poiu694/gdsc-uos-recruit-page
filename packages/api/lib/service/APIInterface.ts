@@ -1,7 +1,7 @@
 import type { AxiosRequestConfig, HeadersDefaults, Method } from 'axios';
 
 import { createFormData } from './utils';
-import { HttpInterface } from './httpInterface';
+import { HttpInterface } from './HttpInterface';
 
 export enum ContentType {
   json = 'application/json',
@@ -30,7 +30,7 @@ export interface ApiConfig extends Omit<AxiosRequestConfig, 'data' | 'cancelToke
   secure?: boolean;
 }
 
-export abstract class APIInterface extends HttpInterface {
+export class APIInterface extends HttpInterface {
   private secure?: boolean;
   private token: string | null = null;
 

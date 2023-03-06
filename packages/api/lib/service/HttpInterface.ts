@@ -1,7 +1,7 @@
 import type { AxiosInstance, AxiosResponse } from 'axios';
 import axios from 'axios';
 
-export abstract class HttpInterface {
+export class HttpInterface {
   protected readonly instance: AxiosInstance;
 
   public constructor(baseURL: string) {
