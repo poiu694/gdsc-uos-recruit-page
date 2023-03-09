@@ -6,13 +6,7 @@ import { Chip, Title, Button, Typography, ButtonHierarchy, Modal } from 'gdsc-uo
 import { ApplyState } from '@/@types';
 import { convertChipColorByState } from '@/utils';
 import { DUMMY_APPLICATION } from '@/dummy/apply';
-import {
-  ContentWrapper,
-  Flex,
-  InterviewGeneratorModal,
-  SelectApplyStateBox,
-  SideMenu,
-} from '../components';
+import { Flex, InterviewGeneratorModal, SelectApplyStateBox } from '../components';
 
 function InterviewRecordPage() {
   const theme = useTheme();
@@ -30,31 +24,28 @@ function InterviewRecordPage() {
 
   return (
     <Wrapper>
-      <SideMenu />
-      <ContentWrapper>
-        <Title title="Application" descriptions={`면접 기록 상세 페이지입니다.`} />
-        <Flex gap={10} alignItems="center" style={{ marginTop: 32 }}>
-          <Typography type="h4">{info?.name}님의 현재 상태</Typography>
-          <Chip variants="filled" label={info?.state} type={convertChipColorByState(info?.state)} />
-        </Flex>
-        <Flex justifyContent="space-between" style={{ width: '80%', marginTop: 32 }}>
-          <Typography type="h5">면접 기록</Typography>
-          <Button hierarchy={ButtonHierarchy.Danger} onClick={() => setIsModalOpen(true)}>
-            <Typography type="body4" color={theme.colors.primary.white}>
-              추가 하기
-            </Typography>
-          </Button>
-        </Flex>
-        <Typography type="body4" style={{ marginTop: 16, width: '80%' }}>
-          {info?.questions[0].answer}
-          {info?.questions[0].answer}
-          {info?.questions[0].answer}
-        </Typography>
-        <Typography type="h5" style={{ marginTop: 16 }}>
-          평가하기
-        </Typography>
-        <SelectApplyStateBox value={applyState} onClickState={handleClickApplyState} />
-      </ContentWrapper>
+      <Title title="Application" descriptions={`면접 기록 상세 페이지입니다.`} />
+      <Flex gap={10} alignItems="center" style={{ marginTop: 32 }}>
+        <Typography type="h4">{info?.name}님의 현재 상태</Typography>
+        <Chip variants="filled" label={info?.state} type={convertChipColorByState(info?.state)} />
+      </Flex>
+      <Flex justifyContent="space-between" style={{ width: '80%', marginTop: 32 }}>
+        <Typography type="h5">면접 기록</Typography>
+        <Button hierarchy={ButtonHierarchy.Danger} onClick={() => setIsModalOpen(true)}>
+          <Typography type="body4" color={theme.colors.primary.white}>
+            추가 하기
+          </Typography>
+        </Button>
+      </Flex>
+      <Typography type="body4" style={{ marginTop: 16, width: '80%' }}>
+        {info?.questions[0].answer}
+        {info?.questions[0].answer}
+        {info?.questions[0].answer}
+      </Typography>
+      <Typography type="h5" style={{ marginTop: 16 }}>
+        평가하기
+      </Typography>
+      <SelectApplyStateBox value={applyState} onClickState={handleClickApplyState} />
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <InterviewGeneratorModal name={'홍길동'} onClickConfirm={() => console.log('hi')} />
       </Modal>

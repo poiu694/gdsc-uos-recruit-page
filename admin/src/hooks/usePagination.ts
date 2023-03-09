@@ -1,3 +1,4 @@
+import React from 'react';
 import { useLayoutEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -48,7 +49,7 @@ const usePagination = ({ totalCount }: Props) => {
     pageSize: DEFAULT_PAGE.pageSize,
   });
 
-  const handleChangePage = (page: number) => {
+  const handleChangePage = React.useCallback((page: number) => {
     if (page === 0) return;
 
     const { currentPage } = getPageOptions({
@@ -59,13 +60,13 @@ const usePagination = ({ totalCount }: Props) => {
     });
     searchParams.set('page', String(currentPage));
     setSearchParams(searchParams);
-  };
+  }, []);
 
-  const handleChangePageSize = (pageSize: number) => {
+  const handleChangePageSize = React.useCallback((pageSize: number) => {
     searchParams.set('size', String(pageSize));
     setSearchParams(searchParams);
     setPageOptions((prev) => ({ ...prev, pageSize }));
-  };
+  }, []);
 
   useLayoutEffect(() => {
     if (!totalCount) return;

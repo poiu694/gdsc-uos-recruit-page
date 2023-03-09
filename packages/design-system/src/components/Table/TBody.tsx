@@ -5,9 +5,12 @@ import { theme } from '../../theme';
 
 interface Props extends React.ComponentPropsWithoutRef<'tbody'> {}
 
-export function TBody({ children, ...restProps }: PropsWithChildren<Props>) {
+export const TBody = React.memo(function TBody({
+  children,
+  ...restProps
+}: PropsWithChildren<Props>) {
   return <Wrapper {...restProps}>{children}</Wrapper>;
-}
+});
 
 const Wrapper = styled.tbody`
   & > tr {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Typography, TeamKeyType, getTitleCaseTeam, BASIC_TEAM } from 'gdsc-uos-design-system';
@@ -22,12 +23,16 @@ function TeamList({
     (isCoreNeed ? 'core' : null) as TeamKeyType,
   ].filter((team) => team);
 
+  const handleClickTeamName = React.useCallback((team: TeamKeyType) => {
+    onClickTeamName(team);
+  }, []);
+
   return (
     <Wrapper>
       <TeamListWrapper>
         <Typography type="h5">팀 리스트</Typography>
         {teamList.map((team) => (
-          <ListItem key={team} onClick={() => onClickTeamName(team)}>
+          <ListItem key={team} onClick={() => handleClickTeamName(team)}>
             <Typography
               type={activeTeam === team ? 'h6' : 'body3'}
               color={activeTeam === team ? theme.colors.primary.blue : theme.palette.gray350}
@@ -65,4 +70,4 @@ const ListItem = styled.li`
   `}
 `;
 
-export default TeamList;
+export default React.memo(TeamList);

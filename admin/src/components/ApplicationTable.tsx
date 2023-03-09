@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import {
   Td,
@@ -108,4 +109,4 @@ function ApplicationTable({ pageSize, applications }: Props) {
 
 const Wrapper = styled(Table)``;
 
-export default ApplicationTable;
+export default React.memo(ApplicationTable);

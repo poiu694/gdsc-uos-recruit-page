@@ -1,6 +1,6 @@
 import { css, Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
-import { Suspense, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { globalStyle as FontGlobalStyle, theme } from 'gdsc-uos-design-system';
 
 import { useGA } from '@/hooks';
@@ -16,11 +16,33 @@ const globalStyle = css`
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isReadyRender, setIsReadyRender] = React.useState(
+    process.env.NEXT_PUBLIC_API_MOCKING !== 'enable',
+  );
   const { initGA } = useGA();
 
-  useEffect(() => {
+  React.useEffect(() => {
+    async function setUpMSW() {
+      const { initMocks } = await import('gdsc-uos-api');
+      await initMocks();
+      setIsReadyRender(true);
+    }
+
+    if (
+      process.env.NODE_ENV === 'development' &&
+      process.env.NEXT_PUBLIC_API_MOCKING === 'enable'
+    ) {
+      setUpMSW();
+    }
+  }, []);
+
+  React.useEffect(() => {
     initGA(process.env.NEXT_PUBLIC_GA_KEY as string);
   }, [initGA]);
+
+  if (!isReadyRender) {
+    return null;
+  }
 
   return (
     <CustomThemeProvider theme={theme}>

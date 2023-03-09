@@ -19,7 +19,7 @@ import { UserType } from '@/@types';
 import { usePagination } from '@/hooks';
 import { convertChipColorByTeam } from '@/utils';
 import { DUMMY_ADMIN_USERS } from '@/dummy/users';
-import { ContentWrapper, PageNavigation, SelectOption, SideMenu } from '@/components';
+import { PageNavigation, SelectOption } from '@/components';
 
 function ManageUserPage() {
   const theme = useTheme();
@@ -52,97 +52,94 @@ function ManageUserPage() {
 
   return (
     <Wrapper>
-      <SideMenu />
-      <ContentWrapper>
-        <Title title="Manage User" descriptions="유저를 관리하는 페이지입니다." />
-        <Typography type="h4" style={{ marginTop: 32 }}>
-          Users
-        </Typography>
-        <TableWrapper>
-          <TablePagination
-            totalCount={totalCount}
-            pageSizeOptions={[5, 10, 15]}
-            page={pageOptions.currentPage}
-            pageSize={pageOptions.pageSize}
-            onPageSizeOptionsChange={handleChangePageSizeOption}
-          />
-          <Table variant="striped">
-            <THead>
-              <Tr>
+      <Title title="Manage User" descriptions="유저를 관리하는 페이지입니다." />
+      <Typography type="h4" style={{ marginTop: 32 }}>
+        Users
+      </Typography>
+      <TableWrapper>
+        <TablePagination
+          totalCount={totalCount}
+          pageSizeOptions={[5, 10, 15]}
+          page={pageOptions.currentPage}
+          pageSize={pageOptions.pageSize}
+          onPageSizeOptionsChange={handleChangePageSizeOption}
+        />
+        <Table variant="striped">
+          <THead>
+            <Tr>
+              <Td>
+                <Typography type="body4">이름</Typography>
+              </Td>
+              <Td>
+                <Typography type="body4">유저 팀</Typography>
+              </Td>
+              <Td>
+                <Typography type="body4">유저 타입</Typography>
+              </Td>
+              <Td>
+                <Typography type="body4">변경</Typography>
+              </Td>
+              <Td>
+                <Typography type="body4">탈퇴</Typography>
+              </Td>
+            </Tr>
+          </THead>
+          <TBody>
+            {DUMMY_ADMIN_USERS.slice(0, pageOptions.pageSize).map((user) => (
+              <Tr key={user.id}>
                 <Td>
-                  <Typography type="body4">이름</Typography>
+                  <Typography type="body4">{user.name}</Typography>
                 </Td>
                 <Td>
-                  <Typography type="body4">유저 팀</Typography>
+                  <Typography type="body4">
+                    <Chip
+                      variants="outlined"
+                      type={convertChipColorByTeam(user.team)}
+                      label={user.team}
+                    />
+                  </Typography>
                 </Td>
                 <Td>
-                  <Typography type="body4">유저 타입</Typography>
+                  <SelectOption
+                    value={userRoles[user.id]}
+                    optionList={['lead', 'core', 'normal']}
+                    onChange={(e) => handeChangeUserType(e, user.id)}
+                  />
                 </Td>
                 <Td>
-                  <Typography type="body4">변경</Typography>
+                  <Button hierarchy={ButtonHierarchy.Success}>
+                    <Typography
+                      type="body4"
+                      textAlign="center"
+                      style={{ padding: 6 }}
+                      color={theme.colors.primary.white}
+                      onClick={() => handleClickUpdateButton(user.id)}
+                    >
+                      변경
+                    </Typography>
+                  </Button>
                 </Td>
                 <Td>
-                  <Typography type="body4">탈퇴</Typography>
+                  <Button
+                    disabled={userRoles[user.id] === 'lead'}
+                    hierarchy={ButtonHierarchy.Danger}
+                  >
+                    <Typography
+                      type="body4"
+                      textAlign="center"
+                      style={{ padding: 6 }}
+                      color={theme.colors.primary.white}
+                    >
+                      탈퇴
+                    </Typography>
+                  </Button>
                 </Td>
               </Tr>
-            </THead>
-            <TBody>
-              {DUMMY_ADMIN_USERS.slice(0, pageOptions.pageSize).map((user) => (
-                <Tr key={user.id}>
-                  <Td>
-                    <Typography type="body4">{user.name}</Typography>
-                  </Td>
-                  <Td>
-                    <Typography type="body4">
-                      <Chip
-                        variants="outlined"
-                        type={convertChipColorByTeam(user.team)}
-                        label={user.team}
-                      />
-                    </Typography>
-                  </Td>
-                  <Td>
-                    <SelectOption
-                      value={userRoles[user.id]}
-                      optionList={['lead', 'core', 'normal']}
-                      onChange={(e) => handeChangeUserType(e, user.id)}
-                    />
-                  </Td>
-                  <Td>
-                    <Button hierarchy={ButtonHierarchy.Success}>
-                      <Typography
-                        type="body4"
-                        textAlign="center"
-                        style={{ padding: 6 }}
-                        color={theme.colors.primary.white}
-                        onClick={() => handleClickUpdateButton(user.id)}
-                      >
-                        변경
-                      </Typography>
-                    </Button>
-                  </Td>
-                  <Td>
-                    <Button
-                      disabled={userRoles[user.id] === 'lead'}
-                      hierarchy={ButtonHierarchy.Danger}
-                    >
-                      <Typography
-                        type="body4"
-                        textAlign="center"
-                        style={{ padding: 6 }}
-                        color={theme.colors.primary.white}
-                      >
-                        탈퇴
-                      </Typography>
-                    </Button>
-                  </Td>
-                </Tr>
-              ))}
-            </TBody>
-          </Table>
-        </TableWrapper>
-        <Navigation pageOptions={pageOptions} handleChangePage={handleChangePage} />
-      </ContentWrapper>
+            ))}
+          </TBody>
+        </Table>
+      </TableWrapper>
+      <Navigation pageOptions={pageOptions} handleChangePage={handleChangePage} />
     </Wrapper>
   );
 }

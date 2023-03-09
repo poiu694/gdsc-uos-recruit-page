@@ -21,7 +21,7 @@ interface Props {
   memos: Memo[];
 }
 
-function EvaluationTable({ name, memos }: Props) {
+function MemoTable({ name, memos }: Props) {
   const theme = useTheme();
   const [isMemoOpen, setIsMemoOpen] = React.useState<boolean>(false);
   const [selectedMemo, setSelectedMemo] = React.useState<Memo | null>(null);
@@ -82,4 +82,4 @@ const TableWrapper = styled(Table)`
   }
 `;
 
-export default EvaluationTable;
+export default MemoTable;

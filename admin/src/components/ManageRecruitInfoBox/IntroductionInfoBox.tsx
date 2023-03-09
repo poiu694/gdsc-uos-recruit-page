@@ -26,29 +26,28 @@ function IntroductionInfoBox() {
   const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
   const [introductionList, setIntroductionList] = React.useState<Introduction[]>(INTRODUCTION);
 
-  const handleClickTeamName = (team: TeamKeyType) => {
+  const handleClickTeamName = React.useCallback((team: TeamKeyType) => {
     setActiveTeam(team);
-  };
+  }, []);
 
-  const handleChangeInput = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    titleIndex: number,
-    itemIndex: number,
-  ) => {
-    const nextIntroductionList = [...introductionList];
-    nextIntroductionList[titleIndex].list[itemIndex] = e.target.value;
-    setIntroductionList(nextIntroductionList);
-  };
+  const handleChangeInput = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>, titleIndex: number, itemIndex: number) => {
+      const nextIntroductionList = [...introductionList];
+      nextIntroductionList[titleIndex].list[itemIndex] = e.target.value;
+      setIntroductionList(nextIntroductionList);
+    },
+    [],
+  );
 
-  const handleClickDeleteButton = (titleIndex: number, itemIndex: number) => {
+  const handleClickDeleteButton = React.useCallback((titleIndex: number, itemIndex: number) => {
     const nextIntroductionList = [...introductionList];
     nextIntroductionList[titleIndex].list = nextIntroductionList[titleIndex].list.filter(
       (_, idx) => idx !== itemIndex,
     );
     setIntroductionList(nextIntroductionList);
-  };
+  }, []);
 
-  const handleClickAddFiled = (titleIndex: number) => {
+  const handleClickAddFiled = React.useCallback((titleIndex: number) => {
     if (introductionList[titleIndex].list.length < 5) {
       const nextIntroductionList = [...introductionList];
       nextIntroductionList[titleIndex].list = [...nextIntroductionList[titleIndex].list, ''];
@@ -56,7 +55,7 @@ function IntroductionInfoBox() {
     } else {
       alert('질문에 대한 답변은 5개를 넘어갈 수 없습니다.');
     }
-  };
+  }, []);
 
   return (
     <Wrapper>
@@ -150,4 +149,4 @@ const FiledAddButton = styled(Button)`
   `}
 `;
 
-export default IntroductionInfoBox;
+export default React.memo(IntroductionInfoBox);

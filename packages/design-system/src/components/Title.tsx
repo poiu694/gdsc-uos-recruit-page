@@ -9,7 +9,7 @@ interface Props extends React.ComponentPropsWithoutRef<'div'> {
   isDark?: boolean;
 }
 
-export function Title({ title, descriptions, isDark = true, ...restProps }: Props) {
+export function Title({ title, descriptions, isDark = false, ...restProps }: Props) {
   return (
     <Wrapper {...restProps}>
       <Typography type="h5" color={isDark ? darkTheme.text.bold : theme.colors.text.bold}>

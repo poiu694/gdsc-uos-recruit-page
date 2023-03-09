@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
 import { theme } from '../../theme';
@@ -11,7 +12,7 @@ interface Props {
   onPageSizeOptionsChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export function TablePagination({
+export const TablePagination = React.memo(function TablePagination({
   page,
   pageSize,
   totalCount,
@@ -39,7 +40,7 @@ export function TablePagination({
       </Typography>
     </Wrapper>
   );
-}
+});
 
 const Wrapper = styled.div`
   width: 100%;

@@ -23,37 +23,36 @@ type Question = {
   required: boolean;
 };
 
-function ApplyQuestionInfoBOx() {
+function ApplyQuestionInfoBox() {
   const theme = useTheme();
   const [questionList, setQuestionList] = React.useState<Question[]>(QUESTIONS);
   const [activeTeam, setActiveTeam] = React.useState<TeamKeyType>(DEFAULT_TEAM_VALUE);
 
-  const handleClickTeamName = (team: TeamKeyType) => {
+  const handleClickTeamName = React.useCallback((team: TeamKeyType) => {
     setActiveTeam(team);
-  };
+  }, []);
 
-  const handleChangeInput = <T extends string | number>(
-    nextValue: T,
-    targetIndex: number,
-    property: keyof Question,
-  ) => {
-    const nextQuestionList = [...questionList];
-    nextQuestionList[targetIndex][property] =
-      property === 'required'
-        ? (!nextQuestionList[targetIndex][property] as never)
-        : (nextValue as never);
-    setQuestionList(nextQuestionList);
-  };
+  const handleChangeInput = React.useCallback(
+    <T extends string | number>(nextValue: T, targetIndex: number, property: keyof Question) => {
+      const nextQuestionList = [...questionList];
+      nextQuestionList[targetIndex][property] =
+        property === 'required'
+          ? (!nextQuestionList[targetIndex][property] as never)
+          : (nextValue as never);
+      setQuestionList(nextQuestionList);
+    },
+    [],
+  );
 
-  const handleClickAddFiled = () => {
+  const handleClickAddFiled = React.useCallback(() => {
     const nextQuestionList = [...questionList, { title: '', maxLength: 0, required: false }];
     setQuestionList(nextQuestionList);
-  };
+  }, []);
 
-  const handleClickDeleteFiled = (targetIndex: number) => {
+  const handleClickDeleteFiled = React.useCallback((targetIndex: number) => {
     const nextQuestionList = [...questionList].filter((_, idx) => idx !== targetIndex);
     setQuestionList(nextQuestionList);
-  };
+  }, []);
 
   return (
     <Wrapper>
@@ -172,4 +171,4 @@ const HoverButton = styled(Button)`
   `}
 `;
 
-export default ApplyQuestionInfoBOx;
+export default React.memo(ApplyQuestionInfoBox);
