@@ -14,7 +14,7 @@ function MainBanner({ banner }: Props) {
       <ContentsWrapper>
         <TitleWrapper>
           <Typography type="h1" color={theme.colors.primary.red}>
-            Googles
+            Google
           </Typography>
           <Typography type="h1" color={theme.colors.primary.yellow}>
             Developer

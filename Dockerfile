@@ -20,6 +20,8 @@ ENV APP_ENV production
 
 RUN mkdir /app
 WORKDIR /app
+ENV CHOKIDAR_USEPOLLING=true
+
 # Don't run production as root
 RUN echo 'YARN VERSION IN RUNNER: ' && yarn --version
 RUN addgroup --system --gid 1001 nodejs
