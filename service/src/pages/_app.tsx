@@ -11,7 +11,7 @@ const globalStyle = css`
   ${FontGlobalStyle}
 
   body {
-    background-color: ${theme.colors.background};
+    overscroll-behavior: none;
   }
 `;
 
