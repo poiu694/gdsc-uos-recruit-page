@@ -1,14 +1,18 @@
 {
   "packages/design-system/**/*.{js,jsx,ts,tsx}": [
+    "turbo run prettier --filter='@gdsc-uos/ui'",
     "turbo run lint --filter='@gdsc-uos/ui'"
   ],
   "packages/api/**/*.{ts,tsx}": [
+    "turbo run prettier --filter='@gdsc-uos/api'",
     "turbo run lint --filter='@gdsc-uos/api'"
   ],
   "admin/**/*.{js,jsx,ts,tsx}": [
+    "turbo run prettier --filter='@gdsc-uos/admin'",
     "turbo run lint --filter='@gdsc-uos/admin'"
   ],
   "service/**/*.{js,jsx,ts,tsx}": [
+    "turbo run prettier --filter='@gdsc-uos/service'",
     "turbo run lint --filter='@gdsc-uos/service'"
   ]
 }

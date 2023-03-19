@@ -7,7 +7,12 @@
         "!.next/cache/**"
       ]
     },
-    "lint": {},
+    "lint": {
+      "cache": false
+    },
+    "prettier": {
+      "cache": false
+    },
     "dev": {
       "cache": false
     },
