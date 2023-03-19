@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Graph</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2-pre.1/viz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/viz.js@2.1.2-pre.1/full.render.js"></script>
+    <script>
+      const s = `digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] #build" -> "[root] ___ROOT___"
+		"[root] @gdsc-uos/admin#build" -> "[root] ___ROOT___"
+		"[root] @gdsc-uos/api#build" -> "[root] ___ROOT___"
+		"[root] @gdsc-uos/eslint#build" -> "[root] ___ROOT___"
+		"[root] @gdsc-uos/service#build" -> "[root] ___ROOT___"
+		"[root] @gdsc-uos/tsconfig#build" -> "[root] ___ROOT___"
+		"[root] @gdsc-uos/ui#build" -> "[root] ___ROOT___"
+	}
+}
+`
+        .replace(/\_\_\_ROOT\_\_\_/g, "Root")
+        .replace(/\[root\]/g, "");
+      new Viz()
+        .renderSVGElement(s)
+        .then((el) => document.body.appendChild(el))
+        .catch((e) => console.error(e));
+    </script>
+  </body>
+</html>

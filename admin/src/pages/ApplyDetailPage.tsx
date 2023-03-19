@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Chip, Title, Button, Typography, ButtonHierarchy, TextArea } from 'gdsc-uos-design-system';
+import { Chip, Title, Button, Typography, ButtonHierarchy, TextArea } from '@gdsc-uos/ui';
 
 import { DUMMY_APPLICATION } from '@/dummy/apply';
 import {

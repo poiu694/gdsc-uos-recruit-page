@@ -1,5 +1,5 @@
 {
-  "name": "gdsc-uos-api",
+  "name": "@gdsc-uos/api",
   "version": "0.1.0",
   "author": "LeeSangMin",
   "packageManager": "yarn@3.2.1",
@@ -21,7 +21,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gdsc-uos-tsconfig-custom": "1.0.0",
+    "@gdsc-uos/tsconfig": "1.0.0",
     "msw": "^1.1.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"

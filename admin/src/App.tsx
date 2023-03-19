@@ -1,6 +1,6 @@
 import React from 'react';
 import { Global, ThemeProvider } from '@emotion/react';
-import { globalStyle, theme } from 'gdsc-uos-design-system';
+import { globalStyle, theme } from '@gdsc-uos/ui';
 
 import MainRoute from './routes';
 import { context as APIContext, TestAPI } from './api';

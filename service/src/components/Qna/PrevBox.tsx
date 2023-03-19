@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
-import { Icon, Typography } from 'gdsc-uos-design-system';
+import { Icon, Typography } from '@gdsc-uos/ui';
 
 function PrevBox() {
   const theme = useTheme();

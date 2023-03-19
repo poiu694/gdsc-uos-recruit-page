@@ -1,7 +1,7 @@
 import { css, Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
 import React, { Suspense } from 'react';
-import { globalStyle as FontGlobalStyle, theme } from 'gdsc-uos-design-system';
+import { globalStyle as FontGlobalStyle, theme } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
 import { Bottom, CustomThemeProvider, Header, ScriptHeader, Spinner } from '@/components/common';
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   React.useEffect(() => {
     async function setUpMSW() {
-      const { initMocks } = await import('gdsc-uos-api');
+      const { initMocks } = await import('@gdsc-uos/api');
       await initMocks();
       setIsReadyRender(true);
     }

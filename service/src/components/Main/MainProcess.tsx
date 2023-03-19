@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
-import { Circle, ProcessCircleType, Title, Typography } from 'gdsc-uos-design-system';
+import { Circle, ProcessCircleType, Title, Typography } from '@gdsc-uos/ui';
 
 import { useDarkTheme } from '@/hooks';
 import { TitleWithDescription } from '@types';

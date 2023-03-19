@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Icon, Typography } from 'gdsc-uos-design-system';
+import { Icon, Typography } from '@gdsc-uos/ui';
 
 import CustomLink from './CustomLink';
 

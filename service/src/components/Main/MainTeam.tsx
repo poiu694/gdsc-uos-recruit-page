@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
-import { Title, Typography } from 'gdsc-uos-design-system';
+import { Title, Typography } from '@gdsc-uos/ui';
 
 import { useDarkTheme } from '@/hooks';
 import { TitleWithDescription } from '@types';

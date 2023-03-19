@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
-import { Input, Button, Typography, ButtonHierarchy } from 'gdsc-uos-design-system';
+import { Input, Button, Typography, ButtonHierarchy } from '@gdsc-uos/ui';
 import { useNavigate } from 'react-router-dom';
 
 import { Flex, Logo } from '@/components';

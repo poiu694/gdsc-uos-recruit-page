@@ -1,4 +1,4 @@
-import { createGenericContext, createGenericUseContext } from 'gdsc-uos-design-system';
+import { createGenericContext, createGenericUseContext } from '@gdsc-uos/ui';
 
 import { TestAPI } from './service';
 

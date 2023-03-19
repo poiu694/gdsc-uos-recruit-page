@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React, { useReducer } from 'react';
 import { useTheme } from '@emotion/react';
-import { Banner, Button, ButtonHierarchy, TextArea, Typography } from 'gdsc-uos-design-system';
+import { Banner, Button, ButtonHierarchy, TextArea, Typography } from '@gdsc-uos/ui';
 import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 
 import { ApplyQuestion } from '@types';

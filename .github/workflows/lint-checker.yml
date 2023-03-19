@@ -24,10 +24,15 @@ jobs:
       - name: checkout action
         uses: actions/checkout@v2
 
+      - uses: pnpm/action-setup@v2.0.1
+          with:
+            version: 7.29.3
+
       - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
       - name: file changes action
         uses: trilom/file-changes-action@master
@@ -45,16 +50,33 @@ jobs:
           if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"admin"* ]]; then
             echo "admin=true" >> $GITHUB_OUTPUT
           fi
+          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"api"* ]]; then
+            echo "api=true" >> $GITHUB_OUTPUT
+          fi
+          if [[ "${{ steps.files.outputs.OUTPUT_FILES }}" == *"design-system"* ]]; then
+            echo "ui=true" >> $GITHUB_OUTPUT
+          fi
         id: changes
 
-      - name: yarn install
-        run: yarn
+      - name: pnpm install
+        run: pnpm install
 
       - name: run service eslint
         if: ${{ steps.changes.outputs.service == 'true' }}
         run: |
-          yarn service:lint
+          pnpm run lint --filter='@gdsc-uos/service'
 
       - name: run admin eslint
         if: ${{ steps.changes.outputs.admin == 'true' }}
-        run: yarn admin:lint
+        run: |
+          pnpm run lint --filter='@gdsc-uos/admin'
+
+      - name: run ui eslint
+        if: ${{ steps.changes.outputs.ui == 'true' }}
+        run: |
+          pnpm run lint --filter='@gdsc-uos/ui'
+
+      - name: run api eslint
+        if: ${{ steps.changes.outputs.api == 'true' }}
+        run: |
+          pnpm run lint --filter='@gdsc-uos/api'

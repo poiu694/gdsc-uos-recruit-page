@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { Banner, getTitleCaseTeam, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
+import { Banner, getTitleCaseTeam, TEAM_LIST, TeamKeyType } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
 import { IntroductionContent } from '@/constants';

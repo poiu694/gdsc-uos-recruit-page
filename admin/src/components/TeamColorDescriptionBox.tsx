@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { PalleteValueType, Typography } from 'gdsc-uos-design-system';
+import { PalleteValueType, Typography } from '@gdsc-uos/ui';
 
 import { Flex } from './styled';
 

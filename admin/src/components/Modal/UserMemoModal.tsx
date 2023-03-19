@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Button, Typography, useModalContext, ButtonHierarchy } from 'gdsc-uos-design-system';
+import { Button, Typography, useModalContext, ButtonHierarchy } from '@gdsc-uos/ui';
 
 import { Memo } from '@/@types';
 import { Flex } from '@/components/styled';

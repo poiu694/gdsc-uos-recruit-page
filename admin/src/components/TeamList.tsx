@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Typography, TeamKeyType, getTitleCaseTeam, BASIC_TEAM } from 'gdsc-uos-design-system';
+import { Typography, TeamKeyType, getTitleCaseTeam, BASIC_TEAM } from '@gdsc-uos/ui';
 
 interface Props {
   activeTeam: TeamKeyType;

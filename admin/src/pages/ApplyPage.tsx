@@ -7,7 +7,7 @@ import {
   ClickableIcon,
   TablePagination,
   TeamKeyType,
-} from 'gdsc-uos-design-system';
+} from '@gdsc-uos/ui';
 
 import { ApplyState, UserApplication } from '@/@types';
 import { usePagination } from '@/hooks';

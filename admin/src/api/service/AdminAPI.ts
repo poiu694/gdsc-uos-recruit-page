@@ -1,4 +1,4 @@
-import { APIInterface } from 'gdsc-uos-api';
+import { APIInterface } from '@gdsc-uos/api';
 
 export class AdminAPI extends APIInterface {
   constructor() {

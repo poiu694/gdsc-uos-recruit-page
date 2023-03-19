@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
-import { Icon, Typography, getTitleCaseTeam } from 'gdsc-uos-design-system';
+import { Icon, Typography, getTitleCaseTeam } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
 import { TeamNameProps, QuestionListItem } from '@types';

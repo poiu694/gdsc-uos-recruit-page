@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
-import { Typography, get200Color, get400Color } from 'gdsc-uos-design-system';
+import { Typography, get200Color, get400Color } from '@gdsc-uos/ui';
 
 import type { AsideCardType, TeamNameProps } from '@types';
 

@@ -1,29 +1,21 @@
 {
-  "name": "gdsc-uos-recruit-page",
+  "name": "gdsc-uos",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/poiu694/sample_page.git",
+  "repository": "https://github.com/poiu694/gdsc-uos-recruit-page",
   "author": "Lee <43488305+poiu694@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
+  "packageManager": "pnpm@7.29.3",
   "scripts": {
-    "service": "yarn workspace service dev",
-    "service:start": "yarn ds:build && yarn workspace service dev",
-    "service:build": "yarn ds:build && yarn workspace service build",
-    "service:lint": "yarn workspace service lint",
-    "service:prettier": "yarn workspace service prettier",
-    "admin": "yarn workspace admin dev",
-    "admin:lint": "yarn workspace admin lint",
-    "admin:prettier": "yarn workspace admin prettier",
-    "admin:start": "yarn ds:build && yarn workspace admin dev",
-    "admin:build": "yarn ds:build && yarn workspace admin build",
-    "ds:lint": "yarn workspace gdsc-uos-design-system lint",
-    "ds:prettier": "yarn workspace gdsc-uos-design-system prettier",
-    "ds:build": "yarn workspace gdsc-uos-design-system build",
-    "api:lint": "yarn workspace gdsc-uos-api lint",
-    "api:prettier": "yarn workspace gdsc-uos-api prettier",
-    "lint": "yarn service:lint && yarn admin:lint && yarn ds:lint",
-    "prettier": "yarn service:prettier && yarn admin:prettier && yarn ds:prettier",
+    "service": "turbo run dev --filter='@gdsc-uos/service'",
+    "admin": "turbo run dev --filter='@gdsc-uos/admin'",
+    "dev": "turbo run dev --no-cache --continue",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "prettier": "turbo run prettier",
+    "lint": "turbo run lint",
+    "graph": "turbo run build --graph=graph/index.html",
     "postinstall": "husky install"
   },
   "workspaces": [
@@ -31,12 +23,10 @@
     "service",
     "packages/**"
   ],
-  "packageManager": "yarn@3.2.3",
-  "dependencies": {
-    "typescript": "^4.7.4"
-  },
   "devDependencies": {
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.2"
+    "lint-staged": "^13.1.2",
+    "typescript": "^4.7.4",
+    "turbo": "latest"
   }
 }

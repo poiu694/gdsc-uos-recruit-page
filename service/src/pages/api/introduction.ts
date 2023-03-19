@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { TeamContent } from 'gdsc-uos-design-system';
+import { TeamContent } from '@gdsc-uos/ui';
 
 import { IntroductionType } from '@types';
 import { IntroductionContent } from '@/constants';

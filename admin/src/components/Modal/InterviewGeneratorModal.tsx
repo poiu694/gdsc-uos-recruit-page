@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  Button,
-  TextArea,
-  Typography,
-  useModalContext,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+import { Button, TextArea, Typography, useModalContext, ButtonHierarchy } from '@gdsc-uos/ui';
 import { useTheme } from '@emotion/react';
 
 interface Props {

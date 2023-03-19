@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Typography } from 'gdsc-uos-design-system';
+import { Typography } from '@gdsc-uos/ui';
 import { PieChart } from 'react-minimal-pie-chart';
 
 import { Flex } from './styled';

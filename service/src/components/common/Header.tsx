@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
-import { ClickableIcon, Typography } from 'gdsc-uos-design-system';
+import { ClickableIcon, Typography } from '@gdsc-uos/ui';
 
 import { useDarkTheme, useGA } from '@/hooks';
 import { GOOGLE_FORM_LINK } from '@/constants/form';
