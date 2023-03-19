@@ -6,6 +6,7 @@
   "author": "Lee <43488305+poiu694@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
+  "packageManager": "pnpm@7.29.3",
   "scripts": {
     "service": "yarn workspace service dev",
     "service:start": "yarn ds:build && yarn workspace service dev",
@@ -31,12 +32,9 @@
     "service",
     "packages/**"
   ],
-  "packageManager": "yarn@3.2.3",
-  "dependencies": {
-    "typescript": "^4.7.4"
-  },
   "devDependencies": {
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.2"
+    "lint-staged": "^13.1.2",
+    "typescript": "^4.7.4"
   }
 }
