@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Chip, Title, Button, Typography, ButtonHierarchy, Modal } from 'gdsc-uos-design-system';
+import { Chip, Title, Button, Typography, ButtonHierarchy, Modal } from '@gdsc-uos/ui';
 
 import { ApplyState } from '@/@types';
 import { convertChipColorByState } from '@/utils';

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
-import { Icon, Typography, IconKeyType, PalleteValueType } from 'gdsc-uos-design-system';
+import { Icon, Typography, IconKeyType, PalleteValueType } from '@gdsc-uos/ui';
 
 interface Props {
   label: string;

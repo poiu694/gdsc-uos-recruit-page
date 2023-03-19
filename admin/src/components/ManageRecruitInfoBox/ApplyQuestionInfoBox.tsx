@@ -8,7 +8,7 @@ import {
   Typography,
   TeamKeyType,
   ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+} from '@gdsc-uos/ui';
 
 import { QUESTIONS } from '@/dummy/apply';
 import { Flex } from '@/components/styled';

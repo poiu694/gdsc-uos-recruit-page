@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { Chip } from 'gdsc-uos-design-system';
+import { Chip } from '@gdsc-uos/ui';
 
 import { Flex } from './styled';
 import { ApplyState } from '@/@types';

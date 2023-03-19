@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
-import { TeamKeyType, Typography } from 'gdsc-uos-design-system';
+import { TeamKeyType, Typography } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
 import { teams } from '@/constants';

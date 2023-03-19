@@ -1,5 +1,5 @@
 {
-  "name": "gdsc-uos-tsconfig-custom",
+  "name": "@gdsc-uos/tsconfig",
   "version": "1.0.0",
   "private": true,
   "author": "LeeSangMin",

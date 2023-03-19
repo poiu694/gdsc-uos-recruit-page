@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
-import { Planet, Typography } from 'gdsc-uos-design-system';
+import { Planet, Typography } from '@gdsc-uos/ui';
 
 interface Props {
   banner: string;

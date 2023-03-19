@@ -4,7 +4,7 @@ import App from './App';
 
 const prepare = async (): Promise<void> => {
   if (import.meta.env.DEV) {
-    const { initMocks } = await import('gdsc-uos-api');
+    const { initMocks } = await import('@gdsc-uos/api');
     await initMocks();
   }
 };

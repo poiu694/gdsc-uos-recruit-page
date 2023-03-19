@@ -1,14 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import {
-  Input,
-  Title,
-  Typography,
-  TextArea,
-  Button,
-  ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+import { Input, Title, Typography, TextArea, Button, ButtonHierarchy } from '@gdsc-uos/ui';
 
 import { useEmailAction } from '@/hooks';
 import { DUMMY_APPLYS } from '@/dummy/apply';

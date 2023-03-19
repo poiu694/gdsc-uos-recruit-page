@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css, useTheme } from '@emotion/react';
-import { Button, ButtonHierarchy, Chip, Typography } from 'gdsc-uos-design-system';
+import { Button, ButtonHierarchy, Chip, Typography } from '@gdsc-uos/ui';
 
 import { Flex } from './styled';
 import { useEmailAction } from '@/hooks';

@@ -8,7 +8,7 @@ import {
   TextArea,
   Typography,
   useModalContext,
-} from 'gdsc-uos-design-system';
+} from '@gdsc-uos/ui';
 
 import { FAQ } from '@/@types';
 

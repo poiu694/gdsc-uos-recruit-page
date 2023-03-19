@@ -2,13 +2,7 @@ import { useCallback } from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { css, useTheme } from '@emotion/react';
-import {
-  Typography,
-  get600Color,
-  getJobByTeam,
-  getTitleCaseTeam,
-  get400Color,
-} from 'gdsc-uos-design-system';
+import { Typography, get600Color, getJobByTeam, getTitleCaseTeam, get400Color } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
 import { TeamNameProps } from '@types';

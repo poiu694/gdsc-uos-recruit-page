@@ -1,4 +1,4 @@
-import { ChipType, TeamKeyType } from 'gdsc-uos-design-system';
+import { ChipType, TeamKeyType } from '@gdsc-uos/ui';
 
 import type { ApplyState, UserType } from '@/@types';
 

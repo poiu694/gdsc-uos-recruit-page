@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Button, Typography, ClickableIcon, ButtonHierarchy } from 'gdsc-uos-design-system';
+import { Button, Typography, ClickableIcon, ButtonHierarchy } from '@gdsc-uos/ui';
 
 import { PageOptions } from '@/hooks/usePagination';
 

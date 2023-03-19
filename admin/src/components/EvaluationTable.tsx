@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Chip, Table, TBody, Td, THead, Tr, Typography } from 'gdsc-uos-design-system';
+import { Chip, Table, TBody, Td, THead, Tr, Typography } from '@gdsc-uos/ui';
 
 import { ApplyState } from '@/@types';
 import { convertChipColorByState } from '@/utils';

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Title, Typography } from 'gdsc-uos-design-system';
+import { Title, Typography } from '@gdsc-uos/ui';
 
 import { Flex, SummaryCard, ApplicationStatusChart, TeamColorDescriptionBox } from '@/components';
 import React from 'react';

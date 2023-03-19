@@ -11,7 +11,7 @@ import {
   TeamKeyType,
   ButtonHierarchy,
   getTitleCaseTeam,
-} from 'gdsc-uos-design-system';
+} from '@gdsc-uos/ui';
 
 import TeamList from '@/components/TeamList';
 import { FAQ } from '@/@types';

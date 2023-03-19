@@ -1,4 +1,4 @@
-import { TeamKeyType } from 'gdsc-uos-design-system';
+import { TeamKeyType } from '@gdsc-uos/ui';
 
 export interface QuestionListItem {
   id?: string;

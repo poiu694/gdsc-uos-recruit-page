@@ -9,7 +9,7 @@ import {
   TeamKeyType,
   ClickableIcon,
   ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+} from '@gdsc-uos/ui';
 
 import TeamList from '@/components/TeamList';
 import { INTRODUCTION } from '@/dummy/introduction';

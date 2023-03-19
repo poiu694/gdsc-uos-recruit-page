@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Banner, TEAM_LIST, TeamKeyType } from 'gdsc-uos-design-system';
+import { Banner, TEAM_LIST, TeamKeyType } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
 import { TeamList } from '@/components/Qna';

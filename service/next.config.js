@@ -2,9 +2,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   transpilePackages: [
-    'gdsc-uos-design-system',
-    'gdsc-uos-eslint-config-custom',
-    'gdsc-uos-tsconfig-custom',
+    '@gdsc-uos/ui',
+    '@gdsc-uos/eslint',
+    '@gdsc-uos/tsconfig',
   ],
   webpack: (config) => {
     config.watchOptions = {

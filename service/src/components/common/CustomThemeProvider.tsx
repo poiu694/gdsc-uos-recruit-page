@@ -1,11 +1,6 @@
 import React from 'react';
 import { Theme, ThemeProvider } from '@emotion/react';
-import {
-  createGenericContext,
-  createGenericUseContext,
-  darkTheme,
-  theme,
-} from 'gdsc-uos-design-system';
+import { createGenericContext, createGenericUseContext, darkTheme, theme } from '@gdsc-uos/ui';
 
 import { useLocalStorage } from '@/hooks';
 

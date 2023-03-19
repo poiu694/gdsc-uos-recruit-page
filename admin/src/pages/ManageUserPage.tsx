@@ -13,7 +13,7 @@ import {
   Typography,
   ButtonHierarchy,
   TablePagination,
-} from 'gdsc-uos-design-system';
+} from '@gdsc-uos/ui';
 
 import { UserType } from '@/@types';
 import { usePagination } from '@/hooks';

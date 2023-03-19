@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Typography } from 'gdsc-uos-design-system';
+import { Typography } from '@gdsc-uos/ui';
 
 interface Props {
   desc: string;

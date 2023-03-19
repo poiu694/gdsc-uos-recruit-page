@@ -9,7 +9,7 @@ import {
   Button,
   Typography,
   ButtonHierarchy,
-} from 'gdsc-uos-design-system';
+} from '@gdsc-uos/ui';
 import { useTheme } from '@emotion/react';
 import React from 'react';
 

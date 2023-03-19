@@ -1,18 +1,14 @@
 {
   "packages/design-system/**/*.{js,jsx,ts,tsx}": [
-    "yarn ds:prettier",
-    "yarn ds:lint"
+    "turbo run lint --filter='@gdsc-uos/ui'"
   ],
   "packages/api/**/*.{ts,tsx}": [
-    "yarn api:prettier",
-    "yarn api:lint"
+    "turbo run lint --filter='@gdsc-uos/api'"
   ],
   "admin/**/*.{js,jsx,ts,tsx}": [
-    "yarn admin:prettier",
-    "yarn admin:lint"
+    "turbo run lint --filter='@gdsc-uos/admin'"
   ],
   "service/**/*.{js,jsx,ts,tsx}": [
-    "yarn service:prettier",
-    "yarn service:lint"
+    "turbo run lint --filter='@gdsc-uos/service'"
   ]
 }

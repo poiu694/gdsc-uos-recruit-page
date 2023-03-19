@@ -1,5 +1,5 @@
 {
-  "name": "admin",
+  "name": "@gdsc-uos/admin",
   "private": true,
   "version": "0.1.0",
   "author": "LeeSangMin",
@@ -23,6 +23,7 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
@@ -38,10 +39,10 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gdsc-uos-api": "workspace:^",
-    "gdsc-uos-design-system": "workspace:^",
-    "gdsc-uos-eslint-config-custom": "workspace:^",
-    "gdsc-uos-tsconfig-custom": "workspace:^",
+    "@gdsc-uos/api": "workspace:*",
+    "@gdsc-uos/ui": "workspace:*",
+    "@gdsc-uos/eslint": "workspace:*",
+    "@gdsc-uos/tsconfig": "workspace:*",
     "msw": "^1.1.0",
     "prettier": "^2.8.4",
     "typescript": "^4.6.4",

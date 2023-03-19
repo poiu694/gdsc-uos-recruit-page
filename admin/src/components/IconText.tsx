@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
-import { Typography, Icon, IconKeyType } from 'gdsc-uos-design-system';
+import { Typography, Icon, IconKeyType } from '@gdsc-uos/ui';
 
 import { Flex } from './styled';
 
