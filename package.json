@@ -19,8 +19,7 @@
     "postinstall": "husky install"
   },
   "workspaces": [
-    "admin",
-    "service",
+    "app/**",
     "packages/**"
   ],
   "devDependencies": {

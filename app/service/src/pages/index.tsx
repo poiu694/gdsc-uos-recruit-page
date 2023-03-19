@@ -1,12 +1,12 @@
-import type { GetStaticProps, NextPage } from 'next';
+import React from 'react';
 import styled from '@emotion/styled';
+import type { GetStaticProps, NextPage } from 'next';
 
 import main from '@/constants/Main';
 import { Helmet } from '@/components/common';
 import { useGA, useAOSSideEffect } from '@/hooks';
 import type { TitleWithDescription } from '@types';
 import { MainBanner, MainProcess, MainTeam } from '@/components';
-import React from 'react';
 import { TestAPI } from '@/api/service';
 
 interface Props {
