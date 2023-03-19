@@ -29,10 +29,12 @@ packages: Put shared component for service, admin
 clone it, install it and run it.
 
 ```shell
-git clone https://github.com/poiu694/sample_page.git
-
-yarn service # service dev
-yarn admin # admin dev
+git clone https://github.com/poiu694/gdsc-uos-recruit-page.git
+cd gdsc-uos-recruit-page
+pnpm install
+pnpm dev # service / admin dev
+# pnpm admin # only admin dev
+# pnpm service # only admin dev
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
