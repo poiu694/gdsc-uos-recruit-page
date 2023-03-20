@@ -41,8 +41,10 @@ function CustomThemeProvider({
     setIsMounted(true);
     if (typeof window === 'undefined') {
       setUserTheme('dark');
-    } else if (typeof window !== 'undefined' && window.matchMedia(MEDIA).matches && !userTheme) {
+    } else if (typeof window !== 'undefined' && window.matchMedia(MEDIA).matches) {
       setUserTheme('dark');
+    } else {
+      setUserTheme('light');
     }
   }, [setUserTheme, userTheme]);
 
