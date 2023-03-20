@@ -37,9 +37,11 @@ const QnaListPage: NextPage<QnaListPageProps> = ({ questions, teamName }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.values(TEAM_LIST).map((teamName) => ({
-    params: { teamName },
-  }));
+  const paths = Object.values(TEAM_LIST)
+    .filter((team) => team !== 'design')
+    .map((teamName) => ({
+      params: { teamName },
+    }));
 
   return {
     paths,

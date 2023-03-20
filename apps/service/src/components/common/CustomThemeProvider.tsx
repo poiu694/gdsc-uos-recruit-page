@@ -35,16 +35,21 @@ function CustomThemeProvider({
   const toggleTheme = React.useCallback(() => {
     const nextUserTheme = userTheme === 'light' ? 'dark' : 'light';
     setUserTheme(nextUserTheme);
-  }, [userTheme]);
+  }, [setUserTheme, userTheme]);
 
   React.useEffect(() => {
     setIsMounted(true);
-    if (typeof window !== 'undefined' && window.matchMedia(MEDIA).matches && !userTheme) {
+    if (
+      typeof window === 'undefined' ||
+      (typeof window !== 'undefined' && window.matchMedia(MEDIA).matches)
+    ) {
       setUserTheme('dark');
+    } else {
+      setUserTheme('light');
     }
-  }, []);
+  }, [setUserTheme]);
 
-  if (!isMounted || !userTheme) {
+  if (!isMounted || typeof userTheme === 'undefined') {
     return null;
   }
 
