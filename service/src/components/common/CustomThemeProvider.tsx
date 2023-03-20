@@ -39,14 +39,15 @@ function CustomThemeProvider({
 
   React.useEffect(() => {
     setIsMounted(true);
-    if (typeof window === 'undefined') {
-      setUserTheme('dark');
-    } else if (typeof window !== 'undefined' && window.matchMedia(MEDIA).matches) {
+    if (
+      typeof window === 'undefined' ||
+      (typeof window !== 'undefined' && window.matchMedia(MEDIA).matches)
+    ) {
       setUserTheme('dark');
     } else {
       setUserTheme('light');
     }
-  }, [setUserTheme, userTheme]);
+  }, [setUserTheme]);
 
   if (!isMounted || typeof userTheme === 'undefined') {
     return null;
