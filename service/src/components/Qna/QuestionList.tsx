@@ -45,7 +45,12 @@ function QuestionList({ questions, teamName }: Props) {
         </ListItem>
       ))}
       {teamName !== 'common' && (
-        <DirectLink type="h6" teamName={teamName} onClick={handleClickDirectTeamLink}>
+        <DirectLink
+          type="h6"
+          teamName={teamName}
+          color={theme.colors.text.general}
+          onClick={handleClickDirectTeamLink}
+        >
           {getTitleCaseTeam(teamName)} Team 으로 바로가기
         </DirectLink>
       )}

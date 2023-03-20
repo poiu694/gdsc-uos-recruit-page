@@ -18,9 +18,11 @@ function QuestionBox({ question }: Props) {
       <TitleWrapper type="h2" color={theme.colors.text.bold}>
         {question?.title}
       </TitleWrapper>
-      <ContentWrapper type="body3" color={theme.colors.text.general}>
-        {question?.desc}
-      </ContentWrapper>
+      <ContentWrapper
+        type="body3"
+        color={theme.colors.text.general}
+        dangerouslySetInnerHTML={{ __html: question?.desc ?? '' }}
+      />
     </Wrapper>
   );
 }
@@ -51,6 +53,11 @@ const ContentWrapper = styled(Typography)`
 
     @media (max-width: ${theme.size.mobile}px) {
       margin-bottom: ${theme.padding.xlg}px;
+    }
+
+    & > a {
+      text-decoration: none;
+      color: ${theme.colors.primary.blue};
     }
   `}
 `;
