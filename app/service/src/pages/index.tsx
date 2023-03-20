@@ -7,7 +7,6 @@ import { Helmet } from '@/components/common';
 import { useGA, useAOSSideEffect } from '@/hooks';
 import type { TitleWithDescription } from '@types';
 import { MainBanner, MainProcess, MainTeam } from '@/components';
-import { TestAPI } from '@/api/service';
 
 interface Props {
   contents: {
@@ -24,14 +23,6 @@ const Home: NextPage<Props> = ({ contents }) => {
   const { logPageView } = useGA();
   logPageView('메인 화면 조회');
   useAOSSideEffect();
-
-  React.useEffect(() => {
-    (async () => {
-      const testAPI = new TestAPI();
-      const res = await testAPI.getTodoItem();
-      console.log(res);
-    })();
-  }, []);
 
   return (
     <>
