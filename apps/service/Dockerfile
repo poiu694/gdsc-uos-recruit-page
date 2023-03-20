@@ -6,10 +6,10 @@ RUN apk update
 
 RUN mkdir /app
 WORKDIR /app
-# Copy root lockfile
+
 RUN yarn global add turbo
 COPY . .
-RUN turbo prune --scope='@gdsc-uos/service' --docker
+RUN turbo prune --scope=@gdsc-uos/service --docker
 
 ######################################
 ## INSTALLER
@@ -23,7 +23,7 @@ WORKDIR /app
 RUN yarn global add pnpm
 # COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
-COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=builder /app/out/pnpm-*.yaml ./pnpm-*.yaml
 COPY turbo.json turbo.json
 
 # Build the project
@@ -47,8 +47,8 @@ USER nextjs
 COPY --from=installer /app/apps/service/next.config.js .
 COPY --from=installer /app/apps/service/package.json .
 
-COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
+COPY --from=installer --chown=nextjs:nodejs /app/apps/service/.next/standalone ./
 COPY --from=installer --chown=nextjs:nodejs /app/apps/service/.next/static ./apps/service/.next/static
 COPY --from=installer --chown=nextjs:nodejs /app/apps/service/public ./apps/service/public
 
-CMD ["pnpm", "turbo", "run", "start", "--filter=service"]
+CMD node apps/service/server.js
