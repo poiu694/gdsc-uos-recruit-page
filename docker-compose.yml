@@ -1,27 +1,19 @@
-version: "3"
+version: '3'
 
 services:
-  # admin:
-  #   container_name: admin
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #     args:
-  #       - BUILD_CONTEXT=admin
-  #   ports:
-  #     - "8080:80"
   service:
     container_name: service
     restart: always
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        - BUILD_CONTEXT=service
-        - PORT=3000
+      dockerfile: ./apps/service/Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - "./service/next:/usr/src/app/service/next"
-      - "./service/node_modules:/usr/src/app/service/node_modules"
-      - "./:/usr/src/app/service"
+      - '3000:3000'
+    networks:
+      - app_network
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    external: true

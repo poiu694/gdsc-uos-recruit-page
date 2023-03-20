@@ -14,7 +14,7 @@ importers:
       turbo: 1.8.3
       typescript: 4.7.4
 
-  app/admin:
+  apps/admin:
     specifiers:
       '@babel/core': ^7.20.12
       '@emotion/react': ^11.9.3
@@ -85,7 +85,7 @@ importers:
       vite: 3.2.5_@types+node@18.14.6
       vite-plugin-node-polyfills: 0.7.0_vite@3.2.5
 
-  app/service:
+  apps/service:
     specifiers:
       '@babel/core': ^7.20.12
       '@emotion/react': ^11.9.3
@@ -1236,7 +1236,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.12
-      '@babel/plugin-transform-react-jsx': 7.18.6_@babel+core@7.20.12
+      '@babel/plugin-transform-react-jsx': 7.21.0_@babel+core@7.20.12
     dev: true
 
   /@babel/plugin-transform-react-jsx-self/7.21.0_@babel+core@7.20.12:
