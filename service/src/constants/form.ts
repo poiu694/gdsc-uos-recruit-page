@@ -1,4 +1,4 @@
-export const GOOGLE_FORM_LINK = 'https://forms.gle/zDdUkv1RNg3WZdE59';
+export const GOOGLE_FORM_LINK = 'https://forms.gle/bzrgQFBGU71rMNfBA';
 
 export const formIntroduction = (currentYear: number) => `
   안녕하세요! ${
