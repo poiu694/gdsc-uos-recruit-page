@@ -63,7 +63,7 @@ function Header() {
           <Typography
             type="body4"
             color={theme.colors.text.general}
-            onClick={() => handleLinkToPage('/apply')}
+            onClick={() => handleLinkToPage(GOOGLE_FORM_LINK)}
             aria-label="move to apply google-form link"
           >
             지원 하기

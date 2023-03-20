@@ -1,4 +1,4 @@
-const MainBannerDesc = '2022년부터 함께 할 사람을 찾습니다.';
+const MainBannerDesc = '2023년부터 함께 할 사람을 찾습니다.';
 
 const MainProcess = {
   content: {
@@ -8,19 +8,19 @@ const MainProcess = {
   circle: [
     {
       title: '서류 접수',
-      desc: '2022.08.15 ~ 2022.08.29',
+      desc: '2023.03.20 ~ 2023.03.24',
     },
     {
       title: '서류 발표',
-      desc: '2022.09.01',
+      desc: '2023.03.25',
     },
     {
       title: '인터뷰 진행',
-      desc: '2022.09.03 ~ 2022.09.09',
+      desc: '2023.03.27 ~ 2023.03.29',
     },
     {
       title: '최종 발표',
-      desc: '2022.09.14',
+      desc: '2023.03.31',
     },
   ],
 };

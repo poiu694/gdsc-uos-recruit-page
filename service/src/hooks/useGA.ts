@@ -2,7 +2,9 @@ import ReactGA from 'react-ga4';
 
 const useGA = () => {
   const initGA = (key: string) => {
-    ReactGA.initialize(key);
+    if (key) {
+      ReactGA.initialize(key);
+    }
   };
 
   const logPageView = (url: string) => {
