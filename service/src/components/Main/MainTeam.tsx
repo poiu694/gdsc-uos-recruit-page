@@ -34,7 +34,7 @@ function MainTeam({ content }: Props) {
         <TeamCard teamName="backend" />
         <TeamCard teamName="mobile" />
         <TeamCard teamName="data_ml" />
-        <TeamCard teamName="design" />
+        {/* <TeamCard teamName="design" /> */}
       </TeamCardWrapper>
     </Wrapper>
   );
@@ -62,8 +62,13 @@ const TeamCardWrapper = styled.div`
     flex-wrap: wrap;
     gap: ${theme.padding.xlg}px;
 
-    @media (min-width: ${theme.size.tabletL + 300}px) {
+    @media (min-width: ${theme.size.tabletL}px) {
       margin-top: 96px;
+
+      // design 없을 경우
+      & > section {
+        width: 35%;
+      }
     }
   `}
 `;

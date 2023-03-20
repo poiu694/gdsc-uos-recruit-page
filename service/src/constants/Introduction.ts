@@ -146,5 +146,5 @@ export default {
   backend: BackEndIntroduction,
   mobile: MobileIntroduction,
   data_ml: DataMLIntroduction,
-  design: DesignIntroduction,
+  // design: DesignIntroduction,
 } as TeamContent<IntroductionType>;
