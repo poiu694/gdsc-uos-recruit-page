@@ -24,9 +24,10 @@ jobs:
       - name: checkout action
         uses: actions/checkout@v2
 
-      - uses: pnpm/action-setup@v2.0.1
+      - name: checkout pnpm
+        uses: pnpm/action-setup@v2
           with:
-            version: 7.29.3
+            version: 7
 
       - name: setup node
         uses: actions/setup-node@v3
