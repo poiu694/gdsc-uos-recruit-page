@@ -35,11 +35,11 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
     } catch (error) {
       console.warn(`Error setting localStorage key “${key}”:`, error);
     }
-  }, []);
+  }, [key, storedValue]);
 
   React.useEffect(() => {
     setStoredValue(() => readLocalStorage(key, initialValue));
-  }, []);
+  }, [initialValue, key]);
 
   return [storedValue, setValue];
 };
