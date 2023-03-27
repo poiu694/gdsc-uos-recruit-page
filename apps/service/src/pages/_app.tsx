@@ -33,6 +33,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       process.env.NEXT_PUBLIC_API_MOCKING === 'enable'
     ) {
       setUpMSW();
+    } else {
+      setIsReadyRender(true);
     }
   }, []);
 
