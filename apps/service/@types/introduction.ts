@@ -5,7 +5,7 @@ export interface AsideCardType {
 }
 
 export interface ResponseIntroduction {
-  introduction: string;
+  about: string;
   activity: string;
   target: string;
 }
@@ -13,7 +13,7 @@ export interface ResponseIntroduction {
 export interface IntroductionType {
   title: string;
   desc: string;
-  introduction: string[];
+  about: string[];
   activity: string[];
   target: string[];
   aside: AsideCardType;

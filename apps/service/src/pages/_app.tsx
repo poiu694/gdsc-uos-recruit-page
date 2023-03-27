@@ -1,6 +1,7 @@
-import { css, Global } from '@emotion/react';
 import type { AppProps } from 'next/app';
 import React, { Suspense } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { css, Global } from '@emotion/react';
 import { globalStyle as FontGlobalStyle, theme } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
@@ -18,6 +19,16 @@ const globalStyle = css`
 function MyApp({ Component, pageProps }: AppProps) {
   const [isReadyRender, setIsReadyRender] = React.useState(
     process.env.NEXT_PUBLIC_API_MOCKING !== 'enable',
+  );
+  const [queryClient] = React.useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnWindowFocus: false,
+          },
+        },
+      }),
   );
   const { initGA } = useGA();
 
@@ -46,15 +57,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <CustomThemeProvider theme={theme}>
-      <Global styles={globalStyle} />
-      <ScriptHeader />
-      <Header />
-      <Suspense fallback={<Spinner />}>
-        <BodyBackgroundBox>
-          <Component {...pageProps} />
-        </BodyBackgroundBox>
-      </Suspense>
-      <Bottom />
+      <QueryClientProvider client={queryClient}>
+        <Global styles={globalStyle} />
+        <ScriptHeader />
+        <Header />
+        <Suspense fallback={<Spinner />}>
+          <BodyBackgroundBox>
+            <Component {...pageProps} />
+          </BodyBackgroundBox>
+        </Suspense>
+        <Bottom />
+      </QueryClientProvider>
     </CustomThemeProvider>
   );
 }
