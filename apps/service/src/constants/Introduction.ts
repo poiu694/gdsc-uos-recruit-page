@@ -1,5 +1,5 @@
 import { TeamContent } from '@gdsc-uos/ui';
-import { IntroductionType } from '@types';
+import type { IntroductionType } from '@types';
 
 const FrontEndIntroduction = {
   title: 'Frontend Developer',
@@ -11,7 +11,7 @@ const FrontEndIntroduction = {
     '다른 팀들과 소통하는 법을 배웁니다.',
     '프로젝트를 배포하면서 자신의 결과물을 보여줄 수 있는 팀입니다.',
   ],
-  activities: [
+  activity: [
     '데일리 스크럼을 통해 본인의 성장을 공유합니다.',
     '직면한 문제를 공유하고, 서로의 부족한 부분을 채워줍니다.',
     '다양한 웹 프레임워크와 라이브러리를 접할기회를 갖습니다.',
@@ -23,7 +23,7 @@ const FrontEndIntroduction = {
     experience: '무관',
     needs: ['열정'],
   },
-  wants: [
+  target: [
     '프론트엔드를 진정으로 하고 싶으신 분',
     '자신의 지식을 공유하는데 거리낌 없으신 분',
     '개발을 잘 몰라 평소에 아이디어만 가지고 계셨던 분',
@@ -40,7 +40,7 @@ const BackEndIntroduction = {
     '개발 공식 문서를 기반으로 자신의 지식을 정리하고 확장합니다.',
     '모르는 것에 대해 자신감 있게 물어보고 함께 고민합니다.',
   ],
-  activities: [
+  activity: [
     '개인 혹은 팀별 프로젝트를 진행합니다.',
     '데일리 스크럼을 통해 프로젝트 진행상황을 공유합니다!',
     '백엔드팀 스프린트 리뷰를 통해 한달 활동을 피드백합니다.',
@@ -51,7 +51,7 @@ const BackEndIntroduction = {
     experience: '무관',
     needs: ['열정'],
   },
-  wants: [
+  target: [
     'Backend Team의 목표를 달성하고자 함께 노력 하실 분',
     '세부 목표 중 최소 하나를 목표로 두신 분',
     '데일리 스크럼에 참여할 시간적 여유를 낼 수 있는 분(10분~20분)',
@@ -67,7 +67,7 @@ const MobileIntroduction = {
     '원하는 서비스를 만들고 직접 사용해봅니다.',
     '개발 공식 문서를 기반으로 자신의 지식을 정리하고 확장합니다.',
   ],
-  activities: [
+  activity: [
     '개인 혹은 팀별 프로젝트를 진행합니다.',
     '데일리 스크럼을 통해 프로젝트 진행상황을 공유합니다!',
     '모바일팀 스프린트 리뷰를 통해 한달 활동을 피드백합니다.',
@@ -78,7 +78,7 @@ const MobileIntroduction = {
     experience: '무관',
     needs: ['열정'],
   },
-  wants: [
+  target: [
     '눈에 보이는 피드백이 있는 개발을 하고 싶으신 분',
     '당장 사용할 수 있는 소프트웨어를 개발하기를 원하는 분',
     '평소에 필요했지만 스토어에는 없고 아이디어만 가지고 계셨던 분',
@@ -94,7 +94,7 @@ const DataMLIntroduction = {
     '깊은 지식을 나누며 성장합니다.',
     '이론적인 부분을 놓치지 않으려고 노력합니다.',
   ],
-  activities: [
+  activity: [
     '데일리 스크럼에서 매일 관심 있는 기술, 오늘 있었던 일 등의 이야기를 나눕니다.',
     '매 달 한 명씩 돌아가며 GDSC 블로그에 본인의 관심사를 정리한 글을 포스팅해 지식을 기록합니다.',
     '격주로 한 명씩 돌아가며 논문을 읽고, 내용을 공유하는 페이퍼 리뷰를 합니다.',
@@ -105,7 +105,7 @@ const DataMLIntroduction = {
     experience: '무관',
     needs: ['열정'],
   },
-  wants: [
+  target: [
     '머신러닝, 딥러닝을 깊게 공부해보고 싶은 사람',
     '영어로 된 논문을 읽는 것에 부담이 덜한 사람',
     '데이터 분석 덕후들을 만나고 싶은 사람',
@@ -122,7 +122,7 @@ const DesignIntroduction = {
     '디자인 트렌드를 공유하며 성장을 하려고 합니다.',
     '프로젝트를 배포하면서 자신의 결과물을 보여줄 수 있는 팀입니다.',
   ],
-  activities: [
+  activity: [
     '포트폴리오 스터디를 진행합니다.',
     '웹-개발 협업에 대한 스터디를 진행합니다.',
     '스크럼 형식, 혹은 세미나 형식으로 주기적인 시간에 만나서 인사이트를 공유합니다.',
@@ -133,7 +133,7 @@ const DesignIntroduction = {
     experience: '무관',
     needs: ['열정'],
   },
-  wants: [
+  target: [
     '사용자의 관점에서 더 나은 서비스를 제공하고 싶어하시는 분',
     '책임감을 갖고 꾸준한 활동을 진행하실 수 있는 분',
     '개발자와 소통하여 문제를 해결하실 수 있는 분',

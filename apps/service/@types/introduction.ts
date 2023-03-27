@@ -4,11 +4,17 @@ export interface AsideCardType {
   needs: string[];
 }
 
+export interface ResponseIntroduction {
+  introduction: string;
+  activity: string;
+  target: string;
+}
+
 export interface IntroductionType {
   title: string;
   desc: string;
   introduction: string[];
-  activities: string[];
-  wants: string[];
+  activity: string[];
+  target: string[];
   aside: AsideCardType;
 }

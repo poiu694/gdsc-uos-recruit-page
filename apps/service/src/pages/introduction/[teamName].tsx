@@ -42,10 +42,10 @@ const IntroductionPage: NextPage<IntroductionProps> = ({ introduction, teamName 
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
             <List title="저희를 소개할게요" items={introduction.introduction} />
-            <List title="저희는 이런 활동을 해요" items={introduction.activities} />
+            <List title="저희는 이런 활동을 해요" items={introduction.activity} />
             <List
               title={`${getTitleCaseTeam(teamName)} 팀은 이런 분을 기다립니다`}
-              items={introduction.wants}
+              items={introduction.target}
             />
           </ContentsWrapper>
           <AsideCard
