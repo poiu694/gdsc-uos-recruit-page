@@ -1,2 +1,2 @@
 export * from './TestAPI';
-export * from './AdminAPI';
+export * from './AdminService';
