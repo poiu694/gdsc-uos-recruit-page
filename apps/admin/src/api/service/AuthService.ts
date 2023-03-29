@@ -6,16 +6,9 @@ class AuthService extends AdminService {
   }
 
   login() {
-    return this.request({
+    return this.request<void>({
       method: 'POST',
       url: `/oauth2/authorization/google`,
-    });
-  }
-
-  redirect() {
-    return this.request({
-      method: 'GET',
-      url: '/home',
     });
   }
 
@@ -27,11 +20,19 @@ class AuthService extends AdminService {
   }
 
   logout() {
-    return this.request({
+    return this.request<void>({
       method: 'POST',
       url: '/logout',
     });
   }
+
+  redirect() {
+    return this.request({
+      method: 'GET',
+      url: '/home',
+    });
+  }
+
 }
 
 export default new AuthService();

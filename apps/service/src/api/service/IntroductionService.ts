@@ -9,7 +9,7 @@ class IntroductionService extends ServiceAPI {
   }
 
   getIntroductionByType = (type: TeamKeyType): Promise<ResponseIntroduction> => {
-    return this.request({
+    return this.request<ResponseIntroduction>({
       method: 'GET',
       url: `/${type}`,
     });
