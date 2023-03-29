@@ -47,7 +47,7 @@ function CustomThemeProvider({
     } else {
       setUserTheme('light');
     }
-  }, [setUserTheme]);
+  }, []);
 
   if (!isMounted || typeof userTheme === 'undefined') {
     return null;
