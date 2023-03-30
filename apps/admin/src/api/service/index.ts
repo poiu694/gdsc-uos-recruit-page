@@ -1,2 +1,3 @@
-export * from './TestAPI';
-export * from './AdminAPI';
+export * from './AdminService';
+export { default as AuthService } from './AuthService';
+export { default as ApplicationService } from './ApplicationService';

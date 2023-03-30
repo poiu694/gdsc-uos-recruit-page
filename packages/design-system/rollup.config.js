@@ -1,14 +1,9 @@
-import fs from 'fs';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
 import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-
-const loadJSON = (path) =>
-  JSON.parse(fs.readFileSync(new URL(path, import.meta.url)));
-const packageJSON = loadJSON('./package.json');
 
 const extensions = [...DEFAULT_EXTENSIONS, '.ts', '.tsx'];
 

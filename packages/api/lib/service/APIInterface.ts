@@ -12,7 +12,6 @@ export type QueryParamsType = Record<string | number, any>;
 
 export interface FullRequestParams
   extends Omit<AxiosRequestConfig, 'data' | 'params' | 'url' | 'responseType'> {
-  /** set parameter to `true` for call `secureHeader` for this request */
   method: Method;
   secure?: boolean;
   /** request path */

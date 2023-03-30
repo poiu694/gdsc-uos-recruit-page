@@ -1,23 +1,19 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import { css, useTheme } from '@emotion/react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { Banner, getTitleCaseTeam, TEAM_LIST, TeamKeyType } from '@gdsc-uos/ui';
+import { Banner, getTitleCaseTeam, TEAM_LIST } from '@gdsc-uos/ui';
 
 import { useGA } from '@/hooks';
-import { IntroductionContent } from '@/constants';
+import { TeamNameProps } from '@types';
+import { useIntroductionQuery } from '@/api/query';
 import { GOOGLE_FORM_LINK } from '@/constants/form';
-import { IntroductionType, TeamNameProps } from '@types';
 import { Helmet, Introduction } from '@/components/common';
 import { List, AsideCard } from '@/components/Introduction';
 
-interface IntroductionProps extends TeamNameProps {
-  introduction: IntroductionType;
-}
-
-const IntroductionPage: NextPage<IntroductionProps> = ({ introduction, teamName }) => {
-  const theme = useTheme();
+const IntroductionPage: NextPage<TeamNameProps> = ({ teamName }) => {
   const router = useRouter();
+  const { isLoading, data: introduction } = useIntroductionQuery(teamName);
   const { logEvent, logPageView } = useGA();
   logPageView(`/introduction/${teamName}`);
 
@@ -33,6 +29,10 @@ const IntroductionPage: NextPage<IntroductionProps> = ({ introduction, teamName 
     router.push(`/qna/${teamName}`);
   };
 
+  if (isLoading || !introduction) {
+    return null;
+  }
+
   return (
     <>
       <Helmet title="소개" description="GDSC UOS RECRUIT 소개 페이지" />
@@ -41,11 +41,11 @@ const IntroductionPage: NextPage<IntroductionProps> = ({ introduction, teamName 
         <Wrapper>
           <ContentsWrapper>
             <Introduction title={introduction.title} desc={introduction.desc} />
-            <List title="저희를 소개할게요" items={introduction.introduction} />
-            <List title="저희는 이런 활동을 해요" items={introduction.activities} />
+            <List title="저희를 소개할게요" items={introduction.about} />
+            <List title="저희는 이런 활동을 해요" items={introduction.activity} />
             <List
               title={`${getTitleCaseTeam(teamName)} 팀은 이런 분을 기다립니다`}
-              items={introduction.wants}
+              items={introduction.target}
             />
           </ContentsWrapper>
           <AsideCard
@@ -75,11 +75,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const introduction = IntroductionContent[params!.teamName as TeamKeyType];
-
   return {
     props: {
-      introduction,
       teamName: params!.teamName,
     },
   };
