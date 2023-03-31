@@ -3,6 +3,7 @@ version: '3'
 services:
   service:
     container_name: service
+    image: poiu694/gdsc-uos-recruit-service:latest
     restart: always
     build:
       context: .
