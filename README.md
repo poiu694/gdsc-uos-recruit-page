@@ -16,7 +16,7 @@
 
 ## 😎 Summarize <a name = "summarize"></a>
 
-The repository manages the GDSC-UOS-RECRUIT-PAGE with using monorepo(yarn workspace).
+The repository manages the GDSC-UOS-RECRUIT-PAGE with using monorepo(turborepo).
 
 [service](https://recruit-gdsc-uos.vercel.app/): gdsc-uos-recruit-page service page
 
