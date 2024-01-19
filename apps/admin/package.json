@@ -47,7 +47,7 @@
     "msw": "^1.1.0",
     "prettier": "^2.8.4",
     "typescript": "^4.6.4",
-    "vite": "^3.2.7",
+    "vite": "^3.2.8",
     "vite-plugin-node-polyfills": "^0.7.0"
   },
   "msw": {
